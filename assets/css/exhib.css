@@ -1,0 +1,49 @@
+:root {
+	--fv-nav-height: 4em;
+	--fv-main-height: calc(100vh - var(--fv-nav-height));
+			
+	--fv-card-header-height: 3.5em;
+	--fv-card-footer-height: 3.5em;
+
+	--fv-card-body-height: calc( 
+		var(--fv-main-height) - 
+		var(--fv-card-header-height) - 
+		var(--fv-card-footer-height) -
+		1em
+	) ;
+}
+
+@media (max-width:600px) {
+	.card {
+		width: 95vw;
+		left: 2.5vw; 
+	}
+
+
+}
+@media (min-width:600px) {
+	.card {
+		width: 70vw;
+		left: 15vw; 
+	}
+
+
+}
+
+#map-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+}
+
+.booth {
+    background-color: lightblue;
+    border: 1px solid #000;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer; /* Add pointer cursor to indicate interactivity */
+}
+
+.booth:hover {
+    background-color: rgb(181, 27, 166); /* Change color on hover */
+}

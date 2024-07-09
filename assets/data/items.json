@@ -1,0 +1,281 @@
+{
+	"meta": {
+		"startWith": 0,
+		"startNarrative": "Exhibition",
+		"startValue": "Room 1",
+		"narratives": ["Date of Creation", "Date of Publication", "Themes/Topics", "Exhibition"]
+	},
+	"items": [
+		{
+			"@sort": "Object 1",
+			"shortName": "Galileo’s Telescope Replica",
+			"image": "assets/img/items/1galileo.jpg",
+			"info": {
+				"Title": "Galileo’s Telescope",
+				"Creator": "Galileo Galilei",
+				"Date of Creation": "Original telescope circa 1609; replica created in 1923",
+				"Original Location": "Museo di Fisica e Storia Naturale, Florence, Italy",
+				"Significance": "Catalyzed controversy by challenging the geocentric view of the universe; pivotal in advancing observational astronomy",
+				"Themes/Topics": "Scientific revolution, astronomical discovery, controversy in early modern science",
+				"Controversies/Debates": "Sparked debates on the structure of the universe and the role of observational evidence in scientific inquiry",
+				"Exhibition": "Room 1: Scientific Revolutions"		
+			},
+			"shortInfo": "Explore Galileo’s telescope replica to see how early scientific breakthroughs reshaped our understanding of the universe and influenced modern innovation.", 
+			"longerInfo": ["This replica showcases how Galileo’s Telescope transformed astronomy. Galileo's discoveries of moons around Jupiter challenged old ideas about the solar system, paving the way for modern science."],
+			"fullInfo": "assets/docs/1galileo.html"
+		},
+		{
+			"@sort": "Object 2",
+			"shortName": "'The Origin of Species'",
+			"image": "assets/img/items/2darwin.jpg",
+			"info": {
+				"Title": "'The Origin of Species' by Charles Darwin",
+				"Author": "Charles Darwin", 
+				"Date of Creation/Publication": "First published in 1859",
+				"Original Location": "Private collection, Virginia, USA",
+				"Significance": "Sparked debates on evolution, natural selection, and the relationship between science and religion",
+				"Themes/Topics": "Evolutionary biology, scientific controversies, religion versus science",
+				"Controversies/Debates": "Provoked discussions on the origin of species, human origins, and implications for religious beliefs",
+				"Exhibition": "Room 1: Scientific Revolutions"		
+		},
+			"shortInfo": "Explore Darwin's groundbreaking theory on evolution and its societal impact. Understand its relevance to contemporary debates on science and ethics.", 
+			"longerInfo": ["Delve into Darwin’s theory of evolution presented in The Origin of Species (1859). Darwin proposed natural selection as a mechanism for species adaptation, challenging creationist views. Explore debates in evolutionary biology and Darwin's influence on modern genetics and ecology."],
+			"fullInfo": "assets/docs/2darwin.html"
+		},
+		{
+			"@sort": "Object 3",
+			"shortName": "Enigma Machine",
+			"image": "assets/img/items/3enigma.jpg",
+			"info": {
+				"Title": "Enigma Machine",
+				"Creator": "Alan Turing and various German engineers and cryptologists", 
+				"Date of Creation": "Developed in the early 20th century; significant during WWII",
+				"Original Location": "Bletchely Park Museum, United Kingdom",
+				"Significance": "Represents the importance of cryptography in wartime intelligence and technological advancements",
+				"Themes/Topics": "WWII technology, cryptography, secrecy versus transparency",
+				"Controversies/Debates": "Ethical implications of wartime intelligence operations and the balance between security and privacy.",
+				"Exhibition": "Room 1: Scientific Revolutions"		
+		},
+			"shortInfo": "Discover the Enigma Machine, used during WWII to encrypt secret messages. Learn how Allied efforts to decode it influenced the outcome of the war and shaped modern cryptography.", 
+			"longerInfo": ["Explore the Enigma Machine’s cryptographic complexity and its significance during WWII. This device illustrates advancements in cryptography and the ethical implications of code-breaking efforts. Dive into its technical workings and its contribution to the history of information security."],
+			"fullInfo": "assets/docs/3enigma.html"
+		},
+		{
+			"@sort": "Object 4",
+			"shortName": "\"For the Love of God\", Damien Hirst",
+			"image": "assets/img/items/4hirst.jpg",
+			"info": {
+				"Title": "\"For the Love of God\" by Damien Hirst",
+				"Author": "Damien Hirst", 
+				"Date of Creation": "2007",
+				"Original Location": "White Cube Gallery, London, England",
+				"Significance": "Satirizes themes of death, wealth, and the commodification of art.",
+				"Themes/Topics": "Mortality, consumerism, opulence in art",
+				"Controversies/Debates": "Criticized for its ostentatious use of luxury materials and the perceived emptiness of its message",
+				"Exhibition": "Room 2: Cultural and Artistic Provocations"		
+			},
+			"shortInfo": "\"For the Love of God\" is a platinum cast of a human skull encrusted with diamonds, created by Damien Hirst in 2007, symbolizing themes of mortality and materialism.",
+			"longerInfo": ["This piece explores themes of mortality, wealth, and the enduring allure of luxury. The skull's opulent decoration challenges viewers to contemplate the intersection of art, death, and the conspicuous consumption of contemporary society. \"For the Love of God\" provocatively questions the value we place on material goods and the inevitable fate of human existence, juxtaposing the preciousness of diamonds with the inevitability of death, prompting reflection on the fragility and transience of life amidst the pursuit of wealth and status."],
+			"fullInfo": "assetsdocs/4hirst.html"
+		},
+		{
+			"@sort": "Object 5",
+			"shortName": "Victorian-Era Corset",
+			"image": "assets/img/items/5corset.jpg",
+			"info": {
+				"Title": "Victorian-Era Corset",
+				"Creator": "Victorian garment manufacturers",
+				"Date of Creation": "Made in 1864. Popular throughout the Victorian era (19th century)",
+				"Original Location": "Victoria and Albert Museum, London, UK",
+				"Significance": "Reflects debates on women’s fashion, health implications, and societal expectations of beauty",
+				"Themes/Topics": "Fashion history, women’s health, body image",
+				"Controversies/Debates": "Discussions on restrictive clothing, body autonomy, and gender roles",
+				"Exhibition": "Room 4: Ethical and Moral Dilemmas"		
+			},
+			"shortInfo": "Explore the Victorian-Era Corset and its influence on women’s fashion and health during the 19th century. Learn about societal expectations and the evolution of women’s rights.",
+			"longerInfo": ["This cultural artifact symbolizes gender norms and bodily aesthetics in the 19th century. Explore its impact on women’s health, fashion history, and feminist critiques of beauty standards and social conformity."],
+			"fullInfo": "assets/docs/5corset.html"
+		},
+		{
+			"@sort": "Object 6",
+			"shortName": "The Atomic Bomb",
+			"image": "assets/img/items/6bomb.jpg",
+			"info": {
+				"Title": "Replica of the Atomic Bomb 'Little Boy'",
+				"Creator": "Manhattan Project scientists and engineers",
+				"Date of Creation": "The original bomb was dropped in 1945",
+				"Original Location": "Air & Space Museum, Denver, USA",
+				"Significance": "Symbolizes the dawn of the nuclear age and the ethical debates surrounding nuclear warfare",
+				"Themes/Topics": "WWII history, nuclear weapons, ethics of war",
+				"Controversies/Debates": "Ongoing discussions on the use of atomic bombs, moral implications, and global security",
+				"Exhibition": "Room 4: Ethical and Moral Dilemmas"		
+			},
+			"shortInfo": "Learn about the Atomic Bomb “Little Boy” dropped on Hiroshima in 1945, ending WWII but sparking ethical debates. Understand its implications for global peace and nuclear disarmament.",
+			"longerInfo": ["Explore the replica of the Atomic Bomb \"Little Boy\" and its role in WWII and subsequent nuclear deterrence strategies. Analyze its ethical dimensions, exploring debates on nuclear weapons, international relations, and the long-term consequences of atomic warfare."],
+			"fullInfo": "assets/docs/6bomb.html"
+		},
+		{
+			"@sort": "Object 7",
+			"shortName": "Luther's 95 Theses",
+			"image": "assets/img/items/7luther.jpg",
+			"info": {
+				"Title": "Martin Luther’s 95 Theses",
+				"Date of Publication": "Posted in 1517",
+				"Original Location": "Oxford University, UK (facsimile)",
+				"Significance": "Ignited debates on church authority, religious reform, and the spread of Protestantism",
+				"Themes/Topics": "Reformation history, religious dissent, church politics",
+				"Controversies/Debates": "Historical and theological implications of religious reform movements",
+				"Exhibition": "Room 3: Social and Political Movements"		
+			},
+			"shortInfo": "Learn about Martin Luther’s 95 Theses, challenging the Catholic Church’s practices in the 16th century. Understand its significance in religious history and the Reformation.",
+			"longerInfo": ["Explore the facsimile of Martin Luther’s 95 Theses, pivotal in challenging ecclesiastical authority and advocating for religious reforms. Explore its theological arguments and historical implications for Western Christianity."],
+			"fullInfo": "assets/docs/7luther.html"
+		},
+		{
+			"@sort": "Object 8",
+			"shortName": "Van Gogh's \"Starry Night\"",
+			"image": "assets/img/items/8vangogh.jpg",
+			"info": {
+				"Title": "\"Starry Night\" by Vincent van Gogh Belew",
+				"Creator": "Vincent van Gogh",
+				"Date of Creation": "Painted in 1889",
+				"Original Location": "Museum of Modern Art (MoMA), New York, USA",
+				"Significance": "Initially controversial and now iconic, reflects changing perceptions of art and mental health",
+				"Themes/Topics": "Art history, post-impressionism, 19th-century artistic trends of subjective expression and the exploration of inner experience, artist's emotional turmoil",
+				"Controversies/Debates": "Criticism and appreciation of modern art, artist’s mental state and creative expression",
+				"Exhibition": "Room 2: Cultural and Artistic Provocations"		
+			},
+			"shortInfo": "Discover Vincent van Gogh’s \"Starry Night\" and its unique artistic style. Learn about its symbolism and the artist’s life and struggles.",
+			"longerInfo": ["Explore Vincent van Gogh’s painting, renowned for its expressive brushwork and emotional intensity. Explore its artistic influences, reception history, and contributions to modern art movements like Post-Impressionism."],
+			"fullInfo": "assets/docs/8vangogh.html"
+		},
+		{
+			"@sort": "@Object 9",
+			"shortName": "Suffragette Hunger Strike Medal",
+			"image": "assets/img/items/9medal.jpg",
+			"info": {
+				"Title": "Suffragette Hunger Strike Medal",
+				"Creator": "Suffragette organizations and medal makers",
+				"Date of Creation": "Early 20th century",
+				"Original Location": "Museum of London, UK",
+				"Significance": "Represents the suffragette movement’s struggle for women’s right to vote and gender equality",
+				"Themes/Topics": "Women’s history, suffrage movements, civil disobedience",
+				"Controversies/Debates": "Political activism, methods of protest, women’s rights",
+				"Exhibition": "Room 3: Social and Political Movements"  		
+			},
+			"shortInfo": "Discover the Suffragette Hunger Strike Medal, symbolizing the fight for women’s suffrage. Explore its historical significance and the ongoing struggle for gender equality.",
+			"longerInfo": ["Learn about the Suffragette Hunger Strike Medal as a symbol of women’s activism and resistance during the suffrage movement. Analyze its historical context, strategies of protest, and impact on women’s rights globally."],
+			"fullInfo": "assets/docs/9medal.html"
+		},
+		{
+			"@sort": "@Object 10",
+			"shortName": "\"Shoot\", Chris Burden",
+			"image": "assets/img/items/10shoot.jpg",
+			"info": {
+				"Title": "Video installation of \"Shoot\" performance by Chris Burden",
+				"Artist": "Chris Burden",
+				"Date of Publication": " 1971: Performance; video documentation dates vary",
+				"Original Location": "Various art institutions and collections, including museums specializing in contemporary art",
+				"Significance": "Exploration of extreme physical experiences as a form of artistic expression",
+				"Themes/Topics": "Performance art, body art, violence and pain, artistic endurance",
+				"Controversies/Debates": "The performance sparked debates about the ethics of using real violence in art, as well as discussions on the role of the audience in witnessing and interpreting extreme acts. Critics and scholars continue to analyze \"Shoot\" within the context of performance art history and its implications for understanding the boundaries of artistic expression.",
+				"Exhibition": "Room 2: Cultural and Artistic Provocations"		
+			},
+			"shortInfo": "\"Shoot\" by Chris Burden is a powerful example of how performance art can challenge societal norms, provoke visceral reactions, and invite audiences to reconsider their perceptions of art and human experience.",
+			"longerInfo": ["The performance sparked debates about the ethics of using real violence in art, as well as discussions on the role of the audience in witnessing and interpreting extreme acts. Critics and scholars continue to analyze \"Shoot\" within the context of performance art history and its implications for understanding the boundaries of artistic expression."],
+			"fullInfo": "assets/docs/10shoot.html"
+		},
+		{
+			"@sort": "@Object 11",
+			"shortName": "\"Playboy\"",
+			"image": "assets/img/items/11playboy.jpg",
+			"info": {
+				"Title": "First Issue of \"Playboy\" Magazine",
+				"Creator": "Hugh Hefner and Playboy Enterprises",
+				"Date of Creation": "First published in December 1953",
+				"Original Location": "Various museums and private collections worldwide",
+				"Significance": "Sparked discussions on sexuality, media representation, and feminism",
+				"Themes/Topics": "Media history, sexual revolution, feminism",
+				"Controversies/Debates": "Criticisms of objectification, debates on sexual liberation and censorship",
+				"Exhibition": "Room 5: Modern Controversies"		
+			},
+			"shortInfo": "Discover the first issue of “Playboy” magazine, exploring its cultural impact on media and sexuality. Understand its influence on modern publishing and social attitudes.",
+			"longerInfo": ["Examine the first issue of “Playboy” (1953) and its cultural significance as a blend of literature, photography, and lifestyle. Analyze its impact on the representation of sexuality in media, consumer culture, and feminist critiques of the objectification of women."],
+			"fullInfo": "assets/docs/11playboy.html"
+		},
+		{
+			"@sort": "@Object 12",
+			"shortName": "Dolly the Sheep",
+			"image": "assets/img/items/12dolly.jpg",
+			"info": {
+				"Title": "Photograph of Dolly the Sheep, an animal clone",
+				"Creator": "Scientists at the Roslin Institute, led by Dr. Ian Wilmut",
+				"Date of Creation": "1996: Birth of Dolly, 1997: Announcement",
+				"Original Location": "Roslin Institute, Scotland.",
+				"Significance": "Ethical concerns about the cloning of animals and potential implications for human cloning, including safety, ethical guidelines, and the concept of genetic identity",
+				"Themes/Topics": "Cloning, bioethics, genetic engineering, animal rights",
+				"Controversies/Debates": "Welfare of cloned animals, the potential for human cloning, genetic modification, and the ethical boundaries of scientific experimentation on living organisms.",
+				"Exhibition": "Room 4: Ethical and Moral Dilemmas"		
+			},
+			"shortInfo": "Why clone a sheep? Dolly was a part of the Roslin Institute’s research into producing genetically modified farm animals or livestock.",
+			"longerInfo": ["Dolly the Sheep, born on July 5, 1996, at the Roslin Institute in Scotland, made history as the first mammal cloned from an adult somatic cell using nuclear transfer technology. Created by scientists led by Dr. Ian Wilmut, Dolly's birth sparked global ethical discussions about the implications of cloning on animal welfare, genetic identity, and the potential for human cloning. Her legacy continues to influence debates on bioethics, genetic engineering, and the ethical boundaries of scientific research involving living organisms."],
+			"fullInfo": "assets/docs/12dolly.html"
+		},
+		{
+			"@sort": "@Object 13",
+			"shortName": "Moon Landing Photo",
+			"image": "assets/img/items/13nasa.jpg",
+			"info": {
+				"Title": "NASA Moon Landing Photograph",
+				"Author": "NASA astronauts and mission team",
+				"Date of Creation/Publication": "July 20, 1969",
+				"Original Location": "NASA's Johnson Space Center (JSC), Houston, Texas, USA",
+				"Significance": "Symbolizes human achievement in space exploration and technological advancement",
+				"Themes/Topics": "Space exploration, scientific achievement, conspiracy theories",
+				"Controversies/Debates": "Conspiracy theories questioning the authenticity of the moon landing",
+				"Exhibition": "Room 4: Ethical and Moral Dilemmas"		
+			},
+			"shortInfo": "Explore the iconic NASA Moon Landing Photo, symbolizing human achievement in space exploration. Discover its impact on scientific innovation and international cooperation.",
+			"longerInfo": ["Examine the NASA Moon Landing Photo (1969) as a cultural icon and symbol of technological achievement. Analyze its historical context, technological advancements in space exploration, and its impact on global perceptions of scientific progress."],
+			"fullInfo": "assets/docs/13nasa.html"
+		},
+		{
+			"@sort": "@Object 14",
+			"shortName": "Curie's Sheet",
+			"image": "assets/img/items/14curie.jpg",
+			"info": {
+				"Title": "Reproduction of the sheet of the measurements taken by Pierre and Marie Curie on 0.1 g of RaCl₂ (radium chloride)",
+				"Author": "Marie Curie and Pierre Curie",
+				"Date of Creation": "April 22, 1902",
+				"Original Location": "Curie Museum, Paris, France",
+				"Significance": "Groundbreaking research on radioactivity, crucial contributions to modern physics and chemistry, laying the foundation for the development of X-ray technology",
+				"Themes/Topics": "Scientific discovery, women in science, women in STEM fields, radiation research",
+				"Controversies/Debates": "Ethical considerations in early radiation research, scientific advancements versus health risks",
+				"Exhibition": "Room 3: Social and Political Movements"		
+			},
+			"shortInfo": "In 1898, Pierre and Marie Curie discovered radium. In 1902, they sought to determine its atomic mass. They recorded the various steps of their calculations in their laboratory notebooks, from which this document is extracted. Both of their handwriting appears on this sheet, and the original still shows residual traces of radioactivity.",
+			"longerInfo": ["Examine the reproduction of Pierre and Marie Curie’s measurements sheet from 1902. Their meticulous calculations advanced our knowledge of radioactivity, laying the groundwork for X-ray technology and cancer treatment. Dive into the ethical implications of early radiation research, their scientific methodologies, and their enduring impact on physics and chemistry research."],
+			"fullInfo": "assets/docs/14curie.html"
+		},
+		{
+			"@sort": "@Object 15",
+			"shortName": "Snowden’s Revelations",
+			"image": "assets/img/items/15revel.jpg",
+			"info": {
+				"Title": "Edward Snowden’s Revelations",
+				"Author": "Edward Snowden and NSA documents",
+				"Date of Publication": "Leaks occurred in 2013",
+				"Original Location": "tional Security Archive, G. Washington University, USA",
+				"Significance": "The documents represent debates on privacy rights, government surveillance, and digital ethics",
+				"Themes/Topics": "Digital privacy, whistleblowing, surveillance state",
+				"Controversies/Debates": "Legal and ethical implications of mass surveillance and privacy laws, impact on civil liberties",
+				"Creator/Author": "keyboards", 
+				"Exhibition": "Room 5: Modern Controversies"		
+			},
+			"shortInfo": "Explore the tablet displaying Edward Snowden’s Revelations, highlighting debates on privacy and surveillance. Understand its implications for digital ethics and security.",
+			"longerInfo": ["The tablet exhibited here, displays a facsimile of Edward Snowden’s Revelations. Snowden exposed secret U.S. government surveillance programs in 2013. These disclosures highlighted how governments monitor phone and internet activities, sparking debates about privacy and security in the digital age. Understand the importance of protecting personal information and the balance between national security and individual privacy."],
+			"fullInfo": "assets/docs/15revel.html"
+		}
+		
+	]
+}

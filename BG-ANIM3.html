@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Escher Style Animation</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="sketch.js"></script>
+  <style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+    }
+    #p5CanvasContainer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Places the canvas behind other content */
+    }
+    #mainContent {
+        position: relative;
+        z-index: 1;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.9); /* Slightly transparent to show animation behind */
+        border-radius: 10px;
+        margin: 20px;
+    }
+</style>
+</head>
+<body>
+
+  <main>
+  <div class="card" id="mainCard">
+    <div class="card-header">
+        <h2 class="text-center" id="header">Placeholder Header</h2>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 d-flex">
+                <img id="img" src="" class="card-img-top img-fluid limitHeight m-auto" alt="Placeholder Image">
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <h5 class="card-title text-center">Data</h5>
+                <button class="btn d-lg-none" type="button" id="dataExpanderIcon" data-bs-toggle="collapse" data-bs-target="#table" aria-expanded="false" aria-controls="table">
+                    <span class="bi-chevron-bar-right"></span>
+                    <span class="bi-chevron-bar-down"></span>
+                </button>
+                <table class="table table-striped border collapse d-md-block" id="table">
+                    <tbody id="infoTable">
+                        <!-- Table rows will be dynamically populated -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <h5 class="card-title text-center">Info</h5>
+        <p class="card-text" id="shortInfo">Placeholder Short Info</p>
+        <p class="card-text d-none" id="longerInfo">Placeholder Long Info</p>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+        <button id="buttonPrevious" type="button" class="btn btn-primary">Previous</button>
+        <h3 id="narrative">Placeholder Narrative</h3>
+        <button id="buttonNext" type="button" class="btn btn-primary">Next</button>
+    </div>
+</div>
+
+<div class="card d-none" id="fullInfo">
+    <div class="card-header">
+        <h2 class="text-center" id="fullHeader">Placeholder Full Header</h2>
+    </div>
+    <div class="card-body" id="fullInfoContent">
+        <!-- Full info content will be dynamically populated -->
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+        <a href="#" type="button" class="btn btn-primary m-auto" onclick="hideFullInfo()">Back</a>
+    </div>
+</div>
+</main>
+
+
+</body>
+</html>
