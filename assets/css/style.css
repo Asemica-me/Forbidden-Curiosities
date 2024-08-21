@@ -1,3 +1,7 @@
+/* Vitali css */
+
+@charset "UTF-8";
+
 :root {
 	--fv-nav-height: 4em;
 	--fv-main-height: calc(100vh - var(--fv-nav-height));
