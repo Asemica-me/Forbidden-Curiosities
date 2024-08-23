@@ -140,22 +140,22 @@
 		},
 		{
 			"@sort": "Object 8",
-			"shortName": "Van Gogh's \"Starry Night\"",
-			"image": "assets/img/items/8vangogh.jpg",
+			"shortName": "L'Origin du Monde",
+			"image": "assets/img/items/8origin-du-monde.jpg",
 			"info": {
-				"Title": "\"Starry Night\" by Vincent van Gogh",
-				"Creator": "Vincent van Gogh",
-				"Date of Creation": "Painted in 1889",
-				"Place of Creation": "",
-				"Original Location": "Museum of Modern Art (MoMA), New York, USA",
-				"Significance": "Initially controversial and now iconic, reflects changing perceptions of art and mental health",
-				"Themes/Topics": "Art history, post-impressionism, 19th-century artistic trends of subjective expression and the exploration of inner experience, artist's emotional turmoil",
-				"Controversies/Debates": "Criticism and appreciation of modern art, artist’s mental state and creative expression",
+				"Title": "L'Origin du Monde",
+				"Creator": "Gustave Courbet",
+				"Date of Creation": "Painted in 1866",
+				"Place of Creation": "Paris",
+				"Original Location": "Musée d'Orsay, Paris, France",
+				"Significance": "Initially controversial and now iconic, reflects women bodies representation in art",
+				"Themes/Topics": "Art history, realism, 19th-century, Woman body, France, Paris",
+				"Controversies/Debates": "Criticism and appreciation of modern art",
 				"Exhibition": "Room 2: Cultural and Artistic Provocations"		
 			},
-			"shortInfo": "Discover Vincent van Gogh’s \"Starry Night\" and its unique artistic style. Learn about its symbolism and the artist’s life and struggles.",
-			"longerInfo": ["Explore Vincent van Gogh’s painting, renowned for its expressive brushwork and emotional intensity. Explore its artistic influences, reception history, and contributions to modern art movements like Post-Impressionism."],
-			"fullInfo": "assets/docs/8vangogh.html"
+			"shortInfo": "L'Origin du Monde by Gustave Courbet was painted in 1866 and first exposed in Paris. It's a bold representation of the female genitalia.",
+			"longerInfo": ["This way of female depiction broke the academia convention to display female nudity only in mythological or literary contexts. This was a consequence of Courbet interest in realism and erotism. In this paint, as in others of his own, we can appreciate his way to reproduce tonalism following the venetian school, emulating Tiziano, Correggio and Veronese."],
+			"fullInfo": "assets/docs/8origin-du-monde.html"
 		},
 		{
 			"@sort": "@Object 9",
@@ -292,35 +292,23 @@
 			"fullInfo": "assets/docs/15revel.html"
 		},
 		{
-			"@sort": "@Object 15",
-			"shortName": "Snowden’s Revelations",
-			"image": "assets/img/items/15revel.jpg",
-			"info": {
-				"Title": "Edward Snowden’s Revelations",
-				"Author": "Edward Snowden and NSA documents",
-				"Date of Publication": "Leaks occurred in 2013",
-				"Place of Creation": "USA",
-				"Original Location": "National Security Archive, G. Washington University, USA",
-				"Significance": "The documents represent debates on privacy rights, government surveillance, and digital ethics",
-				"Themes/Topics": "Digital privacy, whistleblowing, surveillance state",
-				"Controversies/Debates": "Legal and ethical implications of mass surveillance and privacy laws, impact on civil liberties",
-				"Creator/Author": "keyboards", 
-				"Exhibition": "Room 5: Modern Controversies"		
-			},
-			"shortInfo": "Explore the tablet displaying Edward Snowden’s Revelations, highlighting debates on privacy and surveillance. Understand its implications for digital ethics and security.",
-			"longerInfo": ["The tablet exhibited here, displays a facsimile of Edward Snowden’s Revelations. Snowden exposed secret U.S. government surveillance programs in 2013. These disclosures highlighted how governments monitor phone and internet activities, sparking debates about privacy and security in the digital age. Understand the importance of protecting personal information and the balance between national security and individual privacy."],
-			"fullInfo": "assets/docs/15revel.html"
-		},
-		{
 			"@sort": "@Object 16",
-			"shortName": "Minigonna",
-			"image": "assets/img/items/16.jpg",
+			"shortName": "Mary Quant's mini skirt",
+			"image": "assets/img/items/16mini-skirt.jpg",
 			"info": {
-						
+				"Title": "Dress",
+				"Author": "Mary Quant(designer)",
+				"Date of Publication": "designed in 1966",
+				"Place of Creation": "London",
+				"Original Location": "Victoria and Albert Museum, London, UK",
+				"Significance": "Revolution in skirt design, a new concept of women wearing that took into account also women sexuality.",
+				"Themes/Topics": "Fashion, Women bodies, Women, Sixties, London, UK",
+				"Controversies/Debates": "Women bodies more exposed, conservatives societies tried to opposed. Women's will to express themselves as they wanted was more powerful than the censorship.",
+				"Exhibition": "Room "						
 			},
-			"shortInfo": "",
-			"longerInfo": [""],
-			"fullInfo": "assets/docs/16.html"
+			"shortInfo": "This garment was designed by Mary Quant in 1966. It was one of the most appreciated of her prodcuts. It's a vibrant green coloured short dress.",
+			"longerInfo": ["This dress shows a so called mini-skirt, because it stops before the knees. It's length, bright colour and dynamic cut of the skirt are typical marks of Mary Quant's design. She was an early fashion designers when she was one of the first to push this kind of garment, but she was the one to make it an icon of the sixties fashion. This new version of the skirt was for the young women generation a way to express their will to be more free and a shock for the conservative societies of that time."],
+			"fullInfo": "assets/docs/16mini-skirt.html"
 		},
 		{
 			"@sort": "@Object 17",
@@ -345,13 +333,43 @@
 		{
 			"@sort": "@Object 18",
 			"shortName": "Archibugio",
-			"image": "assets/img/items/17.jpg",
+			"image": "assets/img/items/18.jpg",
 			"info": {
 						
 			},
 			"shortInfo": "",
 			"longerInfo": [""],
-			"fullInfo": "assets/docs/17.html"
+			"fullInfo": "assets/docs/18.html"
+		},
+		{
+			"@sort": "@Object 19",
+			"shortName": "Ghigliottina",
+			"image": "assets/img/items/19.jpg",
+			"info": {
+						
+			},
+			"shortInfo": "",
+			"longerInfo": [""],
+			"fullInfo": "assets/docs/19.html"
+		},
+		{
+			"@sort": "@Object 20",
+			"shortName": "Da Vinci's Vitruvian Man",
+			"image": "assets/img/items/20da-vinci.jpg",
+			"info": {
+				"Title": "Vitruvian Man",
+				"Author": "Leonardo Da Vinci",
+				"Date of Publication": "c. 1490",
+				"Place of Creation": "N.A.",
+				"Original Location": "Gallerie dell'Accademia, Venezia, Italia",
+				"Significance": "Human anatomy was a study sticked to misbelives and observations based on animals. New approaches brought progress not only in medical field, but in other fields, like art as the Da Vinci's Vitruvian man shows.",
+				"Themes/Topics": "Art, Anatomy, Venezia, Italy, Renaissence",
+				"Controversies/Debates": "To realise this sketch Da Vinci used human anatomy's studies made directly on human corpses, a practice that untill the Renaissence was prohibited for religious and dogmatic reasons.",
+				"Exhibition": "Room "	
+			},
+			"shortInfo": "This is a version of the vitruvian man described by Vitruvio drawn by Leonardo Da Vinci around the 1490.",
+			"longerInfo": ["This sketch shows one of face of the poliedric soul of Leonardo Da Vinci, art, but also his intereset in medicine science as the precise reproduction of the muscles and human structure show. This draw is a testimony of the benefits obtained by pursuing an activity banned or seen as sacrilegious, study of the human anatomy through corpses."],
+			"fullInfo": "assets/docs/20da-vinci.html"
 		}
 		
 	]
