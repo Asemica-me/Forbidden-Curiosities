@@ -332,25 +332,25 @@
 		},
 		{
 			"@sort": "@Object 18",
-			"shortName": "Archibugio",
-			"image": "assets/img/items/18.jpg",
+			"shortName": "The arquebus",
+			"image": "assets/img/items/18arquebus.jpg",
 			"info": {
 						
 			},
-			"shortInfo": "",
-			"longerInfo": [""],
-			"fullInfo": "assets/docs/18.html"
+			"shortInfo": "The arquebus is an early type of portable gun, a precursor to the musket, used in the 15th to 17th centuries. It was a matchlock firearm, typically loaded with gunpowder and a lead ball. It Symbolizes the transition from medieval to modern warfare and the mechanisation of war. ",
+			"longerInfo": ["The invention of the arquebus was a turning point in military history, symbolizing the transition from medieval to modern warfare. Its introduction heralded the decline of knightly dominance on the battlefield, the rise of professional standing armies, and the development of new military strategies and fortifications. Beyond its tactical implications, the arquebus played a significant role in the broader social and political transformations of the late Middle Ages and Renaissance, contributing to the decline of feudalism and the rise of centralized states. Although eventually replaced by more advanced firearms, the arquebus laid the groundwork for the future of warfare and the global expansion of European powers."],
+			"fullInfo": "assets/docs/18archibugio.html"
 		},
 		{
 			"@sort": "@Object 19",
-			"shortName": "Ghigliottina",
-			"image": "assets/img/items/19.jpg",
+			"shortName": "Guillotine",
+			"image": "assets/img/items/19guillotine1.jpg",
 			"info": {
 						
 			},
-			"shortInfo": "",
-			"longerInfo": [""],
-			"fullInfo": "assets/docs/19.html"
+			"shortInfo": "The Guillotine was a type of decapitation device and one of the most infamous symbols of capital punishment in history. Although most famously associated with France during the French Revolution, the device and its variants were used in other European countries, contributing to significant debates around the ethics, legality, and humanity of state-enforced death penalties",
+			"longerInfo": ["The Guillotine was a type of decapitation device and one of the most infamous symbols of capital punishment in history. Although most famously associated with France during the French Revolution, the device and its variants were used in Italy and other European countries, contributing to significant debates around the ethics, legality, and humanity of state-enforced death penalties and represented the broader European shift towards what was seen as a more civilized form of capital punishment. It replaced more archaic and brutal methods of execution like hanging, burning, or breaking on the wheel. Its efficiency and supposed humanity were emphasized, making it a preferred method of execution for many governments at the time. "],
+			"fullInfo": "assets/docs/19ghigliottina.html"
 		},
 		{
 			"@sort": "@Object 20",
