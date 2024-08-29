@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Color Palette Example</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* Cambiato a colonna per disporre i div e i bottoni verticalmente */
+    color: white;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000;
+}
+
+/* Contenitore per le color-box */
+.color-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px; /* Spazio tra i color-box e i bottoni */
+}
+
+/* Stili per i color-box */
+.color-box {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+}
+
+/* codice bottoni */
+.button-container {
+    display: grid;
+    gap: 20px;
+    justify-content: center; /* Centra i bottoni */
+}
+
+.button {
+    padding: 15px 30px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Pulsante 1: Rosso con angoli arrotondati */
+.btn-next {
+    background-color: #f10ff1;
+    border: 1px solid #000;
+    border-radius: 8px;
+}
+.btn-next:hover {
+    background-color: #000;
+    border: 1px solid #ffff;
+    color: #fff;
+}
+
+/* Pulsante 2: Blu con bordo e angoli squadrati */
+.btn-explore {
+    background-color: #f10ff1;
+    border: 1px solid #000;
+    border-radius: 8px;
+}
+.btn-explore:hover {
+    background-color: #ffffff;
+    border: 1px solid #f10ff1;
+    color: #f10ff1;
+}
+
+/* Pulsante 3: Verde con ombra e angoli arrotondati */
+.btn-more {
+    background-color: #f10ff1;
+    border-radius: 12px;
+}
+.btn-more:hover {
+    background-color: #f10ff1;
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* Pulsante 4: Giallo con bordo spesso e angoli arrotondati */
+.btn-back {
+    background-color: #000000;
+    border: 1px solid #9a9a9a;
+    border-radius: 25px;
+}
+.btn-back:hover {
+    background-color: #000000;
+    border: 1px solid #ffffff;
+    transform: scale(1.05);
+}
+</style>
+</head>
+<body>
+
+<!-- Contenitore per i color-box -->
+<div class="color-container">
+    <div class="color-box" style="background-color: #000000; border-color: #ffffff;"></div> 
+    <div class="color-box" style="background-color: #323232;"></div>
+    <div class="color-box" style="background-color: #ffffff;"></div> <!-- x caratteri tipografici -->
+    <div class="color-box" style="background-color: #f10ff1"></div>
+</div>
+
+<!-- Contenitore per i bottoni -->
+<div class="button-container">
+    <button class="button btn-next">Next</button>
+    <button class="button btn-explore">Explore</button>
+    <button class="button btn-more">More</button>
+    <button class="button btn-back">Back</button>
+</div>
+
+</body>
+</html>
