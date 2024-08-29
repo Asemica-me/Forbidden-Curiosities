@@ -335,6 +335,15 @@
 			"shortName": "The arquebus",
 			"image": "assets/img/items/18arquebus.jpg",
 			"info": {
+				"Title": "Combination Wheellock Matchlock Gun",
+				"Author": "N.A.",
+				"Date of Publication": "1560",
+				"Place of Creation": "Germany",
+				"Original Location": "The MET museum, New York City",
+				"Significance": "Symbolizes the transition from medieval to modern warfare and the mechanisation of war.",
+				"Themes/Topics": "firearms, military technology, gunpowder",
+				"Controversies/Debates": "The introduction of firearms like the arquebus was controversial as it diminished the effectiveness of traditional knightly armor and changed the nature of combat. Some debates cantered on the ethical implications of using firearms, which were seen as impersonal and indiscriminate weapons compared to swords and other melee weapons.",
+				"Exhibition": "Room "
 						
 			},
 			"shortInfo": "The arquebus is an early type of portable gun, a precursor to the musket, used in the 15th to 17th centuries. It was a matchlock firearm, typically loaded with gunpowder and a lead ball. It Symbolizes the transition from medieval to modern warfare and the mechanisation of war. ",
@@ -346,6 +355,15 @@
 			"shortName": "Guillotine",
 			"image": "assets/img/items/19guillotine1.jpg",
 			"info": {
+				"Title": "Reign of terror Guillotine blade",
+				"Author": "N.A.",
+				"Date of Publication": "1793",
+				"Place of Creation": "France",
+				"Original Location": "Madame Tussauds, London",
+				"Significance": "The Guillotine represented the broader European shift towards what was seen as a more civilized form of capital punishment. It replaced more archaic and brutal methods of execution like hanging, burning, or breaking on the wheel. Its efficiency and supposed humanity were emphasized, making it a preferred method of execution for many governments at the time.",
+				"Themes/Topics": "Death, Capital Punishment, France, Revolution, Engineering",
+				"Controversies/Debates": "The guillotine, often associated with the French Revolution, has been a subject of controversy and debate due to its role in mass executions and its symbolism of state violence. Critics argue that it dehumanized the process of execution, turning death into a public spectacle and stripping victims of dignity. Debates also center on whether it was a tool of justice or tyranny, with some viewing it as a necessary equalizer in a time of revolution, while others see it as an emblem of the Reign of Terror's excesses and the dangers of unchecked power",
+				"Exhibition": "Room "	
 						
 			},
 			"shortInfo": "The Guillotine was a type of decapitation device and one of the most infamous symbols of capital punishment in history. Although most famously associated with France during the French Revolution, the device and its variants were used in other European countries, contributing to significant debates around the ethics, legality, and humanity of state-enforced death penalties",
