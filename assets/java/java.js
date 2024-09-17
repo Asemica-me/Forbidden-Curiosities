@@ -163,3 +163,11 @@ function inner(id,content, emptyFirst=true) {
 	document.getElementById(id).innerHTML += content ; 
 }
 
+function menuToggle() {
+	var x = document.getElementById("menu-links");
+	if (x.style.visibility === "visible") {
+		x.style.visibility = "hidden";
+	  } else {
+		x.style.visibility = "visible";
+	}
+}
