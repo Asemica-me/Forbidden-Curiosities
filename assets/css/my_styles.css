@@ -155,7 +155,7 @@
 }
 
 @media screen and (min-width: 831px) {
-  div.topnav {display: none;}
+  div.menu-bar {display: none;}
 }
   */
 
@@ -171,70 +171,74 @@
 
 .rom-navbar {
   position: relative;
-  margin-top: 1vw;
-  margin-bottom: 1.5vw;
-  height: 4vw;
+  height: 6vw;
   width: 100%;
-  background-color: #333;
   display:grid;
   grid-template-columns: 1fr 2fr 1fr;
 }
 
 .navbar-body {
   position: inherit;
-  background: linear-gradient(to bottom, #e400ff, #7100b7);
-  /*background-clip: text;
-  color: transparent;*/
-  text-align: center;
   font-size: calc(15px + 0.390625vw);
   display: grid;
   height: inherit;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 3fr 1fr;
-  border: 3px solid pink;
 }
 
 .nav-link {
   position: inherit;
-  color:inherit;
+  background: linear-gradient(to bottom, #e400ff, #7100b7);
+  background-clip: text;
+  color: transparent;
+  text-align: center;
   align-self: flex-end;
-  border: 3px solid orange;
 }
 
 .menu-bar {
   position: inherit;
-  background-color: white;
-  border: 3px solid green;
-  height: inherit;
+  height: 18vw;
   display: grid;
-  grid-template-rows: 2fr 4fr;
+  grid-template-rows: 6vw 3fr;
+  text-align: center;
 }
 
-#menu-links {
-  visibility: hidden;
-  height: auto;
-  background-color: #fdb813;
-  font-size: calc(15px + 0.390625vw);
+.menu-bar #icon-box {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 3fr 1fr;
 }
 
 .menu-bar .icon {
-  position: inherit;
-  margin-right: 20px;
   font-size: calc(30px + 0.390625vw);
+  align-self: flex-end;
+}
+
+#menu-links {
+  /*visibility: hidden;*/
+  height: auto;
+  font-size: calc(15px + 0.390625vw);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 #menu-links a {
-  position: inherit;
   text-decoration: none;
+  text-align: left;
+  border: 3px solid green;
+}
+
+#menu-links #links {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
 .logo {
   position: inherit;
   background-color: #444;
-  border: 3px solid green;
   height: inherit;
+  width: 25%;
+  left: 25%;
 }
 
 .foot {
@@ -242,10 +246,4 @@
   background: linear-gradient(to bottom, #e400ff, #7100b7);
   height: 0.25vw;
   width: 100%;
-  border: 1px solid red;
-}
-
-.menu-bar .icon {
-  position: inherit;
-  text-align: right;
 }
