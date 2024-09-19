@@ -1,9 +1,9 @@
 {
 	"meta": {
 		"startWith": 0,
-		"startNarrative": "Exhibition",
+		"startNarrative": "Historical Period",
 		"startValue": "Room 1",
-		"narratives": ["Date of Creation", "Date of Publication", "Themes/Topics", "Exhibition"]
+		"narratives": ["Type", "Themes", "Date of Creation"]
 	},
 	"items": [
 		{
@@ -17,7 +17,7 @@
 				"Place of Creation": "",
 				"Original Location": "Museo di Fisica e Storia Naturale, Florence, Italy",
 				"Significance": "Catalyzed controversy by challenging the geocentric view of the universe; pivotal in advancing observational astronomy",
-				"Themes/Topics": "Scientific revolution, astronomical discovery, controversy in early modern science",
+				"Themes": "Scientific revolution, astronomical discovery, controversy in early modern science",
 				"Controversies/Debates": "Sparked debates on the structure of the universe and the role of observational evidence in scientific inquiry",
 				"Exhibition": "Room 1: Scientific Revolutions"		
 			},
@@ -36,7 +36,7 @@
 				"Place of Creation": "",
 				"Original Location": "Private collection, Virginia, USA",
 				"Significance": "Sparked debates on evolution, natural selection, and the relationship between science and religion",
-				"Themes/Topics": "Evolutionary biology, scientific controversies, religion versus science",
+				"Themes": "Evolutionary biology, scientific controversies, religion versus science",
 				"Controversies/Debates": "Provoked discussions on the origin of species, human origins, and implications for religious beliefs",
 				"Exhibition": "Room 1: Scientific Revolutions"		
 		},
@@ -55,7 +55,7 @@
 				"Place of Creation": "",
 				"Original Location": "Bletchely Park Museum, United Kingdom",
 				"Significance": "Represents the importance of cryptography in wartime intelligence and technological advancements",
-				"Themes/Topics": "WWII technology, cryptography, secrecy versus transparency",
+				"Themes": "WWII technology, cryptography, secrecy versus transparency",
 				"Controversies/Debates": "Ethical implications of wartime intelligence operations and the balance between security and privacy.",
 				"Exhibition": "Room 1: Scientific Revolutions"		
 		},
@@ -74,7 +74,7 @@
 				"Place of Creation": "",
 				"Original Location": "White Cube Gallery, London, England",
 				"Significance": "Satirizes themes of death, wealth, and the commodification of art.",
-				"Themes/Topics": "Mortality, consumerism, opulence in art",
+				"Themes": "Mortality, consumerism, opulence in art",
 				"Controversies/Debates": "Criticized for its ostentatious use of luxury materials and the perceived emptiness of its message",
 				"Exhibition": "Room 2: Cultural and Artistic Provocations"		
 			},
@@ -93,7 +93,7 @@
 				"Place of Creation": "",
 				"Original Location": "Victoria and Albert Museum, London, UK",
 				"Significance": "Reflects debates on women’s fashion, health implications, and societal expectations of beauty",
-				"Themes/Topics": "Fashion history, women’s health, body image",
+				"Themes": "Fashion history, women’s health, body image",
 				"Controversies/Debates": "Discussions on restrictive clothing, body autonomy, and gender roles",
 				"Exhibition": "Room 4: Ethical and Moral Dilemmas"		
 			},
@@ -112,7 +112,7 @@
 				"Place of Creation": "",
 				"Original Location": "Air & Space Museum, Denver, USA",
 				"Significance": "Symbolizes the dawn of the nuclear age and the ethical debates surrounding nuclear warfare",
-				"Themes/Topics": "WWII history, nuclear weapons, ethics of war",
+				"Themes": "WWII history, nuclear weapons, ethics of war",
 				"Controversies/Debates": "Ongoing discussions on the use of atomic bombs, moral implications, and global security",
 				"Exhibition": "Room 4: Ethical and Moral Dilemmas"		
 			},
@@ -130,7 +130,7 @@
 				"Original Location": "Oxford University, UK (facsimile)",
 				"Place of Creation": "",
 				"Significance": "Ignited debates on church authority, religious reform, and the spread of Protestantism",
-				"Themes/Topics": "Reformation history, religious dissent, church politics",
+				"Themes": "Reformation history, religious dissent, church politics",
 				"Controversies/Debates": "Historical and theological implications of religious reform movements",
 				"Exhibition": "Room 3: Social and Political Movements"		
 			},
@@ -149,7 +149,7 @@
 				"Place of Creation": "Paris",
 				"Original Location": "Musée d'Orsay, Paris, France",
 				"Significance": "Initially controversial and now iconic, reflects women bodies representation in art",
-				"Themes/Topics": "Art history, realism, 19th-century, Woman body, France, Paris",
+				"Themes": "Art history, realism, 19th-century, Woman body, France, Paris",
 				"Controversies/Debates": "Criticism and appreciation of modern art",
 				"Exhibition": "Room 2: Cultural and Artistic Provocations"		
 			},
@@ -168,7 +168,7 @@
 				"Place of Creation": "",
 				"Original Location": "Museum of London, UK",
 				"Significance": "Represents the suffragette movement’s struggle for women’s right to vote and gender equality",
-				"Themes/Topics": "Women’s history, suffrage movements, civil disobedience",
+				"Themes": "Women’s history, suffrage movements, civil disobedience",
 				"Controversies/Debates": "Political activism, methods of protest, women’s rights",
 				"Exhibition": "Room 3: Social and Political Movements"  		
 			},
@@ -187,7 +187,7 @@
 				"Place of Creation": "",
 				"Original Location": "Various art institutions and collections, including museums specializing in contemporary art",
 				"Significance": "Exploration of extreme physical experiences as a form of artistic expression",
-				"Themes/Topics": "Performance art, body art, violence and pain, artistic endurance",
+				"Themes": "Performance art, body art, violence and pain, artistic endurance",
 				"Controversies/Debates": "The performance sparked debates about the ethics of using real violence in art, as well as discussions on the role of the audience in witnessing and interpreting extreme acts. Critics and scholars continue to analyze \"Shoot\" within the context of performance art history and its implications for understanding the boundaries of artistic expression.",
 				"Exhibition": "Room 2: Cultural and Artistic Provocations"		
 			},
@@ -206,7 +206,7 @@
 				"Place of Creation": "",
 				"Original Location": "Various museums and private collections worldwide",
 				"Significance": "Sparked discussions on sexuality, media representation, and feminism",
-				"Themes/Topics": "Media history, sexual revolution, feminism",
+				"Themes": "Media history, sexual revolution, feminism",
 				"Controversies/Debates": "Criticisms of objectification, debates on sexual liberation and censorship",
 				"Exhibition": "Room 5: Modern Controversies"		
 			},
@@ -225,7 +225,7 @@
 				"Place of Creation": "",
 				"Original Location": "Roslin Institute, Scotland.",
 				"Significance": "Ethical concerns about the cloning of animals and potential implications for human cloning, including safety, ethical guidelines, and the concept of genetic identity",
-				"Themes/Topics": "Cloning, bioethics, genetic engineering, animal rights",
+				"Themes": "Cloning, bioethics, genetic engineering, animal rights",
 				"Controversies/Debates": "Welfare of cloned animals, the potential for human cloning, genetic modification, and the ethical boundaries of scientific experimentation on living organisms.",
 				"Exhibition": "Room 4: Ethical and Moral Dilemmas"		
 			},
@@ -244,7 +244,7 @@
 				"Place of Creation": "",
 				"Original Location": "NASA's Johnson Space Center (JSC), Houston, Texas, USA",
 				"Significance": "Symbolizes human achievement in space exploration and technological advancement",
-				"Themes/Topics": "Space exploration, scientific achievement, conspiracy theories",
+				"Themes": "Space exploration, scientific achievement, conspiracy theories",
 				"Controversies/Debates": "Conspiracy theories questioning the authenticity of the moon landing",
 				"Exhibition": "Room 4: Ethical and Moral Dilemmas"		
 			},
@@ -263,7 +263,7 @@
 				"Place of Creation": "",
 				"Original Location": "Curie Museum, Paris, France",
 				"Significance": "Groundbreaking research on radioactivity, crucial contributions to modern physics and chemistry, laying the foundation for the development of X-ray technology",
-				"Themes/Topics": "Scientific discovery, women in science, women in STEM fields, radiation research",
+				"Themes": "Scientific discovery, women in science, women in STEM fields, radiation research",
 				"Controversies/Debates": "Ethical considerations in early radiation research, scientific advancements versus health risks",
 				"Exhibition": "Room 3: Social and Political Movements"		
 			},
@@ -282,7 +282,7 @@
 				"Place of Creation": "",
 				"Original Location": "tional Security Archive, G. Washington University, USA",
 				"Significance": "The documents represent debates on privacy rights, government surveillance, and digital ethics",
-				"Themes/Topics": "Digital privacy, whistleblowing, surveillance state",
+				"Themes": "Digital privacy, whistleblowing, surveillance state",
 				"Controversies/Debates": "Legal and ethical implications of mass surveillance and privacy laws, impact on civil liberties",
 				"Creator/Author": "keyboards", 
 				"Exhibition": "Room 5: Modern Controversies"		
@@ -302,7 +302,7 @@
 				"Place of Creation": "London",
 				"Original Location": "Victoria and Albert Museum, London, UK",
 				"Significance": "Revolution in skirt design, a new concept of women wearing that took into account also women sexuality.",
-				"Themes/Topics": "Fashion, Women bodies, Women, Sixties, London, UK",
+				"Themes": "Fashion, Women bodies, Women, Sixties, London, UK",
 				"Controversies/Debates": "Women bodies more exposed, conservatives societies tried to opposed. Women's will to express themselves as they wanted was more powerful than the censorship.",
 				"Exhibition": "Room "						
 			},
@@ -321,7 +321,7 @@
 				"Place of Creation": "Chicago, USA",
 				"Original Location": "Reddit (Web)",
 				"Significance": "The image shows AI's power to create realistic yet misleading content, highlighting urgent ethical concerns in digital media",
-				"Themes/Topics": "Digital privacy, whistleblowing, surveillance state",
+				"Themes": "Digital privacy, whistleblowing, surveillance state",
 				"Controversies/Debates": "Ethical use of AI in creating misleading content, the ease of spreading misinformation, and the need for regulations to prevent such digital deceptions",
 				"Creator/Author": "", 
 				"Exhibition": "Room "		
@@ -341,7 +341,7 @@
 				"Place of Creation": "Germany",
 				"Original Location": "The MET museum, New York City",
 				"Significance": "Symbolizes the transition from medieval to modern warfare and the mechanisation of war.",
-				"Themes/Topics": "firearms, military technology, gunpowder",
+				"Themes": "firearms, military technology, gunpowder",
 				"Controversies/Debates": "The introduction of firearms like the arquebus was controversial as it diminished the effectiveness of traditional knightly armor and changed the nature of combat. Some debates cantered on the ethical implications of using firearms, which were seen as impersonal and indiscriminate weapons compared to swords and other melee weapons.",
 				"Exhibition": "Room "
 						
@@ -361,7 +361,7 @@
 				"Place of Creation": "France",
 				"Original Location": "Madame Tussauds, London",
 				"Significance": "The Guillotine represented the broader European shift towards what was seen as a more civilized form of capital punishment. It replaced more archaic and brutal methods of execution like hanging, burning, or breaking on the wheel. Its efficiency and supposed humanity were emphasized, making it a preferred method of execution for many governments at the time.",
-				"Themes/Topics": "Death, Capital Punishment, France, Revolution, Engineering",
+				"Themes": "Death, Capital Punishment, France, Revolution, Engineering",
 				"Controversies/Debates": "The guillotine, often associated with the French Revolution, has been a subject of controversy and debate due to its role in mass executions and its symbolism of state violence. Critics argue that it dehumanized the process of execution, turning death into a public spectacle and stripping victims of dignity. Debates also center on whether it was a tool of justice or tyranny, with some viewing it as a necessary equalizer in a time of revolution, while others see it as an emblem of the Reign of Terror's excesses and the dangers of unchecked power",
 				"Exhibition": "Room "	
 						
@@ -381,7 +381,7 @@
 				"Place of Creation": "N.A.",
 				"Original Location": "Gallerie dell'Accademia, Venezia, Italia",
 				"Significance": "Human anatomy was a study sticked to misbelives and observations based on animals. New approaches brought progress not only in medical field, but in other fields, like art as the Da Vinci's Vitruvian man shows.",
-				"Themes/Topics": "Art, Anatomy, Venezia, Italy, Renaissence",
+				"Themes": "Art, Anatomy, Venezia, Italy, Renaissence",
 				"Controversies/Debates": "To realise this sketch Da Vinci used human anatomy's studies made directly on human corpses, a practice that untill the Renaissence was prohibited for religious and dogmatic reasons.",
 				"Exhibition": "Room "	
 			},
