@@ -157,8 +157,6 @@
                 <p>Date of Creation:</p>
                 <p>Store Location:</p>
                 <p>Place of Creation/Publication:</p>
-                <p>Themes:</p>
-                <p>Tipology:</p>
                 <button class="see-more">See more</button>
             </div>
             <div class="image">
@@ -241,17 +239,21 @@
         }
 
         function createInfoTable(item) {
-            const infoContainer = document.querySelector(".info");
-            infoContainer.innerHTML = ""; // Clear previous content
+    const infoContainer = document.querySelector(".info");
+    infoContainer.innerHTML = ""; // Clear previous content
 
-            for (const key in item.info) {
-                if (item.info[key]) {
-                    const infoRow = document.createElement('p');
-                    infoRow.innerText = `${key}: ${item.info[key]}`;
-                    infoContainer.appendChild(infoRow);
-                }
-            }
+    for (const key in item.info) {
+        // Skip the "Themes" key
+        if (key === "Themes") continue;
+
+        // Only create and append the info if the value exists
+        if (item.info[key]) {
+            const infoRow = document.createElement('p');
+            infoRow.innerText = `${key}: ${item.info[key]}`;
+            infoContainer.appendChild(infoRow);
         }
+    }
+}
 
 // MODAL POP-UP
 
