@@ -149,15 +149,15 @@
     flex-direction: column;
   }
 
-/*
+
 @media screen and (max-width: 830px) {
-  div.rom-navbar {display: none;}
+  div.navbar-body {visibility: hidden;}
 }
 
 @media screen and (min-width: 831px) {
-  div.menu-bar {display: none;}
+  div.menu {visibility: hidden;}
 }
-  */
+
 
 .copyright {
   position: relative;
@@ -171,8 +171,9 @@
 
 .rom-navbar {
   position: relative;
-  height: 6vw;
+  height: 120px;
   width: 100%;
+  top: 10px;
   display:grid;
   grid-template-columns: 1fr 2fr 1fr;
 }
@@ -181,69 +182,125 @@
   position: inherit;
   font-size: calc(15px + 0.390625vw);
   display: grid;
-  height: inherit;
+  height: 100px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.nav-link-box {
+  height: fit-content;
+  display: grid;
   grid-template-rows: 3fr 1fr;
+  align-self: flex-end;
+}
+
+.foot {
+  position: inherit;
+  background-color: #f10ff1;
+  height: 0.25vw;
+  width: 100%;
+}
+
+.nav-link-box .nav-link:hover + .foot {
+  background-color: white;
+}
+
+.nav-link:visited {
+  color: #f10ff1;
+}
+
+.nav-link:hover {
+  color: white;
 }
 
 .nav-link {
   position: inherit;
-  background: linear-gradient(to bottom, #e400ff, #7100b7);
-  background-clip: text;
-  color: transparent;
+  color: #f10ff1;
   text-align: center;
   align-self: flex-end;
 }
 
-.menu-bar {
-  position: inherit;
-  height: 18vw;
-  display: grid;
-  grid-template-rows: 6vw 3fr;
-  text-align: center;
+#menu-button {
+  position: relative;
+  top: 40px;
+  right: 10px;
+  height: 60px;
 }
 
-.menu-bar #icon-box {
-  display: grid;
-  grid-template-rows: 3fr 1fr;
+.toggle-btn {
+  position: relative;
+  left: 67%;
+  width: 4vw;
+  height: 4vw;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.menu-bar .icon {
-  font-size: calc(30px + 0.390625vw);
-  align-self: flex-end;
+.toggle-btn span {
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  transition: 0.3s;
+  background-color: #f10ff1;
+}
+
+.toggle-btn span:first-child {
+  transform: translateY(-8px);
+}
+
+.toggle-btn.x span:nth-child(2) {
+  opacity: 0;
+}
+
+.toggle-btn span:last-child {
+  transform: translateY(8px);
+}
+
+.toggle-btn.x span:first-child {
+  transform: rotate(45deg) translateY(0);
+}
+
+.toggle-btn.x span:last-child {
+  transform: rotate(-45deg) translateY(0);
 }
 
 #menu-links {
-  /*visibility: hidden;*/
-  height: auto;
-  font-size: calc(15px + 0.390625vw);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  position: relative;
+  height: 200px;
+  display: none;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
 #menu-links a {
+  background-color: #323232;
   text-decoration: none;
-  text-align: left;
-  border: 3px solid green;
+  font-size: calc(15px + 0.390625vw);
+  text-align: center;
+  padding: 10px 0;
 }
 
-#menu-links #links {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+#menu-links a:last-child {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+#menu-links a:nth-child(odd) {
+  background-color: #444;
+}
+
+#menu-links a:hover {
+  color: white;
+  background-color: #f10ff1;
 }
 
 .logo {
   position: inherit;
   background-color: #444;
-  height: inherit;
-  width: 25%;
+  height: 100px;
+  width: 100px;
   left: 25%;
-}
-
-.foot {
-  position: inherit;
-  background: linear-gradient(to bottom, #e400ff, #7100b7);
-  height: 0.25vw;
-  width: 100%;
+  border: none;
 }
