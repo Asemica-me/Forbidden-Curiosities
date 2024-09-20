@@ -325,6 +325,7 @@ a:visited {
 
       .tab-button, .sub-tab-button, .nav-button, .see-more {
           background-color: #e600e6;
+          height: 50px ;
           border: none;
           color: white;
           padding: 10px 20px;

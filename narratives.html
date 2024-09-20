@@ -77,10 +77,6 @@
             max-width: 300px; /* Limit the button width */
         }
 
-        button:hover {
-            background-color: #ff00ff;
-        }
-
         /* Media Queries for Responsiveness */
         @media (min-width: 600px) {
             /* Larger screens: Align buttons side by side in two columns */
@@ -111,21 +107,9 @@
                 width: 150px;
             }
 
-
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Narratives</a></li>
-                <li><a href="#">Items</a></li>
-                <li><a href="#">Map</a></li>
-                <li><a href="#">About us</a></li>
-            </ul>
-        </nav>
-    </header>
 <!-- Navbar -->
         <div class="rom-navbar">
             <a class="logo" href="home.html">logo</a>
@@ -166,7 +150,7 @@
 <!------ Navbar End ---------->
 <!-- Footer -->
     
-    <main>
+    <div>
         <div class="icon-container">
             <img src="book-icon.png" alt="Book Icon" class="book-icon">
         </div>
@@ -174,7 +158,7 @@
         <h2>Walk through different themes to understand the value of each piece of the exhibition</h2>
         
         <div class="sub-tabs">
-            <button class="sub-tab-button active">ETHICS OF WAR</button>
+            <button class="sub-tab-button">ETHICS OF WAR</button>
             <button class="sub-tab-button">SCIENTIFIC REVOLUTION</button>
             <button class="sub-tab-button">WOMEN'S HISTORY</button>
         </div>
@@ -182,8 +166,43 @@
             <button class="sub-tab-button">RELIGIOUS DISSENT</button>
             <button class="sub-tab-button">PROVOCATIVE ART</button>
             <button class="sub-tab-button">DIGITAL PRIVACY</button>
+        </div>  
+    </div>
+    <div>
+        <div class="icon-container">
+            <img src="tipology-icon.png" alt="Tipology Icon" class="book-icon">
         </div>
         
-    </main>
+        <h2>DISCOVER WHAT TIPOLOGY OF CURIOSITY HAS MARKED HISTORY</h2>
+        
+        <div class="sub-tabs">
+            <button class="sub-tab-button">TEXT</button>
+            <button class="sub-tab-button">TOOLS</button>
+            <button class="sub-tab-button">WEAPONS</button>
+        </div>
+        <div class="sub-tabs">
+            <button class="sub-tab-button">GARMENTS</button>
+            <button class="sub-tab-button">EVENTS</button>
+            <button class="sub-tab-button">WORKS OF ART</button>
+        </div>  
+    </div>
+    <div>
+        <div class="icon-container">
+            <img src="periods-icon.png" alt="Periods Icon" class="book-icon">
+        </div>
+        
+        <h2>DISCOVER WHAT THE PERIODS THAT PRODUCED THE CURIOSITIES</h2>
+        
+        <div class="sub-tabs">
+            <button class="sub-tab-button">XV-XVII</button>
+            <button class="sub-tab-button">XVII-XIX</button>
+            <button class="sub-tab-button">FIRST HALF XX</button>
+        </div>
+        <div class="sub-tabs">
+            <button class="sub-tab-button">SECOND HALF XX</button>
+            <button class="sub-tab-button">XXI</button>
+            
+        </div>  
+    </div>
 </body>
 </html>
