@@ -1,9 +1,9 @@
 {
 	"meta": {
 		"startWith": 0,
-		"startNarrative": "Exhibition",
+		"startNarrative": "Historical Period",
 		"startValue": "Room 1",
-		"narratives": ["Date of Creation", "Date of Publication", "Themes/Topics", "Exhibition"]
+		"narratives": ["Type", "Themes", "Date of Creation"]
 	},
 	"items": [
 		{
@@ -13,13 +13,16 @@
 			"info": {
 				"Title": "Galileo’s Telescope",
 				"Creator": "Galileo Galilei",
+				"Type": "Tool",
 				"Date of Creation": "Original telescope circa 1609; replica created in 1923",
 				"Place of Creation": "",
 				"Original Location": "Museo di Fisica e Storia Naturale, Florence, Italy",
 				"Significance": "Catalyzed controversy by challenging the geocentric view of the universe; pivotal in advancing observational astronomy",
-				"Themes/Topics": "Scientific revolution, astronomical discovery, controversy in early modern science",
 				"Controversies/Debates": "Sparked debates on the structure of the universe and the role of observational evidence in scientific inquiry",
-				"Exhibition": "Room 1: Scientific Revolutions"		
+				"Exhibition": "Room ",
+				"Themes": "Scientifical revolution, Religious dissent" ,
+				"Historical Period" : "XV-XVII" ,
+				"Tipology" : "Tool" 
 			},
 			"shortInfo": "Explore Galileo’s telescope replica to see how early scientific breakthroughs reshaped our understanding of the universe and influenced modern innovation.", 
 			"longerInfo": ["This replica showcases how Galileo’s Telescope transformed astronomy. Galileo's discoveries of moons around Jupiter challenged old ideas about the solar system, paving the way for modern science."],
@@ -32,13 +35,16 @@
 			"info": {
 				"Title": "'The Origin of Species' by Charles Darwin",
 				"Author": "Charles Darwin", 
+				"Type": "",
 				"Date of Creation/Publication": "First published in 1859",
 				"Place of Creation": "",
 				"Original Location": "Private collection, Virginia, USA",
 				"Significance": "Sparked debates on evolution, natural selection, and the relationship between science and religion",
-				"Themes/Topics": "Evolutionary biology, scientific controversies, religion versus science",
 				"Controversies/Debates": "Provoked discussions on the origin of species, human origins, and implications for religious beliefs",
-				"Exhibition": "Room 1: Scientific Revolutions"		
+				"Exhibition": "Room ",	
+				"Themes": "scientifical revolution, religion dissent" ,
+				"Historical Period" : "XVIII-XIX Century" ,
+				"Tipology" : "Text" 
 		},
 			"shortInfo": "Explore Darwin's groundbreaking theory on evolution and its societal impact. Understand its relevance to contemporary debates on science and ethics.", 
 			"longerInfo": ["Delve into Darwin’s theory of evolution presented in The Origin of Species (1859). Darwin proposed natural selection as a mechanism for species adaptation, challenging creationist views. Explore debates in evolutionary biology and Darwin's influence on modern genetics and ecology."],
@@ -55,9 +61,12 @@
 				"Place of Creation": "",
 				"Original Location": "Bletchely Park Museum, United Kingdom",
 				"Significance": "Represents the importance of cryptography in wartime intelligence and technological advancements",
-				"Themes/Topics": "WWII technology, cryptography, secrecy versus transparency",
 				"Controversies/Debates": "Ethical implications of wartime intelligence operations and the balance between security and privacy.",
-				"Exhibition": "Room 1: Scientific Revolutions"		
+				"Exhibition": "Room " ,
+				"Themes": "Ethics of war, Digital privacy",
+				"Historical Period" : "First half of XX Century" ,
+				"Tipology" : "Tool" 
+				
 		},
 			"shortInfo": "Discover the Enigma Machine, used during WWII to encrypt secret messages. Learn how Allied efforts to decode it influenced the outcome of the war and shaped modern cryptography.", 
 			"longerInfo": ["Explore the Enigma Machine’s cryptographic complexity and its significance during WWII. This device illustrates advancements in cryptography and the ethical implications of code-breaking efforts. Dive into its technical workings and its contribution to the history of information security."],
@@ -74,9 +83,11 @@
 				"Place of Creation": "",
 				"Original Location": "White Cube Gallery, London, England",
 				"Significance": "Satirizes themes of death, wealth, and the commodification of art.",
-				"Themes/Topics": "Mortality, consumerism, opulence in art",
 				"Controversies/Debates": "Criticized for its ostentatious use of luxury materials and the perceived emptiness of its message",
-				"Exhibition": "Room 2: Cultural and Artistic Provocations"		
+				"Exhibition": "Room " ,
+				"Themes": "Provocative art",
+				"Historical Period" : "XXI Century" ,
+				"Tipology" : "Artwork" 		
 			},
 			"shortInfo": "\"For the Love of God\" is a platinum cast of a human skull encrusted with diamonds, created by Damien Hirst in 2007, symbolizing themes of mortality and materialism.",
 			"longerInfo": ["This piece explores themes of mortality, wealth, and the enduring allure of luxury. The skull's opulent decoration challenges viewers to contemplate the intersection of art, death, and the conspicuous consumption of contemporary society. \"For the Love of God\" provocatively questions the value we place on material goods and the inevitable fate of human existence, juxtaposing the preciousness of diamonds with the inevitability of death, prompting reflection on the fragility and transience of life amidst the pursuit of wealth and status."],
@@ -93,9 +104,11 @@
 				"Place of Creation": "",
 				"Original Location": "Victoria and Albert Museum, London, UK",
 				"Significance": "Reflects debates on women’s fashion, health implications, and societal expectations of beauty",
-				"Themes/Topics": "Fashion history, women’s health, body image",
 				"Controversies/Debates": "Discussions on restrictive clothing, body autonomy, and gender roles",
-				"Exhibition": "Room 4: Ethical and Moral Dilemmas"		
+				"Exhibition": "Room " ,
+				"Themes": "Women's history",
+				"Historical Period" : "XVIII-XIX Century" ,
+				"Tipology" : "Garment" 		
 			},
 			"shortInfo": "Explore the Victorian-Era Corset and its influence on women’s fashion and health during the 19th century. Learn about societal expectations and the evolution of women’s rights.",
 			"longerInfo": ["This cultural artifact symbolizes gender norms and bodily aesthetics in the 19th century. Explore its impact on women’s health, fashion history, and feminist critiques of beauty standards and social conformity."],
@@ -112,9 +125,11 @@
 				"Place of Creation": "",
 				"Original Location": "Air & Space Museum, Denver, USA",
 				"Significance": "Symbolizes the dawn of the nuclear age and the ethical debates surrounding nuclear warfare",
-				"Themes/Topics": "WWII history, nuclear weapons, ethics of war",
 				"Controversies/Debates": "Ongoing discussions on the use of atomic bombs, moral implications, and global security",
-				"Exhibition": "Room 4: Ethical and Moral Dilemmas"		
+				"Exhibition": "Room ",
+				"Themes": "Ethics of war",
+				"Historical Period" : "First half of XX Century" ,
+				"Tipology" : "Weapon" 	
 			},
 			"shortInfo": "Learn about the Atomic Bomb “Little Boy” dropped on Hiroshima in 1945, ending WWII but sparking ethical debates. Understand its implications for global peace and nuclear disarmament.",
 			"longerInfo": ["Explore the replica of the Atomic Bomb \"Little Boy\" and its role in WWII and subsequent nuclear deterrence strategies. Analyze its ethical dimensions, exploring debates on nuclear weapons, international relations, and the long-term consequences of atomic warfare."],
@@ -130,9 +145,11 @@
 				"Original Location": "Oxford University, UK (facsimile)",
 				"Place of Creation": "",
 				"Significance": "Ignited debates on church authority, religious reform, and the spread of Protestantism",
-				"Themes/Topics": "Reformation history, religious dissent, church politics",
 				"Controversies/Debates": "Historical and theological implications of religious reform movements",
-				"Exhibition": "Room 3: Social and Political Movements"		
+				"Exhibition": "Room ",
+				"Themes": "Religious dissent",
+				"Historical Period" : "XV-XVII" ,
+				"Tipology" : "Text" 
 			},
 			"shortInfo": "Learn about Martin Luther’s 95 Theses, challenging the Catholic Church’s practices in the 16th century. Understand its significance in religious history and the Reformation.",
 			"longerInfo": ["Explore the facsimile of Martin Luther’s 95 Theses, pivotal in challenging ecclesiastical authority and advocating for religious reforms. Explore its theological arguments and historical implications for Western Christianity."],
@@ -149,9 +166,11 @@
 				"Place of Creation": "Paris",
 				"Original Location": "Musée d'Orsay, Paris, France",
 				"Significance": "Initially controversial and now iconic, reflects women bodies representation in art",
-				"Themes/Topics": "Art history, realism, 19th-century, Woman body, France, Paris",
 				"Controversies/Debates": "Criticism and appreciation of modern art",
-				"Exhibition": "Room 2: Cultural and Artistic Provocations"		
+				"Exhibition": "Room ",
+				"Themes": "Provocative art",
+				"Historical Period" : "XVIII-XIX Century" ,
+				"Tipology" : "Artwork" 	
 			},
 			"shortInfo": "L'Origin du Monde by Gustave Courbet was painted in 1866 and first exposed in Paris. It's a bold representation of the female genitalia.",
 			"longerInfo": ["This way of female depiction broke the academia convention to display female nudity only in mythological or literary contexts. This was a consequence of Courbet interest in realism and erotism. In this paint, as in others of his own, we can appreciate his way to reproduce tonalism following the venetian school, emulating Tiziano, Correggio and Veronese."],
@@ -168,9 +187,11 @@
 				"Place of Creation": "",
 				"Original Location": "Museum of London, UK",
 				"Significance": "Represents the suffragette movement’s struggle for women’s right to vote and gender equality",
-				"Themes/Topics": "Women’s history, suffrage movements, civil disobedience",
 				"Controversies/Debates": "Political activism, methods of protest, women’s rights",
-				"Exhibition": "Room 3: Social and Political Movements"  		
+				"Exhibition": "Room " ,
+				"Themes": "Women’s history",
+				"Historical Period" : "First half of XX Century" ,
+				"Tipology" : "Event" 	
 			},
 			"shortInfo": "Discover the Suffragette Hunger Strike Medal, symbolizing the fight for women’s suffrage. Explore its historical significance and the ongoing struggle for gender equality.",
 			"longerInfo": ["Learn about the Suffragette Hunger Strike Medal as a symbol of women’s activism and resistance during the suffrage movement. Analyze its historical context, strategies of protest, and impact on women’s rights globally."],
@@ -187,17 +208,19 @@
 				"Place of Creation": "",
 				"Original Location": "Various art institutions and collections, including museums specializing in contemporary art",
 				"Significance": "Exploration of extreme physical experiences as a form of artistic expression",
-				"Themes/Topics": "Performance art, body art, violence and pain, artistic endurance",
 				"Controversies/Debates": "The performance sparked debates about the ethics of using real violence in art, as well as discussions on the role of the audience in witnessing and interpreting extreme acts. Critics and scholars continue to analyze \"Shoot\" within the context of performance art history and its implications for understanding the boundaries of artistic expression.",
-				"Exhibition": "Room 2: Cultural and Artistic Provocations"		
+				"Exhibition": "Room " ,
+				"Themes": "Provocative art",
+				"Historical Period" : "Second half of XX Century" ,
+				"Tipology" : "Artwork" 
 			},
-			"shortInfo": "\"Shoot\" by Chris Burden is a powerful example of how performance art can challenge societal norms, provoke visceral reactions, and invite audiences to reconsider their perceptions of art and human experience.",
+			"shortInfo": "'Shoot' by Chris Burden is a powerful example of how performance art can challenge societal norms, provoke visceral reactions, and invite audiences to reconsider their perceptions of art and human experience.",
 			"longerInfo": ["The performance sparked debates about the ethics of using real violence in art, as well as discussions on the role of the audience in witnessing and interpreting extreme acts. Critics and scholars continue to analyze \"Shoot\" within the context of performance art history and its implications for understanding the boundaries of artistic expression."],
 			"fullInfo": "assets/docs/10shoot.html"
 		},
 		{
 			"@sort": "@Object 11",
-			"shortName": "\"Playboy\"",
+			"shortName": "'Playboy'",
 			"image": "assets/img/items/11playboy.jpg",
 			"info": {
 				"Title": "First Issue of \"Playboy\" Magazine",
@@ -206,9 +229,11 @@
 				"Place of Creation": "",
 				"Original Location": "Various museums and private collections worldwide",
 				"Significance": "Sparked discussions on sexuality, media representation, and feminism",
-				"Themes/Topics": "Media history, sexual revolution, feminism",
 				"Controversies/Debates": "Criticisms of objectification, debates on sexual liberation and censorship",
-				"Exhibition": "Room 5: Modern Controversies"		
+				"Exhibition": "Room " ,
+				"Themes": "Women's history",
+				"Historical Period" : "Second half of XX Century" ,
+				"Tipology" : "Text" 		
 			},
 			"shortInfo": "Discover the first issue of “Playboy” magazine, exploring its cultural impact on media and sexuality. Understand its influence on modern publishing and social attitudes.",
 			"longerInfo": ["Examine the first issue of “Playboy” (1953) and its cultural significance as a blend of literature, photography, and lifestyle. Analyze its impact on the representation of sexuality in media, consumer culture, and feminist critiques of the objectification of women."],
@@ -225,9 +250,11 @@
 				"Place of Creation": "",
 				"Original Location": "Roslin Institute, Scotland.",
 				"Significance": "Ethical concerns about the cloning of animals and potential implications for human cloning, including safety, ethical guidelines, and the concept of genetic identity",
-				"Themes/Topics": "Cloning, bioethics, genetic engineering, animal rights",
 				"Controversies/Debates": "Welfare of cloned animals, the potential for human cloning, genetic modification, and the ethical boundaries of scientific experimentation on living organisms.",
-				"Exhibition": "Room 4: Ethical and Moral Dilemmas"		
+				"Exhibition": "Room ",
+				"Themes": "Scientifical revolution",
+				"Historical Period" : "Second half of XX Century" ,
+				"Tipology" : "Event" 	
 			},
 			"shortInfo": "Why clone a sheep? Dolly was a part of the Roslin Institute’s research into producing genetically modified farm animals or livestock.",
 			"longerInfo": ["Dolly the Sheep, born on July 5, 1996, at the Roslin Institute in Scotland, made history as the first mammal cloned from an adult somatic cell using nuclear transfer technology. Created by scientists led by Dr. Ian Wilmut, Dolly's birth sparked global ethical discussions about the implications of cloning on animal welfare, genetic identity, and the potential for human cloning. Her legacy continues to influence debates on bioethics, genetic engineering, and the ethical boundaries of scientific research involving living organisms."],
@@ -244,9 +271,11 @@
 				"Place of Creation": "",
 				"Original Location": "NASA's Johnson Space Center (JSC), Houston, Texas, USA",
 				"Significance": "Symbolizes human achievement in space exploration and technological advancement",
-				"Themes/Topics": "Space exploration, scientific achievement, conspiracy theories",
 				"Controversies/Debates": "Conspiracy theories questioning the authenticity of the moon landing",
-				"Exhibition": "Room 4: Ethical and Moral Dilemmas"		
+				"Exhibition": "Room ",
+				"Themes": "Scientific revolution",
+				"Historical Period" : "Second half of XX Century" ,
+				"Tipology" : "Event" 	
 			},
 			"shortInfo": "Explore the iconic NASA Moon Landing Photo, symbolizing human achievement in space exploration. Discover its impact on scientific innovation and international cooperation.",
 			"longerInfo": ["Examine the NASA Moon Landing Photo (1969) as a cultural icon and symbol of technological achievement. Analyze its historical context, technological advancements in space exploration, and its impact on global perceptions of scientific progress."],
@@ -263,9 +292,11 @@
 				"Place of Creation": "",
 				"Original Location": "Curie Museum, Paris, France",
 				"Significance": "Groundbreaking research on radioactivity, crucial contributions to modern physics and chemistry, laying the foundation for the development of X-ray technology",
-				"Themes/Topics": "Scientific discovery, women in science, women in STEM fields, radiation research",
 				"Controversies/Debates": "Ethical considerations in early radiation research, scientific advancements versus health risks",
-				"Exhibition": "Room 3: Social and Political Movements"		
+				"Exhibition": "Room " ,
+				"Themes": "Women's history, Scientifical revolution",
+				"Historical Period" : "First half of XX Century" ,
+				"Tipology" : "Text, Event" 
 			},
 			"shortInfo": "In 1898, Pierre and Marie Curie discovered radium. In 1902, they sought to determine its atomic mass. They recorded the various steps of their calculations in their laboratory notebooks, from which this document is extracted. Both of their handwriting appears on this sheet, and the original still shows residual traces of radioactivity.",
 			"longerInfo": ["Examine the reproduction of Pierre and Marie Curie’s measurements sheet from 1902. Their meticulous calculations advanced our knowledge of radioactivity, laying the groundwork for X-ray technology and cancer treatment. Dive into the ethical implications of early radiation research, their scientific methodologies, and their enduring impact on physics and chemistry research."],
@@ -282,10 +313,12 @@
 				"Place of Creation": "",
 				"Original Location": "tional Security Archive, G. Washington University, USA",
 				"Significance": "The documents represent debates on privacy rights, government surveillance, and digital ethics",
-				"Themes/Topics": "Digital privacy, whistleblowing, surveillance state",
 				"Controversies/Debates": "Legal and ethical implications of mass surveillance and privacy laws, impact on civil liberties",
 				"Creator/Author": "keyboards", 
-				"Exhibition": "Room 5: Modern Controversies"		
+				"Exhibition": "Room " ,
+				"Themes": "Digital privacy",
+				"Historical Period" : "XXI Century" ,
+				"Tipology" : "Event" 		
 			},
 			"shortInfo": "Explore the tablet displaying Edward Snowden’s Revelations, highlighting debates on privacy and surveillance. Understand its implications for digital ethics and security.",
 			"longerInfo": ["The tablet exhibited here, displays a facsimile of Edward Snowden’s Revelations. Snowden exposed secret U.S. government surveillance programs in 2013. These disclosures highlighted how governments monitor phone and internet activities, sparking debates about privacy and security in the digital age. Understand the importance of protecting personal information and the balance between national security and individual privacy."],
@@ -302,9 +335,11 @@
 				"Place of Creation": "London",
 				"Original Location": "Victoria and Albert Museum, London, UK",
 				"Significance": "Revolution in skirt design, a new concept of women wearing that took into account also women sexuality.",
-				"Themes/Topics": "Fashion, Women bodies, Women, Sixties, London, UK",
 				"Controversies/Debates": "Women bodies more exposed, conservatives societies tried to opposed. Women's will to express themselves as they wanted was more powerful than the censorship.",
-				"Exhibition": "Room "						
+				"Exhibition": "Room ",
+				"Themes": "Women's history",
+				"Historical Period" : "Second half of XX Century" ,
+				"Tipology" : "Garment" 					
 			},
 			"shortInfo": "This garment was designed by Mary Quant in 1966. It was one of the most appreciated of her prodcuts. It's a vibrant green coloured short dress.",
 			"longerInfo": ["This dress shows a so called mini-skirt, because it stops before the knees. It's length, bright colour and dynamic cut of the skirt are typical marks of Mary Quant's design. She was an early fashion designers when she was one of the first to push this kind of garment, but she was the one to make it an icon of the sixties fashion. This new version of the skirt was for the young women generation a way to express their will to be more free and a shock for the conservative societies of that time."],
@@ -321,10 +356,12 @@
 				"Place of Creation": "Chicago, USA",
 				"Original Location": "Reddit (Web)",
 				"Significance": "The image shows AI's power to create realistic yet misleading content, highlighting urgent ethical concerns in digital media",
-				"Themes/Topics": "Digital privacy, whistleblowing, surveillance state",
 				"Controversies/Debates": "Ethical use of AI in creating misleading content, the ease of spreading misinformation, and the need for regulations to prevent such digital deceptions",
 				"Creator/Author": "", 
-				"Exhibition": "Room "		
+				"Exhibition": "Room " ,
+				"Themes": "Digital privacy, Religious dissent",
+				"Historical Period" : "XXI Century" ,
+				"Tipology" : "Artwork" 		
 			},
 			"shortInfo": "The viral AI-generated image of Pope Francis in a white puffer jacket sparked global attention, raising important ethical concerns about the potential for AI to create convincing but misleading content.",
 			"longerInfo": ["“I just thought it was funny to see the Pope in a funny jacket,” said the creator of the image, Pablo Xavier, a 31-year-old construction worker from Chicago. The AI-generated image of Pope Francis in a white puffer jacket went viral, captivating the internet with its unexpected humor. However, its rapid spread also highlighted the challenges of distinguishing real from fake content in the digital age and raised significant ethical concerns about the use of AI to create misleading images."],
@@ -341,9 +378,11 @@
 				"Place of Creation": "Germany",
 				"Original Location": "The MET museum, New York City",
 				"Significance": "Symbolizes the transition from medieval to modern warfare and the mechanisation of war.",
-				"Themes/Topics": "firearms, military technology, gunpowder",
 				"Controversies/Debates": "The introduction of firearms like the arquebus was controversial as it diminished the effectiveness of traditional knightly armor and changed the nature of combat. Some debates cantered on the ethical implications of using firearms, which were seen as impersonal and indiscriminate weapons compared to swords and other melee weapons.",
-				"Exhibition": "Room "
+				"Exhibition": "Room " ,
+				"Themes": "Ethics of war",
+				"Historical Period" : "XV-XVII Century" ,
+				"Tipology" : "Weapon" 
 						
 			},
 			"shortInfo": "The arquebus is an early type of portable gun, a precursor to the musket, used in the 15th to 17th centuries. It was a matchlock firearm, typically loaded with gunpowder and a lead ball. It Symbolizes the transition from medieval to modern warfare and the mechanisation of war. ",
@@ -361,9 +400,11 @@
 				"Place of Creation": "France",
 				"Original Location": "Madame Tussauds, London",
 				"Significance": "The Guillotine represented the broader European shift towards what was seen as a more civilized form of capital punishment. It replaced more archaic and brutal methods of execution like hanging, burning, or breaking on the wheel. Its efficiency and supposed humanity were emphasized, making it a preferred method of execution for many governments at the time.",
-				"Themes/Topics": "Death, Capital Punishment, France, Revolution, Engineering",
 				"Controversies/Debates": "The guillotine, often associated with the French Revolution, has been a subject of controversy and debate due to its role in mass executions and its symbolism of state violence. Critics argue that it dehumanized the process of execution, turning death into a public spectacle and stripping victims of dignity. Debates also center on whether it was a tool of justice or tyranny, with some viewing it as a necessary equalizer in a time of revolution, while others see it as an emblem of the Reign of Terror's excesses and the dangers of unchecked power",
-				"Exhibition": "Room "	
+				"Exhibition": "Room " ,
+				"Themes": "Etichs of war",
+				"Historical Period" : "XVIII-XIX Century" ,
+				"Tipology" : "Weapon" 	
 						
 			},
 			"shortInfo": "The Guillotine was a type of decapitation device and one of the most infamous symbols of capital punishment in history. Although most famously associated with France during the French Revolution, the device and its variants were used in other European countries, contributing to significant debates around the ethics, legality, and humanity of state-enforced death penalties",
@@ -381,9 +422,11 @@
 				"Place of Creation": "N.A.",
 				"Original Location": "Gallerie dell'Accademia, Venezia, Italia",
 				"Significance": "Human anatomy was a study sticked to misbelives and observations based on animals. New approaches brought progress not only in medical field, but in other fields, like art as the Da Vinci's Vitruvian man shows.",
-				"Themes/Topics": "Art, Anatomy, Venezia, Italy, Renaissence",
 				"Controversies/Debates": "To realise this sketch Da Vinci used human anatomy's studies made directly on human corpses, a practice that untill the Renaissence was prohibited for religious and dogmatic reasons.",
-				"Exhibition": "Room "	
+				"Exhibition": "Room " ,
+				"Themes": "Religious dissent",
+				"Historical Period" : "XV-XVII Century" ,
+				"Tipology" : "Artwork" 	
 			},
 			"shortInfo": "This is a version of the vitruvian man described by Vitruvio drawn by Leonardo Da Vinci around the 1490.",
 			"longerInfo": ["This sketch shows one of face of the poliedric soul of Leonardo Da Vinci, art, but also his intereset in medicine science as the precise reproduction of the muscles and human structure show. This draw is a testimony of the benefits obtained by pursuing an activity banned or seen as sacrilegious, study of the human anatomy through corpses."],

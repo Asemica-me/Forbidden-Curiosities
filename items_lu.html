@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header, .footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.5rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background-color: #000;
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0px 7px #f10ff1;
+    overflow: hidden;
+    border: 1px solid #f10ff1;
+}
+
+.card-header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.5rem;
+}
+
+.card-content {
+    display: flex;
+    flex-grow: 1;
+}
+
+.column1 {
+    flex: 1;
+    background-color: #FF5733;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+}
+
+.column2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #33B5FF;
+    padding: 15px;
+}
+
+/* Styling for the table */
+#infoTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.2rem;
+}
+
+#infoTable th, #infoTable td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#infoTable th {
+    background-color: #333;
+    color: white;
+}
+
+#infoTable a.button {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+#infoTable a.button:hover {
+    background-color: #45a049;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #ddd;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+        </style>
+
+    </style>
+</head>
+<body>
+
+    <header class="header">Page Header</header>
+    
+    <section class="container">
+        <div class="card">
+            <div class="card-header">
+                <h2 id="fullHeader">Card Title</h2>
+            </div>
+            
+            <div class="card-content">
+                <!-- Left column -->
+                <div class="column column1">Column 1
+                    <img id="img" src="" class="img-fluid limitHeight m-auto" alt="Item Image">
+                </div>
+
+                <!-- Right column with dynamic table -->
+                <div class="column column2">
+                    <table id="infoTable">
+                        <!-- Dynamic content will be inserted here -->
+                    </table>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <button id="buttonPrevious" class="btn prev-btn" onclick="hideFullInfo()">Back</button>
+                <button id="buttonNext" class="btn next-btn">Next</button>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    function inner(id, content, overwrite) {
+        const element = document.getElementById(id);
+        if (overwrite) {
+            element.innerHTML = content;
+        } else {
+            element.innerHTML += content;
+        }
+    }
+    
+    function changeNarrative(infoKey, narrative) {
+        console.log(`Changing narrative for: ${infoKey}, Value: ${narrative}`);
+        // Implement logic to change the narrative displayed in the card or to update other UI elements
+    }
+    
+    function createInfoTable(item) {
+        inner("infoTable", "", true);  // Clear the table
+        for (let i in item.info) {
+            if (item.info[i] !== null) {
+                if (narratives.includes(i)) {
+                    const items = item.info[i].split(", ");
+                    const val = items.map(item => `<a class="button" role="button" href="#" onclick="changeNarrative('${i}', '${item}')">${item}</a>`).join(", ");
+                    inner("infoTable", `<tr><th>${i}</th><td>${val}</td></tr>`, false);
+                } else {
+                    inner("infoTable", `<tr><th>${i}</th><td>${item.info[i]}</td></tr>`, false);
+                }
+            }
+        }
+    }
+    
+    const narratives = ["narrative1", "narrative2"]; // Example narrative types
+    const exampleItem = {
+        info: {
+            "narrative1": "Story A, Story B",
+            "narrative2": "Story X, Story Y",
+            "Description": "This is a sample description.",
+            "Date": "2024-09-18",
+        }
+    };
+    
+    // Call the function to populate the table
+    createInfoTable(exampleItem);
+        </script>
+
+</html>
