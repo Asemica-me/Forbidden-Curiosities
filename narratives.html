@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exhibition Narratives</title>
+    <link rel="stylesheet" href="assets/css/my_styles.css">
+    <script src="assets/java/java.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Header and Navigation */
+        header {
+            background-color: black;
+            padding: 20px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Make it responsive */
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: #a12bbf;
+            text-decoration: none;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        .icon-container {
+            margin: 50px 0;
+        }
+
+        .book-icon {
+            width: 100px;
+            height: auto;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin: 20px 0;
+            color: #f2f2f2;
+        }
+
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Button styles */
+        button {
+            background-color: #a12bbf;
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%; /* Responsive button width */
+            max-width: 300px; /* Limit the button width */
+        }
+
+        button:hover {
+            background-color: #ff00ff;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (min-width: 600px) {
+            /* Larger screens: Align buttons side by side in two columns */
+            .buttons-container {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 30px;
+            }
+
+            button {
+                width: 40%;
+                max-width: 200px; /* Adjust button width on larger screens */
+            }
+        }
+
+        @media (min-width: 1024px) {
+            /* Further layout adjustments for bigger screens */
+            nav ul li a {
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .book-icon {
+                width: 150px;
+            }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Narratives</a></li>
+                <li><a href="#">Items</a></li>
+                <li><a href="#">Map</a></li>
+                <li><a href="#">About us</a></li>
+            </ul>
+        </nav>
+    </header>
+<!-- Navbar -->
+        <div class="rom-navbar">
+            <a class="logo" href="home.html">logo</a>
+            <div class="navbar-body">
+                <div class="nav-link-box">
+                    <a class="nav-link" href="#">Narratives</a>
+                    <span class="underline"></span>
+                </div>
+                <div class="nav-link-box">
+                    <a class="nav-link" href="#">Items</a>
+                    <span class="underline"></span>
+                </div>
+                <div class="nav-link-box">
+                    <a class="nav-link" href="#">Map</a>
+                    <span class="underline"></span>
+                </div>
+                <div class="nav-link-box">
+                    <a class="nav-link" href="about.html">About us</a>
+                    <span class="underline"></span>
+                </div>
+            </div>
+            <!-- Hamburger Menu -->
+            <div class="menu" id="menu-button">
+                <button id="toggleButton" onclick="toggleCurtain()" class="toggle-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div class="menu" id="menu-links">
+            <a href="#">Narratives</a>
+            <a href="#">Items</a>
+            <a href="#">Map</a>
+            <a href="#">About us</a>
+        </div>
+<!------- Hamburger Menu End --------->
+<!------ Navbar End ---------->
+<!-- Footer -->
+    
+    <main>
+        <div class="icon-container">
+            <img src="book-icon.png" alt="Book Icon" class="book-icon">
+        </div>
+        
+        <h2>Walk through different themes to understand the value of each piece of the exhibition</h2>
+        
+        <div class="sub-tabs">
+            <button class="sub-tab-button active">ETHICS OF WAR</button>
+            <button class="sub-tab-button">SCIENTIFIC REVOLUTION</button>
+            <button class="sub-tab-button">WOMEN'S HISTORY</button>
+        </div>
+        <div class="sub-tabs">
+            <button class="sub-tab-button">RELIGIOUS DISSENT</button>
+            <button class="sub-tab-button">PROVOCATIVE ART</button>
+            <button class="sub-tab-button">DIGITAL PRIVACY</button>
+        </div>
+        
+    </main>
+</body>
+</html>
