@@ -149,6 +149,16 @@
     flex-direction: column;
   }
 
+/*=============== Actually used ==================*/
+
+body {
+  margin: 0;
+  background-color: black;
+}
+
+a:visited {
+  color: #f10ff1;
+}
 
 /*================================================*/
 /* =============== Inizio Navbar =================*/      
@@ -164,10 +174,10 @@
 
 .rom-navbar {
   position: relative;
-  height: 120px;
   width: 100%;
+  height: 120px;
   top: 10px;
-  display:grid;
+  display: grid;
   grid-template-columns: 1fr 2fr 1fr;
 }
 
@@ -305,7 +315,7 @@
 
 /* =============== Inizio first-page =================*/
 
-#first-page {
+.box #first-page {
   position: relative;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
@@ -337,7 +347,6 @@ footer {
   color: #ffffff;
   text-align: center;
   font-size: calc(15px + 0.390625vw);
-  height: calc(25px + 0.390625vw);
 }
 
 /* =============== Fine Footer =================*/
