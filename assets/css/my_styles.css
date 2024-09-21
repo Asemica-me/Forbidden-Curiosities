@@ -316,7 +316,17 @@ a:visited {
 /*================================================*/
 /* =============== Buttoni =================*/      
 /*================================================*/
-      
+      button {
+        background-color: #a12bbf;
+        color: white;
+        border: none;
+        padding: 10px 30px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 100%; /* Responsive button width */
+        max-width: 300px; /* Limit the button width */
+      }
       .tabs, .sub-tabs {
           display: flex;
           justify-content: center;
@@ -348,6 +358,21 @@ a:visited {
           background-color: #ff66ff;
       }
 
+      @media (min-width: 600px) {
+        .buttons-container {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        button {
+            width: 40%;
+            max-width: 200px; 
+        }
+    }
+
+
 /*================================================*/
 /* =============== Fine Buttoni =================*/      
 /*================================================*/
@@ -377,7 +402,16 @@ a:visited {
 }
 
 /* =============== Fine first-page =================*/
-
+/* =============== Inizio narrtaives =================*/
+@media (min-width: 1024px) {
+  h2 {
+      font-size: 24px;
+  }
+  .book-icon {
+      width: 150px;
+  }
+}
+/* =============== fine narrtaives =================*/
 /* =============== Inizio Footer =================*/   
 
 footer {
