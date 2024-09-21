@@ -498,7 +498,7 @@ a:visited {
 }
 /* =============== Inizio narrtaives =================*/
 @media (min-width: 1024px) {
-  h2 {
+  .nar-h2 {
       font-size: 24px;
   }
   .book-icon {
