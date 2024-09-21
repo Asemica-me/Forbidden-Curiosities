@@ -10,58 +10,96 @@
 </head>
 
 <body>
-    <div class="box">
-        <!-- Navbar -->
-        <div class="rom-navbar">
-            <a class="logo" href="home.html">logo</a>
-            <div class="navbar-body">
-                <div class="nav-link-box">
-                    <a class="nav-link" href="#">Narratives</a>
-                    <span class="underline"></span>
+    <div id="box">
+        <div id="first-page">
+            <!-- Navbar -->
+            <div id="navbar">
+                <div class="rom-navbar">
+                    <a class="logo" href="home.html">logo</a>
+                    <div class="navbar-body">
+                        <div class="nav-link-box">
+                            <a class="nav-link" href="#">Narratives</a>
+                            <span class="underline"></span>
+                        </div>
+                        <div class="nav-link-box">
+                            <a class="nav-link" href="#">Items</a>
+                            <span class="underline"></span>
+                        </div>
+                        <div class="nav-link-box">
+                            <a class="nav-link" href="#">Map</a>
+                            <span class="underline"></span>
+                        </div>
+                        <div class="nav-link-box">
+                            <a class="nav-link" href="about.html">About us</a>
+                            <span class="underline"></span>
+                        </div>
+                    </div>
+                    <!-- Hamburger Menu -->
+                    <div class="menu" id="menu-button">
+                        <button id="toggleButton" onclick="toggleCurtain()" class="toggle-btn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
                 </div>
-                <div class="nav-link-box">
-                    <a class="nav-link" href="#">Items</a>
-                    <span class="underline"></span>
+                <div class="menu" id="menu-links">
+                    <a href="#">Narratives</a>
+                    <a href="#">Items</a>
+                    <a href="#">Map</a>
+                    <a href="#">About us</a>
                 </div>
-                <div class="nav-link-box">
-                    <a class="nav-link" href="#">Map</a>
-                    <span class="underline"></span>
-                </div>
-                <div class="nav-link-box">
-                    <a class="nav-link" href="about.html">About us</a>
-                    <span class="underline"></span>
-                </div>
+                <!------- Hamburger Menu End --------->
             </div>
-            <!-- Hamburger Menu -->
-            <div class="menu" id="menu-button">
-                <button id="toggleButton" onclick="toggleCurtain()" class="toggle-btn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+            <!------ Navbar End ---------->
+            <div id="welcome">
+                <div id="img-left"></div>
+                <div id="center">
+                    <h1>FORBIDDEN CURIOSITIES</h1>
+                    <div id="arrow"><img src="assets/img/arrow-sm-down-svgrepo-com.svg"></div>
+                </div>
+                <div id="img-right"></div>
             </div>
         </div>
-        <div class="menu" id="menu-links">
-            <a href="#">Narratives</a>
-            <a href="#">Items</a>
-            <a href="#">Map</a>
-            <a href="#">About us</a>
+        <div id="about">
+            <div></div>
+            <div>
+                <h2>DISCOVER THE EXHIBITION</h2>
+                <p>The exhibition delve into items that stirred debate, challenged norms, or had unexpected impacts, offering a provocative look at how controversy can drive change. 
+                    Whether you're exploring the scientific revolutions sparked by Galileo's Telescope or contemplating the cultural provocations of Gustave Courbet’s "Origin du monde", this application is your gateway to discovering the stories behind each artifact, unravelling their roles in shaping our past and present. 
+                     </p>
+            </div>
+            <div></div>
         </div>
-        <!------- Hamburger Menu End --------->
-        <!------ Navbar End ---------->
 
-        <!------ first page ---------->
-        
-        <!------ first page end ---------->
-
-        <!-- Footer -->
+        <!-- Timeline -->
+        <div id="timeline-start"></div>
+        <div id="item-1"></div>
+        <div id="item-2"></div>
+        <div id="item-3"></div>
+        <div id="item-4"></div>
+        <div id="item-5"></div>
+        <div id="item-6"></div>
+        <div id="item-7"></div>
+        <div id="item-8"></div>
+        <div id="item-9"></div>
+        <div id="item-10"></div>
+        <div id="item-11"></div>
+        <div id="item-12"></div>
+        <div id="item-13"></div>
+        <div id="item-14"></div>
+        <div id="item-15"></div>
+        <div id="item-16"></div>
+        <div id="item-17"></div>
+        <div id="item-18"></div>
+        <div id="item-19"></div>
+        <div id="item-20"></div>
+        <!-- Timeline End -->
         <footer>
             <!-- Copyright -->
-            <div>
-                <p>© 2024 Copyright: <a href="#">Forbidden Curiosities</a></p>
-            </div>
+            <p>© 2024 Copyright: <a href="#">Forbidden Curiosities</a></p>
         </footer>
-        <!------ Footer End ------->
     </div>
+    
 </body>
 </html>
