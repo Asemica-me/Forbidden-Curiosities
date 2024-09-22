@@ -3,210 +3,465 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Items</title>
+    <title>Items Gallery</title>
     <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        .header, .footer {
+            background-color: #000;
+            border-bottom: 1px solid white;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.5rem;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #000;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
 
-.header, .footer {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 1.5rem;
-}
-
+/* Basic Styles for Tabs */
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    background-color: #000;
-    color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 0px 7px #f10ff1;
-    overflow: hidden;
-    border: 1px solid #f10ff1;
+.tabs {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
 }
 
-.card-header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    font-size: 1.5rem;
+.tab {
+  padding: 10px 20px;
+  background-color: #ff00ff;
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
-.card-content {
-    display: flex;
-    flex-grow: 1;
+.tab:hover {
+  border-color: #ff00ff;
+  background-color: transparent;
 }
 
-.column1 {
-    flex: 1;
-    background-color: #FF5733;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    color: white;
-    font-weight: bold;
+/* Curtain styles */
+.curtain {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #333;
+  border-radius: 10px;
+  transition: max-height 0.5s ease;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  padding: 2px;
 }
 
-.column2 {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    background-color: #33B5FF;
-    padding: 15px;
+.curtain.open {
+  max-height: 300px; /* Adjust to content size */
 }
 
-/* Styling for the table */
-#infoTable {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 1.2rem;
+.inner-curtain {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-#infoTable th, #infoTable td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+.container:hover #curtain {
+  max-height: 300px; /* Curtain opens on hover */
 }
 
-#infoTable th {
-    background-color: #333;
-    color: white;
+
+        .tabs, .sub-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .tab-button, .sub-tab-button, .nav-button, .see-more {
+            background-color: #e600e6;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .sub-tab-button:hover  {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+            border: 1px solid #f10ff1;
+            box-shadow: 0 0px 3px #f10ff1;
+        }
+
+        .sub-tab-button:active, /* Active state for clicked button */
+        .sub-tab-button.active {
+            background-color: #444; /* Darker shade for pressed effect */
+            color: white;
+            box-shadow: 0 1px 3px #f10ff1 inset; /* Inset shadow for pressed effect */
+        }
+
+.sub-tab-button:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px #f10ff1; /* Custom focus outline */
 }
 
-#infoTable a.button {
-    padding: 5px 10px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-right: 5px;
-}
+        .tab-button:hover {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+            border: 1px solid #f10ff1;
+            box-shadow: 0 0px 7px #f10ff1;
+        }
 
-#infoTable a.button:hover {
-    background-color: #45a049;
-}
+        .tab-button.active, .sub-tab-button.active {
+            background-color: black;
+            border: 1px solid #e600e6;
+        }
 
-.card-footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
-    background-color: #ddd;
-}
+        .title {
+            margin: 20px 0;
+            font-size: 24px;
+        }
 
-.btn {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+        .content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 20px;
+        }
 
-.btn:hover {
-    background-color: #45a049;
-}
+        .info {
+            background-color: #e600e6;
+            padding: 20px;
+            border-radius: 25px;
+            width: 40%;
+        }
 
-        </style>
+        .image img {
+            width: 150px;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        .nav-button {
+            width: 100px;
+        }
+
+        .nav-button:hover, .see-more:hover {
+            background-color: #ff66ff;
+        }
+/*========================== Fine buttons ==============================*/
+
+        .title {
+            margin: 20px 0;
+            font-size: 24px;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .info {
+            background-color: #e600e6;
+            padding: 20px;
+            border-radius: 25px;
+            width: 40%;
+        }
+
+        .image img {
+            width: 150px;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        .nav-button {
+            width: 100px;
+        }
+
+        .nav-button:hover, .see-more:hover {
+            background-color: #ff66ff;
+        }
+/*========================== pop-up iniziale ====================================*/
+.modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #000;
+            color: white;
+            padding: 20px;
+            border: 1px solid #e600e6;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .close {
+            color: #e600e6;
+            float: right;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #ff66ff;
+        }
+
+
 
     </style>
 </head>
 <body>
-
     <header class="header">Page Header</header>
-    
-    <section class="container">
-        <div class="card">
-            <div class="card-header">
-                <h2 id="fullHeader">Card Title</h2>
-            </div>
-            
-            <div class="card-content">
-                <!-- Left column -->
-                <div class="column column1">Column 1
-                    <img id="img" src="" class="img-fluid limitHeight m-auto" alt="Item Image">
-                </div>
+    <!-- Modal Popup -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>LET YOUR CURIOSITY GUIDE YOU<br>EXPLORE THE COLLECTION ON ANY PATH YOU CHOOSE</p>
+        </div>
+    </div>
 
-                <!-- Right column with dynamic table -->
-                <div class="column column2">
-                    <table id="infoTable">
-                        <!-- Dynamic content will be inserted here -->
-                    </table>
-                </div>
-            </div>
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-button"  onclick="selectMain(this)" onclick="filterByCategory('type')">BY TYPE</button>
+            <button class="tab-button active"  onclick="selectMain(this)" onclick="filterByCategory('themes')">BY THEMES</button>
+            <button class="tab-button"  onclick="selectMain(this)" onclick="filterByCategory('historicalPeriod')">BY HISTORICAL PERIOD</button>
+        </div>
+        
 
-            <div class="card-footer">
-                <button id="buttonPrevious" class="btn prev-btn" onclick="hideFullInfo()">Back</button>
-                <button id="buttonNext" class="btn next-btn">Next</button>
+  <!-- Curtain that appears on hover -->
+  <div id="curtain" class="curtain">
+        <div class="sub-tabs  inner-curtain">
+            <button class="sub-tab-button active" onclick="selectSub(this)">ETHICS OF WAR</button>
+            <button class="sub-tab-button" onclick="selectSub(this)">SCIENTIFIC REVOLUTION</button>
+            <button class="sub-tab-button" onclick="selectSub(this)">WOMEN'S HISTORY</button>
+            <button class="sub-tab-button" onclick="selectSub(this)">RELIGIOUS DISSENT</button>
+            <button class="sub-tab-button" onclick="selectSub(this)">PROVOCATIVE ART</button>
+            <button class="sub-tab-button" onclick="selectSub(this)">DIGITAL PRIVACY</button>
+        </div>
+    </div>
+        
+        <h2 class="title"></h2>
+        
+        <div class="content">
+            <div class="info">
+                <p>Title:</p>
+                <p>Creator:</p>
+                <p>Date of Creation:</p>
+                <p>Store Location:</p>
+                <p>Place of Creation/Publication:</p>
+                <button class="see-more">See more</button>
+            </div>
+            <div class="image">
+                <img src="telescope.jpg" alt="Telescope">
             </div>
         </div>
-    </section>
-</body>
-<script>
-    function inner(id, content, overwrite) {
-        const element = document.getElementById(id);
-        if (overwrite) {
-            element.innerHTML = content;
-        } else {
-            element.innerHTML += content;
-        }
-    }
-    
-    function changeNarrative(infoKey, narrative) {
-        console.log(`Changing narrative for: ${infoKey}, Value: ${narrative}`);
-        // Implement logic to change the narrative displayed in the card or to update other UI elements
-    }
-    
-    function createInfoTable(item) {
-        inner("infoTable", "", true);  // Clear the table
-        for (let i in item.info) {
-            if (item.info[i] !== null) {
-                if (narratives.includes(i)) {
-                    const items = item.info[i].split(", ");
-                    const val = items.map(item => `<a class="button" role="button" href="#" onclick="changeNarrative('${i}', '${item}')">${item}</a>`).join(", ");
-                    inner("infoTable", `<tr><th>${i}</th><td>${val}</td></tr>`, false);
-                } else {
-                    inner("infoTable", `<tr><th>${i}</th><td>${item.info[i]}</td></tr>`, false);
-                }
-            }
-        }
-    }
-    
-    const narratives = ["narrative1", "narrative2"]; // Example narrative types
-    const exampleItem = {
-        info: {
-            "narrative1": "Story A, Story B",
-            "narrative2": "Story X, Story Y",
-            "Description": "This is a sample description.",
-            "Date": "2024-09-18",
-        }
-    };
-    
-    // Call the function to populate the table
-    createInfoTable(exampleItem);
-        </script>
+        
+        <div class="navigation">
+            <button id="buttonPrevious" class="nav-button">Previous</button>
+            <button id="buttonNext" class="nav-button">Next</button>
+        </div>
+    </div>
 
+    <script>
+        var items = [];
+        var narratives = [];
+        var currentSelection = [];
+        var currentNarrative = "";
+        var currentValue= "";
+        var currentSort = "";
+
+        document.addEventListener("DOMContentLoaded", async function(event) {
+            console.log("Items Data");
+            fetch('assets/data/items.json')
+            .then(response => response.json())
+            .then(data => {    
+                items = data.items;
+                var startWith = data.meta.startWith;
+                var item = items[startWith];
+
+                narratives = data.meta.narratives;
+                currentNarrative = data.meta.startNarrative;
+                currentValue = data.meta.startValue;
+                prepareNarratives();
+            });
+        });
+
+        function filterByCategory(category) {
+            switch(category) {
+                case 'type':
+                    // Implement logic to filter items by type
+                    
+                    break;
+                case 'themes':
+                    // Implement logic to filter items by themes
+                    
+                    break;
+                case 'historicalPeriod':
+                    // Implement logic to filter items by historical period
+                    
+                    break;
+            }
+            prepareNarratives();
+        }
+
+
+
+        function prepareNarratives() {
+            currentSelection = items.filter( i => 
+                i.info[currentNarrative]?.includes(currentValue) 
+            );
+            currentSelection.sort( (i,j) =>  
+                i['@sort'] < j['@sort'] ? -1 : 1 
+            );
+            if (currentSelection.length == 0) 
+                currentSelection = items;
+
+            var index  = currentSelection.findIndex( i => i['@sort'] == currentSort );
+            if (index == -1) index = 0;
+            showInfo(index);
+        }
+
+        function showInfo(index) {
+            var item = currentSelection[index];
+            currentSort = item['@sort'];
+            document.querySelector(".title").innerText = item.shortName;
+            document.querySelector(".image img").src = item.image;
+            document.querySelector(".image img").alt = item.shortName;
+            createInfoTable(item);
+        }
+
+        function createInfoTable(item) {
+    const infoContainer = document.querySelector(".info");
+    infoContainer.innerHTML = ""; // Clear previous content
+
+    for (const key in item.info) {
+        // Skip the "Themes" key
+        if (key === "Themes") continue;
+
+        // Only create and append the info if the value exists
+        if (item.info[key]) {
+            const infoRow = document.createElement('p');
+            infoRow.innerText = `${key}: ${item.info[key]}`;
+            infoContainer.appendChild(infoRow);
+        }
+    }
+}
+
+// MODAL POP-UP, da riattivare 
+
+        // window.onload = function() {
+        //     var modal = document.getElementById("myModal");
+        //     var span = document.getElementsByClassName("close")[0];
+
+        //     // Show the modal when the page loads
+        //     modal.style.display = "flex";
+
+        //     // Close the modal when the "x" is clicked
+        //     span.onclick = function() {
+        //         modal.style.display = "none";
+        //     }
+
+        //     // Close the modal when clicking outside of the modal content
+        //     window.onclick = function(event) {
+        //         if (event.target == modal) {
+        //             modal.style.display = "none";
+        //         }
+        //     }
+        // }
+
+        function prepareNavigationButtons(index) {
+	if (index > 0) {
+		byId("buttonPrevious").disabled = false
+		byId("buttonPrevious").onclick = () => showInfo(index-1)
+		byId("buttonPrevious").innerHTML = currentSelection[index-1].shortName		
+	} else {
+		byId("buttonPrevious").disabled = true
+		byId("buttonPrevious").onclick = null
+		byId("buttonPrevious").innerHTML = "--"
+	}
+	if (index < currentSelection.length-1) {
+		byId("buttonNext").disabled = false
+		byId("buttonNext").onclick = () => showInfo(index+1)
+		byId("buttonNext").innerHTML = currentSelection[index+1].shortName
+	} else {
+		byId("buttonNext").disabled = true
+		byId("buttonNext").onclick = null
+		byId("buttonNext").innerHTML = "--"
+	}
+	inner('narrative', currentNarrative+": "+currentValue)
+}
+
+// tendina visualizz sub-narratives
+let curtainOpen = false;
+
+document.querySelector('.tabs').addEventListener('click', function() {
+  const curtain = document.getElementById('curtain');
+  curtainOpen = !curtainOpen;
+  
+  if (curtainOpen) {
+    curtain.classList.add('open');
+  } else {
+    curtain.classList.remove('open');
+  }
+});
+
+let activeMainButton = null;
+let activeSubButton = null;
+
+function selectMain(button) {
+    // Deactivate previously active main button
+    if (activeMainButton) {
+        activeMainButton.classList.remove('active');
+    }
+    
+    // Set the clicked button as active
+    activeMainButton = button;
+    button.classList.toggle('active');
+}
+
+function selectSub(button) {
+    // Deactivate previously active sub button
+    if (activeSubButton) {
+        activeSubButton.classList.remove('active');
+    }
+    
+    // Set the clicked button as active
+    activeSubButton = button;
+    button.classList.toggle('active');
+}
+
+    </script>
+</body>
 </html>
