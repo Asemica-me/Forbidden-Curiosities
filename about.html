@@ -4,52 +4,56 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/greyscale.css">
     <link rel="stylesheet" href="assets/css/my_styles.css">
-    <script src="assets/java/java.js" defer></script>
+    <script src="assets/java/java.js"></script>
     <title>Forbidden Curiosities - About us</title>
 </head>
 
 <body>
+    <!-- Navbar -->
     <div class="rom-navbar">
-        <div class="logo">logo</div>
+        <a class="logo" href="home.html">logo</a>
         <div class="navbar-body">
-            <a class="nav-link" href="#">Narratives</a>
-            <a class="nav-link" href="#">Items</a>
-            <a class="nav-link" href="#">Map</a>
-            <a class="nav-link" href="#">About us</a>
-            <span class="foot"></span>
-            <span class="foot"></span>
-            <span class="foot"></span>
-            <span class="foot"></span>
-            <!-- Hamburger Menu -->
+            <div class="nav-link-box">
+                <a class="nav-link" href="#">Narratives</a>
+                <span class="underline"></span>
+            </div>
+            <div class="nav-link-box">
+                <a class="nav-link" href="#">Items</a>
+                <span class="underline"></span>
+            </div>
+            <div class="nav-link-box">
+                <a class="nav-link" href="#">Map</a>
+                <span class="underline"></span>
+            </div>
+            <div class="nav-link-box">
+                <a class="nav-link" href="about.html">About us</a>
+                <span class="underline"></span>
+            </div>
         </div>
-        <div class="menu-bar">
-            <div id="icon-box">
-                <a href="#" class="icon" onclick="menuToggle()"><i class="fa fa-bars"></i></a>
+        <!-- Hamburger Menu -->
+        <div class="menu" id="menu-button">
+            <button id="toggleButton" onclick="toggleCurtain()" class="toggle-btn">
                 <span></span>
-            </div>
-            <div id="menu-links">
-                <div id="links">
-                    <span></span><a href="#">Narratives</a>
-                    <span></span><a href="#">Items</a>
-                    <span></span><a href="#">Map</a>
-                    <span></span><a href="#">About us</a>
-                </div>
-                
-            </div>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        
     </div>
-
+    <div class="menu" id="menu-links">
+        <a href="#">Narratives</a>
+        <a href="#">Items</a>
+        <a href="#">Map</a>
+        <a href="#">About us</a>
+    </div>
+    <!------- Hamburger Menu End --------->
+    <!------ Navbar End ---------->
     <!-- Footer -->
-    <footer class="copyright">
+    <footer>
         <!-- Copyright -->
-        <div>
-            © 2024 Copyright: <a class="" href="#">Forbidden Curiosities</a>
-        </div>
+        <p>© 2024 Copyright: <a class="" href="#">Forbidden Curiosities</a></p>
     </footer>
+    <!------ Footer End ------->
     
 </body>
 </html>

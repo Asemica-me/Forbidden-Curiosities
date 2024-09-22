@@ -163,11 +163,13 @@ function inner(id,content, emptyFirst=true) {
 	document.getElementById(id).innerHTML += content ; 
 }
 
-function menuToggle() {
-	var x = document.getElementById("menu-links");
-	if (x.style.visibility === "visible") {
-		x.style.visibility = "hidden";
-	  } else {
-		x.style.visibility = "visible";
+function toggleCurtain() {
+	var menu_links = document.getElementById('menu-links');
+	var toggleButton = document.getElementById('toggleButton');
+	if (menu_links.style.display === "grid") {
+		menu_links.style.display = "none";
+	} else {
+		menu_links.style.display = "grid";
 	}
-}
+	toggleButton.classList.toggle('x');
+  }

@@ -149,35 +149,98 @@
     flex-direction: column;
   }
 
+/*=============== Actually used ==================*/
+
+body {
+  margin: 0;
+  background-color: black;
+}
+
+a:visited {
+  color: #f10ff1;
+}
+
+#box {
+  display: grid;
+  position: relative;
+  margin: 0;
+  height: 100%;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
 
 /*================================================*/
-/* =============== N A V B A R =================*/      
+/* =============== Buttoni =======================*/      
+/*================================================*/
+      
+.tabs, .sub-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab-button, .sub-tab-button, .nav-button, .see-more {
+  background-color: #e600e6;
+  height: 50px ;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.tab-button.active, .sub-tab-button.active {
+  background-color: black;
+  border: 1px solid #e600e6;
+}
+
+.nav-button {
+  width: 100px;
+}
+
+.nav-button:hover, .see-more:hover {
+  background-color: #ff66ff;
+}
+
+/*================================================*/
+/* =============== Fine Buttoni =================*/      
+/*================================================*/
+
+
+/*================================================*/
+/* =============== Inizio first-page =============*/      
+/*================================================*/
+
+#first-page {
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+}
+
+/*================================================*/
+/* =============== Inizio Navbar =================*/      
 /*================================================*/
 
 @media screen and (max-width: 830px) {
-  div.rom-navbar {display: none;}
+  div.navbar-body {visibility: hidden;}
 }
 
 @media screen and (min-width: 831px) {
-  div.menu-bar {display: none;}
+  div.menu {visibility: hidden;}
 }
-  */
 
-.copyright {
+#navbar {
   position: relative;
-  z-index: -1;
-  background-color: rgb(77, 77, 77);
-  color: #ffffff;
-  text-align: center;
-  font-size: calc(15px + 0.390625vw);
-  height: calc(25px + 0.390625vw);
+  flex: 0 1 auto;
 }
 
 .rom-navbar {
   position: relative;
-  height: 6vw;
   width: 100%;
-  display:grid;
+  height: 120px;
+  top: 10px;
+  display: grid;
   grid-template-columns: 1fr 2fr 1fr;
 }
 
@@ -185,74 +248,316 @@
   position: inherit;
   font-size: calc(15px + 0.390625vw);
   display: grid;
-  height: inherit;
+  height: 100px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.nav-link-box {
+  height: fit-content;
+  display: grid;
   grid-template-rows: 3fr 1fr;
+  align-self: flex-end;
+}
+
+.underline {
+  position: inherit;
+  background-color: #f10ff1;
+  height: 0.25vw;
+  width: 100%;
+}
+
+.nav-link-box .nav-link:hover + .underline {
+  background-color: white;
+}
+
+.nav-link:visited {
+  color: #f10ff1;
+}
+
+.nav-link:hover {
+  color: white;
 }
 
 .nav-link {
+  text-decoration: none;
   position: inherit;
-  background: linear-gradient(to bottom, #e400ff, #7100b7);
-  background-clip: text;
-  color: transparent;
+  color: #f10ff1;
   text-align: center;
   align-self: flex-end;
 }
 
-.menu-bar {
-  position: inherit;
-  height: 18vw;
-  display: grid;
-  grid-template-rows: 6vw 3fr;
-  text-align: center;
+#menu-button {
+  position: relative;
+  top: 40px;
+  right: 10px;
+  height: 60px;
 }
 
-.menu-bar #icon-box {
-  display: grid;
-  grid-template-rows: 3fr 1fr;
+.toggle-btn {
+  position: relative;
+  left: 67%;
+  width: 4vw;
+  height: 4vw;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.menu-bar .icon {
-  font-size: calc(30px + 0.390625vw);
-  align-self: flex-end;
+.toggle-btn span {
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  transition: 0.3s;
+  background-color: #f10ff1;
+}
+
+.toggle-btn span:first-child {
+  transform: translateY(-8px);
+}
+
+.toggle-btn.x span:nth-child(2) {
+  opacity: 0;
+}
+
+.toggle-btn span:last-child {
+  transform: translateY(8px);
+}
+
+.toggle-btn.x span:first-child {
+  transform: rotate(45deg) translateY(0);
+}
+
+.toggle-btn.x span:last-child {
+  transform: rotate(-45deg) translateY(0);
 }
 
 #menu-links {
-  /*visibility: hidden;*/
-  height: auto;
-  font-size: calc(15px + 0.390625vw);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  position: absolute;
+  height: 200px;
+  width: 100%;
+  display: none;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  z-index: 2;
 }
 
 #menu-links a {
+  background-color: #323232;
   text-decoration: none;
-  text-align: left;
-  border: 3px solid green;
+  font-size: calc(15px + 0.390625vw);
+  text-align: center;
+  padding: 10px 0;
 }
 
-#menu-links #links {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+#menu-links a:last-child {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+#menu-links a:nth-child(odd) {
+  background-color: #444;
+}
+
+#menu-links a:hover {
+  color: white;
+  background-color: #f10ff1;
+}
+
+.logo {
+  position: inherit;
+  background-color: #444;
+  height: 100px;
+  width: 100px;
+  left: 25%;
+  border: none;
 }
 
 /*================================================*/
 /* =============== Fine Navbar =================*/      
 /*================================================*/
 
+/*================================================*/
+/* =============== Buttoni =================*/      
+/*================================================*/
+      button {
+        background-color: #a12bbf;
+        color: white;
+        border: none;
+        padding: 10px 30px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 100%; /* Responsive button width */
+        max-width: 300px; /* Limit the button width */
+      }
+      .tabs, .sub-tabs {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 20px;
+      }
 
-.logo {
-  position: inherit;
-  background-color: #444;
+      .tab-button, .sub-tab-button, .nav-button, .see-more {
+          background-color: #e600e6;
+          height: 50px ;
+          border: none;
+          color: white;
+          padding: 10px 20px;
+          margin: 5px;
+          cursor: pointer;
+          border-radius: 10px;
+          transition: background-color 0.3s;
+      }
+
+      .tab-button.active, .sub-tab-button.active {
+          background-color: black;
+          border: 1px solid #e600e6;
+      }
+
+      .nav-button {
+          width: 100px;
+      }
+
+      .nav-button:hover, .see-more:hover {
+          background-color: #ff66ff;
+      }
+
+      @media (min-width: 600px) {
+        .buttons-container {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        button {
+            width: 40%;
+            max-width: 200px; 
+        }
+    }
+
+
+/*================================================*/
+/* =============== Fine Buttoni =================*/      
+/*================================================*/
+
+
+#welcome {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+#img-left {
+  border: solid orange;
+}
+
+#img-right {
+  border: solid orange;
+}
+
+#center {
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+#center h1 {
+  margin-top: 20vh;
+  font-size: calc(60px + 0.390625vw);
+  color: #f10ff1;
+  text-align: center;
+}
+
+#center #arrow {
+  margin-bottom: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#center #arrow img {
+  height: 100px;
+  width: 100px;
+  transition: 0.7s;
+}
+
+#center #arrow img:hover {
+  height: 120px;
+  width: 120px;
+}
+
+/*================================================*/
+/* =============== Fine first-page ===============*/
+/*================================================*/
+
+
+/*================================================*/
+/* =============== Inizio about ==================*/
+/*================================================*/
+
+#about {
   height: inherit;
-  width: 25%;
-  left: 25%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: solid yellow;
 }
 
-.foot {
-  position: inherit;
-  background: linear-gradient(to bottom, #e400ff, #7100b7);
-  height: 0.25vw;
-  width: 100%;
+#about div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid green;
 }
+
+#about h2 {
+  font-size: calc(30px + 0.390625vw);
+  color: #f10ff1;
+  text-align: center;
+  border: solid red;
+}
+
+#about p {
+  color:#f10ff1;
+  font-size: calc(15px + 0.390625vw);
+  text-align: center;
+  border:solid red;
+}
+
+/*================================================*/
+/* =============== Fine about ==================*/
+/*================================================*/
+
+#timeline-start {
+  height: inherit;
+  border: solid green;
+}
+
+#item-1 {
+  height: inherit;
+  border:solid pink;
+}
+/* =============== Inizio narrtaives =================*/
+@media (min-width: 1024px) {
+  .nar-h2 {
+      font-size: 24px;
+  }
+  .book-icon {
+      width: 150px;
+  }
+}
+/* =============== fine narrtaives =================*/
+/* =============== Inizio Footer =================*/   
+
+footer {
+  position: relative;
+  caret-color: transparent;
+  z-index: -1;
+  background-color: rgb(77, 77, 77);
+  color: #ffffff;
+  text-align: center;
+  font-size: calc(15px + 0.390625vw);
+}
+
+/* =============== Fine Footer =================*/
