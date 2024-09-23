@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/my_styles.css">
     <title>Items Gallery</title>
     <style>
 
@@ -10,7 +11,7 @@
 /* style per la main card degli items */
 
 body {
-    background-color: rgb(100, 100, 100);
+    background-color: #000;
     color: white;
     font-family: Arial, sans-serif;
     text-align: center;
@@ -405,8 +406,48 @@ button.d-none {
 
     </style>
 </head>
-<body>
-    <header class="header">Page Header</header>
+
+    <header class="header">
+            <!-- Navbar -->
+    <div class="rom-navbar">
+        <a class="logo" href="index.html">logo</a>
+        <div class="navbar-body">
+            <div class="nav-link-box">
+                <a class="nav-link" href="narratives.html">Narratives</a>
+                <span class="underline"></span>
+            </div>
+            <div class="nav-link-box">
+                <a class="nav-link" href="items.html">Items</a>
+                <span class="underline"></span>
+            </div>
+            <div class="nav-link-box">
+                <a class="nav-link" href="map.html">Map</a>
+                <span class="underline"></span>
+            </div>
+            <div class="nav-link-box">
+                <a class="nav-link" href="about.html">About us</a>
+                <span class="underline"></span>
+            </div>
+        </div>
+        <!-- Hamburger Menu -->
+        <div class="menu" id="menu-button">
+            <button id="toggleButton" onclick="toggleCurtain()" class="toggle-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+    <div class="menu" id="menu-links">
+        <a href="#">Narratives</a>
+        <a href="#">Items</a>
+        <a href="#">Map</a>
+        <a href="#">About us</a>
+    </div>
+    <!------- Hamburger Menu End --------->
+    <!------ Navbar End ---------->
+    </header>
+
     <!-- Modal Popup -->
     <div id="myModal" class="modal">
         <div class="modal-content">
@@ -457,7 +498,7 @@ button.d-none {
             </div>
         </div>
     </div>
-
+<body>
  <!--========= ingresso al nero cancello - entrata per Mordor ==================-->       
  <header id="header">ETHICS OF WAR</header>
  <div class="container">
