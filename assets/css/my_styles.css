@@ -165,7 +165,7 @@ a:visited {
   position: relative;
   margin: 0;
   height: 100%;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 100vh 100vh auto 25vh;
 }
 
 /*================================================*/
@@ -213,7 +213,8 @@ a:visited {
 /*================================================*/
 
 #first-page {
-  height: 100vh;
+  position: relative;
+  height: 100%;
   display: flex;
   flex-flow: column;
 }
@@ -224,6 +225,23 @@ a:visited {
 
 @media screen and (max-width: 830px) {
   div.navbar-body {visibility: hidden;}
+  div#timeline span {
+    left: 5%;
+  }
+  div.item div.item-content {
+    float: right;
+    width: 70%;
+    background-color: aqua;
+  }
+
+  div.item:nth-of-type(even) .item-content {
+    right: 0vw;
+    background-color: yellow;
+  }
+
+  div.item:nth-of-type(odd) .item-content {
+    right: 0vw;
+  }
 }
 
 @media screen and (min-width: 831px) {
@@ -497,10 +515,10 @@ a:visited {
 /*================================================*/
 
 #about {
-  height: inherit;
+  position: relative;
   display: grid;
+  height: 100%;
   grid-template-columns: 1fr 1fr 1fr;
-  border: solid yellow;
 }
 
 #about div:nth-child(2) {
@@ -508,36 +526,103 @@ a:visited {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: solid green;
 }
 
 #about h2 {
   font-size: calc(30px + 0.390625vw);
   color: #f10ff1;
   text-align: center;
-  border: solid red;
 }
 
 #about p {
   color:#f10ff1;
   font-size: calc(15px + 0.390625vw);
   text-align: center;
-  border:solid red;
 }
 
 /*================================================*/
 /* =============== Fine about ==================*/
 /*================================================*/
 
-#timeline-start {
-  height: inherit;
-  border: solid green;
+/*================================================*/
+/* ============== Inizio timeline ================*/
+/*================================================*/
+
+#timeline {
+  position: relative;
 }
 
-#item-1 {
-  height: inherit;
-  border:solid pink;
+#timeline-start {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid yellow;
 }
+
+#timeline-start h2 {
+  position: relative;
+  font-size: calc(30px + 0.390625vw);
+  color: #f10ff1;
+  text-align: center;
+}
+
+#timeline-start p {
+  position: relative;
+  color:#f10ff1;
+  font-size: calc(15px + 0.390625vw);
+  text-align: center;
+}
+
+#timeline #items {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+#timeline span {
+  position: absolute;
+  left: 50%;
+  margin: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #f10ff1;
+  z-index: -1;
+}
+
+#timeline .item {
+  position: relative;
+  width: 100%;
+  height: 33vh;
+  margin-top: 5vh;
+  border:solid red;
+}
+
+.item .item-content {
+  position: relative;
+  width: 30%;
+  height: 28.4vh;
+  padding: 1em 2em;
+  border-radius: 10px;
+  background-color: #444;
+}
+
+.item:nth-of-type(even) .item-content {
+  float: right;
+  right: 5vw;
+}
+
+.item:nth-of-type(odd) .item-content {
+  left: 5vw;
+}
+
+
+
+/*================================================*/
+/* ============== Fine timeline ================*/
+/*================================================*/
+
 /* =============== Inizio narrtaives =================*/
 @media (min-width: 1024px) {
   .nar-h2 {
@@ -552,8 +637,7 @@ a:visited {
 
 footer {
   position: relative;
-  caret-color: transparent;
-  z-index: -1;
+  height: 100%;
   background-color: rgb(77, 77, 77);
   color: #ffffff;
   text-align: center;
