@@ -189,7 +189,7 @@ function byId(elementId) {
     return document.getElementById(elementId);
 }
 
-function inner(elementId, content, clear = false) {
+function inner(elementId, content, clear = true) {
     const element = document.getElementById(elementId);
     if (clear) {
         element.innerHTML = ''; // Pulisce il contenuto esistente
