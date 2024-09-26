@@ -2,8 +2,8 @@
 	"meta": {
 		"startWith": 0,
 		"startNarrative": "Historical Period",
-		"startValue": "Room 1",
-		"narratives": ["Type", "Themes", "Historical Period"]
+		"startValue": "XV-XVII",
+		"narratives": ["Typology", "Themes", "Historical Period"]
 	},
 	"items": [
 		{
