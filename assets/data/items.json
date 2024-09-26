@@ -2,16 +2,16 @@
 	"meta": {
 		"startWith": 0,
 		"startNarrative": "Historical Period",
-		"startValue": "Room 1",
-		"narratives": ["Type", "Themes", "Date of Creation"]
+		"startValue": "XV-XVII",
+		"narratives": ["Typology", "Themes", "Historical Period"]
 	},
 	"items": [
 		{
-			"@sort": "Object 1",
-			"shortName": "Galileo’s Telescope Replica",
+			"@sort": "1",
+			"shortName": "Galileo’s Telescope",
 			"image": "assets/img/items/1galileo.jpg",
 			"info": {
-				"Title": "Galileo’s Telescope",
+				"Title": "Galileo’s Telescope Replica",
 				"Creator": "Galileo Galilei",
 				"Type": "Tool",
 				"Date of Creation": "Original telescope circa 1609; replica created in 1923",
@@ -22,14 +22,14 @@
 				"Exhibition": "Room ",
 				"Themes": "Scientifical revolution, Religious dissent" ,
 				"Historical Period" : "XV-XVII" ,
-				"Tipology" : "Tool" 
+				"Typology" : "Tool" 
 			},
 			"shortInfo": "Explore Galileo’s telescope replica to see how early scientific breakthroughs reshaped our understanding of the universe and influenced modern innovation.", 
 			"longerInfo": ["This replica showcases how Galileo’s Telescope transformed astronomy. Galileo's discoveries of moons around Jupiter challenged old ideas about the solar system, paving the way for modern science."],
 			"fullInfo": "assets/docs/1galileo.html"
 		},
 		{
-			"@sort": "Object 2",
+			"@sort": "2",
 			"shortName": "'The Origin of Species'",
 			"image": "assets/img/items/2darwin.jpg",
 			"info": {
@@ -44,14 +44,14 @@
 				"Exhibition": "Room ",	
 				"Themes": "scientifical revolution, religion dissent" ,
 				"Historical Period" : "XVIII-XIX Century" ,
-				"Tipology" : "Text" 
+				"Typology" : "Text" 
 		},
 			"shortInfo": "Explore Darwin's groundbreaking theory on evolution and its societal impact. Understand its relevance to contemporary debates on science and ethics.", 
 			"longerInfo": ["Delve into Darwin’s theory of evolution presented in The Origin of Species (1859). Darwin proposed natural selection as a mechanism for species adaptation, challenging creationist views. Explore debates in evolutionary biology and Darwin's influence on modern genetics and ecology."],
 			"fullInfo": "assets/docs/2darwin.html"
 		},
 		{
-			"@sort": "Object 3",
+			"@sort": "3",
 			"shortName": "Enigma Machine",
 			"image": "assets/img/items/3enigma.jpg",
 			"info": {
@@ -65,7 +65,7 @@
 				"Exhibition": "Room " ,
 				"Themes": "Ethics of war, Digital privacy",
 				"Historical Period" : "First half of XX Century" ,
-				"Tipology" : "Tool" 
+				"Typology" : "Tool" 
 				
 		},
 			"shortInfo": "Discover the Enigma Machine, used during WWII to encrypt secret messages. Learn how Allied efforts to decode it influenced the outcome of the war and shaped modern cryptography.", 
@@ -73,7 +73,7 @@
 			"fullInfo": "assets/docs/3enigma.html"
 		},
 		{
-			"@sort": "Object 4",
+			"@sort": "4",
 			"shortName": "\"For the Love of God\", Damien Hirst",
 			"image": "assets/img/items/4hirst.jpg",
 			"info": {
@@ -87,14 +87,14 @@
 				"Exhibition": "Room " ,
 				"Themes": "Provocative art",
 				"Historical Period" : "XXI Century" ,
-				"Tipology" : "Artwork" 		
+				"Typology" : "Artwork" 		
 			},
 			"shortInfo": "\"For the Love of God\" is a platinum cast of a human skull encrusted with diamonds, created by Damien Hirst in 2007, symbolizing themes of mortality and materialism.",
 			"longerInfo": ["This piece explores themes of mortality, wealth, and the enduring allure of luxury. The skull's opulent decoration challenges viewers to contemplate the intersection of art, death, and the conspicuous consumption of contemporary society. \"For the Love of God\" provocatively questions the value we place on material goods and the inevitable fate of human existence, juxtaposing the preciousness of diamonds with the inevitability of death, prompting reflection on the fragility and transience of life amidst the pursuit of wealth and status."],
 			"fullInfo": "assetsdocs/4hirst.html"
 		},
 		{
-			"@sort": "Object 5",
+			"@sort": "5",
 			"shortName": "Victorian-Era Corset",
 			"image": "assets/img/items/5corset.jpg",
 			"info": {
@@ -108,14 +108,14 @@
 				"Exhibition": "Room " ,
 				"Themes": "Women's history",
 				"Historical Period" : "XVIII-XIX Century" ,
-				"Tipology" : "Garment" 		
+				"Typology" : "Garment" 		
 			},
 			"shortInfo": "Explore the Victorian-Era Corset and its influence on women’s fashion and health during the 19th century. Learn about societal expectations and the evolution of women’s rights.",
 			"longerInfo": ["This cultural artifact symbolizes gender norms and bodily aesthetics in the 19th century. Explore its impact on women’s health, fashion history, and feminist critiques of beauty standards and social conformity."],
 			"fullInfo": "assets/docs/5corset.html"
 		},
 		{
-			"@sort": "Object 6",
+			"@sort": "6",
 			"shortName": "The Atomic Bomb",
 			"image": "assets/img/items/6bomb.jpg",
 			"info": {
@@ -129,14 +129,14 @@
 				"Exhibition": "Room ",
 				"Themes": "Ethics of war",
 				"Historical Period" : "First half of XX Century" ,
-				"Tipology" : "Weapon" 	
+				"Typology" : "Weapon" 	
 			},
 			"shortInfo": "Learn about the Atomic Bomb “Little Boy” dropped on Hiroshima in 1945, ending WWII but sparking ethical debates. Understand its implications for global peace and nuclear disarmament.",
 			"longerInfo": ["Explore the replica of the Atomic Bomb \"Little Boy\" and its role in WWII and subsequent nuclear deterrence strategies. Analyze its ethical dimensions, exploring debates on nuclear weapons, international relations, and the long-term consequences of atomic warfare."],
 			"fullInfo": "assets/docs/6bomb.html"
 		},
 		{
-			"@sort": "Object 7",
+			"@sort": "7",
 			"shortName": "Luther's 95 Theses",
 			"image": "assets/img/items/7luther.jpg",
 			"info": {
@@ -149,14 +149,14 @@
 				"Exhibition": "Room ",
 				"Themes": "Religious dissent",
 				"Historical Period" : "XV-XVII" ,
-				"Tipology" : "Text" 
+				"Typology" : "Text" 
 			},
 			"shortInfo": "Learn about Martin Luther’s 95 Theses, challenging the Catholic Church’s practices in the 16th century. Understand its significance in religious history and the Reformation.",
 			"longerInfo": ["Explore the facsimile of Martin Luther’s 95 Theses, pivotal in challenging ecclesiastical authority and advocating for religious reforms. Explore its theological arguments and historical implications for Western Christianity."],
 			"fullInfo": "assets/docs/7luther.html"
 		},
 		{
-			"@sort": "Object 8",
+			"@sort": "8",
 			"shortName": "L'Origin du Monde",
 			"image": "assets/img/items/8origin-du-monde.jpg",
 			"info": {
@@ -170,14 +170,14 @@
 				"Exhibition": "Room ",
 				"Themes": "Provocative art",
 				"Historical Period" : "XVIII-XIX Century" ,
-				"Tipology" : "Artwork" 	
+				"Typology" : "Artwork" 	
 			},
 			"shortInfo": "L'Origin du Monde by Gustave Courbet was painted in 1866 and first exposed in Paris. It's a bold representation of the female genitalia.",
 			"longerInfo": ["This way of female depiction broke the academia convention to display female nudity only in mythological or literary contexts. This was a consequence of Courbet interest in realism and erotism. In this paint, as in others of his own, we can appreciate his way to reproduce tonalism following the venetian school, emulating Tiziano, Correggio and Veronese."],
 			"fullInfo": "assets/docs/8origin-du-monde.html"
 		},
 		{
-			"@sort": "@Object 9",
+			"@sort": "@9",
 			"shortName": "Suffragette Hunger Strike Medal",
 			"image": "assets/img/items/9medal.jpg",
 			"info": {
@@ -191,14 +191,14 @@
 				"Exhibition": "Room " ,
 				"Themes": "Women’s history",
 				"Historical Period" : "First half of XX Century" ,
-				"Tipology" : "Event" 	
+				"Typology" : "Event" 	
 			},
 			"shortInfo": "Discover the Suffragette Hunger Strike Medal, symbolizing the fight for women’s suffrage. Explore its historical significance and the ongoing struggle for gender equality.",
 			"longerInfo": ["Learn about the Suffragette Hunger Strike Medal as a symbol of women’s activism and resistance during the suffrage movement. Analyze its historical context, strategies of protest, and impact on women’s rights globally."],
 			"fullInfo": "assets/docs/9medal.html"
 		},
 		{
-			"@sort": "@Object 10",
+			"@sort": "@10",
 			"shortName": "\"Shoot\", Chris Burden",
 			"image": "assets/img/items/10shoot.jpg",
 			"info": {
@@ -212,14 +212,14 @@
 				"Exhibition": "Room " ,
 				"Themes": "Provocative art",
 				"Historical Period" : "Second half of XX Century" ,
-				"Tipology" : "Artwork" 
+				"Typology" : "Artwork" 
 			},
 			"shortInfo": "'Shoot' by Chris Burden is a powerful example of how performance art can challenge societal norms, provoke visceral reactions, and invite audiences to reconsider their perceptions of art and human experience.",
 			"longerInfo": ["The performance sparked debates about the ethics of using real violence in art, as well as discussions on the role of the audience in witnessing and interpreting extreme acts. Critics and scholars continue to analyze \"Shoot\" within the context of performance art history and its implications for understanding the boundaries of artistic expression."],
 			"fullInfo": "assets/docs/10shoot.html"
 		},
 		{
-			"@sort": "@Object 11",
+			"@sort": "@11",
 			"shortName": "'Playboy'",
 			"image": "assets/img/items/11playboy.jpg",
 			"info": {
@@ -233,14 +233,14 @@
 				"Exhibition": "Room " ,
 				"Themes": "Women's history",
 				"Historical Period" : "Second half of XX Century" ,
-				"Tipology" : "Text" 		
+				"Typology" : "Text" 		
 			},
 			"shortInfo": "Discover the first issue of “Playboy” magazine, exploring its cultural impact on media and sexuality. Understand its influence on modern publishing and social attitudes.",
 			"longerInfo": ["Examine the first issue of “Playboy” (1953) and its cultural significance as a blend of literature, photography, and lifestyle. Analyze its impact on the representation of sexuality in media, consumer culture, and feminist critiques of the objectification of women."],
 			"fullInfo": "assets/docs/11playboy.html"
 		},
 		{
-			"@sort": "@Object 12",
+			"@sort": "@12",
 			"shortName": "Dolly the Sheep",
 			"image": "assets/img/items/12dolly.jpg",
 			"info": {
@@ -254,14 +254,14 @@
 				"Exhibition": "Room ",
 				"Themes": "Scientifical revolution",
 				"Historical Period" : "Second half of XX Century" ,
-				"Tipology" : "Event" 	
+				"Typology" : "Event" 	
 			},
 			"shortInfo": "Why clone a sheep? Dolly was a part of the Roslin Institute’s research into producing genetically modified farm animals or livestock.",
 			"longerInfo": ["Dolly the Sheep, born on July 5, 1996, at the Roslin Institute in Scotland, made history as the first mammal cloned from an adult somatic cell using nuclear transfer technology. Created by scientists led by Dr. Ian Wilmut, Dolly's birth sparked global ethical discussions about the implications of cloning on animal welfare, genetic identity, and the potential for human cloning. Her legacy continues to influence debates on bioethics, genetic engineering, and the ethical boundaries of scientific research involving living organisms."],
 			"fullInfo": "assets/docs/12dolly.html"
 		},
 		{
-			"@sort": "@Object 13",
+			"@sort": "@13",
 			"shortName": "Moon Landing Photo",
 			"image": "assets/img/items/13nasa.jpg",
 			"info": {
@@ -275,14 +275,14 @@
 				"Exhibition": "Room ",
 				"Themes": "Scientific revolution",
 				"Historical Period" : "Second half of XX Century" ,
-				"Tipology" : "Event" 	
+				"Typology" : "Event" 	
 			},
 			"shortInfo": "Explore the iconic NASA Moon Landing Photo, symbolizing human achievement in space exploration. Discover its impact on scientific innovation and international cooperation.",
 			"longerInfo": ["Examine the NASA Moon Landing Photo (1969) as a cultural icon and symbol of technological achievement. Analyze its historical context, technological advancements in space exploration, and its impact on global perceptions of scientific progress."],
 			"fullInfo": "assets/docs/13nasa.html"
 		},
 		{
-			"@sort": "@Object 14",
+			"@sort": "@14",
 			"shortName": "Curie's Sheet",
 			"image": "assets/img/items/14curie.jpg",
 			"info": {
@@ -296,14 +296,14 @@
 				"Exhibition": "Room " ,
 				"Themes": "Women's history, Scientifical revolution",
 				"Historical Period" : "First half of XX Century" ,
-				"Tipology" : "Text, Event" 
+				"Typology" : "Text, Event" 
 			},
 			"shortInfo": "In 1898, Pierre and Marie Curie discovered radium. In 1902, they sought to determine its atomic mass. They recorded the various steps of their calculations in their laboratory notebooks, from which this document is extracted. Both of their handwriting appears on this sheet, and the original still shows residual traces of radioactivity.",
 			"longerInfo": ["Examine the reproduction of Pierre and Marie Curie’s measurements sheet from 1902. Their meticulous calculations advanced our knowledge of radioactivity, laying the groundwork for X-ray technology and cancer treatment. Dive into the ethical implications of early radiation research, their scientific methodologies, and their enduring impact on physics and chemistry research."],
 			"fullInfo": "assets/docs/14curie.html"
 		},
 		{
-			"@sort": "@Object 15",
+			"@sort": "@15",
 			"shortName": "Snowden’s Revelations",
 			"image": "assets/img/items/15revel.jpg",
 			"info": {
@@ -318,14 +318,14 @@
 				"Exhibition": "Room " ,
 				"Themes": "Digital privacy",
 				"Historical Period" : "XXI Century" ,
-				"Tipology" : "Event" 		
+				"Typology" : "Event" 		
 			},
 			"shortInfo": "Explore the tablet displaying Edward Snowden’s Revelations, highlighting debates on privacy and surveillance. Understand its implications for digital ethics and security.",
 			"longerInfo": ["The tablet exhibited here, displays a facsimile of Edward Snowden’s Revelations. Snowden exposed secret U.S. government surveillance programs in 2013. These disclosures highlighted how governments monitor phone and internet activities, sparking debates about privacy and security in the digital age. Understand the importance of protecting personal information and the balance between national security and individual privacy."],
 			"fullInfo": "assets/docs/15revel.html"
 		},
 		{
-			"@sort": "@Object 16",
+			"@sort": "@16",
 			"shortName": "Mary Quant's mini skirt",
 			"image": "assets/img/items/16mini-skirt.jpg",
 			"info": {
@@ -339,14 +339,14 @@
 				"Exhibition": "Room ",
 				"Themes": "Women's history",
 				"Historical Period" : "Second half of XX Century" ,
-				"Tipology" : "Garment" 					
+				"Typology" : "Garment" 					
 			},
 			"shortInfo": "This garment was designed by Mary Quant in 1966. It was one of the most appreciated of her prodcuts. It's a vibrant green coloured short dress.",
 			"longerInfo": ["This dress shows a so called mini-skirt, because it stops before the knees. It's length, bright colour and dynamic cut of the skirt are typical marks of Mary Quant's design. She was an early fashion designers when she was one of the first to push this kind of garment, but she was the one to make it an icon of the sixties fashion. This new version of the skirt was for the young women generation a way to express their will to be more free and a shock for the conservative societies of that time."],
 			"fullInfo": "assets/docs/16mini-skirt.html"
 		},
 		{
-			"@sort": "@Object 17",
+			"@sort": "@17",
 			"shortName": "AI Image of Pope Francis",
 			"image": "assets/img/items/17pope.jpg",
 			"info": {
@@ -361,14 +361,14 @@
 				"Exhibition": "Room " ,
 				"Themes": "Digital privacy, Religious dissent",
 				"Historical Period" : "XXI Century" ,
-				"Tipology" : "Artwork" 		
+				"Typology" : "Artwork" 		
 			},
 			"shortInfo": "The viral AI-generated image of Pope Francis in a white puffer jacket sparked global attention, raising important ethical concerns about the potential for AI to create convincing but misleading content.",
 			"longerInfo": ["“I just thought it was funny to see the Pope in a funny jacket,” said the creator of the image, Pablo Xavier, a 31-year-old construction worker from Chicago. The AI-generated image of Pope Francis in a white puffer jacket went viral, captivating the internet with its unexpected humor. However, its rapid spread also highlighted the challenges of distinguishing real from fake content in the digital age and raised significant ethical concerns about the use of AI to create misleading images."],
 			"fullInfo": "assets/docs/17AI-pope.html"
 		},
 		{
-			"@sort": "@Object 18",
+			"@sort": "@18",
 			"shortName": "The arquebus",
 			"image": "assets/img/items/18arquebus.jpg",
 			"info": {
@@ -382,7 +382,7 @@
 				"Exhibition": "Room " ,
 				"Themes": "Ethics of war",
 				"Historical Period" : "XV-XVII Century" ,
-				"Tipology" : "Weapon" 
+				"Typology" : "Weapon" 
 						
 			},
 			"shortInfo": "The arquebus is an early type of portable gun, a precursor to the musket, used in the 15th to 17th centuries. It was a matchlock firearm, typically loaded with gunpowder and a lead ball. It Symbolizes the transition from medieval to modern warfare and the mechanisation of war. ",
@@ -390,7 +390,7 @@
 			"fullInfo": "assets/docs/18archibugio.html"
 		},
 		{
-			"@sort": "@Object 19",
+			"@sort": "@19",
 			"shortName": "Guillotine",
 			"image": "assets/img/items/19guillotine1.jpg",
 			"info": {
@@ -404,7 +404,7 @@
 				"Exhibition": "Room " ,
 				"Themes": "Etichs of war",
 				"Historical Period" : "XVIII-XIX Century" ,
-				"Tipology" : "Weapon" 	
+				"Typology" : "Weapon" 	
 						
 			},
 			"shortInfo": "The Guillotine was a type of decapitation device and one of the most infamous symbols of capital punishment in history. Although most famously associated with France during the French Revolution, the device and its variants were used in other European countries, contributing to significant debates around the ethics, legality, and humanity of state-enforced death penalties",
@@ -412,7 +412,7 @@
 			"fullInfo": "assets/docs/19ghigliottina.html"
 		},
 		{
-			"@sort": "@Object 20",
+			"@sort": "@20",
 			"shortName": "Da Vinci's Vitruvian Man",
 			"image": "assets/img/items/20da-vinci.jpg",
 			"info": {
@@ -426,7 +426,7 @@
 				"Exhibition": "Room " ,
 				"Themes": "Religious dissent",
 				"Historical Period" : "XV-XVII Century" ,
-				"Tipology" : "Artwork" 	
+				"Typology" : "Artwork" 	
 			},
 			"shortInfo": "This is a version of the vitruvian man described by Vitruvio drawn by Leonardo Da Vinci around the 1490.",
 			"longerInfo": ["This sketch shows one of face of the poliedric soul of Leonardo Da Vinci, art, but also his intereset in medicine science as the precise reproduction of the muscles and human structure show. This draw is a testimony of the benefits obtained by pursuing an activity banned or seen as sacrilegious, study of the human anatomy through corpses."],
