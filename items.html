@@ -185,6 +185,18 @@ function prepareNarratives() {
 	showInfo(index)
 }
 
+function byId(elementId) {
+    return document.getElementById(elementId);
+}
+
+function inner(elementId, content, clear = false) {
+    const element = document.getElementById(elementId);
+    if (clear) {
+        element.innerHTML = ''; // Pulisce il contenuto esistente
+    }
+    element.innerHTML += content; // Aggiunge il nuovo contenuto
+}
+
 function showInfo(index) {
 	var item = currentSelection[index]
 	currentSort = item['@sort']
