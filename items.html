@@ -3,51 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/my_styles.css">
     <link rel="stylesheet" href="assets/css/items.css">
     <title>Items Gallery</title>
 </head>
+<body>
 
     <header class="header">
+        <h1 id="logo"><a href="#">Logo</a></h1>
             <!-- Navbar -->
-    <div class="rom-navbar">
-        <a class="logo" href="index.html">logo</a>
-        <div class="navbar-body">
-            <div class="nav-link-box">
-                <a class="nav-link" href="narratives.html">Narratives</a>
-                <span class="underline"></span>
-            </div>
-            <div class="nav-link-box">
-                <a class="nav-link" href="items.html">Items</a>
-                <span class="underline"></span>
-            </div>
-            <div class="nav-link-box">
-                <a class="nav-link" href="map.html">Map</a>
-                <span class="underline"></span>
-            </div>
-            <div class="nav-link-box">
-                <a class="nav-link" href="about.html">About us</a>
-                <span class="underline"></span>
+            <nav class="navbar">
+                <div class="navbar-body">
+                <ul>
+                    <li><a href="narratives.html">Narratives</a></li>
+                    <li><a href="items.html">Items Gallery</a></li>
+                    <li><a href="map.html">Exhibition Map</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+                </div>
+                <!-- Hamburger Menu -->
+            <div class="menu" id="menu-button">
+                <button id="toggleButton" onclick="toggleCurtain()" class="toggle-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
-        <!-- Hamburger Menu -->
-        <div class="menu" id="menu-button">
-            <button id="toggleButton" onclick="toggleCurtain()" class="toggle-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+        <div class="menu" id="menu-links">
+            <a href="narratives.html">Narratives</a>
+            <a href="items.html">Items Gallery</a>
+            <a href="map.html">Exhibition Map</a>
+            <a href="about.html">About Us</a>
         </div>
-    </div>
-    <div class="menu" id="menu-links">
-        <a href="#">Narratives</a>
-        <a href="#">Items</a>
-        <a href="#">Map</a>
-        <a href="#">About us</a>
-    </div>
-    <!------- Hamburger Menu End --------->
+        <!------- Hamburger Menu End --------->
+            </nav>
     <!------ Navbar End ---------->
-    </header>
 
     <!-- Modal Popup -->
     <div id="myModal" class="modal">
@@ -56,6 +46,8 @@
             <p>LET YOUR CURIOSITY GUIDE YOU<br>EXPLORE THE COLLECTION ON ANY PATH YOU CHOOSE</p>
         </div>
     </div>
+</header>
+<main>
 
     <div class="container">
         <div class="tabs">
@@ -99,7 +91,7 @@
             </div>
         </div>
     </div>
-<body>
+
  <!--========= ingresso al nero cancello - entrata per Mordor ==================-->      
  <div class="container" id="wholeCard">
     <div class="card-header">
@@ -189,7 +181,7 @@ function byId(elementId) {
     return document.getElementById(elementId);
 }
 
-function inner(elementId, content, clear = false) {
+function inner(elementId, content, clear = true) {
     const element = document.getElementById(elementId);
     if (clear) {
         element.innerHTML = ''; // Pulisce il contenuto esistente
@@ -362,5 +354,10 @@ function selectSub(button) {
 }
 
     </script>
+
+<footer>
+    <p>&copy; 2024 PD. Tutti i diritti riservati.</p>
+    <p><a href="#privacy">Informativa sulla privacy</a></p>
+</footer>
 </body>
 </html>
