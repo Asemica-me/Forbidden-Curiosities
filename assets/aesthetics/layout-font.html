@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempio di Implementazione Font</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    font-family: 'Open Sans', sans-serif; /* Font per il corpo del testo */
+    margin: 0;
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+header {
+    background-color: #333;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.navbar h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    margin: 0;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif; /* Font per i link della navbar */
+}
+
+.navbar a:hover {
+    text-decoration: underline; /* Effetto hover */
+}
+
+.content {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.content h2 {
+    font-family: 'Montserrat', sans-serif; /* Font per i titoli del contenuto */
+    font-size: 28px;
+    color: #333;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    font-family: 'Open Sans', sans-serif; /* Font per il footer */
+}
+
+</style>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>Logo</h1>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Servizi</a></li>
+                <li><a href="#">Chi Siamo</a></li>
+                <li><a href="#">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="content">
+            <h2>Ciao eccoci qui</h2>
+            <p>Questo è un esempio di un sito web con la scelta di due font.<br> Vengono utilizzati <b>Montserrat</b> per i titoli e <b>Open Sans</b> per il corpo del testo.</p>
+            <p>La leggibilità è importante, quindi abbiamo scelto font che sono facili da leggere su schermi di diverse dimensioni.</p>
+            <p>Torna <a href="font.html">indietro</a> ai font.</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Esempio. Tutti i diritti riservati.</p>
+    </footer>
+</body>
+</html>

@@ -3,92 +3,361 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forbidden Curiosities</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <script src="assets/java/java.js" defer></script>
-    <script src="assets/java/index.js"></script>
-      <!-- Favicon -->
-  <link href="assets/img/icon3.png" rel="icon">
-
-  <!-- Vendor CSS Files
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="assets/css/items.css">
+    <title>Items Gallery</title>
 </head>
 <body>
-    <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img id="logo" src="assets/img/demo.jpg" alt="Logo" width="60" height="24" class="d-inline-block align-text-top">
-                Forbidden Curiosities
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a id="navHome" class="nav-link active" aria-current="page" href="#">Home</a></li>
-                    <li class="nav-item"><a id="navFeatures" class="nav-link" href="#">Features</a></li>
-                    <li class="nav-item"><a id="navPricing" class="nav-link" href="#">Pricing</a></li>
-                    <li class="nav-item"><a id="navDisabled" class="nav-link disabled" aria-disabled="true">Disabled</a></li>
+
+    <header class="header">
+        <h1 id="logo"><a href="#">Logo</a></h1>
+            <!-- Navbar -->
+            <nav class="navbar">
+                <div class="navbar-body">
+                <ul>
+                    <li><a href="narratives.html">Narratives</a></li>
+                    <li><a href="items.html">Items Gallery</a></li>
+                    <li><a href="map.html">Exhibition Map</a></li>
+                    <li><a href="about.html">About Us</a></li>
                 </ul>
-            </div>
-        </div>
-    </nav>
-
-    <main>
-        <div class="card" id="mainCard">
-            <div class="card-header">
-                <h2 class="text-center" id="header">Placeholder Header</h2>
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-sm-12 col-md-6 d-flex">
-                        <img id="img" src="" class="card-img-top img-fluid limitHeight m-auto" alt="Placeholder Image">
-                    </div>
-                    <div class="col-sm-12 col-md-6">
-                        <h5 class="card-title text-center">Data</h5>
-                        <button class="btn d-lg-none" type="button" id="dataExpanderIcon" data-bs-toggle="collapse" data-bs-target="#table" aria-expanded="false" aria-controls="table">
-                            <span class="bi-chevron-bar-right"></span>
-                            <span class="bi-chevron-bar-down"></span>
-                        </button>
-                        <table class="table table-striped border collapse d-md-block" id="table">
-                            <tbody id="infoTable">
-                                <!-- Table rows will be dynamically populated -->
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
-                <h5 class="card-title text-center">Info</h5>
-                <p class="card-text" id="shortInfo">Placeholder Short Info</p>
-                <p class="card-text d-none" id="longerInfo">Placeholder Long Info</p>
-            </div>
-            <div class="card-footer d-flex justify-content-between">
-                <button id="buttonPrevious" type="button" class="btn btn-primary">Previous</button>
-                <h3 id="narrative">Placeholder Narrative</h3>
-                <button id="buttonNext" type="button" class="btn btn-primary">Next</button>
+                <!-- Hamburger Menu -->
+            <div class="menu" id="menu-button">
+                <button id="toggleButton" onclick="toggleCurtain()" class="toggle-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
+        <div class="menu" id="menu-links">
+            <a href="narratives.html">Narratives</a>
+            <a href="items.html">Items Gallery</a>
+            <a href="map.html">Exhibition Map</a>
+            <a href="about.html">About Us</a>
+        </div>
+        <!------- Hamburger Menu End --------->
+            </nav>
+    <!------ Navbar End ---------->
 
-        <div class="card d-none" id="fullInfo">
+    <!-- Modal Popup -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>LET YOUR CURIOSITY GUIDE YOU<br>EXPLORE THE COLLECTION ON ANY PATH YOU CHOOSE</p>
+        </div>
+    </div>
+</header>
+<main>
+
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-button main-button" onclick="selectMain(this, 'curtain-type')">BY TYPOLOGY</button>
+            <button class="tab-button main-button" onclick="selectMain(this, 'curtain-theme')">BY THEMES</button>
+            <button class="tab-button main-button" onclick="selectMain(this, 'curtain-period')">BY HISTORICAL PERIOD</button>
+        </div>
+    
+        <!-- Curtain TYPE -->
+        <div id="curtain-type" class="curtain">
+            <div class="sub-tabs inner-curtain">
+                <button class="sub-tab-button" onclick="selectSub(this)">TEXT</button>
+                <button class="sub-tab-button" onclick="selectSub(this)">TOOL</button>
+                <button class="sub-tab-button" onclick="selectSub(this)">ARTWORK</button>
+                <button class="sub-tab-button" onclick="selectSub(this)">GARMENT</button>
+                <button class="sub-tab-button" onclick="selectSub(this)">EVENT</button>
+                <button class="sub-tab-button" onclick="selectSub(this)">WEAPON</button>
+            </div>
+        </div>        
+    
+        <!-- Curtain THEME -->
+        <div id="curtain-theme" class="curtain">
+            <div class="sub-tabs inner-curtain">
+                <button class="sub-tab-button" onclick="selectSub(this)">ETHICS OF WAR</button>
+                <button class="sub-tab-button" onclick="selectSub(this)">SCIENTIFIC REVOLUTION</button>
+                <button class="sub-tab-button" onclick="selectSub(this)">WOMEN'S HISTORY</button>
+                <button class="sub-tab-button" onclick="selectSub(this)">RELIGIOUS DISSENT</button>
+                <button class="sub-tab-button" onclick="selectSub(this)">PROVOCATIVE ART</button>
+                <button class="sub-tab-button" onclick="selectSub(this)">DIGITAL PRIVACY</button>
+            </div>
+        </div>
+    
+        <!-- Curtain PERIOD -->
+        <div id="curtain-period" class="curtain">
+            <div class="sub-tabs inner-curtain">
+                <button class="sub-tab-button" onclick="selectSub(this)">15-17<sup>th</sup> CENTURY</button>
+                <button class="sub-tab-button" onclick="selectSub(this)">18-19<sup>th</sup> CENTURY</button>
+                <button class="sub-tab-button" onclick="selectSub(this)">FIRST HALF 20<sup>th</sup> CENTURY</button>
+                <button class="sub-tab-button" onclick="selectSub(this)">SECOND HALF 20<sup>th</sup> CENTURY</button>
+                <button class="sub-tab-button" onclick="selectSub(this)">21<sup>st</sup> CENTURY</button>
+            </div>
+        </div>
+    </div>
+
+ <!--========= ingresso al nero cancello - entrata per Mordor ==================-->      
+ <div class="container" id="wholeCard">
+    <div class="card-header">
+        <h2 class="text-center" id="title-header"></h2>
+    </div>
+    <div class="whole-card">
+     <div class="info-section"> 
+        <h5 class="card-title text-center">Data - Info</h5>
+         <table class="table" id="table">
+            <tbody id="infoTable"></tbody>
+         </table>
+         <h5 class="card-title text-center">Info - /</h5>
+         <p class="card-text" id="shortInfo"></p>
+         <p class="card-text hidden" id="longerInfo"></p>
+     </div>
+     <div class="image-section">
+         <img id="img" src="" alt="image" />
+     </div>
+ </div>
+ <div class="nav-buttons card-footer">
+     <button href="#" type="button" id="buttonPrev" class="nav-button"></button>
+     <h3 id="narrative"></h3>
+     <button href="#" type="button" id="buttonNext" class="nav-button"></button>
+ </div>
+ </div>
+
+ <!--==================== sezione fetch pagina html esterna  ==============================-->
+        <div class="container">
+        <div class="card hidden" id="fullInfo">
             <div class="card-header">
                 <h2 class="text-center" id="fullHeader">Placeholder Full Header</h2>
             </div>
             <div class="card-body" id="fullInfoContent">
                 <!-- Full info content will be dynamically populated -->
             </div>
-            <div class="card-footer d-flex justify-content-between">
-                <a href="#" type="button" class="btn btn-primary m-auto" onclick="hideFullInfo()">Back</a>
+            <div class="card-footer">
+                <a href="#" type="button" class="btn-desc btn-primary" onclick="hideFullInfo()">Back</a>
             </div>
         </div>
+    </div>
+
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+var items = [];
+var narratives = [];
+var currentSelection = [];
+var currentNarrative = "";
+var currentValue = "";
+var currentSort = "";
+
+// JSON Data
+document.addEventListener("DOMContentLoaded", async function(event) {
+	console.log("Ready to start")
+	fetch('assets/data/items.json')
+	.then(response => response.json())
+	.then(data => {	
+		items = data.items
+		var startWith = data.meta.startWith
+		var item = items[startWith]
+
+		narratives = data.meta.narratives
+		currentNarrative = data.meta.startNarrative
+		currentValue = data.meta.startValue
+		prepareNarratives()
+	})
+});
+
+function prepareNarratives() {
+	currentSelection = items.filter( i => 
+		i.info[currentNarrative]?.includes(currentValue) 
+	)
+	currentSelection.sort( (i,j) =>  
+		i['@sort'] < j['@sort'] ? -1 : 1 
+	)
+	if (currentSelection.length==0) 
+		currentSelection = items	
+
+	var index  = currentSelection.findIndex( i => i['@sort'] == currentSort )
+	if (index == -1) index = 0
+	showInfo(index)
+}
+
+function byId(elementId) {
+    return document.getElementById(elementId);
+}
+
+function inner(elementId, content, clear = true) {
+    const element = document.getElementById(elementId);
+    if (clear) {
+        element.innerHTML = ''; // Pulisce il contenuto esistente
+    }
+    element.innerHTML += content; // Aggiunge il nuovo contenuto
+}
+
+function showInfo(index) {
+	var item = currentSelection[index]
+	currentSort = item['@sort']
+	inner("title-header",item.shortName) ;
+	inner("fullHeader",item.shortName) ;
+	byId("img").src = item.image
+	byId("img").alt = item.shortName
+	createInfoTable(item)
+	inner("shortInfo",item.shortInfo + '<div class="button-container">' +
+        '<a type="button" class="button" onclick="more()">Tell me more...</a>' + '</div>'); 
+	inner("longerInfo","<p>"+item.longerInfo.join("</p><p>") +
+    '<div class="button-container">' +
+        '<a type="button" class="button" onclick="less()">Tell me less</a> or <a type="button" class="button" onclick="muchMore()">Tell me even more...</a></p>')
+        + '</div>';
+	byId("fullInfo").dataset['uri'] = item.fullInfo
+	
+	prepareNavigationButtons(index)
+}
+
+function more() {
+    hide("shortInfo");
+    show("longerInfo");
+    hide("fullInfo");
+    byId("showLessBtn").classList.remove("hidden");
+    byId("showMoreBtn").classList.add("hidden");
+}
+
+function less() {
+    hide("longerInfo");
+    show("shortInfo");
+    byId("showMoreBtn").classList.remove("hidden");
+    byId("showLessBtn").classList.add("hidden");
+}
+
+function muchMore() {
+	var uri = byId("fullInfo").dataset['uri']
+	fetch(uri)
+	.then(response => response.text())
+	.then(data => {	
+		inner("fullInfoContent",data) ;
+		hide("wholeCard") ;
+		show("fullInfo") ;
+		window.scrollTo(0,0)
+	})
+}
+
+function hideFullInfo() {
+	hide("longerInfo") ;
+	show("shortInfo") ;
+	hide("fullInfo") ;
+	show("wholeCard") ;
+}
+
+function createInfoTable(item) {
+	inner("infoTable","",true) ;
+	for (i in item.info) {
+		if (item.info[i] !== null) {
+			if (narratives.includes(i)) {
+				var items = item.info[i].split(", ")
+				var val = []
+				for (j in items) {
+					val.push('<a class="button" role="button" href="#" onclick="changeNarrative(\''+i+'\',\''+items[j]+'\')">'+items[j]+'</a>')
+				}
+			inner("infoTable","<tr><th>"+i+"</th><td>"+val.join(", ")+"</td></tr>", false)
+			} else {
+				inner("infoTable","<tr><th>"+i+"</th><td>"+item.info[i]+"</td></tr>", false)
+			}
+		}
+	}
+}
+
+function prepareNavigationButtons(index) {
+    if (index > 0) {
+        byId("buttonPrev").disabled = false;
+        byId("buttonPrev").onclick = () => showInfo(index - 1);
+        byId("buttonPrev").innerHTML = currentSelection[index - 1].shortName;        
+    } else {
+        byId("buttonPrev").disabled = true;
+        byId("buttonPrev").onclick = null;
+        byId("buttonPrev").innerHTML = "--";
+    }
+
+    if (index < currentSelection.length - 1) {
+        byId("buttonNext").disabled = false;
+        byId("buttonNext").onclick = () => showInfo(index + 1);
+        byId("buttonNext").innerHTML = currentSelection[index + 1].shortName;
+    } else {
+        byId("buttonNext").disabled = true;
+        byId("buttonNext").onclick = null;
+        byId("buttonNext").innerHTML = "--";
+    }
+}
+
+
+// QUI INIZIA CODICE X LE NARRATIVES IN ALTO (NAVIGAZIONE BOTTONI)
+
+// Dropdown for visualizing sub-narratives
+let activeMainButton = null;
+let activeSubButton = null;
+let activeCurtain = null;
+
+
+// Function to manage the selection of the main button and toggle the curtain
+function selectMain(button) {
+    // Deactivate the previously active main button
+    if (activeMainButton) {
+        activeMainButton.classList.remove('active');
+        closeAllCurtains();  // Close any open curtain
+    }
+    
+    // Set the clicked main button as active
+    activeMainButton = button;
+    button.classList.add('active');
+    
+    // Open the appropriate curtain based on the button
+    let curtainId;
+    if (button.innerText.includes('TYPOLOGY')) {
+        curtainId = 'curtain-type';
+    } else if (button.innerText.includes('THEMES')) {
+        curtainId = 'curtain-theme';
+    } else if (button.innerText.includes('HISTORICAL PERIOD')) {
+        curtainId = 'curtain-period';
+    }
+    openCurtain(curtainId);
+}
+
+// Function to open a specific curtain
+function openCurtain(curtainId) {
+    closeAllCurtains();  // Close all open curtains
+
+    // Open the selected curtain
+    const curtain = document.getElementById(curtainId);
+    curtain.classList.add('open');
+}
+
+// Function to close all curtains
+function closeAllCurtains() {
+    const curtains = document.querySelectorAll('.curtain');
+    curtains.forEach(curtain => curtain.classList.remove('open'));
+    curtainOpen = false;
+}
+
+// Close the curtain if clicked outside of it
+document.addEventListener('click', function(event) {
+    const isClickInsideCurtain = event.target.closest('.curtain');
+    const isClickOnButton = event.target.closest('.main-button, .sub-tab-button');
+
+    if (!isClickInsideCurtain && !isClickOnButton) {
+        closeAllCurtains();
+    }
+});
+
+// Function to select the sub-button
+function selectSub(button) {
+    // Deactivate the previously active sub-button
+    if (activeSubButton) {
+        activeSubButton.classList.remove('active');
+    }
+    
+    // Set the clicked sub-button as active
+    activeSubButton = button;
+    button.classList.add('active');
+}
+
+    </script>
+
+<footer>
+    <p>&copy; 2024 PD. Tutti i diritti riservati.</p>
+    <p><a href="#privacy">Informativa sulla privacy</a></p>
+</footer>
 </body>
 </html>
