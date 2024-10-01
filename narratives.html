@@ -3,111 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exhibition Narratives</title>
+    
     <link rel="stylesheet" href="assets/css/my_styles.css">
     <script src="assets/java/java.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <title>Forbidden Curiosities - Narratives</title>
 
-        body {
-            background-color: black;
-            font-family: Arial, sans-serif;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        /* Header and Navigation */
-        header {
-            background-color: black;
-            padding: 20px 0;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap; /* Make it responsive */
-            gap: 20px;
-        }
-
-        nav ul li a {
-            color: #a12bbf;
-            text-decoration: none;
-            font-size: 18px;
-            text-transform: uppercase;
-        }
-
-        .icon-container {
-            margin: 50px 0;
-        }
-
-        .book-icon {
-            width: 100px;
-            height: auto;
-        }
-
-        h2 {
-            font-size: 20px;
-            margin: 20px 0;
-            color: #f2f2f2;
-        }
-
-        .buttons-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
-        /* Button styles */
-        button {
-            background-color: #a12bbf;
-            color: white;
-            border: none;
-            padding: 10px 30px;
-            font-size: 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            width: 100%; /* Responsive button width */
-            max-width: 300px; /* Limit the button width */
-        }
-
-        /* Media Queries for Responsiveness */
-        @media (min-width: 600px) {
-            /* Larger screens: Align buttons side by side in two columns */
-            .buttons-container {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 30px;
-            }
-
-            button {
-                width: 40%;
-                max-width: 200px; /* Adjust button width on larger screens */
-            }
-        }
-
-        @media (min-width: 1024px) {
-            /* Further layout adjustments for bigger screens */
-            nav ul li a {
-                font-size: 20px;
-            }
-
-            h2 {
-                font-size: 24px;
-            }
-
-            .book-icon {
-                width: 150px;
-            }
-        }
-    </style>
 </head>
 <body>
 <!-- Navbar -->
@@ -150,60 +50,79 @@
 <!------- Hamburger Menu End --------->
 <!------ Navbar End ---------->
 
-    
-    <div>
-        <div class="icon-container">
-            <img src="book-icon.png" alt="Book Icon" class="book-icon">
+    <div class = "content">
+
+        <!-- Modal -->
+        <div id="sumModal">
+            <button id="closebtn" onclick="closeModalBtn()">X</button>
+            <div id="modalContent">
+                <h2 id="sumTitle"></h2>
+                <p>bla bla bla</p>
+            </div>
+            <button id="goNar" >Explore this Narrative</button>
         </div>
-        
-        <h2>Walk through different themes to understand the value of each piece of the exhibition</h2>
-        
-        <div class="sub-tabs">
-            <button class="sub-tab-button">ETHICS OF WAR</button>
-            <button class="sub-tab-button">SCIENTIFIC REVOLUTION</button>
-            <button class="sub-tab-button">WOMEN'S HISTORY</button>
+        <!-- FineModal --> 
+        <div>
+            <div class="icon-container">
+                <img src="C:\Users\pietr\Desktop\5078755.png" alt="Book Icon" class="icon">
+            </div>
+
+            <h2 class = "nar-h2">Walk through different themes to understand the value of each piece of the exhibition</h2>
+
+            <div class="btnCont" id = "themes">
+                <button class="narBtn" id = "ethics-btn" onclick="openModalBtn(this)">ETHICS OF WAR</button>
+                <button class="narBtn" id = "scientific-btn" onclick="openModalBtn(this)">SCIENTIFIC REVOLUTION</button>
+                <button class="narBtn" id = "women-btn" onclick="openModalBtn(this)">WOMEN'S HISTORY</button>
+            </div>
+            <div class="btnCont">
+                <button class="narBtn" id = "religious-btn" onclick="openModalBtn(this)">RELIGIOUS DISSENT</button>
+                <button class="narBtn" id = "provocative-btn" onclick="openModalBtn(this)">PROVOCATIVE ART</button>
+                <button class="narBtn" id = "digital-btn" onclick="openModalBtn(this)">DIGITAL PRIVACY</button>
+            </div>
+              
         </div>
-        <div class="sub-tabs">
-            <button class="sub-tab-button">RELIGIOUS DISSENT</button>
-            <button class="sub-tab-button">PROVOCATIVE ART</button>
-            <button class="sub-tab-button">DIGITAL PRIVACY</button>
-        </div>  
-    </div>
-    <div>
-        <div class="icon-container">
-            <img src="tipology-icon.png" alt="Tipology Icon" class="book-icon">
-        </div>
-        
-        <h2 class = "nar-h2">DISCOVER WHAT TIPOLOGY OF CURIOSITY HAS MARKED HISTORY</h2>
-        
-        <div class="sub-tabs">
-            <button class="sub-tab-button">TEXT</button>
-            <button class="sub-tab-button">TOOLS</button>
-            <button class="sub-tab-button">WEAPONS</button>
-        </div>
-        <div class="sub-tabs">
-            <button class="sub-tab-button">GARMENTS</button>
-            <button class="sub-tab-button">EVENTS</button>
-            <button class="sub-tab-button">WORKS OF ART</button>
-        </div>  
-    </div>
-    <div>
-        <div class="icon-container">
-            <img src="periods-icon.png" alt="Periods Icon" class="book-icon">
-        </div>
-        
-        <h2>DISCOVER WHAT THE PERIODS THAT PRODUCED THE CURIOSITIES</h2>
-        
-        <div class="sub-tabs">
-            <button class="sub-tab-button">XV-XVII</button>
-            <button class="sub-tab-button">XVII-XIX</button>
-            <button class="sub-tab-button">FIRST HALF XX</button>
-        </div>
-        <div class="sub-tabs">
-            <button class="sub-tab-button">SECOND HALF XX</button>
-            <button class="sub-tab-button">XXI</button>
+        <div>
+            <div class="icon-container">
+                <img src="tipology-icon.png" alt="Tipology Icon" class="icon">
+            </div>
             
-        </div>  
+            <h2 class = "nar-h2">DISCOVER WHAT TIPOLOGY OF CURIOSITY HAS MARKED HISTORY</h2>
+            
+            <div class="btnCont">
+                <button class="narBtn" id = "texts-btn" onclick="openModalBtn(this)">TEXTS</button>
+                <button class="narBtn" id = "tools-btn" onclick="openModalBtn(this)">TOOLS</button>
+                <button class="narBtn" id = "weapons-btn" onclick="openModalBtn(this)">WEAPONS</button>
+            </div>
+            <div class="btnCont">
+                <button class="narBtn" id = "garments-btn" onclick="openModalBtn(this)">GARMENTS</button>
+                <button class="narBtn" id = "events-btn" onclick="openModalBtn(this)">EVENTS</button>
+                <button class="narBtn" id = "works-btn" onclick="openModalBtn(this)">WORKS OF ART</button>
+            </div>  
+        </div>
+        <div>
+            <div class="icon-container">
+                <img src="periods-icon.png" alt="Periods Icon" class="icon">
+            </div>
+            
+            <h2 class = "nar-h2">DISCOVER WHAT THE PERIODS THAT PRODUCED THE CURIOSITIES</h2>
+            
+            <div class="btnCont">
+                <button class="narBtn" id = "XV-XVII-btn" onclick="openModalBtn(this)">XV-XVII</button>
+                <button class="narBtn" id = "XVII-XIX-btn" onclick="openModalBtn(this)">XVII-XIX</button>
+                <button class="narBtn" id = "FIRST-btn" onclick="openModalBtn(this)">FIRST HALF XX</button>
+            </div>
+            <div class="btnCont">
+                <button class="narBtn" id = "SECOND-btn" onclick="openModalBtn(this)">SECOND HALF XX</button>
+                <button class="narBtn" id = "XXI-btn" onclick="openModalBtn(this)"> XXI</button>
+                
+            </div>  
+        </div>
     </div>
+    <!-- Footer -->
+    <footer>
+        <!-- Copyright -->
+        <p>© 2024 Copyright: <a class="" href="#">Forbidden Curiosities</a></p>
+    </footer>
+    <!------ Footer End ------->
 </body>
 </html>
