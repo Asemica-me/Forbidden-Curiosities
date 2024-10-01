@@ -224,28 +224,41 @@ a:visited {
 /*================================================*/
 
 @media screen and (max-width: 830px) {
+  
   div.navbar-body {visibility: hidden;}
+  
   div#timeline span {
-    left: 5%;
-  }
-  div.item div.item-content {
-    float: right;
-    width: 70%;
-    background-color: aqua;
+    left: 7vw;
   }
 
-  div.item:nth-of-type(even) .item-content {
-    right: 0vw;
-    background-color: yellow;
+  div.item div.item-content {
+    float: right;
+    width: 60%;
+    right: 5vw;
+  }
+
+  div.item div.item-content img {
+    height: inherit;
+    width: 70%;
+    
   }
 
   div.item:nth-of-type(odd) .item-content {
-    right: 0vw;
+    float: right;
   }
+
 }
 
 @media screen and (min-width: 831px) {
   div.menu {visibility: hidden;}
+
+  div.item:nth-of-type(odd) .item-content {
+    left: 5vw;
+  }
+
+  div.item:nth-of-type(even) .item-content {
+    right: 5vw;
+  }
 }
 
 #navbar {
@@ -468,11 +481,11 @@ a:visited {
 }
 
 #img-left {
-  border: solid orange;
+  background-color: grey;
 }
 
 #img-right {
-  border: solid orange;
+  background-color: grey;
 }
 
 #center {
@@ -550,6 +563,7 @@ a:visited {
 
 #timeline {
   position: relative;
+  width: 100%;
 }
 
 #timeline-start {
@@ -558,7 +572,6 @@ a:visited {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: solid yellow;
 }
 
 #timeline-start h2 {
@@ -577,6 +590,7 @@ a:visited {
 
 #timeline #items {
   position: relative;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr;
 }
@@ -596,12 +610,12 @@ a:visited {
   width: 100%;
   height: 33vh;
   margin-top: 5vh;
-  border:solid red;
+  /*border:solid red;*/
 }
 
 .item .item-content {
   position: relative;
-  width: 30%;
+  width: 33%;
   height: 28.4vh;
   padding: 1em 2em;
   border-radius: 10px;
@@ -610,13 +624,11 @@ a:visited {
 
 .item:nth-of-type(even) .item-content {
   float: right;
-  right: 5vw;
 }
 
-.item:nth-of-type(odd) .item-content {
-  left: 5vw;
+#timeline .item:last-child {
+  margin-bottom: 5vh;
 }
-
 
 
 /*================================================*/
