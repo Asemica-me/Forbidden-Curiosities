@@ -1,19 +1,210 @@
 @charset "UTF-8";
 
-:root {
-	--fv-nav-height: 4em;
-	--fv-main-height: calc(100vh - var(--fv-nav-height));
-			
-	--fv-card-header-height: 3.5em;
-	--fv-card-footer-height: 3.5em;
-
-	--fv-card-body-height: calc( 
-		var(--fv-main-height) - 
-		var(--fv-card-header-height) - 
-		var(--fv-card-footer-height) -
-		1em
-	) ;
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-color: #000;
+    color: white;
 }
+
+header {
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+#logo {
+    padding: 2%;
+}
+
+/*================================================*/
+/* =============== Inizio Navbar =================*/      
+/*================================================*/
+
+nav {
+    margin-left: auto;
+    display: flex;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.navbar h1 {
+    font-size: 24px;
+    color: white;
+    margin: 0; /* Riduce margini per occupare meno spazio */
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    margin-left: auto; /* Sposta i link a destra */
+}
+
+.navbar ul li {
+    margin: 0 10px; /* Spazi più ristretti tra gli elementi */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px; /* Aggiunta di padding per rendere i link più cliccabili */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #e600e6; /* Colore di sfondo al passaggio del mouse */
+}
+
+.toggle-btn {
+    background: none; /* Nessun background */
+    border: none; /* Rimuove il bordo */
+    cursor: pointer; /* Cambia il cursore a pointer */
+}
+
+.menu {
+    display: flex; /* Mostra il menu in orizzontale */
+}
+
+.toggle-btn span {
+    display: block; /* Rende ogni linea visibile */
+    width: 25px; /* Larghezza delle barre */
+    height: 3px; /* Altezza delle barre */
+    background-color: white; /* Colore delle barre */
+    margin: 5px 0; /* Spazi tra le barre */
+    transition: all 0.3s ease; /* Transizione per animazione */
+}
+
+#menu-links {
+    display: none; /* Nasconde il menu inizialmente */
+    flex-direction: column; /* Dispone i link in colonna */
+    position: absolute; /* Posizione assoluta rispetto all'header */
+    top: 50px; /* Sposta il menu sotto l'header */
+    left: 0; /* Allinea a sinistra */
+    background-color: #333; /* Colore di sfondo del menu */
+    width: 100%; /* Larghezza completa */
+    padding: 10px 0; /* Padding verticale */
+}
+
+#menu-links a {
+    color: white; /* Colore del testo dei link */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    padding: 10px 20px; /* Padding per rendere i link più cliccabili */
+    border-radius: 5px; /* Arrotonda gli angoli dei link */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transizioni per colore e trasformazione */
+    display: block; /* Rende i link a blocchi per un'area cliccabile più ampia */
+}
+
+#menu-links a:hover {
+    background-color: #e600e6; /* Colore di sfondo al passaggio del mouse */
+    transform: scale(1.1); /* Ingrandisce il link al passaggio del mouse */
+}
+
+/* Mostra il menu quando è attivo */
+#menu-links.active {
+    display: flex; /* Mostra il menu */
+}
+
+
+@media screen and (max-width: 830px) {
+  div.navbar-body {visibility: hidden;}
+  }
+
+@media screen and (min-width: 831px) {
+  div.menu {visibility: hidden;}
+}
+
+#menu-button {
+  position: relative;
+  top: 40px;
+  right: 10px;
+  height: 60px;
+}
+
+.toggle-btn {
+  position: relative;
+  left: 67%;
+  width: 4vw;
+  height: 4vw;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle-btn span {
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  transition: 0.3s;
+  background-color: #f10ff1;
+}
+
+.toggle-btn span:first-child {
+  transform: translateY(-8px);
+}
+
+.toggle-btn.x span:nth-child(2) {
+  opacity: 0;
+}
+
+.toggle-btn span:last-child {
+  transform: translateY(8px);
+}
+
+.toggle-btn.x span:first-child {
+  transform: rotate(45deg) translateY(0);
+}
+
+.toggle-btn.x span:last-child {
+  transform: rotate(-45deg) translateY(0);
+}
+
+#menu-links {
+  position: absolute;
+  height: 200px;
+  width: 100%;
+  display: none;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  z-index: 2;
+}
+
+#menu-links a {
+  background-color: #323232;
+  text-decoration: none;
+  font-size: calc(15px + 0.390625vw);
+  text-align: center;
+  padding: 10px 0;
+}
+
+#menu-links a:last-child {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+#menu-links a:nth-child(odd) {
+  background-color: #444;
+}
+
+#menu-links a:hover {
+  color: white;
+  background-color: #f10ff1;
+}
+
+/*================================================*/
+/* =============== Fine Navbar =================*/      
+/*================================================*/
 
 @media (max-width:600px) {
 	.card {
@@ -43,13 +234,6 @@
 ##								##
 ##################################*/
 
-
-body {
-    background-color: #000;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
 
 /* General Styles */
 .card-header {
