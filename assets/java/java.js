@@ -173,3 +173,48 @@ function toggleCurtain() {
 	}
 	toggleButton.classList.toggle('x');
   }
+
+/* 
+START NARRATIVES PAGE
+*/
+
+/*modal */
+
+function openModalBtn(btn) {
+	document.getElementById("sumModal").style.display = 'block';
+   
+        var buttonText = btn.innerText;
+        var title = document.getElementById('sumTitle');
+        title.innerText = buttonText;
+		
+    }
+
+
+function closeModalBtn(){
+	document.getElementById("sumModal").style.display = 'none';
+}
+
+let NarSum = {
+	ethics: "John Doe",
+	scientific: "Scientific progress is marked by revolutionary discoveries that change our view of the world. Galileo, with his telescopic observations in 1609, challenged the geocentric conception, promoting the acceptance of the heliocentric model. His empirical and experimental approach marked a turning point in the scientific method, making direct observation central to the investigative process. Charles Darwin, with 'On the Origin of Species' (1859), proposed natural selection as the mechanism of evolution. His theory not only transformed biology but also deeply influenced modern thought, unifying knowledge from various disciplines to explain the diversity of life. Darwin's work represents a milestone in the understanding of biological evolution. Marie Curie, a pioneer in research on radioactivity, discovered elements such as polonium and radium, opening new avenues in nuclear physics and medicine. Her work had a lasting impact, demonstrating the potential of the scientific method to revolutionize science and its applications, such as radiotherapy for cancer treatment. The Apollo 11 Moon landing (1969) showcased humanity's engineering capabilities, inspiring generations of scientists. Finally, the cloning of Dolly (1996) challenged established theories, opening new perspectives in biology and regenerative medicine, marking a breakthrough in the understanding of cloning and the potential of genetic science." ,
+	women: "John Doe",
+	religious: "John Doe",
+	provocative: "John Doe",
+	digital: "The AI-generated image of Pope Francis in a puffer jacket highlights the dangers of digital manipulation in the modern era. These deepfakes undermine trust in the authenticity of images, raising serious concerns about privacy and the integrity of identities. The ease with which false images can be created and spread calls for reflection on how to protect people's reputations and identities in today's digital context. The Enigma encryption system, used by the Germans during World War II, represents a turning point in the history of cryptography and information security. Its decryption by the Allies underscored the importance of protecting sensitive communications, a crucial aspect in the protection of privacy in the digital realm today, where information security is paramount. Edward Snowden's revelations brought to light the NSA's mass surveillance practices, sparking a global debate about the tension between national security and individual privacy. These revelations highlighted the need for transparency and democratic oversight of surveillance programs, raising critical questions about how to balance security with the right to privacy in an increasingly interconnected world. In summary, these examples show the complexity and multidimensionality of the concept of privacy. Digital manipulation, communication security, and mass surveillance are interconnected issues that require a careful and balanced approach. Privacy is not just a technical issue, but an essential element of democracy and individual freedom, which must be protected against modern threats.",
+	texts: "John Doe",
+	tools: "John Doe",
+	weapons: "John Doe",
+	garments: "John Doe",
+	events: "John Doe",
+	works: "John Doe",
+	XV: "John Doe",
+	XVII: "John Doe",
+	FIRST: "John Doe",
+	SECOND: "John Doe",
+	XXI: "John Doe",
+
+  };
+
+/* 
+END NARRATIVES PAGE
+*/

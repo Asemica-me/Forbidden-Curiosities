@@ -168,44 +168,6 @@ a:visited {
   grid-template-rows: 100vh 100vh auto 25vh;
 }
 
-/*================================================*/
-/* =============== Buttoni =======================*/      
-/*================================================*/
-      
-.tabs, .sub-tabs {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.tab-button, .sub-tab-button, .nav-button, .see-more {
-  background-color: #e600e6;
-  height: 50px ;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  margin: 5px;
-  cursor: pointer;
-  border-radius: 10px;
-  transition: background-color 0.3s;
-}
-
-.tab-button.active, .sub-tab-button.active {
-  background-color: black;
-  border: 1px solid #e600e6;
-}
-
-.nav-button {
-  width: 100px;
-}
-
-.nav-button:hover, .see-more:hover {
-  background-color: #ff66ff;
-}
-
-/*================================================*/
-/* =============== Fine Buttoni =================*/      
-/*================================================*/
 
 
 /*================================================*/
@@ -420,69 +382,7 @@ a:visited {
 /* =============== Fine Navbar =================*/      
 /*================================================*/
 
-/*================================================*/
-/* =============== Buttoni =================*/      
-/*================================================*/
-      button {
-        background-color: #a12bbf;
-        color: white;
-        border: none;
-        padding: 10px 30px;
-        font-size: 16px;
-        border-radius: 8px;
-        cursor: pointer;
-        width: 100%; /* Responsive button width */
-        max-width: 300px; /* Limit the button width */
-      }
-      .tabs, .sub-tabs {
-          display: flex;
-          justify-content: center;
-          margin-bottom: 20px;
-      }
 
-      .tab-button, .sub-tab-button, .nav-button, .see-more {
-          background-color: #e600e6;
-          height: 50px ;
-          border: none;
-          color: white;
-          padding: 10px 20px;
-          margin: 5px;
-          cursor: pointer;
-          border-radius: 10px;
-          transition: background-color 0.3s;
-      }
-
-      .tab-button.active, .sub-tab-button.active {
-          background-color: black;
-          border: 1px solid #e600e6;
-      }
-
-      .nav-button {
-          width: 100px;
-      }
-
-      .nav-button:hover, .see-more:hover {
-          background-color: #ff66ff;
-      }
-
-      @media (min-width: 600px) {
-        .buttons-container {
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        button {
-            width: 40%;
-            max-width: 200px; 
-        }
-    }
-
-
-/*================================================*/
-/* =============== Fine Buttoni =================*/      
-/*================================================*/
 
 
 #welcome {
@@ -646,16 +546,182 @@ a:visited {
 /* ============== Fine timeline ================*/
 /*================================================*/
 
-/* =============== Inizio narrtaives =================*/
-@media (min-width: 1024px) {
-  .nar-h2 {
-      font-size: 24px;
-  }
-  .book-icon {
-      width: 150px;
+/*================================================*/
+/* ============= inizio narratives ===============*/
+/*================================================*/
+.content {
+  text-align: center;
+}
+
+.icon{
+  align-self: center;
+  margin: 50px 0;
+  width: 100px;
+  height: auto;
+}
+
+.nar-h2 {
+  font-size: 20px;
+  margin: 20px 0;
+  color: #f2f2f2;
+}
+
+/*modal*/
+
+#sumModal {
+  display: none; 
+  position: fixed; 
+  width: 60%; 
+  height: 80%; 
+  background-color: #f10ff1; 
+  border-radius: 10px;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  z-index: 1000;
+}
+
+#closebtn {
+  background: none;
+  border: none;
+  color: #fb0505; 
+  font-size: 20px; 
+  font-weight: bold;
+  cursor: pointer; 
+  position: absolute; 
+  top: 10px;
+  right: 15px;
+}
+
+#modalContent {
+  margin-top: 40px; /* Adds space below the close button */
+}
+
+#sumTitle {
+  font-size: 24px; /* Larger title */
+  margin-bottom: 10px;
+  color: #333; /* Dark text for the title */
+}
+
+#modalContent p {
+  font-size: 16px;
+  color: #555; /* Slightly lighter text for the content */
+  line-height: 1.5; /* Improve readability */
+}
+
+#goNar {
+  height: 40px;
+  width: 40%;
+  position: absolute;
+  bottom: 10px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  background-color: #6c6c6c; 
+  color: rgb(35, 179, 219); 
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  
+  transition: background-color 0.3s ease; 
+}
+
+#goNar:hover {
+  background-color: #ffffff; /* Darker blue on hover */
+}
+
+@media (max-width: 1200px) {
+  #sumModal {
+    width: 60%; 
   }
 }
-/* =============== fine narrtaives =================*/
+
+@media (max-width: 1000px) {
+  #sumModal {
+    width: 70%; 
+  }
+}
+
+@media (max-width: 800px) {
+  #sumModal {
+    width: 80%; 
+  }
+}
+
+@media (max-width: 600px) {
+  #sumModal {
+    width: 90%;
+  }
+  #goNar {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 300px) {
+  #sumModal {
+    width: 90%;
+  }
+  
+  #goNar {
+    font-size: 14px;
+  }
+}
+ 
+
+
+
+
+/* ============ Buttoni Pietro====================*/      
+
+.btnCont{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    height: 50px ;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    
+}
+
+.narBtn {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-color:  #f10ff1;
+  color: white;
+  justify-content: center;
+  height: 50px ;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+  width: 40%; /* Responsive button width */
+  max-width: 250px; /* Limit the button width */
+}
+
+.narBtn:hover {
+  background-color: black;
+  border: 1px solid #f10ff1;
+}
+
+.narBtn:active {
+  background-color: black;
+  border: 1px solid #f10ff1;
+}
+
+
+/* ============ Fine Buttoni Pietro ==============*/      
+
+
+/*================================================*/
+/* =============== Fine narratives ===============*/
+/*================================================*/
+
+
 /* =============== Inizio Footer =================*/   
 
 footer {
