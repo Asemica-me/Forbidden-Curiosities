@@ -177,17 +177,6 @@ function prepareNarratives() {
 	showInfo(index)
 }
 
-function byId(elementId) {
-    return document.getElementById(elementId);
-}
-
-function inner(elementId, content, clear = true) {
-    const element = document.getElementById(elementId);
-    if (clear) {
-        element.innerHTML = ''; // Pulisce il contenuto esistente
-    }
-    element.innerHTML += content; // Aggiunge il nuovo contenuto
-}
 
 function showInfo(index) {
 	var item = currentSelection[index]
@@ -280,6 +269,29 @@ function prepareNavigationButtons(index) {
         byId("buttonNext").onclick = null;
         byId("buttonNext").innerHTML = "--";
     }
+}
+
+function changeNarrative(narrative,value) {
+		currentNarrative = narrative
+		currentValue = value
+		prepareNarratives()
+}
+
+function byId(id) {
+	return document.getElementById(id)
+}
+
+function show(id) {
+	document.getElementById(id).classList.remove('hidden')
+}
+
+function hide(id) {
+	document.getElementById(id).classList.add('hidden')
+}
+
+function inner(id,content, emptyFirst=true) {
+	if(emptyFirst) document.getElementById(id).innerHTML = "" ; 
+	document.getElementById(id).innerHTML += content ; 
 }
 
 
