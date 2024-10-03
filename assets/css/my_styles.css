@@ -153,6 +153,7 @@
 
 body {
   margin: 0;
+  width: 100vw;
   background-color: black;
 }
 
@@ -165,6 +166,7 @@ a:visited {
   position: relative;
   margin: 0;
   height: 100%;
+  width: inherit;
   grid-template-rows: 100vh 100vh auto 25vh;
 }
 
@@ -176,7 +178,8 @@ a:visited {
 
 #first-page {
   position: relative;
-  height: 100%;
+  height: inherit;
+  width: inherit;
   display: flex;
   flex-flow: column;
 }
@@ -188,7 +191,33 @@ a:visited {
 @media screen and (max-width: 830px) {
   
   div.navbar-body {visibility: hidden;}
+
+  div#img-right {
+    display: none;
+  }
+
+  div#img-left {
+    display: none;
+  }
+
+  div#welcome {
+    display: block;
+    width: 100%;
+  }
+
+  div#center {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  div#center h1 {
+    font-size: calc(10vw * 0.9);
+  }
   
+  div#about {
+    width: 100%;
+  }
+
   div#timeline span {
     left: 7vw;
   }
@@ -213,6 +242,16 @@ a:visited {
 
 @media screen and (min-width: 831px) {
   div.menu {visibility: hidden;}
+
+  div#banner {
+    display: none;
+  }
+  
+  div#about {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 
   div.item:nth-of-type(odd) .item-content {
     left: 5vw;
@@ -249,7 +288,7 @@ a:visited {
   height: fit-content;
   display: grid;
   grid-template-rows: 3fr 1fr;
-  align-self: flex-end;
+  align-self: center;
 }
 
 .underline {
@@ -299,7 +338,7 @@ a:visited {
 
 .toggle-btn {
   position: relative;
-  left: 67%;
+  left: calc(55% * 0.9);
   width: 4vw;
   height: 4vw;
   background-color: transparent;
@@ -348,6 +387,7 @@ a:visited {
 }
 
 #menu-links a {
+  color: #f10ff1;
   background-color: #323232;
   text-decoration: none;
   font-size: calc(15px + 0.390625vw);
@@ -386,7 +426,7 @@ a:visited {
 
 
 #welcome {
-  flex: 1 1 auto;
+  flex: 1 auto;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
 }
@@ -401,12 +441,15 @@ a:visited {
 
 #center {
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr 1fr;
+}
+
+#center #banner {
+  background-color: grey;
 }
 
 #center h1 {
-  margin-top: 20vh;
-  font-size: calc(60px + 0.390625vw);
+  font-size: calc(5vw * 0.9);
   color: #f10ff1;
   text-align: center;
 }
@@ -440,9 +483,8 @@ a:visited {
 
 #about {
   position: relative;
-  display: grid;
   height: 100%;
-  grid-template-columns: 1fr 1fr 1fr;
+  align-content: center;
 }
 
 #about div:nth-child(2) {
@@ -459,9 +501,12 @@ a:visited {
 }
 
 #about p {
+  height: fit-content;
+  padding-left: 10vh;
+  padding-right: 10vh;
   color:#f10ff1;
   font-size: calc(15px + 0.390625vw);
-  text-align: center;
+  text-align: justify;
 }
 
 /*================================================*/
