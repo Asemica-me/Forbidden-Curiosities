@@ -648,10 +648,15 @@ a:visited {
   color: #333; /* Dark text for the title */
 }
 
-#modalContent p {
+#sumCont {
+  margin-top: 5%;
+  padding-left: 3%;
   font-size: 16px;
   color: #555; /* Slightly lighter text for the content */
   line-height: 1.5; /* Improve readability */
+  text-align: left;
+  overflow-y: auto;
+
 }
 
 #goNar {
@@ -680,18 +685,24 @@ a:visited {
   #sumModal {
     width: 60%; 
   }
+
 }
 
 @media (max-width: 1000px) {
   #sumModal {
     width: 70%; 
   }
+
+
 }
 
 @media (max-width: 800px) {
   #sumModal {
     width: 80%; 
+    
   }
+
+  
 }
 
 @media (max-width: 600px) {
@@ -701,6 +712,12 @@ a:visited {
   #goNar {
     font-size: 14px;
   }
+
+  #sumCont {
+    font-size: 14px;
+  }
+
+  
 }
 
 @media (max-width: 300px) {
@@ -711,6 +728,12 @@ a:visited {
   #goNar {
     font-size: 14px;
   }
+
+  #sumCont {
+    font-size: 12px;
+  }
+
+
 }
  
 
