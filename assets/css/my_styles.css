@@ -222,22 +222,13 @@ a:visited {
     left: 7vw;
   }
 
-  div.item div.item-content {
-    float: right;
-    width: 60%;
-    right: 5vw;
+  div#timeline div.item div.empty-box {
+    display:none;
   }
 
-  div.item div.item-content img {
-    height: inherit;
-    width: 70%;
-    
+  div#timeline div.item div.item-wrapper {
+    width: 180%;  
   }
-
-  div.item:nth-of-type(odd) .item-content {
-    float: right;
-  }
-
 }
 
 @media screen and (min-width: 831px) {
@@ -253,12 +244,30 @@ a:visited {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  div.item:nth-of-type(odd) .item-content {
-    left: 5vw;
+  div#timeline div#items div.item div.item-wrapper div.data {
+    text-align: center;
   }
 
-  div.item:nth-of-type(even) .item-content {
-    right: 5vw;
+  div#timeline div#items div.item:nth-child(even) div.item-wrapper{
+    margin-right: 5vw;
+  }
+
+  div#timeline div#items div.item:nth-child(odd) div.item-wrapper{
+    grid-template-columns: 5fr 1fr;
+    grid-column: 1;
+    margin-left: 5vw;
+  }
+
+  div#timeline div#items div.item:nth-child(odd) div.empty-box{
+    grid-column: 2;
+  }
+
+  div#timeline div#items div.item:nth-child(odd) div.item-wrapper div.data{
+    grid-column: 2;
+  }
+
+  div#timeline div#items div.item:nth-child(odd) div.item-wrapper div.item-content{
+    grid-row: 1;
   }
 }
 
@@ -563,23 +572,34 @@ a:visited {
 
 #timeline .item {
   position: relative;
-  width: 100%;
-  height: 33vh;
   margin-top: 5vh;
-  /*border:solid red;*/
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-.item .item-content {
+#timeline .item-wrapper {
   position: relative;
-  width: 33%;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  height: 33vh;
+}
+
+#timeline .item-wrapper .data {
+  position: relative;
+  color:#ffffff;
+  padding-top: 3vh;
+  margin: 6px;
+  text-align: right;
+  font-size: calc(15px + 0.390625vw);
+}
+
+.item-wrapper .item-content {
+  position: relative;
   height: 28.4vh;
   padding: 1em 2em;
   border-radius: 10px;
   background-color: #444;
-}
-
-.item:nth-of-type(even) .item-content {
-  float: right;
 }
 
 #timeline .item:last-child {
@@ -760,14 +780,14 @@ a:visited {
   background-color:  #f10ff1;
   color: white;
   justify-content: center;
-  height: 50px ;
+  height: 5vh ;
   border: none;
   padding: 10px 20px;
   margin: 5px;
   cursor: pointer;
   border-radius: 10px;
   transition: background-color 0.3s;
-  width: 40%; /* Responsive button width */
+  width: 40%;  /*Responsive button width */
   max-width: 250px; /* Limit the button width */
 }
 
