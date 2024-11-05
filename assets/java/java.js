@@ -272,3 +272,7 @@ let NarSum = {
 /* 
 END NARRATIVES PAGE
 */
+
+/* index.html functions START */
+
+/* index.thml functions END */
