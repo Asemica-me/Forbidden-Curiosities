@@ -275,4 +275,17 @@ END NARRATIVES PAGE
 
 /* index.html functions START */
 
+window.addEventListener('scroll', function() {
+	upButton = document.getElementById("upButton");
+	if (window.scrollY >= document.documentElement.clientHeight) {
+	  upButton.style.visibility = "visible";
+	  upButton.addEventListener("click", () => window.scrollTo({
+		top: 0,
+		behavior: "smooth",
+	  }));
+	} else if (window.scrollY < document.documentElement.clientHeight) {
+	  upButton.style.visibility = "hidden";
+	}
+  });
+
 /* index.thml functions END */

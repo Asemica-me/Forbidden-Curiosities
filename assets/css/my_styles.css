@@ -177,6 +177,14 @@ a:visited {
 /* =============== Inizio first-page =============*/      
 /*================================================*/
 
+#upButton {
+  position: fixed;
+  bottom: 3vh;
+  right: 3vw;
+  z-index: 1;
+  visibility: hidden;
+}
+
 #first-page {
   position: relative;
   height: inherit;
@@ -190,6 +198,11 @@ a:visited {
 /*================================================*/
 
 @media screen and (max-width: 830px) {
+
+  input {
+    height: 70px;
+    width: 70px;
+  }
   
   div.navbar-body {visibility: hidden;}
 
@@ -251,6 +264,12 @@ a:visited {
 }
 
 @media screen and (min-width: 831px) {
+
+  input {
+    height: 90px;
+    width: 90px;
+  }
+
   div.menu {visibility: hidden;}
 
   div#banner {
