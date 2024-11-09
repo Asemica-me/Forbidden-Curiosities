@@ -163,16 +163,6 @@ function inner(id,content, emptyFirst=true) {
 	document.getElementById(id).innerHTML += content ; 
 }
 
-function toggleCurtain() {
-	var menu_links = document.getElementById('menu-links');
-	var toggleButton = document.getElementById('toggleButton');
-	if (menu_links.style.display === "grid") {
-		menu_links.style.display = "none";
-	} else {
-		menu_links.style.display = "grid";
-	}
-	toggleButton.classList.toggle('x');
-  }
 
 /* 
 START NARRATIVES PAGE
@@ -275,6 +265,17 @@ END NARRATIVES PAGE
 
 /* index.html functions START */
 
+function toggleCurtain() {
+	var menu_links = document.getElementById('menu-links');
+	var toggleButton = document.getElementById('toggleButton');
+	if (menu_links.style.display === "grid") {
+		menu_links.style.display = "none";
+	} else {
+		menu_links.style.display = "grid";
+	}
+	toggleButton.classList.toggle('x');
+  }
+
 window.addEventListener('scroll', function() {
 	upButton = document.getElementById("upButton");
 	if (window.scrollY >= document.documentElement.clientHeight) {
@@ -287,5 +288,40 @@ window.addEventListener('scroll', function() {
 	  upButton.style.visibility = "hidden";
 	}
   });
+
+document.addEventListener("DOMContentLoaded", function(e) {
+	
+	const infoButtons = document.getElementsByClassName("infoButton");
+
+	for (let i = 0; i < infoButtons.length; i++) {
+		var button = infoButtons[i];
+		button.addEventListener("click", function() {
+			var _ = this.parentElement;
+			var info_closer = _.children[1];
+			var img = _.children[2];
+			var info_bar = _.children[3];
+			this.style.visibility = "hidden";
+			info_closer.style.visibility = "visible";
+			info_bar.style.visibility = "visible";
+			img.style.filter = "blur(3px)";
+		});
+	};
+
+	const infoClosers = document.getElementsByClassName("infoCloser");
+
+	for (let i = 0; i < infoClosers.length; i++) {
+		var closer = infoClosers[i];
+		closer.addEventListener("click", function() {
+			var _ = this.parentElement;
+			var info_button = _.children[0];
+			var img = _.children[2];
+			var info_bar = _.children[3];
+			info_bar.style.visibility = "hidden";
+			info_button.style.visibility = "visible";
+			img.style.filter = "none";
+			this.style.visibility = "hidden";
+		});
+	};
+});
 
 /* index.thml functions END */
