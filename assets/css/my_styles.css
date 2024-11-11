@@ -151,15 +151,22 @@
 
 /*=============== Actually used ==================*/
 
+/* Qui si mettono tutte le variabili */
+:root {
+  --wideScreen: True;
+  --mainColor: #f10ff1;
+}
+
 body {
   margin: 0;
   width: 100%;
   height: 100%;
   background-color: black;
+  overflow-x: hidden;
 }
 
 a:visited {
-  color: #f10ff1;
+  color: var(--mainColor);
 }
 
 #box {
@@ -197,7 +204,17 @@ a:visited {
 /* =============== Inizio Navbar =================*/      
 /*================================================*/
 
+@media screen and (min-height: 890px) {
+  div#timeline #line {
+    top: 2%;
+  }
+}
+
 @media screen and (max-width: 830px) {
+  
+  :root {
+    --wideScreen: False;
+  }
 
   #upButton {
     height: 70px;
@@ -255,7 +272,7 @@ a:visited {
 }
 
 @media screen and (min-width: 831px) {
-
+  
   #upButton {
     height: 90px;
     width: 90px;
@@ -336,7 +353,7 @@ a:visited {
 
 .underline {
   position: inherit;
-  background-color: #f10ff1;
+  background-color: var(--mainColor);
   height: 0.1vw;
   width: 100%;
 }
@@ -347,7 +364,7 @@ a:visited {
 }
 
 .nav-link:visited {
-  color: #f10ff1;
+  color: var(--mainColor);
 }
 
 .nav-link:hover {
@@ -358,7 +375,7 @@ a:visited {
 .nav-link {
   text-decoration: none;
   position: inherit;
-  color: #f10ff1;
+  color: var(--mainColor);
   text-align: center;
   align-self: flex-end;
   transition: color 0.3s ease, transform 0.3s ease; /* Transizione per colore e trasformazione */
@@ -366,7 +383,7 @@ a:visited {
 
 .nav-link a { /* Lucrezia */
   text-decoration: none;
-  color: #f10ff1;
+  color: var(--mainColor);
   font-size: 1em;
   padding-bottom: 10px;
   transition: color 0.3s ease, transform 0.3s ease;
@@ -397,7 +414,7 @@ a:visited {
   width: 40px;
   height: 4px;
   transition: 0.3s;
-  background-color: #f10ff1;
+  background-color: var(--mainColor);
 }
 
 .toggle-btn span:first-child {
@@ -430,7 +447,7 @@ a:visited {
 }
 
 #menu-links a {
-  color: #f10ff1;
+  color: var(--mainColor);
   background-color: #323232;
   text-decoration: none;
   font-size: calc(15px + 0.390625vw);
@@ -449,7 +466,7 @@ a:visited {
 
 #menu-links a:hover {
   color: white;
-  background-color: #f10ff1;
+  background-color: var(--mainColor);
 }
 
 .logo {
@@ -493,7 +510,7 @@ a:visited {
   position: relative;
   margin-top: 15%;
   font-size: calc(50px + 0.390625vw);
-  color: #f10ff1;
+  color: var(--mainColor);
   text-align: center;
 }
 
@@ -529,7 +546,7 @@ a:visited {
   height: 100%;
   display: grid;
   grid-template-columns: 0.5fr 2fr 0.5fr;
-  color: #f10ff1;
+  color: var(--mainColor);
 }
 
 #about #about-content {
@@ -548,6 +565,11 @@ a:visited {
   max-width: 500px;
   text-align: justify;
   font-size: calc(15px + 0.390625vw);
+}
+
+#about #about-content button {
+  width: 10%;
+  min-width: 128px;
 }
 
 /*================================================*/
@@ -575,13 +597,13 @@ a:visited {
 #timeline-start h2 {
   position: relative;
   font-size: calc(45px + 0.390625vw);
-  color: #f10ff1;
+  color: var(--mainColor);
   text-align: center;
 }
 
 #timeline-start p {
   position: relative;
-  color:#f10ff1;
+  color:var(--mainColor);
   font-size: calc(20px + 0.390625vw);
   text-align: center;
 }
@@ -601,7 +623,7 @@ a:visited {
   margin: 0;
   border-radius: 6px;
   height: 97.4%;
-  background-color: #f10ff1;
+  background-color: var(--mainColor);
 }
 
 #timeline .item {
@@ -641,23 +663,42 @@ a:visited {
   height: inherit;
   min-width: 30%;
   border-radius: 10px;
+  opacity: 0;
+  animation: "";
 }
 
+/* Animations for images - START */
+@keyframes right-enter {
+  from {opacity: 0; transform: translateX(100%);}
+  to {opacity: 1; transform: translateX(0);}
+}
+
+@keyframes left-enter {
+  from {opacity: 0; transform: translateX(-100%);}
+  to {opacity: 1; transform: translateX(0);}
+}
+/* Animations for images - END */
+
 .item-wrapper .item-space .image-box .info-bar {
-  height: 90%;
-  width: 90%;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 0 0 10px 10px;
   visibility: hidden;
+}
+
+.item-wrapper .item-space .image-box .info-bar p {
+  padding: 0 10% 0 10%;
+  justify-content: center;
 }
 
 .item-wrapper .item-space .image-box .infoButton {
   position: absolute;
   right: 0;
   top: 0;
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   visibility: visible;
 }
 
@@ -665,8 +706,8 @@ a:visited {
   position: absolute;
   right: 0;
   top: 0;
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -700,16 +741,16 @@ a:visited {
 .item-wrapper .item-space .image-box .info-bar .bottone #timeButton{
   border-radius: 5px;
   border: 0;
-  background-color:#f10ff1;
+  background-color:var(--mainColor);
   color: white;
   width: 50%;
   font-size: calc(10px + 0.390625vw);
 }
 
 .item-wrapper .item-space .image-box .info-bar .bottone #timeButton:hover {
-  color:#f10ff1;
+  color:var(--mainColor);
   background-color: black;
-  border: 2px solid #f10ff1;
+  border: 2px solid var(--mainColor);
 }
 
 #timeline .item-wrapper .data {
@@ -719,9 +760,14 @@ a:visited {
   margin-top: 25%;
   height: fit-content;
   text-align: center;
-  background-color: #f10ff1;
+  background-color: var(--mainColor);
+  animation: "mymove 5s";
 }
 
+@keyframes mymove {
+  from {background-color: red;}
+  to {background-color: orange;}
+}
 
 /*================================================*/
 /* ============== Fine timeline ================*/
@@ -754,7 +800,7 @@ a:visited {
   position: fixed; 
   width: 60%; 
   height: 80%; 
-  background-color: #f10ff1; 
+  background-color: var(--mainColor); 
   border-radius: 10px;
   top: 55%;
   left: 50%;
@@ -893,7 +939,7 @@ a:visited {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  background-color:  #f10ff1;
+  background-color:  var(--mainColor);
   color: white;
   height: 5vh ;
   border: none;
@@ -908,12 +954,12 @@ a:visited {
 
 .narBtn:hover {
   background-color: black;
-  border: 1px solid #f10ff1;
+  border: 1px solid var(--mainColor);
 }
 
 .narBtn:active {
   background-color: black;
-  border: 1px solid #f10ff1;
+  border: 1px solid var(--mainColor);
 }
 
 
