@@ -244,7 +244,6 @@ body{
 
 }
 
-
 .grid-container {
   display: grid;
   grid-template-rows: 25vh 50vh 50vh 50vh 25vh ;
@@ -255,169 +254,174 @@ body{
 
 .grid-item {
   text-align: center;
-  background-color: lightblue;
-  border: 1px solid #ddd;
+  background-color: blalightblue;
   align-items: center;
   justify-content: center;
 }
 
-  
-  .icon{
-    align-self: center;
-    margin: 50px 0;
-    width: 100px;
-    height: auto;
+
+.icon{
+  align-self: center;
+  margin: 50px 0;
+  width: 100px;
+  height: auto;
+}
+
+.nar-h2 {
+  font-size: 20px;
+  margin: 20px 0;
+  color: #f2f2f2;
+}
+
+/*modal*/
+
+#content {
+    transition: opacity 0.5s ease, filter 0.5s ease; /* Smooth transition for opacity and blur */
   }
   
-  .nar-h2 {
-    font-size: 20px;
-    margin: 20px 0;
-    color: #f2f2f2;
+.opaque {
+    opacity: 0.3; /* Adjust opacity */
+    filter: blur(5px); /* Optional: Apply blur effect */
+    pointer-events: none; /* Prevent interaction with the background */
   }
-  
-  /*modal*/
-  
-  #sumModal {
-    display: none; 
-    position: fixed; 
-    width: 60%; 
-    height: 80%; 
-    background-color: #c0c0c0ed; 
-    border-radius: 10px;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%); 
-    z-index: 1000;
-  }
-  
-  #closebtn {
-    background: none;
+
+#sumModal {
+  display: none; 
+  position: fixed; 
+  width: 60%; 
+  height: 80%; 
+  background-color: #c0c0c0ed; 
+  border-radius: 10px;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  z-index: 1000;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#closebtn {
+  background: none;
+  border: none;
+  color: #fb0505; 
+  font-size: 20px; 
+  font-weight: bold;
+  cursor: pointer; 
+  position: absolute; 
+  top: 10px;
+  right: 15px;
+}
+
+
+
+#modalContent {
+  margin-top: 40px; /* Adds space below the close button */
+}
+
+#sumTitle {
+  font-size: 24px; /* Larger title */
+  margin-bottom: 10px;
+  color: #333; /* Dark text for the title */
+}
+
+#sumCont {
+  margin-top: 5%;
+  padding-left: 3%;
+  font-size: 16px;
+  color: #555; /* Slightly lighter text for the content */
+  line-height: 1.5; /* Improve readability */
+  text-align: left;
+  overflow-y: auto;
+
+}
+
+#goNar {
+  height: 40px;
+  width: 40%;
+  position: absolute;
+  bottom: 10px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  background-color: #f10ff1; 
+  color: rgb(0, 0, 0); 
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+
+  transition: background-color 0.3s ease; 
+}
+
+#goNar:hover {
+background-color: #ffffff; /* Darker blue on hover */
+}
+
+@media (max-width: 1200px) {
+    #sumModal {
+        width: 60%; 
+    }
+
+}
+
+@media (max-width: 1000px) {
+    #sumModal {
+        width: 70%; 
+    }
+
+
+}
+
+@media (max-width: 800px) {
+    #sumModal {
+        width: 80%; 
+        
+}
+
+
+    }
+
+@media (max-width: 600px) {
+    #sumModal {
+        width: 90%;
+    }
+    #goNar {
+        font-size: 14px;
+    }
+
+    #sumCont {
+        font-size: 14px;
+    }
+
+
+}
+
+@media (max-width: 300px) {
+    #sumModal {
+        width: 90%;
+    }
+
+    #goNar {
+        font-size: 14px;
+    }
+
+    #sumCont {
+        font-size: 12px;
+    }
+}
+/* ============ Buttoni Pietro====================*/      
+
+.btnCont{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    height: 50px ;
     border: none;
-    color: #fb0505; 
-    font-size: 20px; 
-    font-weight: bold;
-    cursor: pointer; 
-    position: absolute; 
-    top: 10px;
-    right: 15px;
-  }
-  
-  #modalContent {
-    margin-top: 40px; /* Adds space below the close button */
-  }
-  
-  #sumTitle {
-    font-size: 24px; /* Larger title */
-    margin-bottom: 10px;
-    color: #333; /* Dark text for the title */
-  }
-  
-  #sumCont {
-    margin-top: 5%;
-    padding-left: 3%;
-    font-size: 16px;
-    color: #555; /* Slightly lighter text for the content */
-    line-height: 1.5; /* Improve readability */
-    text-align: left;
-    overflow-y: auto;
-  
-  }
-  
-  #goNar {
-    height: 40px;
-    width: 40%;
-    position: absolute;
-    bottom: 10px; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    background-color: #f10ff1; 
-    color: rgb(0, 0, 0); 
     padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+    margin: 5px;
     
-    transition: background-color 0.3s ease; 
-  }
-  
-  #goNar:hover {
-    background-color: #ffffff; /* Darker blue on hover */
-  }
-  
-  @media (max-width: 1200px) {
-    #sumModal {
-      width: 60%; 
-    }
-  
-  }
-  
-  @media (max-width: 1000px) {
-    #sumModal {
-      width: 70%; 
-    }
-  
-  
-  }
-  
-  @media (max-width: 800px) {
-    #sumModal {
-      width: 80%; 
-      
-    }
-  
-    
-  }
-  
-  @media (max-width: 600px) {
-    #sumModal {
-      width: 90%;
-    }
-    #goNar {
-      font-size: 14px;
-    }
-  
-    #sumCont {
-      font-size: 14px;
-    }
-  
-    
-  }
-  
-  @media (max-width: 300px) {
-    #sumModal {
-      width: 90%;
-    }
-    
-    #goNar {
-      font-size: 14px;
-    }
-  
-    #sumCont {
-      font-size: 12px;
-    }
-  
-  
-  }
-   
-  
-  
-  
-  
-  /* ============ Buttoni Pietro====================*/      
-  
-  .btnCont{
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-      height: 50px ;
-      border: none;
-      padding: 10px 20px;
-      margin: 5px;
-      
-  }
-  
-  .narBtn {
+}
+
+.narBtn {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
@@ -433,22 +437,34 @@ body{
     transition: background-color 0.3s;
     width: 40%; /* Responsive button width */
     max-width: 250px; /* Limit the button width */
-  }
-  
-  .narBtn:hover {
+}
+
+.narBtn:hover {
     background-color: black;
     border: 1px solid #f10ff1;
-  }
-  .narBtn:active,
-  .narBtn.active {
+
+}
+
+.narBtn:active,
+.narBtn.active {
     background-color: black;
     border: 1px solid #f10ff1;
+}
+
+
+/* ============ Fine Buttoni Pietro ==============*/      
+
+
+/*================================================*/
+/* =============== Fine narratives ===============*/
+/*================================================*/
+
+
+footer {
+    position: relative;
+    height: 100%;
+    background-color: rgb(77, 77, 77);
+    color: #ffffff;
+    text-align: center;
+    font-size: calc(15px + 0.390625vw);
   }
-  
-  
-  /* ============ Fine Buttoni Pietro ==============*/      
-  
-  
-  /*================================================*/
-  /* =============== Fine narratives ===============*/
-  /*================================================*/

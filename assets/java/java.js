@@ -172,6 +172,7 @@ START NARRATIVES PAGE
 
 function openModalBtn(btn) {
 	document.getElementById("sumModal").style.display = 'block';
+	document.getElementById("content").classList.add('opaque');
    
         var buttonText = btn.innerText;
         var title = document.getElementById('sumTitle');
@@ -236,6 +237,7 @@ function openModalBtn(btn) {
 
 function closeModalBtn(){
 	document.getElementById("sumModal").style.display = 'none';
+	document.getElementById("content").classList.remove('opaque');
 }
 
 let NarSum = {
