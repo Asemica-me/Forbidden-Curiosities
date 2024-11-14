@@ -151,23 +151,31 @@
 
 /*=============== Actually used ==================*/
 
+/* Qui si mettono tutte le variabili */
+:root {
+  --wideScreen: True;
+  --mainColor: #f10ff1;
+}
+
 body {
   margin: 0;
-  width: 100vw;
+  width: 100%;
+  height: 100%;
   background-color: black;
+  overflow-x: hidden;
 }
 
 a:visited {
-  color: #f10ff1;
+  color: var(--mainColor);
 }
 
 #box {
   display: grid;
   position: relative;
   margin: 0;
-  height: 100%;
+  height: inherit;
   width: inherit;
-  grid-template-rows: 100vh 100vh auto 25vh;
+  grid-template-rows: 100vh 100vh auto 20vh 25vh;
 }
 
 
@@ -175,6 +183,14 @@ a:visited {
 /*================================================*/
 /* =============== Inizio first-page =============*/      
 /*================================================*/
+
+#upButton {
+  position: fixed;
+  bottom: 3vh;
+  right: 3vw;
+  z-index: 1;
+  visibility: hidden;
+}
 
 #first-page {
   position: relative;
@@ -188,7 +204,22 @@ a:visited {
 /* =============== Inizio Navbar =================*/      
 /*================================================*/
 
+@media screen and (min-height: 890px) {
+  div#timeline #line {
+    top: 2%;
+  }
+}
+
 @media screen and (max-width: 830px) {
+  
+  :root {
+    --wideScreen: False;
+  }
+
+  #upButton {
+    height: 70px;
+    width: 70px;
+  }
   
   div.navbar-body {visibility: hidden;}
 
@@ -211,56 +242,85 @@ a:visited {
   }
 
   div#center h1 {
-    font-size: calc(10vw * 0.9);
+    font-size: calc(10vw * 0.9vh);
+    margin-top: 10%;
   }
-  
-  div#about {
-    width: 100%;
-  }
-
-  div#timeline span {
+ 
+  div#timeline #line {
     left: 7vw;
+    width: 1.5vw;
   }
 
-  div.item div.item-content {
-    float: right;
-    width: 60%;
-    right: 5vw;
+  div#timeline div.item div.empty-box {
+    display:none;
   }
 
-  div.item div.item-content img {
-    height: inherit;
-    width: 70%;
-    
+  div#timeline div.item{
+    grid-template-columns: 1fr;
   }
 
-  div.item:nth-of-type(odd) .item-content {
-    float: right;
+  div#timeline div#items div.item div.item-wrapper div.data{
+    margin-left: -45%;
+    margin-right: 30%;
+    border-radius: 0 5px 5px 0;
   }
 
+  div#timeline div.item-wrapper {
+    margin-right: 22%;
+    margin-left: 13%;
+  }
 }
 
 @media screen and (min-width: 831px) {
+  
+  #upButton {
+    height: 90px;
+    width: 90px;
+  }
+
   div.menu {visibility: hidden;}
 
   div#banner {
     display: none;
   }
-  
-  div#about {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+
+  div#timeline #line {
+    width: 0.5vw;
   }
 
-  div.item:nth-of-type(odd) .item-content {
-    left: 5vw;
+  div#timeline div#items div.item:nth-child(odd) div.item-wrapper{
+    grid-template-columns: 5fr 1fr;
+    grid-column: 1;
   }
 
-  div.item:nth-of-type(even) .item-content {
-    right: 5vw;
+  div#timeline div#items div.item:nth-child(odd) div.empty-box{
+    grid-column: 2;
+  }
+
+  div#timeline div#items div.item:nth-child(odd) div.item-wrapper div.data{
+    grid-column: 2;
+    margin-left: 30%;
+    border-radius: 5px 0 0 5px;
+  }
+
+  div#timeline div#items div.item:nth-child(even) div.item-wrapper div.data{
+    margin-right: 30%;
+    border-radius: 0 5px 5px 0;
+  }
+
+  div#timeline div#items div.item:nth-child(odd) div.item-wrapper div.item-space{
+    grid-row: 1;
+  }
+
+  div#timeline div#items div.item:nth-child(odd) div.item-wrapper div.item-space div.image-box {
+    right: 0;
+  }
+
+  div#timeline div#items div.item:nth-child(even) div.item-wrapper div.item-space div.image-box {
+    left: 0;
   }
 }
+
 
 #navbar {
   position: relative;
@@ -293,7 +353,7 @@ a:visited {
 
 .underline {
   position: inherit;
-  background-color: #f10ff1;
+  background-color: var(--mainColor);
   height: 0.1vw;
   width: 100%;
 }
@@ -304,7 +364,7 @@ a:visited {
 }
 
 .nav-link:visited {
-  color: #f10ff1;
+  color: var(--mainColor);
 }
 
 .nav-link:hover {
@@ -315,7 +375,7 @@ a:visited {
 .nav-link {
   text-decoration: none;
   position: inherit;
-  color: #f10ff1;
+  color: var(--mainColor);
   text-align: center;
   align-self: flex-end;
   transition: color 0.3s ease, transform 0.3s ease; /* Transizione per colore e trasformazione */
@@ -323,7 +383,7 @@ a:visited {
 
 .nav-link a { /* Lucrezia */
   text-decoration: none;
-  color: #f10ff1;
+  color: var(--mainColor);
   font-size: 1em;
   padding-bottom: 10px;
   transition: color 0.3s ease, transform 0.3s ease;
@@ -354,7 +414,7 @@ a:visited {
   width: 40px;
   height: 4px;
   transition: 0.3s;
-  background-color: #f10ff1;
+  background-color: var(--mainColor);
 }
 
 .toggle-btn span:first-child {
@@ -387,7 +447,7 @@ a:visited {
 }
 
 #menu-links a {
-  color: #f10ff1;
+  color: var(--mainColor);
   background-color: #323232;
   text-decoration: none;
   font-size: calc(15px + 0.390625vw);
@@ -406,7 +466,7 @@ a:visited {
 
 #menu-links a:hover {
   color: white;
-  background-color: #f10ff1;
+  background-color: var(--mainColor);
 }
 
 .logo {
@@ -421,8 +481,6 @@ a:visited {
 /*================================================*/
 /* =============== Fine Navbar =================*/      
 /*================================================*/
-
-
 
 
 #welcome {
@@ -449,13 +507,15 @@ a:visited {
 }
 
 #center h1 {
-  font-size: calc(5vw * 0.9);
-  color: #f10ff1;
+  position: relative;
+  margin-top: 15%;
+  font-size: calc(50px + 0.390625vw);
+  color: var(--mainColor);
   text-align: center;
 }
 
 #center #arrow {
-  margin-bottom: 5vh;
+  margin-bottom: 15%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -484,29 +544,32 @@ a:visited {
 #about {
   position: relative;
   height: 100%;
-  align-content: center;
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 0.5fr;
+  color: var(--mainColor);
 }
 
-#about div:nth-child(2) {
+#about #about-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-#about h2 {
-  font-size: calc(30px + 0.390625vw);
-  color: #f10ff1;
+#about #about-content h2 {
   text-align: center;
+  font-size: calc(45px + 0.390625vw);
 }
 
-#about p {
-  height: fit-content;
-  padding-left: 10vh;
-  padding-right: 10vh;
-  color:#f10ff1;
-  font-size: calc(15px + 0.390625vw);
+#about #about-content p {
+  max-width: 500px;
   text-align: justify;
+  font-size: calc(15px + 0.390625vw);
+}
+
+#about #about-content button {
+  width: 10%;
+  min-width: 128px;
 }
 
 /*================================================*/
@@ -519,6 +582,7 @@ a:visited {
 
 #timeline {
   position: relative;
+  height: 100%;
   width: 100%;
 }
 
@@ -532,15 +596,15 @@ a:visited {
 
 #timeline-start h2 {
   position: relative;
-  font-size: calc(30px + 0.390625vw);
-  color: #f10ff1;
+  font-size: calc(45px + 0.390625vw);
+  color: var(--mainColor);
   text-align: center;
 }
 
 #timeline-start p {
   position: relative;
-  color:#f10ff1;
-  font-size: calc(15px + 0.390625vw);
+  color:var(--mainColor);
+  font-size: calc(20px + 0.390625vw);
   text-align: center;
 }
 
@@ -551,41 +615,159 @@ a:visited {
   grid-template-columns: 1fr;
 }
 
-#timeline span {
+#timeline #line {
   position: absolute;
-  left: 50%;
+  left: 49.5vw;
+  top: 2.8%;
+  bottom: 0;
   margin: 0;
-  width: 4px;
-  height: 100%;
-  background-color: #f10ff1;
-  z-index: -1;
+  border-radius: 6px;
+  height: 97.4%;
+  background-color: var(--mainColor);
 }
 
 #timeline .item {
   position: relative;
-  width: 100%;
-  height: 33vh;
   margin-top: 5vh;
-  /*border:solid red;*/
-}
-
-.item .item-content {
-  position: relative;
-  width: 33%;
-  height: 28.4vh;
-  padding: 1em 2em;
-  border-radius: 10px;
-  background-color: #444;
-}
-
-.item:nth-of-type(even) .item-content {
-  float: right;
+  height: 50vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 #timeline .item:last-child {
-  margin-bottom: 5vh;
+  margin-bottom: 15vh;
 }
 
+#timeline .item-wrapper {
+  position: relative;
+  height: inherit;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+.item-wrapper .item-space {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: inherit;
+  border-radius: 10px;
+}
+
+.item-wrapper .item-space .image-box {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+  min-width: 30%;
+  border-radius: 10px;
+  opacity: 0;
+  animation: "";
+}
+
+/* Animations for images - START */
+@keyframes right-enter {
+  from {opacity: 0; transform: translateX(100%);}
+  to {opacity: 1; transform: translateX(0);}
+}
+
+@keyframes left-enter {
+  from {opacity: 0; transform: translateX(-100%);}
+  to {opacity: 1; transform: translateX(0);}
+}
+/* Animations for images - END */
+
+.item-wrapper .item-space .image-box .info-bar {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  visibility: hidden;
+}
+
+.item-wrapper .item-space .image-box .info-bar p {
+  padding: 0 10% 0 10%;
+  justify-content: center;
+}
+
+.item-wrapper .item-space .image-box .infoButton {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 50px;
+  width: 50px;
+  visibility: visible;
+}
+
+.item-wrapper .item-space .image-box .infoCloser {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.item-wrapper .item-space .image-box .info-bar h4 {
+  text-align: center;
+  color: white;
+  font-size: calc(20px + 0.390625vw);
+}
+
+.item-wrapper .item-space .image-box .info-bar p {
+  color: white;
+  font-size: calc(15px + 0.390625vw);
+}
+
+#timeline .item-wrapper .item-space .image-box img {
+  border-radius: 10px;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.item-wrapper .item-space .image-box .info-bar .bottone{
+  display: flex;
+  justify-content: center;
+  height: 10%;
+}
+
+.item-wrapper .item-space .image-box .info-bar .bottone #timeButton{
+  border-radius: 5px;
+  border: 0;
+  background-color:var(--mainColor);
+  color: white;
+  width: 50%;
+  font-size: calc(10px + 0.390625vw);
+}
+
+.item-wrapper .item-space .image-box .info-bar .bottone #timeButton:hover {
+  color:var(--mainColor);
+  background-color: black;
+  border: 2px solid var(--mainColor);
+}
+
+#timeline .item-wrapper .data {
+  position: relative;
+  color:#ffffff;
+  font-size: calc(18px + 0.390625vw);
+  margin-top: 25%;
+  height: fit-content;
+  text-align: center;
+  background-color: var(--mainColor);
+  animation: "mymove 5s";
+}
+
+@keyframes mymove {
+  from {background-color: red;}
+  to {background-color: orange;}
+}
 
 /*================================================*/
 /* ============== Fine timeline ================*/
@@ -618,7 +800,7 @@ a:visited {
   position: fixed; 
   width: 60%; 
   height: 80%; 
-  background-color: #f10ff1; 
+  background-color: var(--mainColor); 
   border-radius: 10px;
   top: 55%;
   left: 50%;
@@ -757,28 +939,27 @@ a:visited {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  background-color:  #f10ff1;
+  background-color:  var(--mainColor);
   color: white;
-  justify-content: center;
-  height: 50px ;
+  height: 5vh ;
   border: none;
   padding: 10px 20px;
   margin: 5px;
   cursor: pointer;
   border-radius: 10px;
   transition: background-color 0.3s;
-  width: 40%; /* Responsive button width */
+  width: 40%;  /*Responsive button width */
   max-width: 250px; /* Limit the button width */
 }
 
 .narBtn:hover {
   background-color: black;
-  border: 1px solid #f10ff1;
+  border: 1px solid var(--mainColor);
 }
 
 .narBtn:active {
   background-color: black;
-  border: 1px solid #f10ff1;
+  border: 1px solid var(--mainColor);
 }
 
 

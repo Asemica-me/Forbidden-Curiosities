@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="assets/css/items.css">
+    <link rel="stylesheet" href="assets/css/vitali.css ">
     <title>Items Gallery</title>
 </head>
 <body>
@@ -93,49 +96,61 @@
     </div>
 
  <!--========= ingresso al nero cancello - entrata per Mordor ==================-->      
- <div class="container" id="wholeCard">
+ <div class="card" id="mainCard">
     <div class="card-header">
-        <h2 class="text-center" id="title-header"></h2>
+        <h2 class="text-center" id="header"></h2>
     </div>
-    <div class="whole-card">
-     <div class="info-section"> 
-        <h5 class="card-title text-center">Data - Info</h5>
-         <table class="table" id="table">
-            <tbody id="infoTable"></tbody>
-         </table>
-         <h5 class="card-title text-center">Info - /</h5>
-         <p class="card-text" id="shortInfo"></p>
-         <p class="card-text hidden" id="longerInfo"></p>
-     </div>
-     <div class="image-section">
-         <img id="img" src="" alt="image" />
-     </div>
- </div>
- <div class="nav-buttons card-footer">
-     <button href="#" type="button" id="buttonPrev" class="nav-button"></button>
-     <h3 id="narrative"></h3>
-     <button href="#" type="button" id="buttonNext" class="nav-button"></button>
- </div>
- </div>
+  <div class="card-body">
+  <div class="row">
+        <div class="col-sm-12 col-md-6 d-flex">
+            <img id ="img" src="" class="card-img-top img-fluid limitHeight m-auto" alt="">
+        </div>
+        <div class="col-sm-12 col-md-6">		
 
- <!--==================== sezione fetch pagina html esterna  ==============================-->
-        <div class="container">
-        <div class="card hidden" id="fullInfo">
-            <div class="card-header">
-                <h2 class="text-center" id="fullHeader">Placeholder Full Header</h2>
-            </div>
-            <div class="card-body" id="fullInfoContent">
-                <!-- Full info content will be dynamically populated -->
-            </div>
-            <div class="card-footer">
-                <a href="#" type="button" class="btn-desc btn-primary" onclick="hideFullInfo()">Back</a>
-            </div>
+            <h5 class="card-title text-center">
+<!-- https://stackoverflow.com/questions/52348303/collapse-bootstrap-card-on-sm-and-or-md-screens -->
+<!-- https://stackoverflow.com/questions/19024218/bootstrap-3-collapse-change-chevron-icon-on-click -->
+                Data
+                <button class="btn d-lg-none" type="button" id="dataExpanderIcon"
+                   data-bs-toggle="collapse" data-bs-target="#table" 
+                   aria-expanded="false" aria-controls="table">
+                    <span class="bi-chevron-bar-right" ></span>
+                    <span class="bi-chevron-bar-down" ></span>
+                </button>
+            </h5>
+            <table class="table table-striped border collapse d-md-block" id="table">
+                <tbody  id="infoTable"></tbody>
+            </table>
         </div>
     </div>
+    <h5 class="card-title text-center">Info</h5>
+    <p class="card-text" id="shortInfo"></p>
+    <p class="card-text d-none" id="longerInfo"></p>
+  </div>
+  <div class="card-footer d-flex justify-content-between">
+    <button href="#"  type="button" class="btn btn-primary" id="buttonPrev">Previous</button>
+    <h3 id="narrative"></h3>
+    <button href="#"  type="button" class="btn btn-primary" id="buttonNext">Next</button>
+  </div>
+</div>
+
+
+
+
+<div class="card d-none" id="fullInfo">
+    <div class="card-header">
+        <h2 class="text-center" id="fullHeader"></h2>
+    </div>
+  <div class="card-body" id="fullInfoContent"></div>
+  <div class="card-footer d-flex justify-content-between">
+    <a href="#"  type="button" class="btn btn-primary m-auto" onclick="hideFullInfo()">Back</a>
+  </div>
+</div>
 
     </main>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+ 
     <script>
 
 var items = [];
@@ -181,7 +196,7 @@ function prepareNarratives() {
 function showInfo(index) {
 	var item = currentSelection[index]
 	currentSort = item['@sort']
-	inner("title-header",item.shortName) ;
+	inner("header",item.shortName) ;
 	inner("fullHeader",item.shortName) ;
 	byId("img").src = item.image
 	byId("img").alt = item.shortName
@@ -198,37 +213,31 @@ function showInfo(index) {
 }
 
 function more() {
-    hide("shortInfo");
-    show("longerInfo");
-    hide("fullInfo");
-    byId("showLessBtn").classList.remove("hidden");
-    byId("showMoreBtn").classList.add("hidden");
+	hide("shortInfo") ;
+	show("longerInfo") ;
+	hide("fullInfo") ;
 }
-
 function less() {
-    hide("longerInfo");
-    show("shortInfo");
-    byId("showMoreBtn").classList.remove("hidden");
-    byId("showLessBtn").classList.add("hidden");
+	hide("longerInfo") ;
+	show("shortInfo") ;
+	hide("fullInfo") ;
 }
-
 function muchMore() {
 	var uri = byId("fullInfo").dataset['uri']
 	fetch(uri)
 	.then(response => response.text())
 	.then(data => {	
 		inner("fullInfoContent",data) ;
-		hide("wholeCard") ;
+		hide("mainCard") ;
 		show("fullInfo") ;
 		window.scrollTo(0,0)
 	})
 }
-
 function hideFullInfo() {
 	hide("longerInfo") ;
 	show("shortInfo") ;
 	hide("fullInfo") ;
-	show("wholeCard") ;
+	show("mainCard") ;
 }
 
 function createInfoTable(item) {
