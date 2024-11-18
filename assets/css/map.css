@@ -1,390 +1,153 @@
 /*================================================*/
 /* =============== Inizio Navbar =================*/      
 /*================================================*/
-
-@media screen and (max-width: 830px) {
-  
-  div.navbar-body {visibility: hidden;}
-
-  div#img-right {
-    display: none;
-  }
-
-  div#img-left {
-    display: none;
-  }
-
-  div#welcome {
-    display: block;
-    width: 100%;
-  }
-
-  div#center {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-  }
-
-  div#center h1 {
-    font-size: calc(10vw * 0.9);
-  }
-  
-  div#about {
-    width: 100%;
-  }
-
-  div#timeline span {
-    left: 7vw;
-  }
-
-  div.item div.item-content {
-    float: right;
-    width: 60%;
-    right: 5vw;
-  }
-
-  div.item div.item-content img {
-    height: inherit;
-    width: 70%;
-    
-  }
-
-  div.item:nth-of-type(odd) .item-content {
-    float: right;
-  }
-
+.navbar {
+  max-width: 100%;
 }
 
-@media screen and (min-width: 831px) {
-  div.menu {visibility: hidden;}
-
-  div#banner {
-    display: none;
-  }
-  
-  div#about {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  div.item:nth-of-type(odd) .item-content {
-    left: 5vw;
-  }
-
-  div.item:nth-of-type(even) .item-content {
-    right: 5vw;
-  }
-}
-
-#navbar {
-  position: relative;
-  flex: 0 1 auto;
-}
-
-.rom-navbar {
-  position: relative;
-  width: 100%;
-  height: 120px;
-  top: 10px;
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-}
-
-.navbar-body {
-  position: inherit;
-  font-size: calc(15px + 0.390625vw);
-  display: grid;
-  height: 100px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
-.nav-link-box {
-  height: fit-content;
-  display: grid;
-  grid-template-rows: 3fr 1fr;
-  align-self: center;
-}
-
-.underline {
-  position: inherit;
-  background-color: #f10ff1;
-  height: 0.1vw;
+#nav {
+  color: #ffffff;
   width: 100%;
 }
 
-.nav-link-box .nav-link:hover + .underline {
-  background-color: white;
-  transition: background-color 0.5s ease; /* Transizione più fluida */
-}
-
-.nav-link:visited {
-  color: #f10ff1;
-}
-
-.nav-link:hover {
-  color: white;
-  transform: scale(1.1) translateY(-3px);
-}
-
-.nav-link {
-  text-decoration: none;
-  position: inherit;
-  color: #f10ff1;
-  text-align: center;
-  align-self: flex-end;
-  transition: color 0.3s ease, transform 0.3s ease; /* Transizione per colore e trasformazione */
-}
-
-.nav-link a { /* Lucrezia */
-  text-decoration: none;
-  color: #f10ff1;
-  font-size: 1em;
-  padding-bottom: 10px;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-#menu-button {
-  position: relative;
-  top: 40px;
-  right: 10px;
-  height: 60px;
-}
-
-.toggle-btn {
-  position: relative;
-  left: calc(55% * 0.9);
-  width: 4vw;
-  height: 4vw;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.toggle-btn span {
-  position: absolute;
-  width: 40px;
-  height: 4px;
-  transition: 0.3s;
-  background-color: #f10ff1;
-}
-
-.toggle-btn span:first-child {
-  transform: translateY(-8px);
-}
-
-.toggle-btn.x span:nth-child(2) {
-  opacity: 0;
-}
-
-.toggle-btn span:last-child {
-  transform: translateY(8px);
-}
-
-.toggle-btn.x span:first-child {
-  transform: rotate(45deg) translateY(0);
-}
-
-.toggle-btn.x span:last-child {
-  transform: rotate(-45deg) translateY(0);
-}
-
-#menu-links {
-  position: absolute;
-  height: 200px;
-  width: 100%;
-  display: none;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  z-index: 2;
-}
-
-#menu-links a {
-  color: #f10ff1;
-  background-color: #323232;
-  text-decoration: none;
-  font-size: calc(15px + 0.390625vw);
-  text-align: center;
-  padding: 10px 0;
-}
-
-#menu-links a:last-child {
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-}
-
-#menu-links a:nth-child(odd) {
-  background-color: #444;
-}
-
-#menu-links a:hover {
-  color: white;
-  background-color: #f10ff1;
-}
-
-.logo {
-  position: inherit;
-  background-color: #444;
-  height: 100px;
-  width: 100px;
-  left: 25%;
-  border: none;
-}
-
-/* =============== Fine Navbar =================*/    
+/*================================================*/
+/* =============== Fine Navbar =================*/      
+/*================================================*/ 
 
 /* =============== Inizio map ===============*/
-body{
-  background-color:  black;
+
+
+body {
+  background-color: black;
+
 }
 
-
-/* Dropdown Button */
-.dropbtn {
-  border-radius: 8%;
-  background-color: #f10ff1;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-/* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #ffffff;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
+.footer{
   width: 100%;
-  position: relative;
-  display: inline-block;
 }
 
-#dropdown {
-  position: relative;
+.grid-item{
+  background-color: azure;
 }
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
-
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;}
-
-
 
 .container {
-    display: flex;
-    gap: 10px; 
-    max-width: 100%;
-  }
+  display: grid;
+  grid-template-rows: 20vh 80vh 20vh; 
+  max-width: 100vw;
+  border: solid fuchsia;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 60vw 30vw; /* Two columns within second row */
+  gap: 5vw;
+  width: 100%;
+}
+
+.grid-element{
+  border-radius: 15px;
+  border: solid fuchsia;
+}
+
+
+#map {
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#list {
+  text-align: left;
   
-  .column {
-    border:  solid pink;
-    border-radius: 30px;
-    margin-top: 35px;
+}
+
+.itemList{
+  list-style-type: number;
+}
+
+/* Style the links */
+.itemList a {
+  color: #f10ff1;        /* Make the text purple */
+  text-decoration: none;   /* Remove underline */
+        /* Make the text a bit larger */
+}
+
+/* Optional: Add hover effect */
+.itemList a:hover {
+  color: white;       /* Darker shade of purple on hover */
+}
+
+.itemList li::marker {
+  color: #f10ff1;         /* Change the number color */
+  font-weight: bold;       /* Make the number bold */
+  font-size: 1.3em;        /* Increase the size of the number */
+}
+
+@media screen and (max-width: 830px) {
+  .container {
+  grid-template-rows: 20vh auto 20vh ; /* Three rows */
   }
+  .content {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column */
+  grid-template-rows: 3fr 2fr; /* Stack into two rows */
   
-  #map{
-    border-radius: 30px;
-    max-width: 100%;
   }
-  
-  #right {
-    border:  solid pink;
-    text-align: left;
-    background-color:#c0c0c0;
+
+  #mapCont{
+    width: 100%;
   }
+
+}
+
   
-  .itemList{
-    border: solid pink;
-    list-style-type: number;
-  }
   
-  /* Style the links */
-  .itemList a {
-    color: #f10ff1;        /* Make the text purple */
-    text-decoration: none;   /* Remove underline */
-    font-size: 1.2em;        /* Make the text a bit larger */
-  }
-  
-  /* Optional: Add hover effect */
-  .itemList a:hover {
-    color: white;       /* Darker shade of purple on hover */
-  }
-  
-  .itemList li::marker {
-    color: #f10ff1;         /* Change the number color */
-    font-weight: bold;       /* Make the number bold */
-    font-size: 1.3em;        /* Increase the size of the number */
-    font-family: Arial, sans-serif; /* Change font of the number */
-  }
-  
-/* Extra small devices (phones, portrait) */
+/* Extra small devices (phones, portrait) 
 @media (max-width: 480px) {
   .container {
-    flex-direction: column; /* Stacks columns vertically */
+    display: grid;
+    grid-template-rows: 60vh 35vh  ;
+    gap: 15px; 
+    max-width: 100%;
   }
 }
 
-/* Small devices (phones, landscape) */
+/* Small devices (phones, landscape) 
 @media (max-width: 576px) {
   .container {
-    flex-direction: column; /* Stacks columns vertically */
+    flex-direction: column; 
   }
 }
 
-/* Tablets and small devices in portrait mode */
+
 @media (max-width: 768px) {
   .container {
-    flex-direction: column; /* Stacks columns vertically */
+    flex-direction: column; 
   }
 
 }
 
-/* Tablets and small laptops in landscape mode */
+
 @media (max-width: 992px) {
   .container {
-    flex-direction: column; /* Stacks columns vertically */
+    flex-direction: column; 
   }
 }
 
 @media (max-width: 1363px) {
   .container {
-    flex-direction: column; /* Stacks columns vertically */
+    flex-direction: column; 
   }
-}
+} */
 
 
-
-  
-  
   /*================================================*/
   /* =============== Fine map ===============*/
   /*================================================*/
   
   
-  /* =============== Inizio Footer =================*/   
+  /* =============== Inizio Footer =================   
   
   footer {
     position: relative;
@@ -395,4 +158,4 @@ body{
     font-size: calc(15px + 0.390625vw);
   }
   
-  /* =============== Fine Footer =================*/
+  =============== Fine Footer =================*/

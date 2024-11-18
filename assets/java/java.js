@@ -171,7 +171,7 @@ START NARRATIVES PAGE
 /*modal */
 
 function openModalBtn(btn) {
-	document.getElementById("sumModal").style.display = 'block';
+	document.getElementById("sumModal").classList.add('visible') ;
 	document.getElementById("content").classList.add('opaque');
    
         var buttonText = btn.innerText;
@@ -236,7 +236,7 @@ function openModalBtn(btn) {
 
 
 function closeModalBtn(){
-	document.getElementById("sumModal").style.display = 'none';
+	document.getElementById("sumModal").classList.remove('visible') ;
 	document.getElementById("content").classList.remove('opaque');
 }
 
