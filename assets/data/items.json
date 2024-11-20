@@ -9,7 +9,7 @@
 		{
 			"@sort": "1",
 			"shortName": "Galileo’s Telescope",
-			"image": "assets/img/items/1galileo.jpg",
+			"image": "assets/img/items/1galileo.png",
 			"info": {
 				"Title": "Galileo’s Telescope Replica",
 				"Creator": "Galileo Galilei",
@@ -26,7 +26,7 @@
 			},
 			"shortInfo": "Explore Galileo’s telescope replica to see how early scientific breakthroughs reshaped our understanding of the universe and influenced modern innovation.", 
 			"longerInfo": ["This replica showcases how Galileo’s Telescope transformed astronomy. Galileo's discoveries of moons around Jupiter challenged old ideas about the solar system, paving the way for modern science."],
-			"fullInfo": "assets/docs/1galileo.html"
+			"fullInfo": "assets/docs/1galileo copy.html"
 		},
 		{
 			"@sort": "2",
@@ -177,9 +177,9 @@
 			"fullInfo": "assets/docs/8origin-du-monde.html"
 		},
 		{
-			"@sort": "@9",
+			"@sort": "9",
 			"shortName": "Suffragette Hunger Strike Medal",
-			"image": "assets/img/items/9medal.jpg",
+			"image": "assets/img/items/9medal.jpeg",
 			"info": {
 				"Title": "Suffragette Hunger Strike Medal",
 				"Creator": "Suffragette organizations and medal makers",
@@ -198,7 +198,7 @@
 			"fullInfo": "assets/docs/9medal.html"
 		},
 		{
-			"@sort": "@10",
+			"@sort": "10",
 			"shortName": "\"Shoot\", Chris Burden",
 			"image": "assets/img/items/10shoot.jpg",
 			"info": {
@@ -219,7 +219,7 @@
 			"fullInfo": "assets/docs/10shoot.html"
 		},
 		{
-			"@sort": "@11",
+			"@sort": "11",
 			"shortName": "'Playboy'",
 			"image": "assets/img/items/11playboy.jpg",
 			"info": {
@@ -240,7 +240,7 @@
 			"fullInfo": "assets/docs/11playboy.html"
 		},
 		{
-			"@sort": "@12",
+			"@sort": "12",
 			"shortName": "Dolly the Sheep",
 			"image": "assets/img/items/12dolly.jpg",
 			"info": {
@@ -261,7 +261,7 @@
 			"fullInfo": "assets/docs/12dolly.html"
 		},
 		{
-			"@sort": "@13",
+			"@sort": "13",
 			"shortName": "Moon Landing Photo",
 			"image": "assets/img/items/13nasa.jpg",
 			"info": {
@@ -282,7 +282,7 @@
 			"fullInfo": "assets/docs/13nasa.html"
 		},
 		{
-			"@sort": "@14",
+			"@sort": "14",
 			"shortName": "Curie's Sheet",
 			"image": "assets/img/items/14curie.jpg",
 			"info": {
@@ -303,7 +303,7 @@
 			"fullInfo": "assets/docs/14curie.html"
 		},
 		{
-			"@sort": "@15",
+			"@sort": "15",
 			"shortName": "Snowden’s Revelations",
 			"image": "assets/img/items/15revel.jpg",
 			"info": {
@@ -325,7 +325,7 @@
 			"fullInfo": "assets/docs/15revel.html"
 		},
 		{
-			"@sort": "@16",
+			"@sort": "16",
 			"shortName": "Mary Quant's mini skirt",
 			"image": "assets/img/items/16mini-skirt.jpg",
 			"info": {
@@ -346,7 +346,7 @@
 			"fullInfo": "assets/docs/16mini-skirt.html"
 		},
 		{
-			"@sort": "@17",
+			"@sort": "17",
 			"shortName": "AI Image of Pope Francis",
 			"image": "assets/img/items/17pope.jpg",
 			"info": {
@@ -368,9 +368,9 @@
 			"fullInfo": "assets/docs/17AI-pope.html"
 		},
 		{
-			"@sort": "@18",
+			"@sort": "18",
 			"shortName": "The arquebus",
-			"image": "assets/img/items/18arquebus.jpg",
+			"image": "assets/img/items/18arquebus.jpeg",
 			"info": {
 				"Title": "Combination Wheellock Matchlock Gun",
 				"Author": "N.A.",
@@ -390,7 +390,7 @@
 			"fullInfo": "assets/docs/18archibugio.html"
 		},
 		{
-			"@sort": "@19",
+			"@sort": "19",
 			"shortName": "Guillotine",
 			"image": "assets/img/items/19guillotine1.jpg",
 			"info": {
@@ -412,7 +412,7 @@
 			"fullInfo": "assets/docs/19ghigliottina.html"
 		},
 		{
-			"@sort": "@20",
+			"@sort": "20",
 			"shortName": "Da Vinci's Vitruvian Man",
 			"image": "assets/img/items/20da-vinci.jpg",
 			"info": {
