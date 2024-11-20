@@ -1,0 +1,478 @@
+/*================================================*/
+/* =============== Inizio Navbar =================*/      
+/*================================================*/
+
+@media screen and (max-width: 830px) {
+  
+    div.navbar-body {visibility: hidden;}
+  
+    div#img-right {
+      display: none;
+    }
+  
+    div#img-left {
+      display: none;
+    }
+  
+    div#welcome {
+      display: block;
+      width: 100%;
+    }
+  
+    div#center {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+    }
+  
+    div#center h1 {
+      font-size: calc(10vw * 0.9);
+    }
+    
+    div#about {
+      width: 100%;
+    }
+  
+    div#timeline span {
+      left: 7vw;
+    }
+  
+    div.item div.item-content {
+      float: right;
+      width: 60%;
+      right: 5vw;
+    }
+  
+    div.item div.item-content img {
+      height: inherit;
+      width: 70%;
+      
+    }
+  
+    div.item:nth-of-type(odd) .item-content {
+      float: right;
+    }
+  
+  }
+  
+  @media screen and (min-width: 831px) {
+    div.menu {visibility: hidden;}
+  
+    div#banner {
+      display: none;
+    }
+    
+    div#about {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  
+    div.item:nth-of-type(odd) .item-content {
+      left: 5vw;
+    }
+  
+    div.item:nth-of-type(even) .item-content {
+      right: 5vw;
+    }
+  }
+  
+  #navbar {
+    position: relative;
+    flex: 0 1 auto;
+  }
+  
+  .rom-navbar {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+  
+  .navbar-body {
+    position: inherit;
+    font-size: calc(15px + 0.390625vw);
+    display: grid;
+    height: 100px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  
+  .nav-link-box {
+    height: fit-content;
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    align-self: center;
+  }
+  
+  .underline {
+    position: inherit;
+    background-color: #f10ff1;
+    height: 0.1vw;
+    width: 100%;
+  }
+  
+  .nav-link-box .nav-link:hover + .underline {
+    background-color: white;
+    transition: background-color 0.5s ease; /* Transizione più fluida */
+  }
+  
+  .nav-link:visited {
+    color: #f10ff1;
+  }
+  
+  .nav-link:hover {
+    color: white;
+    transform: scale(1.1) translateY(-3px);
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    position: inherit;
+    color: #f10ff1;
+    text-align: center;
+    align-self: flex-end;
+    transition: color 0.3s ease, transform 0.3s ease; /* Transizione per colore e trasformazione */
+  }
+  
+  .nav-link a { /* Lucrezia */
+    text-decoration: none;
+    color: #f10ff1;
+    font-size: 1em;
+    padding-bottom: 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  #menu-button {
+    position: relative;
+    top: 40px;
+    right: 10px;
+    height: 60px;
+  }
+  
+  .toggle-btn {
+    position: relative;
+    left: calc(55% * 0.9);
+    width: 4vw;
+    height: 4vw;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .toggle-btn span {
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    transition: 0.3s;
+    background-color: #f10ff1;
+  }
+  
+  .toggle-btn span:first-child {
+    transform: translateY(-8px);
+  }
+  
+  .toggle-btn.x span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .toggle-btn span:last-child {
+    transform: translateY(8px);
+  }
+  
+  .toggle-btn.x span:first-child {
+    transform: rotate(45deg) translateY(0);
+  }
+  
+  .toggle-btn.x span:last-child {
+    transform: rotate(-45deg) translateY(0);
+  }
+  
+  #menu-links {
+    position: absolute;
+    height: 200px;
+    width: 100%;
+    display: none;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    z-index: 2;
+  }
+  
+  #menu-links a {
+    color: #f10ff1;
+    background-color: #323232;
+    text-decoration: none;
+    font-size: calc(15px + 0.390625vw);
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  #menu-links a:last-child {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  
+  #menu-links a:nth-child(odd) {
+    background-color: #444;
+  }
+  
+  #menu-links a:hover {
+    color: white;
+    background-color: #f10ff1;
+  }
+  
+  .logo {
+    position: inherit;
+    background-color: #444;
+    height: 100px;
+    width: 100px;
+    left: 25%;
+    border: none;
+  }
+  
+  /* =============== Fine Navbar =================*/    
+  
+/*================================================*/
+/* ============= inizio narratives ===============*/
+/*================================================*/
+
+body{
+    background-color: black;
+    max-width: 100%;  
+}
+
+#content{
+    transition: opacity 0.5s ease, filter 0.5s ease;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-rows: 25vh 50vh 50vh 50vh 25vh ;
+  gap: 10px; /* Optional gap between rows */
+  max-width: 100%;
+}
+
+.grid-item {
+  text-align: center;
+  background-color: black;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.icon{
+  align-self: center;
+  margin: 50px 0;
+  width: 100px;
+  height: auto;
+}
+
+.nar-h2 {
+  font-size: 20px;
+  margin: 20px 0;
+  color: #f2f2f2;
+}
+
+/*modal*/
+
+.opaque {
+    transition: opacity 0.5s ease, filter 0.5s ease;
+    filter: blur(5px); /* Optional: Apply blur effect */
+    pointer-events: none;
+  }
+
+#sumModal {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  position: fixed; 
+  width: 60%; 
+  height: 80%; 
+  background-color: #c0c0c0ed; 
+  border-radius: 10px;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  z-index: 1000;
+}
+
+#sumModal.visible{
+    pointer-events: all;
+    opacity: 1 ;
+    visibility: visible ;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+
+#closebtn {
+  background: none;
+  border: none;
+  color: #fb0505; 
+  font-size: 20px; 
+  font-weight: bold;
+  cursor: pointer; 
+  position: absolute; 
+  top: 10px;
+  right: 15px;
+}
+
+
+
+#modalContent {
+  margin-top: 40px; /* Adds space below the close button */
+}
+
+#sumTitle {
+  font-size: 24px; /* Larger title */
+  margin-bottom: 10px;
+  color: #333; /* Dark text for the title */
+}
+
+#sumCont {
+  margin-top: 5%;
+  padding-left: 3%;
+  font-size: 16px;
+  color: #555; /* Slightly lighter text for the content */
+  line-height: 1.5; /* Improve readability */
+  text-align: left;
+  overflow-y: auto;
+
+}
+
+#goNar {
+  height: 40px;
+  width: 40%;
+  position: absolute;
+  bottom: 10px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  background-color: #f10ff1; 
+  color: rgb(0, 0, 0); 
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+
+  transition: background-color 0.3s ease; 
+}
+
+#goNar:hover {
+background-color: #ffffff; /* Darker blue on hover */
+}
+
+@media (max-width: 1200px) {
+    #sumModal {
+        width: 60%; 
+    }
+
+}
+
+@media (max-width: 1000px) {
+    #sumModal {
+        width: 70%; 
+    }
+
+
+}
+
+@media (max-width: 800px) {
+    #sumModal {
+        width: 80%; 
+        
+}
+
+
+    }
+
+@media (max-width: 600px) {
+    #sumModal {
+        width: 90%;
+    }
+    #goNar {
+        font-size: 14px;
+    }
+
+    #sumCont {
+        font-size: 14px;
+    }
+
+
+}
+
+@media (max-width: 300px) {
+    #sumModal {
+        width: 90%;
+    }
+
+    #goNar {
+        font-size: 14px;
+    }
+
+    #sumCont {
+        font-size: 12px;
+    }
+}
+/* ============ Buttoni Pietro====================*/      
+
+.btnCont{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    height: 50px ;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    
+}
+
+.narBtn {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color:  #f10ff1;
+    color: white;
+    justify-content: center;
+    height: 50px ;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    width: 40%; /* Responsive button width */
+    max-width: 250px; /* Limit the button width */
+}
+
+.narBtn:hover {
+    background-color: black;
+    border: 1px solid #f10ff1;
+
+}
+
+.narBtn:active,
+.narBtn.active {
+    background-color: black;
+    border: 1px solid #f10ff1;
+}
+
+
+/* ============ Fine Buttoni Pietro ==============*/      
+
+
+/*================================================*/
+/* =============== Fine narratives ===============*/
+/*================================================*/
+
+
+footer {
+    position: relative;
+    height: 100%;
+    background-color: rgb(77, 77, 77);
+    color: #ffffff;
+    text-align: center;
+    font-size: calc(15px + 0.390625vw);
+  }

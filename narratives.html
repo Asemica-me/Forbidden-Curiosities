@@ -4,65 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="assets/css/my_styles.css">
+    <link rel="stylesheet" href="assets/css/narratives.css">
     <script src="assets/java/java.js"></script>
     <title>Forbidden Curiosities - Narratives</title>
 
 </head>
 <body>
-<!-- Navbar -->
-        <div class="rom-navbar">
-            <a class="logo" href="index.html">logo</a>
-            <div class="navbar-body">
-                <div class="nav-link-box">
-                    <a class="nav-link" href="#">Narratives</a>
-                    <span class="underline"></span>
+
+    <!-- Modal -->
+    <div id="sumModal">
+        <button id="closebtn" onclick="closeModalBtn()">X</button>
+        <div id="modalContent">
+            <h2 id="sumTitle"></h2>
+            <p id="sumCont">bla bla bla</p>
+        </div>
+        <button id="goNar" >Explore this Narrative</button>
+    </div>
+    <!-- FineModal --> 
+    <div id="content">
+        <div class="grid-container">
+            <div class="grid-item">
+                <!-- Navbar -->
+            <div class="rom-navbar">
+                <a class="logo" href="index.html">logo</a>
+                <div class="navbar-body">
+                    <div class="nav-link-box">
+                        <a class="nav-link" href="#">Narratives</a>
+                        <span class="underline"></span>
+                    </div>
+                    <div class="nav-link-box">
+                        <a class="nav-link" href="#">Items</a>
+                        <span class="underline"></span>
+                    </div>
+                    <div class="nav-link-box">
+                        <a class="nav-link" href="#">Map</a>
+                        <span class="underline"></span>
+                    </div>
+                    <div class="nav-link-box">
+                        <a class="nav-link" href="about.html">About us</a>
+                        <span class="underline"></span>
+                    </div>
                 </div>
-                <div class="nav-link-box">
-                    <a class="nav-link" href="#">Items</a>
-                    <span class="underline"></span>
-                </div>
-                <div class="nav-link-box">
-                    <a class="nav-link" href="#">Map</a>
-                    <span class="underline"></span>
-                </div>
-                <div class="nav-link-box">
-                    <a class="nav-link" href="about.html">About us</a>
-                    <span class="underline"></span>
+                <!-- Hamburger Menu -->
+                <div class="menu" id="menu-button">
+                    <button id="toggleButton" onclick="toggleCurtain()" class="toggle-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </div>
-            <!-- Hamburger Menu -->
-            <div class="menu" id="menu-button">
-                <button id="toggleButton" onclick="toggleCurtain()" class="toggle-btn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+            <div class="menu" id="menu-links">
+                <a href="#">Narratives</a>
+                <a href="#">Items</a>
+                <a href="#">Map</a>
+                <a href="#">About us</a>
             </div>
         </div>
-        <div class="menu" id="menu-links">
-            <a href="#">Narratives</a>
-            <a href="#">Items</a>
-            <a href="#">Map</a>
-            <a href="#">About us</a>
-        </div>
 
-<!------- Hamburger Menu End --------->
-<!------ Navbar End ---------->
-
-    <div class = "content">
-
-        <!-- Modal -->
-        <div id="sumModal">
-            <button id="closebtn" onclick="closeModalBtn()">X</button>
-            <div id="modalContent">
-                <h2 id="sumTitle"></h2>
-                <p id="sumCont">bla bla bla</p>
-            </div>
-            <button id="goNar" >Explore this Narrative</button>
-        </div>
-        <!-- FineModal --> 
-        <div>
+    <!------- Hamburger Menu End --------->
+    <!------ Navbar End ---------->
+        <div class="grid-item">
             <div class="icon-container">
                 <img src="C:\Users\pietr\Desktop\5078755.png" alt="Book Icon" class="icon">
             </div>
@@ -79,9 +81,8 @@
                 <button class="narBtn" id = "provocative-btn" onclick="openModalBtn(this)">PROVOCATIVE ART</button>
                 <button class="narBtn" id = "digital-btn" onclick="openModalBtn(this)">DIGITAL PRIVACY</button>
             </div>
-              
         </div>
-        <div>
+        <div class="grid-item">
             <div class="icon-container">
                 <img src="tipology-icon.png" alt="Tipology Icon" class="icon">
             </div>
@@ -97,32 +98,33 @@
                 <button class="narBtn" id = "garments-btn" onclick="openModalBtn(this)">GARMENTS</button>
                 <button class="narBtn" id = "events-btn" onclick="openModalBtn(this)">EVENTS</button>
                 <button class="narBtn" id = "works-btn" onclick="openModalBtn(this)">WORKS OF ART</button>
-            </div>  
+            </div>
         </div>
-        <div>
-            <div class="icon-container">
-                <img src="periods-icon.png" alt="Periods Icon" class="icon">
-            </div>
-            
-            <h2 class = "nar-h2">DISCOVER WHAT THE PERIODS THAT PRODUCED THE CURIOSITIES</h2>
-            
-            <div class="btnCont">
-                <button class="narBtn" id = "XV-XVII-btn" onclick="openModalBtn(this)">XV-XVII</button>
-                <button class="narBtn" id = "XVII-XIX-btn" onclick="openModalBtn(this)">XVII-XIX</button>
-                <button class="narBtn" id = "FIRST-btn" onclick="openModalBtn(this)">FIRST HALF XX</button>
-            </div>
-            <div class="btnCont">
-                <button class="narBtn" id = "SECOND-btn" onclick="openModalBtn(this)">SECOND HALF XX</button>
-                <button class="narBtn" id = "XXI-btn" onclick="openModalBtn(this)"> XXI</button>
+        <div class="grid-item">
+            <div>
+                <div class="icon-container">
+                    <img src="periods-icon.png" alt="Periods Icon" class="icon">
+                </div>
                 
-            </div>  
+                <h2 class = "nar-h2">DISCOVER WHAT THE PERIODS THAT PRODUCED THE CURIOSITIES</h2>
+                
+                <div class="btnCont">
+                    <button class="narBtn" id = "XV-XVII-btn" onclick="openModalBtn(this)">XV-XVII</button>
+                    <button class="narBtn" id = "XVII-XIX-btn" onclick="openModalBtn(this)">XVII-XIX</button>
+                    <button class="narBtn" id = "FIRST-btn" onclick="openModalBtn(this)">FIRST HALF XX</button>
+                </div>
+                <div class="btnCont">
+                    <button class="narBtn" id = "SECOND-btn" onclick="openModalBtn(this)">SECOND HALF XX</button>
+                    <button class="narBtn" id = "XXI-btn" onclick="openModalBtn(this)"> XXI</button>
+                    
+                </div>  
+            </div>
+        </div>
+        <div class="grid-item">
+            <footer>
+                <p>© 2024 Copyright: <a class="" href="#">Forbidden Curiosities</a></p>
+            </footer>
         </div>
     </div>
-    <!-- Footer -->
-    <footer>
-        <!-- Copyright -->
-        <p>© 2024 Copyright: <a class="" href="#">Forbidden Curiosities</a></p>
-    </footer>
-    <!------ Footer End ------->
 </body>
 </html>

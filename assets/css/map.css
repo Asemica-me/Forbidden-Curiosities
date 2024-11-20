@@ -1,0 +1,161 @@
+/*================================================*/
+/* =============== Inizio Navbar =================*/      
+/*================================================*/
+.navbar {
+  max-width: 100%;
+}
+
+#nav {
+  color: #ffffff;
+  width: 100%;
+}
+
+/*================================================*/
+/* =============== Fine Navbar =================*/      
+/*================================================*/ 
+
+/* =============== Inizio map ===============*/
+
+
+body {
+  background-color: black;
+
+}
+
+.footer{
+  width: 100%;
+}
+
+.grid-item{
+  background-color: azure;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 20vh 80vh 20vh; 
+  max-width: 100vw;
+  border: solid fuchsia;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 60vw 30vw; /* Two columns within second row */
+  gap: 5vw;
+  width: 100%;
+}
+
+.grid-element{
+  border-radius: 15px;
+  border: solid fuchsia;
+}
+
+
+#map {
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#list {
+  text-align: left;
+  
+}
+
+.itemList{
+  list-style-type: number;
+}
+
+/* Style the links */
+.itemList a {
+  color: #f10ff1;        /* Make the text purple */
+  text-decoration: none;   /* Remove underline */
+        /* Make the text a bit larger */
+}
+
+/* Optional: Add hover effect */
+.itemList a:hover {
+  color: white;       /* Darker shade of purple on hover */
+}
+
+.itemList li::marker {
+  color: #f10ff1;         /* Change the number color */
+  font-weight: bold;       /* Make the number bold */
+  font-size: 1.3em;        /* Increase the size of the number */
+}
+
+@media screen and (max-width: 830px) {
+  .container {
+  grid-template-rows: 20vh auto 20vh ; /* Three rows */
+  }
+  .content {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column */
+  grid-template-rows: 3fr 2fr; /* Stack into two rows */
+  
+  }
+
+  #mapCont{
+    width: 100%;
+  }
+
+}
+
+  
+  
+/* Extra small devices (phones, portrait) 
+@media (max-width: 480px) {
+  .container {
+    display: grid;
+    grid-template-rows: 60vh 35vh  ;
+    gap: 15px; 
+    max-width: 100%;
+  }
+}
+
+/* Small devices (phones, landscape) 
+@media (max-width: 576px) {
+  .container {
+    flex-direction: column; 
+  }
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; 
+  }
+
+}
+
+
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column; 
+  }
+}
+
+@media (max-width: 1363px) {
+  .container {
+    flex-direction: column; 
+  }
+} */
+
+
+  /*================================================*/
+  /* =============== Fine map ===============*/
+  /*================================================*/
+  
+  
+  /* =============== Inizio Footer =================   
+  
+  footer {
+    position: relative;
+    height: 100%;
+    background-color: rgb(77, 77, 77);
+    color: #ffffff;
+    text-align: center;
+    font-size: calc(15px + 0.390625vw);
+  }
+  
+  =============== Fine Footer =================*/
