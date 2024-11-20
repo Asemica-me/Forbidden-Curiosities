@@ -184,6 +184,16 @@ a:visited {
 /* =============== Inizio first-page =============*/      
 /*================================================*/
 
+#opaque-page {
+  position: fixed;
+  top: 15vh;
+  height: 85vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1;
+  visibility: hidden;
+}
+
 #upButton {
   position: fixed;
   bottom: 3vh;
@@ -196,8 +206,8 @@ a:visited {
   position: relative;
   height: inherit;
   width: inherit;
-  display: flex;
-  flex-flow: column;
+  display: grid;
+  grid-template-rows: 15% auto;
 }
 
 /*================================================*/
@@ -259,7 +269,7 @@ a:visited {
     grid-template-columns: 1fr;
   }
 
-  div#timeline div#items div.item div.item-wrapper div.data{
+  div#timeline div#items div.item div.item-wrapper div.data-box div.data{
     margin-left: -45%;
     margin-right: 30%;
     border-radius: 0 5px 5px 0;
@@ -297,13 +307,13 @@ a:visited {
     grid-column: 2;
   }
 
-  div#timeline div#items div.item:nth-child(odd) div.item-wrapper div.data{
+  div#timeline div#items div.item:nth-child(odd) div.item-wrapper div.data-box div.data{
     grid-column: 2;
     margin-left: 30%;
     border-radius: 5px 0 0 5px;
   }
 
-  div#timeline div#items div.item:nth-child(even) div.item-wrapper div.data{
+  div#timeline div#items div.item:nth-child(even) div.item-wrapper div.data-box div.data{
     margin-right: 30%;
     border-radius: 0 5px 5px 0;
   }
@@ -321,26 +331,38 @@ a:visited {
   }
 }
 
-
 #navbar {
   position: relative;
-  flex: 0 1 auto;
+  height: 100%;
 }
 
 .rom-navbar {
   position: relative;
   width: 100%;
-  height: 120px;
-  top: 10px;
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
+}
+
+.rom-navbar #logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#logo-box .logo {
+  position: inherit;
+  background-color: #444;
+  height: 13vh;
+  width: 13vh;
+  border: none;
 }
 
 .navbar-body {
   position: inherit;
   font-size: calc(15px + 0.390625vw);
   display: grid;
-  height: 100px;
+  height: inherit;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
@@ -369,7 +391,6 @@ a:visited {
 
 .nav-link:hover {
   color: white;
-  transform: scale(1.1) translateY(-3px);
 }
 
 .nav-link {
@@ -378,27 +399,19 @@ a:visited {
   color: var(--mainColor);
   text-align: center;
   align-self: flex-end;
-  transition: color 0.3s ease, transform 0.3s ease; /* Transizione per colore e trasformazione */
-}
-
-.nav-link a { /* Lucrezia */
-  text-decoration: none;
-  color: var(--mainColor);
-  font-size: 1em;
-  padding-bottom: 10px;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: color 0.3s ease; /* Transizione per colore */
 }
 
 #menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  top: 40px;
-  right: 10px;
-  height: 60px;
+  z-index: 2;
 }
 
 .toggle-btn {
   position: relative;
-  left: calc(55% * 0.9);
   width: 4vw;
   height: 4vw;
   background-color: transparent;
@@ -467,15 +480,6 @@ a:visited {
 #menu-links a:hover {
   color: white;
   background-color: var(--mainColor);
-}
-
-.logo {
-  position: inherit;
-  background-color: #444;
-  height: 100px;
-  width: 100px;
-  left: 25%;
-  border: none;
 }
 
 /*================================================*/
@@ -753,20 +757,21 @@ a:visited {
   border: 2px solid var(--mainColor);
 }
 
-#timeline .item-wrapper .data {
+#timeline .item-wrapper .data-box {
+  position: relative;
+  margin-top: 25%;
+  overflow: hidden;
+}
+
+
+#timeline .item-wrapper .data-box .data {
   position: relative;
   color:#ffffff;
   font-size: calc(18px + 0.390625vw);
-  margin-top: 25%;
   height: fit-content;
   text-align: center;
   background-color: var(--mainColor);
-  animation: "mymove 5s";
-}
-
-@keyframes mymove {
-  from {background-color: red;}
-  to {background-color: orange;}
+  transition: width 0.5s ease;
 }
 
 /*================================================*/

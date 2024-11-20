@@ -294,10 +294,21 @@ END MAP PAGE
 function toggleCurtain() {
 	let menu_links = document.getElementById('menu-links');
 	let toggleButton = document.getElementById('toggleButton');
+	let opaque = document.getElementById('opaque-page');
 	if (menu_links.style.display === "grid") {
 		menu_links.style.display = "none";
+		opaque.classList.remove("active");
+		setTimeout(() => {
+			opaque.style.visibility = "hidden";
+			document.body.style.overflow = "";
+		}, 500);
 	} else {
 		menu_links.style.display = "grid";
+		opaque.style.visibility = "visible";
+		setTimeout(() => {
+			opaque.classList.add("active");
+			document.body.style.overflow = "hidden";
+		}, 10);	
 	}
 	toggleButton.classList.toggle('x');
   }
@@ -353,7 +364,7 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 		});
 	};
 
-// Qui si attribuisce la classe a cui è legata un'animazione
+	// Qui si attribuisce la classe a cui è legata un'animazione
 	const elements = document.querySelectorAll('div.image-box');
 
 	const options = {
@@ -374,6 +385,7 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 					} else {
 						entry.target.style.animation = "right-enter 1.5s ease-out forwards";
 					}
+					
 				} else {
 					entry.target.style.animation = "right-enter 1.5s ease-out forwards";
 				}
@@ -384,6 +396,25 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 	elements.forEach(element => {
 		observer.observe(element); // Qui si inizia ad osservare l'elemento
 	});
+
+	// Funzione per aprire i pannelli delle narratives
+	const narBtns = document.getElementsByClassName("nar-btn");
+
+	for (let i = 0; i < narBtns.length; i++) {
+		let btn = narBtns[i];		
+		btn.addEventListener("click", function() {
+			let _ = this.parentElement;
+			let panel = _.nextElementSibling;
+			let symbol = this.innerHTML;
+			if (symbol === "+") {
+				panel.style.display = "grid";
+				this.innerHTML = "-";
+			} else {
+				panel.style.display = "none";
+				this.innerHTML = "+";
+			}
+		});
+	};
 });
 
 /* index.thml functions END */
