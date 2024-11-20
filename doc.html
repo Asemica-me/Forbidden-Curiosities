@@ -25,7 +25,7 @@
         flex: 3;
         overflow-y: auto;
         padding: 20px;
-        background: #0f000fe3;
+        background: #0f0007e3;
         color: rgba(255, 255, 255, 0.913);
         box-shadow: inset -3px 0 5px rgba(0, 0, 0, 0.1);
     }
@@ -48,6 +48,7 @@
     .article p {
         margin-bottom: 20px;
         line-height: 1.8;
+        text-align: justify;
     }
 
     /* Hide Scrollbars */
@@ -72,16 +73,15 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 2px; /* Thin line */
-        height: 100%;
-        background: #b4b4b4ca; /* White with slight transparency */
+        width: 2px;
+        background: #b4b4b4ca;
         z-index: 10;
     }
 
     /* Menu Styling */
     .menu {
         flex: 1;
-        background: #0f000fe3;
+        background: #0f0007e3;
         padding: 20px;
         overflow-y: auto;
         box-shadow: inset 3px 0 5px rgba(0, 0, 0, 0.1);
@@ -127,28 +127,6 @@
         scroll-behavior: smooth;
     }
 
-    /* Highlight Selected Section */
-    .highlight {
-        animation: highlightAnimation 0.5s ease-in-out forwards;
-        background: rgba(255, 255, 255, 0.3);
-        border-radius: 5px;
-    }
-
-    @keyframes highlightAnimation {
-        0% {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1);
-        }
-        50% {
-            background: rgba(255, 255, 255, 0.5);
-            transform: scale(1.05);
-        }
-        100% {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1);
-        }
-    }
-
     /* Gerarchie del Menu */
     .menu .chapter {
         font-size: 1.2rem;
@@ -156,7 +134,7 @@
         color: #ffffffb6;
         margin: 15px 0;
         padding-left: 10px;
-        border-left: 3px solid rgba(255, 255, 255, 0.8); /* Linea laterale */
+        box-shadow: 2px 2px 3px #ffffff17; 
     }
 
     .menu .subchapter {
@@ -165,7 +143,7 @@
         color: #e0f7faaf;
         margin: 8px 0;
         padding-left: 20px; /* Indentazione */
-        border-left: 2px solid rgba(255, 255, 255, 0.5); /* Linea laterale più sottile */
+        box-shadow: 2px 2px 3px #ffffff17; 
     }
 
     .menu .subsubchapter {
@@ -174,18 +152,29 @@
         color: #b2ebf2e7;
         margin: 5px 0;
         padding-left: 30px; /* Maggiore indentazione */
-        border-left: 1px solid rgba(255, 255, 255, 0.3); /* Linea ancora più sottile */
+        box-shadow: 2px 2px 3px #ffffff17; 
+    }
+
+    .menu .chapter:active,
+    .menu .subchapter:active 
+    .menu .subchapter.active {
+    border-left: 2px solid #80deea; /* Colore più acceso al clic */
+    background-color: rgba(51, 182, 199, 0.1); /* Sfondo leggermente visibile */
+    transform: scale(0.98); /* Leggera contrazione per un effetto di pressione */
     }
 
     /* Hover Effects */
     .menu .chapter:hover,
     .menu .subchapter:hover,
-    .menu .subsubchapter:hover {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 5px;
+    .menu .subsubchapter:hover,
+    .menu .chapter:active,
+    .menu .subchapter:active,
+    .menu .subsubchapter:active {
+        background: rgba(255, 255, 255, 0.235);
         cursor: pointer;
         color: white;
-        transition: background 0.3s ease;
+        transition: background 0.4s ease;
+        border-left: 2px solid rgba(255, 255, 255, 0.5); /* Linea laterale più sottile */
     }
 
 
@@ -284,10 +273,10 @@
                 <h2>5. Use Cases</h2>
                 <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. 
             </section>
+
             <section id="design">
                 <h2>6. Design Specifications</h2>
                 <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. 
-            </section>
                 <section id="layout">
                     <h3>6.1 Visual Design and Layout</h3>
                 <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. Maecenas in velit vel mi feugiat ornare facilisis vitae turpis.</p>
@@ -304,6 +293,8 @@
                     <h3>6.4 Typography</h3>
                 <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. Maecenas in velit vel mi feugiat ornare facilisis vitae turpis.</p>
                 </section>
+            </section>
+
             <section id="references">
                 <h2>7. Refernces</h2>
                 <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. 
@@ -342,7 +333,7 @@
             <a href="#front-back-end" class="subchapter">4.4 Front-End and Back-End Architecture</a>
             <a href="#ux" class="subchapter">4.5 User Experience (UX)</a>
             <a href="#use-cases" class="chapter">5. Use Cases</a>
-            <a href="#design-specifications" class="chapter">6. Design Specifications</a>
+            <a href="#design" class="chapter">6. Design Specifications</a>
             <a href="#design" class="subchapter">6.1 Visual Design</a>
             <a href="#color" class="subchapter">6.2 Color Specifications</a>
             <a href="#feedback" class="subchapter">6.3 Interactive Elements and Feedback</a>

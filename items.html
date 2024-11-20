@@ -1,384 +1,886 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="assets/css/items.css">
-    <link rel="stylesheet" href="assets/css/vitali.css ">
-    <title>Items Gallery</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Items Gallery</title>
+        <style>
+            :root {
+                --mainColor: #f10ff1;
+                --secondColor: #e380e3;
+            }
+            
+            body {
+                margin: 0;
+                width: 100%;
+                height: 100%;
+                background-color: black;
+            }
 
-    <header class="header">
-        <h1 id="logo"><a href="#">Logo</a></h1>
-            <!-- Navbar -->
-            <nav class="navbar">
-                <div class="navbar-body">
-                <ul>
-                    <li><a href="narratives.html">Narratives</a></li>
-                    <li><a href="items.html">Items Gallery</a></li>
-                    <li><a href="map.html">Exhibition Map</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                </ul>
+            img {
+                border-radius: 5px;
+                max-height: 100%;
+                max-width: 100%;
+            }
+
+            #opaque-page {
+                position: fixed;
+                top: 15vh;
+                height: 85vh;
+                width: 100vw;
+                z-index: 1;
+                visibility: hidden;
+                background-color: rgba(0,0,0,0);
+                backdrop-filter: blur(0);
+                transition: backgroudn-color 0.2s ease, backdrop-filter 0.2s ease;
+            }
+
+            #opaque-page.active {
+                background-color: rgba(0,0,0,0.3);
+                backdrop-filter: blur(2px);
+                visibility: visible;
+                transition: backgroud-color 0.5s ease, backdrop-filter 0.5s ease;
+            }
+
+            /*Inizio fullInfo div*/
+
+            #fullInfo {
+                position: fixed;
+                margin: 2vh;
+                height: 96%;
+                width: 98%;
+                background-color: white;
+                border-radius: 10px;
+                z-index: 1;
+                overflow-y: auto;
+            }
+
+            #fullInfoContent {
+                padding: 2%;
+                padding-left: 15%;
+                padding-right: 15%;
+            }
+            
+            #fullInfoCloser {
+                position: fixed;
+                top: 5%;
+                right: 5%;
+            }
+            
+            #fullInfoContent .header {
+                background-color: var(--mainColor);
+                font-size: calc(25px + 0.390625vw);
+                text-align: center;
+            }
+
+            #fullInfoContent .header h3 {
+                margin-block-start: 0;
+                margin-block-end: 0;
+            }
+
+            /* Queste classi sono scritte direttamente dentro ogni file fullInfo */
+            #fullContentBody {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+            }
+            
+            #fullContentBody-4 {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+            }
+
+            .img-box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 3%;
+            }
+
+            .p-box {
+                padding: 3%;
+            }
+
+            .p-box h4 {
+                font-size: calc(20px + 0.390625vw);
+            }
+
+            .p-box p {
+                font-size: calc(15px + 0.390625vw);
+            }
+
+            /*FINE fullInfo div*/
+
+            #page-container {
+                display: grid;
+                position: relative;
+                margin: 0;
+                height: inherit;
+                width: inherit;
+                grid-template-rows: 100vh 25vh;
+            }
+
+            #page-container #main-container {
+                position: relative;
+                height: 100%;
+                display: grid;
+                grid-template-rows: 15vh 85vh;
+            }
+
+            /* INIZIO Navbar/Hamburger-Menu */
+            #page-container #main-container #navbar {
+                position: relative;
+                height: 100%;
+            }
+
+            #navbar {
+                position: relative;
+                height: 100%;
+            }
+
+            .rom-navbar {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                display: grid;
+                grid-template-columns: 1fr 2fr 1fr;
+            }
+
+            .rom-navbar #logo-box {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #logo-box .logo {
+                position: relative;
+                background-color: #444;
+                height: 13vh;
+                width: 13vh;
+                border: none;
+            }
+
+            .navbar-body {
+                position: inherit;
+                font-size: calc(15px + 0.390625vw);
+                display: grid;
+                height: inherit;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+
+            .nav-link-box {
+                height: fit-content;
+                display: grid;
+                grid-template-rows: 3fr 1fr;
+                align-self: center;
+            }
+
+            .underline {
+                position: inherit;
+                background-color: var(--mainColor);
+                height: 0.1vw;
+                width: 100%;
+            }
+
+            .nav-link-box .nav-link:hover + .underline {
+                background-color: white;
+                transition: background-color 0.5s ease; /* Transizione più fluida */
+            }
+
+            .nav-link:visited {
+                color: var(--mainColor);
+            }
+
+            .nav-link:hover {
+                color: white;
+            }
+
+            .nav-link {
+                text-decoration: none;
+                position: inherit;
+                color: var(--mainColor);
+                text-align: center;
+                align-self: flex-end;
+                transition: color 0.3s ease; /* Transizione per colore */
+            }
+
+            #menu-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                z-index: 2;
+            }
+
+            .toggle-btn {
+                position: relative;
+                width: 4vw;
+                height: 4vw;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .toggle-btn span {
+                position: absolute;
+                width: 40px;
+                height: 4px;
+                transition: 0.3s;
+                background-color: var(--mainColor);
+            }
+
+            .toggle-btn span:first-child {
+                transform: translateY(-8px);
+            }
+
+            .toggle-btn.x span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .toggle-btn span:last-child {
+                transform: translateY(8px);
+            }
+
+            .toggle-btn.x span:first-child {
+                transform: rotate(45deg) translateY(0);
+            }
+
+            .toggle-btn.x span:last-child {
+                transform: rotate(-45deg) translateY(0);
+            }
+
+            #menu-links {
+                position: absolute;
+                height: 200px;
+                width: 100%;
+                display: none;
+                grid-template-rows: 1fr 1fr 1fr 1fr;
+                z-index: 2;
+            }
+
+            #menu-links a {
+                color: var(--mainColor);
+                background-color: #323232;
+                text-decoration: none;
+                font-size: calc(15px + 0.390625vw);
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            #menu-links a:last-child {
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+            }
+
+            #menu-links a:nth-child(odd) {
+                background-color: #444;
+            }
+
+            #menu-links a:hover {
+                color: white;
+                background-color: var(--mainColor);
+            }
+            /* FINE Navbar/Hamburger-Menu */
+
+            /************************/
+            /* INIZIO items gallery */
+            /************************/
+            #page-container #main-container #gallery {
+                position: relative;
+                display: grid;
+                grid-template-columns: 15% 40% 45%;
+                grid-template-rows: 6% 94%;
+                border-radius: 5px;
+            }
+
+            #gallery .g-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #gallery .header {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 98%;
+                width: 98%;
+                border-radius: 5px;
+                background-color: var(--mainColor);
+                color: white;
+                font-size: calc(15px + 0.390625vw);
+            }
+
+            /* INIZIO Narratives column */
+            #gallery #column-1 {
+                height: 98%;
+                width: 98%;
+                border-radius: 5px;
+                background-color: var(--secondColor);
+                overflow-y: auto;
+                font-size: calc(13px + 0.390625vw);
+            }
+            
+            #column-1 .narratives {
+                display: flex;
+                align-items: center;
+                margin-left: 5%;
+            }
+
+            /* C'è anche una classe nar-btn inserita nei tre bottoni che aprono i panelli delle narrative*/
+            .btn {
+                position: relative;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                font-size: calc(14px + 0.390625vw);
+            }
+
+            #column-1 p {
+                margin-block-start: 0.5em;
+                margin-block-end: 0.5em;
+            }
+
+            #column-1 .c-box .classes {
+                font-size: calc(12px + 0.390625vw);
+            }
+
+            #column-1 .c-box .classes .long-nar {
+                font-size: calc(11px + 0.390625vw);
+            }
+
+            #column-1 .c-box {
+                display: none;
+            }           
+
+            #column-1 .c-box .classes {
+                display: flex;
+                align-items: center;
+                margin-left: 10%;
+            }
+            /* FINE Narratives column */
+
+            /* INIZIO Image column */
+            #gallery #column-2 {
+                position: relative;
+                height: 98%;
+                width: 98%;
+                border-radius: 5px;
+                background-color: var(--secondColor);
+            }
+
+            #column-2 #switchPanel {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                z-index: 2;
+                background-color: transparent;
+                display: grid;
+                grid-template-rows: 9fr 1fr;
+                opacity: 0;
+                transition: opacity 0.5s ease;
+            }
+
+            #switcthPanel #arrowSection .switch {
+                height: fit-content;
+                width: fit-content;
+            }
+
+            #switchPanel #arrowSection .switch#left {
+                position: absolute;
+                left: 0;
+                top: 40%;
+            }
+
+            #switchPanel #arrowSection .switch#right {
+                position: absolute;
+                right: 0;
+                top: 40%;
+            }
+
+            .switchButton {
+                height: 100px;
+                width: 100px;
+            }
+
+            #switchPanel #indexSection {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            #switchPanel #indexSection #indicesBox {
+                position: relative;
+                background-color: antiquewhite;
+                height: max-content;
+                min-height: 40px;
+                width: max-content;
+                min-width: 100px;
+                padding-left: 2%;
+                padding-right: 2%;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #switchPanel #indexSection #indicesBox .index {
+                color: var(--mainColor);
+                font-size: calc(14px + 0.390625vw);
+                width: 1.5em;
+                height: 1.5em;
+                margin-left: 1%;
+                margin-left: 1%;
+                border-radius: 50%;
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+
+            #switchPanel #indexSection #indicesBox .index:hover {
+                background-color: var(--mainColor);
+                color: white;
+            }
+
+            #switchPanel #indexSection #indicesBox .highlighted {
+                background-color: var(--mainColor);
+                color: white;
+            }
+
+            .switchButton#rightButton {transform: rotate(180deg);}
+
+            #column-2 .image-box {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 3%;
+                height: 95%;
+                width: 95%;
+            }
+            /* FINE Image column */
+
+            /* INIZIO Info column */
+            #gallery #column-3 {
+                height: 98%;
+                width: 98%;
+                border-radius: 5px;
+                background-color: var(--secondColor);
+                font-size: calc(13px + 0.390625vw);
+                overflow-y: auto;
+            }
+
+            #column-3 #info {
+                position: relative;
+                width: 100%;
+            }
+
+            #info td {padding: 1%;}
+
+            #info tr:nth-child(even){background-color: #d523d5;}
+
+            #column-3 #description {
+                position: relative;
+                padding: 2%;
+                padding-left: 4%;
+                padding-right: 4%;
+            }
+
+            #description h5 {
+                text-align: center;
+                font-size: calc(14px + 0.390625vw);
+                margin-block-start: 0;
+                margin-block-end: 0;
+            }
+
+            #description p {
+                text-indent: 5%;
+                line-height: 1.5;
+            }
+
+            .hidden {display: none;}
+            /* FINE Data column */
+
+            /****************/
+            /* FINE gallery */
+            /****************/
+
+            #page-container footer {
+                position: relative;
+                height: 100%;
+                background-color: rgb(77, 77, 77);
+                color: #ffffff;
+                text-align: center;
+                font-size: calc(15px + 0.390625vw);
+            }
+
+            /* INIZIO MEDIA QUERIES */
+            @media screen and (max-width: 830px) {
+  
+                div.navbar-body {visibility: hidden;}
+            }
+
+            @media screen and (min-width: 831px) {
+
+                div.menu {visibility: hidden;}
+            }
+            /* FINE MEDIA QUERIES */
+
+        </style>
+        <script>
+
+            let index = 0;
+            let items = [];
+            let narratives = [];
+            let currentSelection = [];
+            let currentNarrative = "";
+            let currentValue = "";
+            let currentSort = "";
+
+            // Funzione per attivare e disattivare con un click il menu hamburger
+            function toggleCurtain() {
+                let menu_links = document.getElementById('menu-links');
+                let toggleButton = document.getElementById('toggleButton');
+                let opaque = document.getElementById('opaque-page');
+                if (menu_links.style.display === "grid") {
+                    menu_links.style.display = "none";
+                    opaque.classList.remove("active");
+                    setTimeout(() => {
+                        opaque.style.visibility = "hidden";
+                        document.body.style.overflow = "";
+                    }, 500);
+                } else {
+                    menu_links.style.display = "grid";
+                    opaque.style.visibility = "visible";
+                    setTimeout(() => {
+                        opaque.classList.add("active");
+                        document.body.style.overflow = "hidden";
+                    }, 10);	
+                }
+                toggleButton.classList.toggle('x');
+            }
+
+            document.addEventListener("DOMContentLoaded", function() {
+                // Event Listener per aprire i pannelli delle narratives
+                const narBtns = document.getElementsByClassName("nar-btn");
+
+                for (let i = 0; i < narBtns.length; i++) {
+                    let btn = narBtns[i];		
+                    btn.addEventListener("click", function() {
+                        let _ = this.parentElement;
+                        let panel = _.nextElementSibling;
+                        let symbol = this.innerHTML;
+                        if (symbol === "+") {
+                            panel.style.display = "grid";
+                            this.innerHTML = "-";
+                        } else {
+                            panel.style.display = "none";
+                            this.innerHTML = "+";
+                        }
+                    });
+                };
+
+                // Event Listener per far apparire il layer con le frecce di navigazione e 
+                // per farlo sparire dopo 5 secondi
+                const switchPanel = document.getElementById("switchPanel");
+
+                switchPanel.addEventListener("mouseover", () => {
+                    switchPanel.style.opacity = "1";
+                });
+
+                switchPanel.addEventListener("mouseout", () => {
+                    switchPanel.style.opacity = "0";
+                });
+            });
+
+            // JSON Data
+            document.addEventListener("DOMContentLoaded", async function(event) {
+                fetch('assets/data/items.json')
+                .then(response => response.json())
+                .then(data => {	
+                    items = data.items;
+                    let startWith = data.meta.startWith;
+                    let item = items[startWith];
+            
+                    narratives = data.meta.narratives;
+                    currentNarrative = data.meta.startNarrative;
+                    currentValue = data.meta.startValue;
+                    prepareNarratives();                  
+                })
+            });
+            
+            function highlightIndex(index) {
+                const indeces = document.getElementsByClassName("index");
+                for (let i = 0; i < indeces.length; i++) {
+                    indeces[i].classList.remove("highlighted");
+                }
+                let numBar = document.getElementById(String(index));
+                numBar.classList.add("highlighted");
+            }
+            
+            function showInfo(index) {
+                let item = currentSelection[index]
+                currentSort = item['@sort']
+                inner("title-header",item.info.Title) ;
+                byId("img").src = item.image
+                byId("img").alt = item.shortName
+                createInfoTable(item)
+                inner("shortInfo",item.shortInfo + '<a type="button" class="btn" style="margin-left:2%;" onclick="more()">+ info</a>'); 
+                inner("longerInfo","<p>"+item.longerInfo.join("</p>") + '<a type="button" class="btn" style="margin-left:2%;" onclick="less()">- info</a><p>' +
+                    ' <a type="button" class="btn" onclick="muchMore()">+ full info</a></p>');
+                byId("fullInfo").dataset['uri'] = item.fullInfo
+                highlightIndex(index);
+            }
+            
+            function more() {
+                hide("shortInfo");
+                show("longerInfo");
+                hide("fullInfo");
+            }
+            
+            function less() {
+                hide("longerInfo");
+                show("shortInfo");
+            }
+            
+            function muchMore() {
+                let uri = byId("fullInfo").dataset['uri']
+                fetch(uri)
+                .then(response => response.text())
+                .then(data => {	
+                    inner("fullInfoContent",data) ;
+                    show("fullInfo") ;
+                })
+                document.body.style.overflow = "hidden";
+            }
+
+            function hideFullInfo() {
+                hide("fullInfo");
+                document.body.style.overflow = "";
+            }
+            
+            function createInfoTable(item) {
+                inner("infoTable","",true) ;
+                const exb_room = "<tr><th>Exhibition Room</th><td><a type=\"button\" class=\"btn\" href=\"#\" onclick=\"changeNarrative(\'Historical Period\',\'";
+                for (i in item.info) {
+                    if (["Type", "Controversies/Debates", "Significance", "Exhibition"].includes(i)) continue; 
+                    if (item.info[i] !== null) {
+                        if (narratives.includes(i)) {
+                            if (i==="Historical Period") {
+                                inner("infoTable",exb_room + item.info[i] +"\')\">" + item.info[i] + "</a></td></tr>", false);
+                            } else {
+                                let themes = item.info[i].split(", ");
+                                let val = [];
+                                for (j in themes) {
+                                    val.push('<a type="button" class="btn" href="#" onclick="changeNarrative(\''+i+'\',\''+themes[j]+'\')">'+themes[j]+'</a>')
+                                }
+                                inner("infoTable","<tr><th>"+i+"</th><td>"+val.join(", ")+"</td></tr>", false);
+                            }
+                        } else {
+                            inner("infoTable","<tr><th>"+i+"</th><td>"+item.info[i]+"</td></tr>", false);
+                        };
+                    };
+                };
+            };
+            
+            function updateIndices() {
+                let indicesBar = "";
+                for (let curSelIndex = 0; curSelIndex < currentSelection.length; curSelIndex++) {
+                    let displayedIndex = curSelIndex + 1;
+                    indicesBar += "<a class=\"index\" id=\""+curSelIndex+"\" onclick=showInfo("+curSelIndex+")>"+displayedIndex+"</a>"
+                }
+                inner("indicesBox", indicesBar, true);
+            }
+
+            function prepareNarratives() {
+                currentSelection = items.filter( i => 
+                    i.info[currentNarrative]?.includes(currentValue) 
+                );
+                currentSelection.sort( (i,j) =>  
+                    i['@sort'] < j['@sort'] ? -1 : 1
+                );
+                if (currentSelection.length==0) currentSelection = items;
+            
+                index  = currentSelection.findIndex( i => i['@sort'] == currentSort )
+                if (index == -1) index = 0;
+                updateIndices();
+                showInfo(index);
+            }
+            
+            function changeNarrative(narrative,value) {
+                    currentNarrative = narrative
+                    currentValue = value
+                    prepareNarratives()
+            }
+            
+            function byId(id) {
+                return document.getElementById(id)
+            }
+            
+            function show(id) {
+                document.getElementById(id).classList.remove('hidden')
+            }
+            
+            function hide(id) {
+                document.getElementById(id).classList.add('hidden')
+            }
+            
+            function inner(id,content, emptyFirst=true) {
+                if(emptyFirst) document.getElementById(id).innerHTML = "" ; 
+                document.getElementById(id).innerHTML += content ; 
+            }
+
+            // Funzione per cambiare oggetto da vedere da applicare sui pulsanti a destra e a sinistra dell'immagine
+            function switchItem(n) {
+                    index += n;
+                    if (index > currentSelection.length) index = 0;
+                    else if (index < 0) index = currentSelection.length - 1;
+                    showInfo(index);
+                };
+        </script>
+    </head>
+    <body>
+        <!-- Elementi che si sovrappongono a tutti -->
+        <div id="opaque-page"></div>
+        <div class="hidden" id="fullInfo">
+            <div id="fullInfoContent"></div>
+        </div>
+        <!------------------------------------------->
+        <div id="page-container">
+            <div id="main-container">
+                <div id="navbar">
+                    <div class="rom-navbar">
+                        <div id="logo-box"><a class="logo" href="index.html">logo</a></div>
+                        <div class="navbar-body">
+                            <div class="nav-link-box">
+                                <a class="nav-link" href="narratives.html">Narratives</a>
+                                <span class="underline"></span>
+                            </div>
+                            <div class="nav-link-box">
+                                <a class="nav-link" href="items.html">Items</a>
+                                <span class="underline"></span>
+                            </div>
+                            <div class="nav-link-box">
+                                <a class="nav-link" href="map.html">Map</a>
+                                <span class="underline"></span>
+                            </div>
+                            <div class="nav-link-box">
+                                <a class="nav-link" href="about.html">About us</a>
+                                <span class="underline"></span>
+                            </div>
+                        </div>
+                        <!-- Hamburger Menu -->
+                        <div class="menu" id="menu-button">
+                            <button id="toggleButton" onclick="toggleCurtain()" class="toggle-btn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="menu" id="menu-links">
+                        <a href="narratives.html">Narratives</a>
+                        <a href="items.html">Items</a>
+                        <a href="map.html">Map</a>
+                        <a href="about.html">About us</a>
+                    </div>
+                    <!------- Hamburger Menu End --------->
                 </div>
-                <!-- Hamburger Menu -->
-            <div class="menu" id="menu-button">
-                <button id="toggleButton" onclick="toggleCurtain()" class="toggle-btn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <!-------- Navbar end --------->
+                <div id="gallery">
+                    <div class="g-container">
+                        <div class="header">
+                            <h4> Narratives</h4>
+                        </div>
+                    </div>
+                    <div class="g-container">
+                        <div class="header">
+                            <h4 id="title-header"></h4>
+                        </div>
+                    </div>
+                    <div class="g-container">
+                        <div class="header">
+                            <h4>Info</h4>
+                        </div>
+                    </div>
+                    <div class="g-container">
+                        <div id="column-1">
+                            <div class="narratives"><p>Typology</p><button class="nar-btn btn">+</button></div>
+                            <div class="c-box">
+                                <div class="classes" data-value="text" id="prova"><p>Text</p><input type="radio" name="typology"></div>
+                                <div class="classes" data-value="tool"><p>Tool</p><input type="radio" name="typology"></div>
+                                <div class="classes" data-value="artwork"><p>Artwork</p><input type="radio" name="typology"></div>
+                                <div class="classes" data-value="garment"><p>Garment</p><input type="radio" name="typology"></div>
+                                <div class="classes" data-value="event"><p>Event</p><input type="radio" name="typology"></div>
+                                <div class="classes" data-value="weapon"><p>Weapon</p><input type="radio" name="typology"></div>
+                            </div>
+                            <div class="narratives"><p>Themes</p><button class="nar-btn btn">+</button></div>
+                            <div class="c-box">
+                                <div class="classes" data-value="ethics of war"><p>Ethics of war</p><input type="radio" name="theme"></div>
+                                <div class="classes" data-value="scientific revolution"><p class="long-nar">Scientific revolution</p><input type="radio" name="theme"></div>
+                                <div class="classes" data-value="women's history"><p>Women's history</p><input type="radio" name="theme"></div>
+                                <div class="classes" data-value="religiuos dissent"><p>Religious dissent</p><input type="radio" name="theme"></div>
+                                <div class="classes" data-value="provocative art"><p>Provocative art</p><input type="radio" name="theme"></div>
+                                <div class="classes" data-value="digital privacy"><p>Digital privacy</p><input type="radio" name="theme"></div>
+                            </div>
+                            <div class="narratives"><p>Historical period</p><button class="nar-btn btn">+</button></div>
+                            <div class="c-box">
+                                <div class="classes" data-value="XV-XVII"><p>15<sup>th</sup>-17<sup>th</sup> century</p><input type="radio" name="historical-period"></div>
+                                <div class="classes" data-value="XVIII-XIX"><p>18<sup>th</sup>-19<sup>th</sup> century</p><input type="radio" name="historical-period"></div>
+                                <div class="classes" data-value="first half of XX century"><p class="long-nar">1<sup>st</sup> half 20<sup>th</sup> century</p><input type="radio" name="historical-period"></div>
+                                <div class="classes" data-value="second half of XX century"><p class="long-nar">2<sup>nd</sup> half 20<sup>th</sup> century</p><input type="radio" name="historical-period"></div>
+                                <div class="classes" data-value="XXI"><p>21<sup>st</sup> century</p><input type="radio" name="historical-period"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="g-container">
+                        <div id="column-2">
+                            <div id="switchPanel">
+                                <div id="arrowSection">
+                                    <div class="switch" id="left">
+                                        <input class="switchButton" id="leftButton" type="image" src="assets/img/flowArrow.svg" alt="go to back" onclick="switchItem(-1)"/>
+                                    </div>
+                                    <div class="switch" id="right">
+                                        <input class="switchButton" id="rightButton" type="image" src="assets/img/flowArrow.svg" alt="go to forward" onclick="switchItem(1)"/>
+                                    </div>
+                                </div>
+                                <div id="indexSection">
+                                    <div id="indicesBox"></div>
+                                </div>
+                            </div>
+                            <div class="image-box">
+                                <img id="img" src="" alt="image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="g-container">
+                        <div id="column-3">
+                            <table id="info">
+                                <tbody id="infoTable"></tbody>
+                            </table>
+                            <div id="description">
+                                <h5>Description</h5>
+                                <p id="shortInfo"></p>
+                                <p class="hidden" id="longerInfo"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <footer>
+                <!-- Copyright -->
+                <p>© 2024 Copyright: <a href="#">Forbidden Curiosities</a></p>
+            </footer>
         </div>
-        <div class="menu" id="menu-links">
-            <a href="narratives.html">Narratives</a>
-            <a href="items.html">Items Gallery</a>
-            <a href="map.html">Exhibition Map</a>
-            <a href="about.html">About Us</a>
-        </div>
-        <!------- Hamburger Menu End --------->
-            </nav>
-    <!------ Navbar End ---------->
-
-    <!-- Modal Popup -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>LET YOUR CURIOSITY GUIDE YOU<br>EXPLORE THE COLLECTION ON ANY PATH YOU CHOOSE</p>
-        </div>
-    </div>
-</header>
-<main>
-
-    <div class="container">
-        <div class="tabs">
-            <button class="tab-button main-button" onclick="selectMain(this, 'curtain-type')">BY TYPOLOGY</button>
-            <button class="tab-button main-button" onclick="selectMain(this, 'curtain-theme')">BY THEMES</button>
-            <button class="tab-button main-button" onclick="selectMain(this, 'curtain-period')">BY HISTORICAL PERIOD</button>
-        </div>
-    
-        <!-- Curtain TYPE -->
-        <div id="curtain-type" class="curtain">
-            <div class="sub-tabs inner-curtain">
-                <button class="sub-tab-button" onclick="selectSub(this)">TEXT</button>
-                <button class="sub-tab-button" onclick="selectSub(this)">TOOL</button>
-                <button class="sub-tab-button" onclick="selectSub(this)">ARTWORK</button>
-                <button class="sub-tab-button" onclick="selectSub(this)">GARMENT</button>
-                <button class="sub-tab-button" onclick="selectSub(this)">EVENT</button>
-                <button class="sub-tab-button" onclick="selectSub(this)">WEAPON</button>
-            </div>
-        </div>        
-    
-        <!-- Curtain THEME -->
-        <div id="curtain-theme" class="curtain">
-            <div class="sub-tabs inner-curtain">
-                <button class="sub-tab-button" onclick="selectSub(this)">ETHICS OF WAR</button>
-                <button class="sub-tab-button" onclick="selectSub(this)">SCIENTIFIC REVOLUTION</button>
-                <button class="sub-tab-button" onclick="selectSub(this)">WOMEN'S HISTORY</button>
-                <button class="sub-tab-button" onclick="selectSub(this)">RELIGIOUS DISSENT</button>
-                <button class="sub-tab-button" onclick="selectSub(this)">PROVOCATIVE ART</button>
-                <button class="sub-tab-button" onclick="selectSub(this)">DIGITAL PRIVACY</button>
-            </div>
-        </div>
-    
-        <!-- Curtain PERIOD -->
-        <div id="curtain-period" class="curtain">
-            <div class="sub-tabs inner-curtain">
-                <button class="sub-tab-button" onclick="selectSub(this)">15-17<sup>th</sup> CENTURY</button>
-                <button class="sub-tab-button" onclick="selectSub(this)">18-19<sup>th</sup> CENTURY</button>
-                <button class="sub-tab-button" onclick="selectSub(this)">FIRST HALF 20<sup>th</sup> CENTURY</button>
-                <button class="sub-tab-button" onclick="selectSub(this)">SECOND HALF 20<sup>th</sup> CENTURY</button>
-                <button class="sub-tab-button" onclick="selectSub(this)">21<sup>st</sup> CENTURY</button>
-            </div>
-        </div>
-    </div>
-
- <!--========= ingresso al nero cancello - entrata per Mordor ==================-->      
- <div class="card" id="mainCard">
-    <div class="card-header">
-        <h2 class="text-center" id="header"></h2>
-    </div>
-  <div class="card-body">
-  <div class="row">
-        <div class="col-sm-12 col-md-6 d-flex">
-            <img id ="img" src="" class="card-img-top img-fluid limitHeight m-auto" alt="">
-        </div>
-        <div class="col-sm-12 col-md-6">		
-
-            <h5 class="card-title text-center">
-<!-- https://stackoverflow.com/questions/52348303/collapse-bootstrap-card-on-sm-and-or-md-screens -->
-<!-- https://stackoverflow.com/questions/19024218/bootstrap-3-collapse-change-chevron-icon-on-click -->
-                Data
-                <button class="btn d-lg-none" type="button" id="dataExpanderIcon"
-                   data-bs-toggle="collapse" data-bs-target="#table" 
-                   aria-expanded="false" aria-controls="table">
-                    <span class="bi-chevron-bar-right" ></span>
-                    <span class="bi-chevron-bar-down" ></span>
-                </button>
-            </h5>
-            <table class="table table-striped border collapse d-md-block" id="table">
-                <tbody  id="infoTable"></tbody>
-            </table>
-        </div>
-    </div>
-    <h5 class="card-title text-center">Info</h5>
-    <p class="card-text" id="shortInfo"></p>
-    <p class="card-text d-none" id="longerInfo"></p>
-  </div>
-  <div class="card-footer d-flex justify-content-between">
-    <button href="#"  type="button" class="btn btn-primary" id="buttonPrev">Previous</button>
-    <h3 id="narrative"></h3>
-    <button href="#"  type="button" class="btn btn-primary" id="buttonNext">Next</button>
-  </div>
-</div>
-
-
-
-
-<div class="card d-none" id="fullInfo">
-    <div class="card-header">
-        <h2 class="text-center" id="fullHeader"></h2>
-    </div>
-  <div class="card-body" id="fullInfoContent"></div>
-  <div class="card-footer d-flex justify-content-between">
-    <a href="#"  type="button" class="btn btn-primary m-auto" onclick="hideFullInfo()">Back</a>
-  </div>
-</div>
-
-    </main>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
- 
-    <script>
-
-var items = [];
-var narratives = [];
-var currentSelection = [];
-var currentNarrative = "";
-var currentValue = "";
-var currentSort = "";
-
-// JSON Data
-document.addEventListener("DOMContentLoaded", async function(event) {
-	console.log("Ready to start")
-	fetch('assets/data/items.json')
-	.then(response => response.json())
-	.then(data => {	
-		items = data.items
-		var startWith = data.meta.startWith
-		var item = items[startWith]
-
-		narratives = data.meta.narratives
-		currentNarrative = data.meta.startNarrative
-		currentValue = data.meta.startValue
-		prepareNarratives()
-	})
-});
-
-function prepareNarratives() {
-	currentSelection = items.filter( i => 
-		i.info[currentNarrative]?.includes(currentValue) 
-	)
-	currentSelection.sort( (i,j) =>  
-		i['@sort'] < j['@sort'] ? -1 : 1 
-	)
-	if (currentSelection.length==0) 
-		currentSelection = items	
-
-	var index  = currentSelection.findIndex( i => i['@sort'] == currentSort )
-	if (index == -1) index = 0
-	showInfo(index)
-}
-
-
-function showInfo(index) {
-	var item = currentSelection[index]
-	currentSort = item['@sort']
-	inner("header",item.shortName) ;
-	inner("fullHeader",item.shortName) ;
-	byId("img").src = item.image
-	byId("img").alt = item.shortName
-	createInfoTable(item)
-	inner("shortInfo",item.shortInfo + '<div class="button-container">' +
-        '<a type="button" class="button" onclick="more()">Tell me more...</a>' + '</div>'); 
-	inner("longerInfo","<p>"+item.longerInfo.join("</p><p>") +
-    '<div class="button-container">' +
-        '<a type="button" class="button" onclick="less()">Tell me less</a> or <a type="button" class="button" onclick="muchMore()">Tell me even more...</a></p>')
-        + '</div>';
-	byId("fullInfo").dataset['uri'] = item.fullInfo
-	
-	prepareNavigationButtons(index)
-}
-
-function more() {
-	hide("shortInfo") ;
-	show("longerInfo") ;
-	hide("fullInfo") ;
-}
-function less() {
-	hide("longerInfo") ;
-	show("shortInfo") ;
-	hide("fullInfo") ;
-}
-function muchMore() {
-	var uri = byId("fullInfo").dataset['uri']
-	fetch(uri)
-	.then(response => response.text())
-	.then(data => {	
-		inner("fullInfoContent",data) ;
-		hide("mainCard") ;
-		show("fullInfo") ;
-		window.scrollTo(0,0)
-	})
-}
-function hideFullInfo() {
-	hide("longerInfo") ;
-	show("shortInfo") ;
-	hide("fullInfo") ;
-	show("mainCard") ;
-}
-
-function createInfoTable(item) {
-	inner("infoTable","",true) ;
-	for (i in item.info) {
-		if (item.info[i] !== null) {
-			if (narratives.includes(i)) {
-				var items = item.info[i].split(", ")
-				var val = []
-				for (j in items) {
-					val.push('<a class="button" role="button" href="#" onclick="changeNarrative(\''+i+'\',\''+items[j]+'\')">'+items[j]+'</a>')
-				}
-			inner("infoTable","<tr><th>"+i+"</th><td>"+val.join(", ")+"</td></tr>", false)
-			} else {
-				inner("infoTable","<tr><th>"+i+"</th><td>"+item.info[i]+"</td></tr>", false)
-			}
-		}
-	}
-}
-
-function prepareNavigationButtons(index) {
-    if (index > 0) {
-        byId("buttonPrev").disabled = false;
-        byId("buttonPrev").onclick = () => showInfo(index - 1);
-        byId("buttonPrev").innerHTML = currentSelection[index - 1].shortName;        
-    } else {
-        byId("buttonPrev").disabled = true;
-        byId("buttonPrev").onclick = null;
-        byId("buttonPrev").innerHTML = "--";
-    }
-
-    if (index < currentSelection.length - 1) {
-        byId("buttonNext").disabled = false;
-        byId("buttonNext").onclick = () => showInfo(index + 1);
-        byId("buttonNext").innerHTML = currentSelection[index + 1].shortName;
-    } else {
-        byId("buttonNext").disabled = true;
-        byId("buttonNext").onclick = null;
-        byId("buttonNext").innerHTML = "--";
-    }
-}
-
-function changeNarrative(narrative,value) {
-		currentNarrative = narrative
-		currentValue = value
-		prepareNarratives()
-}
-
-function byId(id) {
-	return document.getElementById(id)
-}
-
-function show(id) {
-	document.getElementById(id).classList.remove('hidden')
-}
-
-function hide(id) {
-	document.getElementById(id).classList.add('hidden')
-}
-
-function inner(id,content, emptyFirst=true) {
-	if(emptyFirst) document.getElementById(id).innerHTML = "" ; 
-	document.getElementById(id).innerHTML += content ; 
-}
-
-
-// QUI INIZIA CODICE X LE NARRATIVES IN ALTO (NAVIGAZIONE BOTTONI)
-
-// Dropdown for visualizing sub-narratives
-let activeMainButton = null;
-let activeSubButton = null;
-let activeCurtain = null;
-
-
-// Function to manage the selection of the main button and toggle the curtain
-function selectMain(button) {
-    // Deactivate the previously active main button
-    if (activeMainButton) {
-        activeMainButton.classList.remove('active');
-        closeAllCurtains();  // Close any open curtain
-    }
-    
-    // Set the clicked main button as active
-    activeMainButton = button;
-    button.classList.add('active');
-    
-    // Open the appropriate curtain based on the button
-    let curtainId;
-    if (button.innerText.includes('TYPOLOGY')) {
-        curtainId = 'curtain-type';
-    } else if (button.innerText.includes('THEMES')) {
-        curtainId = 'curtain-theme';
-    } else if (button.innerText.includes('HISTORICAL PERIOD')) {
-        curtainId = 'curtain-period';
-    }
-    openCurtain(curtainId);
-}
-
-// Function to open a specific curtain
-function openCurtain(curtainId) {
-    closeAllCurtains();  // Close all open curtains
-
-    // Open the selected curtain
-    const curtain = document.getElementById(curtainId);
-    curtain.classList.add('open');
-}
-
-// Function to close all curtains
-function closeAllCurtains() {
-    const curtains = document.querySelectorAll('.curtain');
-    curtains.forEach(curtain => curtain.classList.remove('open'));
-    curtainOpen = false;
-}
-
-// Close the curtain if clicked outside of it
-document.addEventListener('click', function(event) {
-    const isClickInsideCurtain = event.target.closest('.curtain');
-    const isClickOnButton = event.target.closest('.main-button, .sub-tab-button');
-
-    if (!isClickInsideCurtain && !isClickOnButton) {
-        closeAllCurtains();
-    }
-});
-
-// Function to select the sub-button
-function selectSub(button) {
-    // Deactivate the previously active sub-button
-    if (activeSubButton) {
-        activeSubButton.classList.remove('active');
-    }
-    
-    // Set the clicked sub-button as active
-    activeSubButton = button;
-    button.classList.add('active');
-}
-
-    </script>
-
-<footer>
-    <p>&copy; 2024 PD. Tutti i diritti riservati.</p>
-    <p><a href="#privacy">Informativa sulla privacy</a></p>
-</footer>
-</body>
+    </body>
 </html>
