@@ -1,0 +1,44 @@
+    /* Stile per lo spinner */
+    .spinner {
+        border: 5px solid #f3f3f3; /* Colore grigio chiaro */
+        border-top: 5px solid #db3490; /* Colore blu per la parte rotante */
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 2s linear infinite;
+    }
+
+    /* Animazione per lo spinner */
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    /* Quando la pagina è caricata, nascondi lo spinner */
+    .loaded .spinner {
+        display: none;
+    }
+
+    /* Stile per il contenuto principale */
+    .content {
+        display: none; /* Rende invisibile il contenuto fino al caricamento */
+    }
+
+    /* Pagina di caricamento */
+    .loading-screen {
+        position: fixed; /* Posiziona lo spinner in modo fisso */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.721); /* Colore di sfondo, modifica qui */
+        z-index: 9999; /* Lo spinner è sopra gli altri contenuti */
+    }
+
+    /* Classe che nasconde lo spinner e mostra il contenuto */
+    body.loaded .loading-screen {
+        display: none;
+    }
