@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/css/my_styles.css">
+    <link rel="stylesheet" href="assets/css/index.css">
     <script src="assets/java/java.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <title>Forbidden Curiosities</title>
@@ -12,12 +12,13 @@
 
 <body>
     <div id="box">
-        <input id="upButton" type="image" src="assets/img/upButton.svg"/>
+        <div id="opaque-page"></div>
+        <input id="upButton" type="image" src="assets/img/upButton.svg" alt="back to the top"/>
         <div id="first-page">
             <!-- Navbar -->
             <div id="navbar">
                 <div class="rom-navbar">
-                    <a class="logo" href="index.html">logo</a>
+                    <div id="logo-box"><a class="logo" href="index.html">logo</a></div>
                     <div class="navbar-body">
                         <div class="nav-link-box">
                             <a class="nav-link" href="narratives.html">Narratives</a>
@@ -59,7 +60,7 @@
                 <div id="center">
                     <div id="banner"></div>
                     <h1>FORBIDDEN CURIOSITIES</h1>
-                    <div id="arrow"><img src="assets/img/arrow-sm-down-svgrepo-com.svg"></div>
+                    <div id="arrow"><img src="assets/img/arrow-sm-down-svgrepo-com.svg" alt="scroll down"></div>
                 </div>
                 <div id="img-right"></div>
             </div>
@@ -81,265 +82,365 @@
                 <h2>THE TIMELINE</h2>
                 <p>Retrace the items through time</p>
             </div>
-            <span></span>
+            <span id="line"></span>
             <div id="items">
                 <div id="item-1" class="item">
                     <div class="empty-box"></div>
                     <div class="item-wrapper">
-                        <div class="data">1927</div>
-                        <div class="item-content">
-                            <h4>1927</h4>
-                            <h3>Nome Oggetto</h3>
-                            <div class="img-space"><img src="assets/img/items/10shoot.jpg"></div>
-                            
-                            <div class="button-space"><button class="narBtn">SEE MORE</button></div>
+                        <div class="data-box"><div class="data">1400</div></div>
+                        <div class="item-space">
+                            <div class="image-box">
+                                <input class="infoButton" type="image" src="assets/img/infoButton.svg" alt="info button"/>
+                                <input class="infoCloser" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
+                                <img src="assets/img/items/18arquebus.jpeg" alt="the arquebus">
+                                <div class="info-bar">
+                                    <h4>Arquebus</h4>
+                                    <p>Lorem ipsum sicut alia sunt. Potest illud qui velit obtinere res. Cum fuisset mendatione, suspectum gravior.</p>
+                                    <div class="bottone"><input id="timeButton" type="button" value="SEE MORE"></input></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div id="item-2" class="item">
                     <div class="empty-box"></div>
                     <div class="item-wrapper">
-                        <div class="data">1927</div>
-                        <div class="item-content">
-                            <h4>1927</h4>
-                            <h3>Nome Oggetto</h3>
-                            <div class="img-space"><img src="assets/img/demo.jpg"></div>
-                            
-                            <div class="button-space"><button class="narBtn">SEE MORE</button></div>
+                        <div class="data-box"><div class="data">1490</div></div>
+                        <div class="item-space">
+                            <div class="image-box">
+                                <input class="infoButton" type="image" src="assets/img/infoButton.svg" alt="info button"/>
+                                <input class="infoCloser" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
+                                <img src="assets/img/items/20da-vinci.jpg" alt="Leonardo Da Vinci's vitruvian man">
+                                <div class="info-bar">
+                                    <h4>Vitruvian Man</h4>
+                                    <p>Lorem ipsum sicut alia sunt. Potest illud qui velit obtinere res. Cum fuisset mendatione, suspectum gravior.</p>
+                                    <div class="bottone"><input id="timeButton" type="button" value="SEE MORE"></input></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div id="item-3" class="item">
                     <div class="empty-box"></div>
                     <div class="item-wrapper">
-                        <div class="data">1927</div>
-                        <div class="item-content">
-                            <h4>1927</h4>
-                            <h3>Nome Oggetto</h3>
-                            <div class="img-space"><img src="assets/img/demo.jpg"></div>
-                            
-                            <div class="button-space"><button class="narBtn">SEE MORE</button></div>
+                        <div class="data-box"><div class="data">1517</div></div>
+                        <div class="item-space">
+                            <div class="image-box">
+                                <input class="infoButton" type="image" src="assets/img/infoButton.svg" alt="info button"/>
+                                <input class="infoCloser" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
+                                <img src="assets/img/items/7luther.jpg" alt="Martin Luther ninty-five theses">
+                                <div class="info-bar">
+                                    <h4>Luther's Theses</h4>
+                                    <p>Lorem ipsum sicut alia sunt. Potest illud qui velit obtinere res. Cum fuisset mendatione, suspectum gravior.</p>
+                                    <div class="bottone"><input id="timeButton" type="button" value="SEE MORE"></input></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div id="item-4" class="item">
                     <div class="empty-box"></div>
                     <div class="item-wrapper">
-                        <div class="data">1927</div>
-                        <div class="item-content">
-                            <h4>1927</h4>
-                            <h3>Nome Oggetto</h3>
-                            <div class="img-space"><img src="assets/img/demo.jpg"></div>
-                            
-                            <div class="button-space"><button class="narBtn">SEE MORE</button></div>
+                        <div class="data-box"><div class="data">1608</div></div>
+                        <div class="item-space">
+                            <div class="image-box">
+                                <input class="infoButton" type="image" src="assets/img/infoButton.svg" alt="info button"/>
+                                <input class="infoCloser" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
+                                <img src="assets/img/items/1galileo.png" alt="Galileo Galilei's telescope">
+                                <div class="info-bar">
+                                    <h4>Galileo's Telescope</h4>
+                                    <p>Lorem ipsum sicut alia sunt. Potest illud qui velit obtinere res. Cum fuisset mendatione, suspectum gravior.</p>
+                                    <div class="bottone"><input id="timeButton" type="button" value="SEE MORE"></input></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div id="item-5" class="item">
                     <div class="empty-box"></div>
                     <div class="item-wrapper">
-                        <div class="data">1927</div>
-                        <div class="item-content">
-                            <h4>1927</h4>
-                            <h3>Nome Oggetto</h3>
-                            <div class="img-space"><img src="assets/img/demo.jpg"></div>
-                            
-                            <div class="button-space"><button class="narBtn">SEE MORE</button></div>
+                        <div class="data-box"><div class="data">19<sup>th</sup> c.</div></div>
+                        <div class="item-space">
+                            <div class="image-box">
+                                <input class="infoButton" type="image" src="assets/img/infoButton.svg" alt="info button"/>
+                                <input class="infoCloser" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
+                                <img src="assets/img/items/5corset.jpg" alt="Victorian age corset">
+                                <div class="info-bar">
+                                    <h4>Victorian Corset</h4>
+                                    <p>Lorem ipsum sicut alia sunt. Potest illud qui velit obtinere res. Cum fuisset mendatione, suspectum gravior.</p>
+                                    <div class="bottone"><input id="timeButton" type="button" value="SEE MORE"></input></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div id="item-6" class="item">
                     <div class="empty-box"></div>
                     <div class="item-wrapper">
-                        <div class="data">1927</div>
-                        <div class="item-content">
-                            <h4>1927</h4>
-                            <h3>Nome Oggetto</h3>
-                            <div class="img-space"><img src="assets/img/demo.jpg"></div>
-                            
-                            <div class="button-space"><button class="narBtn">SEE MORE</button></div>
+                        <div class="data-box"><div class="data">1789</div></div>
+                        <div class="item-space">
+                            <div class="image-box">
+                                <input class="infoButton" type="image" src="assets/img/infoButton.svg" alt="info button"/>
+                                <input class="infoCloser" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
+                                <img src="assets/img/items/19guillotine.jpg" alt="A gullotine used in nineteenth century">
+                                <div class="info-bar">
+                                    <h4>Guillotine</h4>
+                                    <p>Lorem ipsum sicut alia sunt. Potest illud qui velit obtinere res. Cum fuisset mendatione, suspectum gravior.</p>
+                                    <div class="bottone"><input id="timeButton" type="button" value="SEE MORE"></input></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div id="item-7" class="item">
                     <div class="empty-box"></div>
                     <div class="item-wrapper">
-                        <div class="data">1927</div>
-                        <div class="item-content">
-                            <h4>1927</h4>
-                            <h3>Nome Oggetto</h3>
-                            <div class="img-space"><img src="assets/img/demo.jpg"></div>
-                            
-                            <div class="button-space"><button class="narBtn">SEE MORE</button></div>
+                        <div class="data-box"><div class="data">1859</div></div>
+                        <div class="item-space">
+                            <div class="image-box">
+                                <input class="infoButton" type="image" src="assets/img/infoButton.svg" alt="info button"/>
+                                <input class="infoCloser" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
+                                <img src="assets/img/items/2darwin.jpg" alt="First edition Charles Darwin's On origin of species">
+                                <div class="info-bar">
+                                    <h4>"Origin of Species" by Charles Darwin</h4>
+                                    <p>Lorem ipsum sicut alia sunt. Potest illud qui velit obtinere res. Cum fuisset mendatione, suspectum gravior.</p>
+                                    <div class="bottone"><input id="timeButton" type="button" value="SEE MORE"></input></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div id="item-8" class="item">
                     <div class="empty-box"></div>
                     <div class="item-wrapper">
-                        <div class="data">1927</div>
-                        <div class="item-content">
-                            <h4>1927</h4>
-                            <h3>Nome Oggetto</h3>
-                            <div class="img-space"><img src="assets/img/demo.jpg"></div>
-                            
-                            <div class="button-space"><button class="narBtn">SEE MORE</button></div>
+                        <div class="data-box"><div class="data">1866</div></div>
+                        <div class="item-space">
+                            <div class="image-box">
+                                <input class="infoButton" type="image" src="assets/img/infoButton.svg" alt="info button"/>
+                                <input class="infoCloser" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
+                                <img src="assets/img/items/8origin-du-monde.jpg" alt="Gustave Courbet painting L'origin du monde">
+                                <div class="info-bar">
+                                    <h4>"Origin du Monde" by Gustave Courbet</h4>
+                                    <p>Lorem ipsum sicut alia sunt. Potest illud qui velit obtinere res. Cum fuisset mendatione, suspectum gravior.</p>
+                                    <div class="bottone"><input id="timeButton" type="button" value="SEE MORE"></input></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div id="item-9" class="item">
                     <div class="empty-box"></div>
                     <div class="item-wrapper">
-                        <div class="data">1927</div>
-                        <div class="item-content">
-                            <h4>1927</h4>
-                            <h3>Nome Oggetto</h3>
-                            <div class="img-space"><img src="assets/img/demo.jpg"></div>
-                            
-                            <div class="button-space"><button class="narBtn">SEE MORE</button></div>
+                        <div class="data-box"><div class="data">1902</div></div>
+                        <div class="item-space">
+                            <div class="image-box">
+                                <input class="infoButton" type="image" src="assets/img/infoButton.svg" alt="info button"/>
+                                <input class="infoCloser" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
+                                <img src="assets/img/items/14curie.jpg" alt="Marie Curie's laboratory notes">
+                                <div class="info-bar">
+                                    <h4>Marie Curie's studies</h4>
+                                    <p>Lorem ipsum sicut alia sunt. Potest illud qui velit obtinere res. Cum fuisset mendatione, suspectum gravior.</p>
+                                    <div class="bottone"><input id="timeButton" type="button" value="SEE MORE"></input></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div id="item-10" class="item">
                     <div class="empty-box"></div>
                     <div class="item-wrapper">
-                        <div class="data">1927</div>
-                        <div class="item-content">
-                            <h4>1927</h4>
-                            <h3>Nome Oggetto</h3>
-                            <div class="img-space"><img src="assets/img/demo.jpg"></div>
-                            
-                            <div class="button-space"><button class="narBtn">SEE MORE</button></div>
+                        <div class="data-box"><div class="data">1914</div></div>
+                        <div class="item-space">
+                            <div class="image-box">
+                                <input class="infoButton" type="image" src="assets/img/infoButton.svg" alt="info button"/>
+                                <input class="infoCloser" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
+                                <img src="assets/img/items/9medal.jpeg" alt="Medal of honor for hunger strike">
+                                <div class="info-bar">
+                                    <h4>Hunger Strike Medal</h4>
+                                    <p>Lorem ipsum sicut alia sunt. Potest illud qui velit obtinere res. Cum fuisset mendatione, suspectum gravior.</p>
+                                    <div class="bottone"><input id="timeButton" type="button" value="SEE MORE"></input></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div id="item-11" class="item">
                     <div class="empty-box"></div>
                     <div class="item-wrapper">
-                        <div class="data">1927</div>
-                        <div class="item-content">
-                            <h4>1927</h4>
-                            <h3>Nome Oggetto</h3>
-                            <div class="img-space"><img src="assets/img/demo.jpg"></div>
-                            
-                            <div class="button-space"><button class="narBtn">SEE MORE</button></div>
+                        <div class="data-box"><div class="data">1926</div></div>
+                        <div class="item-space">
+                            <div class="image-box">
+                                <input class="infoButton" type="image" src="assets/img/infoButton.svg" alt="info button"/>
+                                <input class="infoCloser" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
+                                <img src="assets/img/items/3enigma.jpg" alt="an exemplar of the Enigma encoder-decoder">
+                                <div class="info-bar">
+                                    <h4>Enigma Machine</h4>
+                                    <p>Lorem ipsum sicut alia sunt. Potest illud qui velit obtinere res. Cum fuisset mendatione, suspectum gravior.</p>
+                                    <div class="bottone"><input id="timeButton" type="button" value="SEE MORE"></input></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div id="item-12" class="item">
                     <div class="empty-box"></div>
                     <div class="item-wrapper">
-                        <div class="data">1927</div>
-                        <div class="item-content">
-                            <h4>1927</h4>
-                            <h3>Nome Oggetto</h3>
-                            <div class="img-space"><img src="assets/img/demo.jpg"></div>
-                            
-                            <div class="button-space"><button class="narBtn">SEE MORE</button></div>
+                        <div class="data-box"><div class="data">1945</div></div>
+                        <div class="item-space">
+                            <div class="image-box">
+                                <input class="infoButton" type="image" src="assets/img/infoButton.svg" alt="info button"/>
+                                <input class="infoCloser" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
+                                <img src="assets/img/items/6bomb.jpg" alt="the so called Little Boy atomic bomb">
+                                <div class="info-bar">
+                                    <h4>Atomic Bomb "Little Boy"</h4>
+                                    <p>Lorem ipsum sicut alia sunt. Potest illud qui velit obtinere res. Cum fuisset mendatione, suspectum gravior.</p>
+                                    <div class="bottone"><input id="timeButton" type="button" value="SEE MORE"></input></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div id="item-13" class="item">
                     <div class="empty-box"></div>
                     <div class="item-wrapper">
-                        <div class="data">1927</div>
-                        <div class="item-content">
-                            <h4>1927</h4>
-                            <h3>Nome Oggetto</h3>
-                            <div class="img-space"><img src="assets/img/demo.jpg"></div>
-                            
-                            <div class="button-space"><button class="narBtn">SEE MORE</button></div>
+                        <div class="data-box"><div class="data">1953</div></div>
+                        <div class="item-space">
+                            <div class="image-box">
+                                <input class="infoButton" type="image" src="assets/img/infoButton.svg" alt="info button"/>
+                                <input class="infoCloser" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
+                                <img src="assets/img/items/11playboy.jpg" alt="Playboy's first issue magazine">
+                                <div class="info-bar">
+                                    <h4>Playboy First Issue</h4>
+                                    <p>Lorem ipsum sicut alia sunt. Potest illud qui velit obtinere res. Cum fuisset mendatione, suspectum gravior.</p>
+                                    <div class="bottone"><input id="timeButton" type="button" value="SEE MORE"></input></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div id="item-14" class="item">
                     <div class="empty-box"></div>
                     <div class="item-wrapper">
-                        <div class="data">1927</div>
-                        <div class="item-content">
-                            <h4>1927</h4>
-                            <h3>Nome Oggetto</h3>
-                            <div class="img-space"><img src="assets/img/demo.jpg"></div>
-                            
-                            <div class="button-space"><button class="narBtn">SEE MORE</button></div>
+                        <div class="data-box"><div class="data">1966</div></div>
+                        <div class="item-space">
+                            <div class="image-box">
+                                <input class="infoButton" type="image" src="assets/img/infoButton.svg" alt="info button"/>
+                                <input class="infoCloser" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
+                                <img src="assets/img/items/16mini-skirt.jpg" alt="Mary Quant's miniskirt">
+                                <div class="info-bar">
+                                    <h4>Miniskirt by Mary Quant</h4>
+                                    <p>Lorem ipsum sicut alia sunt. Potest illud qui velit obtinere res. Cum fuisset mendatione, suspectum gravior.</p>
+                                    <div class="bottone"><input id="timeButton" type="button" value="SEE MORE"></input></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div id="item-15" class="item">
                     <div class="empty-box"></div>
                     <div class="item-wrapper">
-                        <div class="data">1927</div>
-                        <div class="item-content">
-                            <h4>1927</h4>
-                            <h3>Nome Oggetto</h3>
-                            <div class="img-space"><img src="assets/img/demo.jpg"></div>
-                            
-                            <div class="button-space"><button class="narBtn">SEE MORE</button></div>
+                        <div class="data-box"><div class="data">1969</div></div>
+                        <div class="item-space">
+                            <div class="image-box">
+                                <input class="infoButton" type="image" src="assets/img/infoButton.svg" alt="info button"/>
+                                <input class="infoCloser" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
+                                <img src="assets/img/items/13nasa.jpg" alt="A picture of the NASA first moon landing">
+                                <div class="info-bar">
+                                    <h4>Nasa Moon Landing</h4>
+                                    <p>Lorem ipsum sicut alia sunt. Potest illud qui velit obtinere res. Cum fuisset mendatione, suspectum gravior.</p>
+                                    <div class="bottone"><input id="timeButton" type="button" value="SEE MORE"></input></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div id="item-16" class="item">
                     <div class="empty-box"></div>
                     <div class="item-wrapper">
-                        <div class="data">1927</div>
-                        <div class="item-content">
-                            <h4>1927</h4>
-                            <h3>Nome Oggetto</h3>
-                            <div class="img-space"><img src="assets/img/demo.jpg"></div>
-                            
-                            <div class="button-space"><button class="narBtn">SEE MORE</button></div>
+                        <div class="data-box"><div class="data">1971</div></div>
+                        <div class="item-space">
+                            <div class="image-box">
+                                <input class="infoButton" type="image" src="assets/img/infoButton.svg" alt="info button"/>
+                                <input class="infoCloser" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
+                                <img src="assets/img/items/10shoot.jpg" alt="A picture of the Chris Burder Shoot performance">
+                                <div class="info-bar">
+                                    <h4>"Shoot" by Chris Burden</h4>
+                                    <p>Lorem ipsum sicut alia sunt. Potest illud qui velit obtinere res. Cum fuisset mendatione, suspectum gravior.</p>
+                                    <div class="bottone"><input id="timeButton" type="button" value="SEE MORE"></input></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div id="item-17" class="item">
                     <div class="empty-box"></div>
                     <div class="item-wrapper">
-                        <div class="data">1927</div>
-                        <div class="item-content">
-                            <h4>1927</h4>
-                            <h3>Nome Oggetto</h3>
-                            <div class="img-space"><img src="assets/img/demo.jpg"></div>
-                            
-                            <div class="button-space"><button class="narBtn">SEE MORE</button></div>
+                        <div class="data-box"><div class="data">1996</div></div>
+                        <div class="item-space">
+                            <div class="image-box">
+                                <input class="infoButton" type="image" src="assets/img/infoButton.svg" alt="info button"/>
+                                <input class="infoCloser" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
+                                <img src="assets/img/items/12dolly.jpg" alt="The cloned sheep Dolly">
+                                <div class="info-bar">
+                                    <h4>Dolly the Cloned Sheep</h4>
+                                    <p>Lorem ipsum sicut alia sunt. Potest illud qui velit obtinere res. Cum fuisset mendatione, suspectum gravior.</p>
+                                    <div class="bottone"><input id="timeButton" type="button" value="SEE MORE"></input></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div id="item-18" class="item">
                     <div class="empty-box"></div>
                     <div class="item-wrapper">
-                        <div class="data">1927</div>
-                        <div class="item-content">
-                            <h4>1927</h4>
-                            <h3>Nome Oggetto</h3>
-                            <div class="img-space"><img src="assets/img/demo.jpg"></div>
-                            
-                            <div class="button-space"><button class="narBtn">SEE MORE</button></div>
+                        <div class="data-box"><div class="data">2007</div></div>
+                        <div class="item-space">
+                            <div class="image-box">
+                                <input class="infoButton" type="image" src="assets/img/infoButton.svg" alt="info button"/>
+                                <input class="infoCloser" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
+                                <img src="assets/img/items/4hirst.jpg" alt="the artwork For the love of God by Hirst">
+                                <div class="info-bar">
+                                    <h4>"For the Love of God" by Hirst</h4>
+                                    <p>Lorem ipsum sicut alia sunt. Potest illud qui velit obtinere res. Cum fuisset mendatione, suspectum gravior.</p>
+                                    <div class="bottone"><input id="timeButton" type="button" value="SEE MORE"></input></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div id="item-19" class="item">
                     <div class="empty-box"></div>
                     <div class="item-wrapper">
-                        <div class="data">1927</div>
-                        <div class="item-content">
-                            <h4>1927</h4>
-                            <h3>Nome Oggetto</h3>
-                            <div class="img-space"><img src="assets/img/demo.jpg"></div>
-                            
-                            <div class="button-space"><button class="narBtn">SEE MORE</button></div>
+                        <div class="data-box"><div class="data">2013</div></div>
+                        <div class="item-space">
+                            <div class="image-box">
+                                <input class="infoButton" type="image" src="assets/img/infoButton.svg" alt="info button"/>
+                                <input class="infoCloser" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
+                                <img src="assets/img/items/15revel.jpg" alt="A picture of Edward Snowden">
+                                <div class="info-bar">
+                                    <h4>Snowden's Revelations</h4>
+                                    <p>Lorem ipsum sicut alia sunt. Potest illud qui velit obtinere res. Cum fuisset mendatione, suspectum gravior.</p>
+                                    <div class="bottone"><input id="timeButton" type="button" value="SEE MORE"></input></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div id="item-20" class="item">
                     <div class="empty-box"></div>
                     <div class="item-wrapper">
-                        <div class="data">1927</div>
-                        <div class="item-content">
-                            <h4>1927</h4>
-                            <h3>Nome Oggetto</h3>
-                            <div class="img-space"><img src="assets/img/demo.jpg"></div>
-                            
-                            <div class="button-space"><button class="narBtn">SEE MORE</button></div>
+                        <div class="data-box"><div class="data">2023</div></div>
+                        <div class="item-space">
+                            <div class="image-box">
+                                <input class="infoButton" type="image" src="assets/img/infoButton.svg" alt="info button"/>
+                                <input class="infoCloser" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
+                                <img src="assets/img/items/17pope.jpg" alt="A ai-generated image of Pope Francis">
+                                <div class="info-bar">
+                                    <h4>AI image of Pope Francis</h4>
+                                    <p>Lorem ipsum sicut alia sunt. Potest illud qui velit obtinere res. Cum fuisset mendatione, suspectum gravior.</p>
+                                    <div class="bottone"><input id="timeButton" type="button" value="SEE MORE"></input></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

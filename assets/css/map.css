@@ -1,0 +1,428 @@
+/*================================================*/
+/* =============== Inizio Navbar =================*/      
+/*================================================*/
+
+@media screen and (max-width: 830px) {
+  
+  div.navbar-body {visibility: hidden;}
+
+  div#img-right {
+    display: none;
+  }
+
+  div#img-left {
+    display: none;
+  }
+
+  div#welcome {
+    display: block;
+    width: 100%;
+  }
+
+  div#center {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  div#center h1 {
+    font-size: calc(10vw * 0.9);
+  }
+  
+  div#about {
+    width: 100%;
+  }
+
+  div#timeline span {
+    left: 7vw;
+  }
+
+  div.item div.item-content {
+    float: right;
+    width: 60%;
+    right: 5vw;
+  }
+
+  div.item div.item-content img {
+    height: inherit;
+    width: 70%;
+    
+  }
+
+  div.item:nth-of-type(odd) .item-content {
+    float: right;
+  }
+
+}
+
+@media screen and (min-width: 831px) {
+  div.menu {visibility: hidden;}
+
+  div#banner {
+    display: none;
+  }
+  
+  div#about {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  div.item:nth-of-type(odd) .item-content {
+    left: 5vw;
+  }
+
+  div.item:nth-of-type(even) .item-content {
+    right: 5vw;
+  }
+}
+
+#navbar {
+  position: relative;
+  flex: 0 1 auto;
+}
+
+.rom-navbar {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.navbar-body {
+  position: inherit;
+  font-size: calc(15px + 0.390625vw);
+  display: grid;
+  height: 100px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.nav-link-box {
+  height: fit-content;
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  align-self: center;
+}
+
+.underline {
+  position: inherit;
+  background-color: #f10ff1;
+  height: 0.1vw;
+  width: 100%;
+}
+
+.nav-link-box .nav-link:hover + .underline {
+  background-color: white;
+  transition: background-color 0.5s ease; /* Transizione più fluida */
+}
+
+.nav-link:visited {
+  color: #f10ff1;
+}
+
+.nav-link:hover {
+  color: white;
+  transform: scale(1.1) translateY(-3px);
+}
+
+.nav-link {
+  text-decoration: none;
+  position: inherit;
+  color: #f10ff1;
+  text-align: center;
+  align-self: flex-end;
+  transition: color 0.3s ease, transform 0.3s ease; /* Transizione per colore e trasformazione */
+}
+
+.nav-link a { /* Lucrezia */
+  text-decoration: none;
+  color: #f10ff1;
+  font-size: 1em;
+  padding-bottom: 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#menu-button {
+  position: relative;
+  top: 40px;
+  right: 10px;
+  height: 60px;
+}
+
+.toggle-btn {
+  position: relative;
+  left: calc(55% * 0.9);
+  width: 4vw;
+  height: 4vw;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle-btn span {
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  transition: 0.3s;
+  background-color: #f10ff1;
+}
+
+.toggle-btn span:first-child {
+  transform: translateY(-8px);
+}
+
+.toggle-btn.x span:nth-child(2) {
+  opacity: 0;
+}
+
+.toggle-btn span:last-child {
+  transform: translateY(8px);
+}
+
+.toggle-btn.x span:first-child {
+  transform: rotate(45deg) translateY(0);
+}
+
+.toggle-btn.x span:last-child {
+  transform: rotate(-45deg) translateY(0);
+}
+
+#menu-links {
+  position: absolute;
+  height: 200px;
+  width: 100%;
+  display: none;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  z-index: 2;
+}
+
+#menu-links a {
+  color: #f10ff1;
+  background-color: #323232;
+  text-decoration: none;
+  font-size: calc(15px + 0.390625vw);
+  text-align: center;
+  padding: 10px 0;
+}
+
+#menu-links a:last-child {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+#menu-links a:nth-child(odd) {
+  background-color: #444;
+}
+
+#menu-links a:hover {
+  color: white;
+  background-color: #f10ff1;
+}
+
+.logo {
+  position: inherit;
+  background-color: #444;
+  height: 100px;
+  width: 100px;
+  left: 25%;
+  border: none;
+}
+
+/* =============== Fine Navbar =================*/ 
+
+/* =============== Inizio map ===============*/
+
+
+body {
+  background-color: black;
+}
+
+
+.container {
+  display: grid;
+  grid-template-rows: 15vh 85vh 20vh; 
+  max-width: 100vw;
+  row-gap: 3vh;
+ 
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 60vw 30vw; /* Two columns within second row */
+  gap: 5vw;
+  width: 100%;
+  padding-bottom: 3vh;
+}
+
+.grid-element{
+  border-radius: 15px;
+}
+
+#map {
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+}
+
+/* =========list block========*/
+
+#list-container{
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  padding: 45px;
+}
+
+#list-icon{
+  display: none;
+}
+
+#list {
+  text-align: left;
+  
+}
+
+.itemList{
+  list-style-type: number;
+}
+
+/* Style the links */
+.itemList a {
+  color: #f10ff1;        /* Make the text purple */
+  text-decoration: none;   /* Remove underline */
+        /* Make the text a bit larger */
+}
+
+/* Optional: Add hover effect */
+.itemList a:hover {
+  color: white;       /* Darker shade of purple on hover */
+}
+
+.itemList li::marker {
+  color: #f10ff1;         /* Change the number color */
+  font-weight: bold;       /* Make the number bold */
+  font-size: 1.3em;        /* Increase the size of the number */
+}
+
+@media screen and (min-width: 831px) { /* Applies to screens wider than 830px */
+  #list-container {
+    display: block;
+  }
+}
+
+
+@media screen and (max-width: 830px) {
+  .container {
+  grid-template-rows: 20vh auto 20vh ; /* Three rows */
+  }
+
+  .content {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column */
+  grid-template-rows: auto auto ; /* Stack into two rows */
+  padding-bottom: 0vh;
+  }
+
+  #list {
+    display: grid;
+    grid-template-rows: auto auto;
+  }
+
+  #map-container{
+    height: fit-content;
+  }
+
+
+  #list-icon{
+    display: block;
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: center;
+  }
+
+  #icon-button {
+    background: none; /* Remove default button styling */
+    border: none; /* Remove border */
+    padding: 0; /* Remove padding */
+    cursor: pointer; /* Change cursor to pointer for button-like behavior */
+  }
+
+  #icon {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+  }
+  
+  #icon:hover {
+    width: 50px;
+    height: 50px;
+    transform: scale(1.1);
+  }
+    
+  #list-container{
+    display: none;
+  }
+
+}
+
+  
+  
+/* Extra small devices (phones, portrait) 
+@media (max-width: 480px) {
+  .container {
+    display: grid;
+    grid-template-rows: 60vh 35vh  ;
+    gap: 15px; 
+    max-width: 100%;
+  }
+}
+
+/* Small devices (phones, landscape) 
+@media (max-width: 576px) {
+  .container {
+    flex-direction: column; 
+  }
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; 
+  }
+
+}
+
+
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column; 
+  }
+}
+
+@media (max-width: 1363px) {
+  .container {
+    flex-direction: column; 
+  }
+} */
+
+
+  /*================================================*/
+  /* =============== Fine map ===============*/
+  /*================================================*/
+  
+  
+  /* =============== Inizio Footer =================*/
+  
+  .footer {
+    position: relative;
+    height: 100%;
+    background-color: rgb(77, 77, 77);
+    color: #ffffff;
+    text-align: center;
+    font-size: calc(15px + 0.390625vw);
+  }
+  
+ /* =============== Fine Footer =================*/

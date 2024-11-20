@@ -4,60 +4,105 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/css/my_styles.css">
+    <link rel="stylesheet" href="assets/css/map.css">
     <script src="assets/java/java.js"></script>
     <title>Map of the Exhibition</title>
 </head>
 
-<header class="header">
-    <!-- Navbar -->
-    <div class="rom-navbar">
-        <a class="logo" href="index.html">logo</a>
-        <div class="navbar-body">
-            <div class="nav-link-box">
-                <a class="nav-link" href="narratives.html">Narratives</a>
-                <span class="underline"></span>
-            </div>
-            <div class="nav-link-box">
-                <a class="nav-link" href="items.html">Items</a>
-                <span class="underline"></span>
-            </div>
-            <div class="nav-link-box">
-                <a class="nav-link" href="map.html">Map</a>
-                <span class="underline"></span>
-            </div>
-            <div class="nav-link-box">
-                <a class="nav-link" href="about.html">About us</a>
-                <span class="underline"></span>
-            </div>
-        </div>
-        <!-- Hamburger Menu -->
-        <div class="menu" id="menu-button">
-            <button id="toggleButton" onclick="toggleCurtain()" class="toggle-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </div>
-    <div class="menu" id="menu-links">
-        <a href="#">Narratives</a>
-        <a href="#">Items</a>
-        <a href="#">Map</a>
-        <a href="#">About us</a>
-    </div>
+
     <!------- Hamburger Menu End --------->
+
+
     <!------ Navbar End ---------->
-</header>
 <body>
+   
+  
+    <div class="container">
+        <!-- Navbar -->
+        <div class="navbar" class="grid-item">
+            <div class="rom-navbar">
+                <a class="logo" href="index.html">logo</a>
+                <div class="navbar-body">
+                    <div class="nav-link-box">
+                        <a class="nav-link" href="#">Narratives</a>
+                        <span class="underline"></span>
+                    </div>
+                    <div class="nav-link-box">
+                        <a class="nav-link" href="#">Items</a>
+                        <span class="underline"></span>
+                    </div>
+                    <div class="nav-link-box">
+                        <a class="nav-link" href="#">Map</a>
+                        <span class="underline"></span>
+                    </div>
+                    <div class="nav-link-box">
+                        <a class="nav-link" href="about.html">About us</a>
+                        <span class="underline"></span>
+                    </div>
+                </div>
+                <!-- Hamburger Menu -->
+                <div class="menu" id="menu-button">
+                    <button id="toggleButton" onclick="toggleCurtain()" class="toggle-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+            <div class="menu" id="menu-links">
+                <a href="#">Narratives</a>
+                <a href="#">Items</a>
+                <a href="#">Map</a>
+                <a href="#">About us</a>
+            </div>            
+        </div>    
+
+        <div class="content" class="grid-item" >
+            <div class="grid-element" id="map-container">
+                <img src="assets\img\floorfin.png" alt="map" id="map" /> 
+            </div>
+            <div id="list" class="grid-element" >
+                <div id="list-icon">
+                    <button id="icon-button" onclick="showList()">
+                        <img src=assets\img\arrow-sm-down-svgrepo-com.svg id="icon" />
+                    </button> 
+                </div>
+                <div id="list-container">
+                    <ol class="itemList">
+                        <li><a href="https://www.example3.com">Arquebus</a></li>
+                        <li><a href="https://www.example3.com">Vitruvian man</a></li>
+                        <li><a href="https://www.example3.com">Martin Luther’s 95 Theses (facsimile) </a></li>
+                        <li><a href="https://www.example1.com">Galileo’s Telescope Replica </a></li>
+                        <li><a href="https://www.example3.com">Victorian-Era Corset </a></li>
+                        <li><a href="https://www.example3.com">Reign of Terror Guillotine Blade</a></li>
+                        <li><a href="https://www.example2.com">“The Origin of Species” by Charles Darwin </a></li>
+                        <li><a href="https://www.example3.com">Courbet's L'Origine du Monde</a></li>
+                        <li><a href="https://www.example3.com">Sheet of the measurements taken by Marie Curie</a></li>
+                        <li><a href="https://www.example3.com">Suffragette Hunger Strike Medal  </a></li>
+                        <li><a href="https://www.example3.com">Enigma Machine Model D A1214 </a></li>
+                        <li><a href="https://www.example3.com">Replica of the Atomic Bomb “Little Boy” </a></li>
+                        <li><a href="https://www.example3.com">First Issue of “Playboy” Magazine </a></li>
+                        <li><a href="https://www.example3.com">Mini skirt by Mary Quant</a></li>
+                        <li><a href="https://www.example3.com">NASA Moon Landing Photo </a></li>
+                        <li><a href="https://www.example3.com">“Shoot” by Chris Burden</a></li>
+                        <li><a href="https://www.example3.com">Dolly the Sheep (Cloning) </a></li>
+                        <li><a href="https://www.example3.com">For the Love of God” by Damien Hirst</a></li>
+                        <li><a href="https://www.example3.com">Edward Snowden’s Revelations (facsimile) </a></li> 
+                        <li><a href="https://www.example3.com">AI Image of Pope Francis </a></li>                   
+                    </ol>
+                </div> 
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer "class="grid-item" >
+            <p>© 2024 Copyright: <a class="" href="#">Forbidden Curiosities</a></p>
+        </div>
+        <!-- Footer End-->
+    </div>    
+
 
 </body>
 
-    <!-- Footer -->
-    <footer>
-        <!-- Copyright -->
-        <p>© 2024 Copyright: <a class="" href="#">Forbidden Curiosities</a></p>
-    </footer>
-    <!------ Footer End ------->
     
 </html>

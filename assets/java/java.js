@@ -163,16 +163,6 @@ function inner(id,content, emptyFirst=true) {
 	document.getElementById(id).innerHTML += content ; 
 }
 
-function toggleCurtain() {
-	var menu_links = document.getElementById('menu-links');
-	var toggleButton = document.getElementById('toggleButton');
-	if (menu_links.style.display === "grid") {
-		menu_links.style.display = "none";
-	} else {
-		menu_links.style.display = "grid";
-	}
-	toggleButton.classList.toggle('x');
-  }
 
 /* 
 START NARRATIVES PAGE
@@ -181,7 +171,9 @@ START NARRATIVES PAGE
 /*modal */
 
 function openModalBtn(btn) {
-	document.getElementById("sumModal").style.display = 'block';
+	document.getElementById("sumModal").classList.add('visible') ;
+	document.getElementById("content").classList.add('opaque');
+	document.body.style.overflow = 'hidden';
    
         var buttonText = btn.innerText;
         var title = document.getElementById('sumTitle');
@@ -245,27 +237,29 @@ function openModalBtn(btn) {
 
 
 function closeModalBtn(){
-	document.getElementById("sumModal").style.display = 'none';
+	document.getElementById("sumModal").classList.remove('visible') ;
+	document.getElementById("content").classList.remove('opaque');
+	document.body.style.overflow = ''; 
 }
 
 let NarSum = {
-	ethics: "John Doe",
-	scientific: "Scientific progress is marked by revolutionary discoveries that change our view of the world. Galileo, with his telescopic observations in 1609, challenged the geocentric conception, promoting the acceptance of the heliocentric model. His empirical and experimental approach marked a turning point in the scientific method, making direct observation central to the investigative process. Charles Darwin, with 'On the Origin of Species' (1859), proposed natural selection as the mechanism of evolution. His theory not only transformed biology but also deeply influenced modern thought, unifying knowledge from various disciplines to explain the diversity of life. Darwin's work represents a milestone in the understanding of biological evolution. Marie Curie, a pioneer in research on radioactivity, discovered elements such as polonium and radium, opening new avenues in nuclear physics and medicine. Her work had a lasting impact, demonstrating the potential of the scientific method to revolutionize science and its applications, such as radiotherapy for cancer treatment. The Apollo 11 Moon landing (1969) showcased humanity's engineering capabilities, inspiring generations of scientists. Finally, the cloning of Dolly (1996) challenged established theories, opening new perspectives in biology and regenerative medicine, marking a breakthrough in the understanding of cloning and the potential of genetic science." ,
+	scientific:"The selected artifacts highlight the transformative impact of the Scientific Revolution, shedding light on pivotal discoveries, inventions, and ideas that redefined humanity's understanding of the natural world. These objects capture the spirit of inquiry and innovation that characterized this era, reflecting the groundbreaking achievements and the challenges faced by scientists as they questioned traditional beliefs and developed new frameworks of knowledge. By exploring these artifacts, we gain insight into the profound influence of the Scientific Revolution on modern science, technology, and society, as well as the enduring legacy of this period in shaping the way we perceive and engage with the world.",
+	ethics: "The selected artifacts on the ethics of war highlight the moral dilemmas and philosophical debates surrounding armed conflict. They explore key concepts like just war theory, pacifism, and humanitarian principles aimed at reducing suffering. These works reveal how individuals and societies grapple with issues of legitimacy, proportionality, and the rights of combatants and civilians. By examining them, we gain insight into the ethical frameworks that shape decisions on warfare, peacebuilding, and justice, underscoring the enduring quest for ethical conduct in times of conflict." ,
 	women: "The selected artifacts illustrate the diverse and impactful roles women have played throughout history, shedding light on key moments and objects that reflect the evolving status and contributions of women in society. Women’s History encompasses a broad spectrum of experiences and achievements, revealing the struggles, triumphs, and transformations that have defined the female experience across different eras.",
-	religious: "John Doe",
+	religious: "The selected artifacts showcase the significant role of religious dissent throughout history, reflecting key moments of challenge and transformation. They reveal the struggles and convictions of individuals and groups who questioned authority, redefined faith, and advocated for freedom of belief, shaping spiritual and social landscapes across eras.",
 	provocative: "Welcome to the realm of Provocative Art, where creative expression pushes the limits of conventional norms and stirs heated debate. This narrative explores how artists use their works to question, confront, and sometimes even outrage societal standards and expectations, with the deliberate intention to provoke a reaction. These artists challenged traditional aesthetics, moral values, and cultural taboos, prompting viewers to reconsider their perspectives and engage in meaningful discussions. ",
 	digital: "The AI-generated image of Pope Francis in a puffer jacket highlights the dangers of digital manipulation in the modern era. These deepfakes undermine trust in the authenticity of images, raising serious concerns about privacy and the integrity of identities. The ease with which false images can be created and spread calls for reflection on how to protect people's reputations and identities in today's digital context. The Enigma encryption system, used by the Germans during World War II, represents a turning point in the history of cryptography and information security. Its decryption by the Allies underscored the importance of protecting sensitive communications, a crucial aspect in the protection of privacy in the digital realm today, where information security is paramount. Edward Snowden's revelations brought to light the NSA's mass surveillance practices, sparking a global debate about the tension between national security and individual privacy. These revelations highlighted the need for transparency and democratic oversight of surveillance programs, raising critical questions about how to balance security with the right to privacy in an increasingly interconnected world. In summary, these examples show the complexity and multidimensionality of the concept of privacy. Digital manipulation, communication security, and mass surveillance are interconnected issues that require a careful and balanced approach. Privacy is not just a technical issue, but an essential element of democracy and individual freedom, which must be protected against modern threats.",
-	texts: "John Doe",
-	tools: "John Doe",
-	weapons: "John Doe",
-	garments: "sukkiame le palle fratello",
-	events: "John Doe",
-	works: "John Doe",
-	XV: "John Doe",
-	XVII: "John Doe",
-	FIRST: "John Doe",
-	SECOND: "John Doe",
-	XXI: "John Doe",
+	texts: "The selected texts illuminate the diverse and influential roles that written works have played throughout history, offering a window into key moments and ideas that reflect the evolving intellectual, cultural, and social landscapes of different eras. Texts, whether literary, philosophical, or political, encompass a wide array of voices and perspectives, revealing the struggles, triumphs, and transformations that have shaped human thought and society. These writings bear witness to the power of words to inspire change, challenge norms, and document the complexities of the human experience across time.",
+	tools: "The selected tools illustrate the diverse and essential roles that human ingenuity and innovation have played throughout history, offering insight into key moments and objects that reflect the evolving ways in which people have shaped and interacted with their environments. Tools, whether simple or complex, span a wide range of functions and applications, revealing the progress, challenges, and transformations that have defined human creativity and survival. These artifacts demonstrate the power of invention in addressing needs, solving problems, and advancing societies across different periods.",
+	weapons: "The selected weapons reveal the diverse and pivotal roles that armed conflict and defense have played throughout history, providing insight into key moments and objects that reflect the evolving strategies, technologies, and power dynamics of warfare. Weapons, from rudimentary tools of survival to advanced instruments of battle, span a broad range of forms and functions, illustrating the struggles, conquests, and transformations that have shaped civilizations. These artifacts bear witness to the human capacity for both destruction and protection, highlighting the complex relationship between warfare, society, and technological advancement across different eras.",
+	garments: "The selected garments showcase the diverse and meaningful roles that clothing has played throughout history, offering insight into key moments and pieces that reflect the evolving cultural, social, and economic landscapes of various societies. Garments, from everyday attire to ceremonial or symbolic wear, span a wide range of styles and functions, revealing the traditions, status markers, and transformations that have defined personal and collective identities. These artifacts highlight the ways in which clothing has communicated power, gender, and cultural values, illustrating the changing dynamics of fashion, craftsmanship, and expression across different periods.",
+	events: "The selected events illustrate the diverse and profound impact of pivotal moments throughout history, shedding light on key occurrences that have shaped the political, cultural, and social landscapes of various societies. These events, whether driven by conflict, innovation, or social movements, span a wide range of scales and significances, revealing the struggles, triumphs, and transformations that have defined the course of human history. Each event serves as a reflection of its time, highlighting the evolving values, power dynamics, and collective aspirations that have influenced societies across different eras.",
+	works: "The selected works exemplify the diverse and significant contributions that creative expression has made throughout history, offering insights into key pieces that reflect the evolving cultural, artistic, and intellectual currents of various societies. These works, whether in literature, visual arts, music, or other forms, span a broad spectrum of styles and genres, revealing the struggles, inspirations, and transformations that have shaped human creativity. Each piece serves as a testament to the power of artistic expression to challenge norms, provoke thought, and inspire change, highlighting the dynamic interplay between culture and society across different eras.",
+	XV: "The selected artifacts from the 15th to 17th centuries illustrate the profound and multifaceted transformations that occurred during this dynamic period in history, reflecting key moments and objects that shaped the political, cultural, and social landscapes of Europe and beyond. Spanning the Renaissance, the Reformation, and the Age of Exploration, this era was marked by an explosion of artistic innovation, scientific discovery, and religious upheaval. Artifacts from these centuries reveal the struggles and triumphs of individuals and communities as they navigated shifting power dynamics, challenged established norms, and expanded their horizons through exploration and colonization. These pieces serve as vital reminders of the rich tapestry of human experience, highlighting the interconnections between creativity, belief, and the quest for knowledge that defined the 15th to 17th centuries.",
+	XVII: "The selected artifacts from the 17th to 19th centuries illuminate the transformative changes that defined this critical period in history, reflecting key moments and objects that shaped the political, cultural, and social landscapes across the globe. This era witnessed the rise of Enlightenment thought, the expansion of empires, and significant social upheavals, including revolutions and movements for rights and freedoms. Artifacts from these centuries reveal the complexities of industrialization, the evolution of artistic expression, and the shifting dynamics of power and class. They highlight the struggles and aspirations of individuals and groups as they sought to redefine society, challenge oppressive structures, and embrace new ideas. These pieces serve as essential reminders of the rich interplay between innovation, ideology, and social change that characterized the 17th to 19th centuries.",
+	FIRST: "The selected artifacts from the first half of the 20th century reflect the dramatic and transformative changes that characterized this tumultuous period in history, showcasing key moments and objects that shaped global political, cultural, and social landscapes. This era witnessed two world wars, the rise and fall of empires, and significant movements for social justice and civil rights. Artifacts from this time reveal the complexities of technological advancement, artistic innovation, and ideological struggle, as societies grappled with the consequences of conflict and the quest for progress. They highlight the voices of individuals and groups who challenged norms and advocated for change, illustrating the profound impact of modernity on everyday life. These pieces serve as important reminders of the resilience and creativity of humanity in the face of upheaval, as well as the ongoing pursuit of identity and meaning in an increasingly interconnected world.",
+	SECOND: "The selected artifacts from the second half of the 20th century illustrate the profound and varied changes that shaped this dynamic period in history, reflecting key moments and objects that influenced global political, cultural, and social landscapes. This era was marked by the aftermath of World War II, the Cold War, the civil rights movement, and significant shifts in technology and culture. Artifacts from this time reveal the complexities of decolonization, the rise of counterculture, and the ongoing struggles for equality and justice. They highlight the voices of individuals and movements that challenged established norms, embraced new ideologies, and sought to redefine identities in an increasingly interconnected world. These pieces serve as crucial reminders of the resilience of the human spirit and the transformative power of creativity, activism, and innovation during a time of rapid change and global interdependence.",
+	XXI: "The selected artifacts from the 21st century illuminate the rapid and multifaceted changes that define this current era, reflecting key moments and objects that shape contemporary political, cultural, and social landscapes. This period has been characterized by significant technological advancements, globalization, and urgent discussions around issues such as climate change, social justice, and human rights. Artifacts from this time reveal the complexities of a digital age, where information flows freely and communities are both connected and divided. They highlight the voices of diverse individuals and movements that challenge traditional power structures, advocate for inclusivity, and strive for sustainable futures. These pieces serve as vital reminders of the dynamic interplay between innovation, activism, and cultural expression, illustrating the ongoing quest for identity, belonging, and meaningful change in an increasingly interconnected world.",
 
   };
 
@@ -273,10 +267,55 @@ let NarSum = {
 END NARRATIVES PAGE
 */
 
+/* 
+START MAP PAGE
+*/
+function showList() {
+	const listContainer = document.getElementById('list-container');
+	const icon = document.getElementById('icon');
+  
+	// Toggle display between 'none' and 'block'
+	if (listContainer.style.display === 'none' || listContainer.style.display === '') {
+	  listContainer.style.display = 'block';
+	  icon.style.transform = 'rotate(180deg)'; // Rotate icon by 180°
+	} else {
+	  listContainer.style.display = 'none';
+	  icon.style.transform = 'rotate(0deg)'; // Reset icon rotation
+	}
+  }
+  
+/* 
+END MAP PAGE
+*/
+
 /* index.html functions START */
 
-window.addEventListener('scroll', function() {
-	upButton = document.getElementById("upButton");
+// Funzione per attivare e disattivare con un click il menu hamburger
+function toggleCurtain() {
+	let menu_links = document.getElementById('menu-links');
+	let toggleButton = document.getElementById('toggleButton');
+	let opaque = document.getElementById('opaque-page');
+	if (menu_links.style.display === "grid") {
+		menu_links.style.display = "none";
+		opaque.classList.remove("active");
+		setTimeout(() => {
+			opaque.style.visibility = "hidden";
+			document.body.style.overflow = "";
+		}, 500);
+	} else {
+		menu_links.style.display = "grid";
+		opaque.style.visibility = "visible";
+		setTimeout(() => {
+			opaque.classList.add("active");
+			document.body.style.overflow = "hidden";
+		}, 10);	
+	}
+	toggleButton.classList.toggle('x');
+  }
+
+// Funzione per avere un pulsante che rimandi all'inizio della pagina
+window.addEventListener('scroll', function() { // Necessario per controllare il valore dello scroll della pagina 
+	let upButton = document.getElementById("upButton");
 	if (window.scrollY >= document.documentElement.clientHeight) {
 	  upButton.style.visibility = "visible";
 	  upButton.addEventListener("click", () => window.scrollTo({
@@ -287,5 +326,95 @@ window.addEventListener('scroll', function() {
 	  upButton.style.visibility = "hidden";
 	}
   });
+
+
+document.addEventListener("DOMContentLoaded", function() { //Necessario per poter agire sugli elementi una volta che sono stati caricati dal browser
+	
+	// Funzione per aprire il pannello informativo sugli oggetti della timeline
+	const infoButtons = document.getElementsByClassName("infoButton");
+
+	for (let i = 0; i < infoButtons.length; i++) {
+		let button = infoButtons[i];
+		button.addEventListener("click", function() {
+			let _ = this.parentElement;
+			let info_closer = _.children[1];
+			let img = _.children[2];
+			let info_bar = _.children[3];
+			this.style.visibility = "hidden";
+			info_closer.style.visibility = "visible";
+			info_bar.style.visibility = "visible";
+			img.style.filter = "blur(3px)";
+		});
+	};
+
+	// Funzione per chiudere il pannello informativo sugli oggetti della timeline
+	const infoClosers = document.getElementsByClassName("infoCloser");
+
+	for (let i = 0; i < infoClosers.length; i++) {
+		let closer = infoClosers[i];
+		closer.addEventListener("click", function() {
+			let _ = this.parentElement;
+			let info_button = _.children[0];
+			let img = _.children[2];
+			let info_bar = _.children[3];
+			info_bar.style.visibility = "hidden";
+			info_button.style.visibility = "visible";
+			img.style.filter = "none";
+			this.style.visibility = "hidden";
+		});
+	};
+
+	// Qui si attribuisce la classe a cui è legata un'animazione
+	const elements = document.querySelectorAll('div.image-box');
+
+	const options = {
+		root: null, // Valore per ottenere la viewport come contenitore da osservare
+		rootMargin: '0px',
+		threshold: 0.5 // Valore che fa scattare l'animazione quando l'elemento è per il 50% visibile
+	};
+
+	const elements_array = Array.from(elements);
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			const wideScreen = getComputedStyle(document.querySelector(":root")).getPropertyValue("--wideScreen");
+			if (entry.isIntersecting) {
+				if (wideScreen === "True") {
+					const index = elements_array.indexOf(entry.target);
+                	if (index % 2 == 0) {
+						entry.target.style.animation = "left-enter 1.5s ease-out forwards";
+					} else {
+						entry.target.style.animation = "right-enter 1.5s ease-out forwards";
+					}
+					
+				} else {
+					entry.target.style.animation = "right-enter 1.5s ease-out forwards";
+				}
+				observer.unobserve(entry.target); // Fatta l'animaizone qui si smette di osservare l'elemento
+			}
+		});
+	}, options);
+	elements.forEach(element => {
+		observer.observe(element); // Qui si inizia ad osservare l'elemento
+	});
+
+	// Funzione per aprire i pannelli delle narratives
+	const narBtns = document.getElementsByClassName("nar-btn");
+
+	for (let i = 0; i < narBtns.length; i++) {
+		let btn = narBtns[i];		
+		btn.addEventListener("click", function() {
+			let _ = this.parentElement;
+			let panel = _.nextElementSibling;
+			let symbol = this.innerHTML;
+			if (symbol === "+") {
+				panel.style.display = "grid";
+				this.innerHTML = "-";
+			} else {
+				panel.style.display = "none";
+				this.innerHTML = "+";
+			}
+		});
+	};
+});
 
 /* index.thml functions END */
