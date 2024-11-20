@@ -261,7 +261,6 @@ body{
   justify-content: center;
 }
 
-
 .icon{
   align-self: center;
   margin: 50px 0;
@@ -281,9 +280,18 @@ body{
     transition: opacity 0.5s ease, filter 0.5s ease;
     filter: blur(5px); /* Optional: Apply blur effect */
     pointer-events: none;
+    overflow: "";
+    
   }
 
+#sum{
+  overflow: auto; /* Enable vertical scrolling */
+  height: 100%;
+}
+
 #sumModal {
+  display:grid;
+  grid-template-rows:  1fr 2fr 5fr 2fr;
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
@@ -306,7 +314,6 @@ body{
     transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-
 #closebtn {
   background: none;
   border: none;
@@ -319,21 +326,18 @@ body{
   right: 15px;
 }
 
-
-
 #modalContent {
   margin-top: 40px; /* Adds space below the close button */
 }
 
 #sumTitle {
   font-size: 24px; /* Larger title */
-  margin-bottom: 10px;
+  margin: 5%;
   color: #333; /* Dark text for the title */
 }
 
 #sumCont {
-  margin-top: 5%;
-  padding-left: 3%;
+  margin: 5%;
   font-size: 16px;
   color: #555; /* Slightly lighter text for the content */
   line-height: 1.5; /* Improve readability */

@@ -173,6 +173,7 @@ START NARRATIVES PAGE
 function openModalBtn(btn) {
 	document.getElementById("sumModal").classList.add('visible') ;
 	document.getElementById("content").classList.add('opaque');
+	document.body.style.overflow = 'hidden';
    
         var buttonText = btn.innerText;
         var title = document.getElementById('sumTitle');
@@ -238,13 +239,14 @@ function openModalBtn(btn) {
 function closeModalBtn(){
 	document.getElementById("sumModal").classList.remove('visible') ;
 	document.getElementById("content").classList.remove('opaque');
+	document.body.style.overflow = ''; 
 }
 
 let NarSum = {
-	ethics: "The selected artifacts related to the ethics of war reflect the complex moral dilemmas and philosophical debates that have emerged throughout history regarding the justification, conduct, and consequences of armed conflict. These artifacts—whether texts, artworks, or objects—offer insight into key moments and ideas that shape our understanding of just war theory, pacifism, and the humanitarian principles that seek to mitigate suffering in times of war. They reveal the struggles of individuals and societies grappling with questions of legitimacy, proportionality, and the rights of combatants and non-combatants alike. These pieces highlight the ongoing conversations around the responsibilities of nations and individuals in conflict, illustrating how ethical considerations influence decisions about warfare, peacebuilding, and the pursuit of justice. Through examining these artifacts, we gain a deeper understanding of the moral frameworks that guide our responses to violence and the enduring quest for ethical conduct in an age marked by persistent conflict.",
-	scientific: "Scientific progress is marked by revolutionary discoveries that change our view of the world. Galileo, with his telescopic observations in 1609, challenged the geocentric conception, promoting the acceptance of the heliocentric model. His empirical and experimental approach marked a turning point in the scientific method, making direct observation central to the investigative process. Charles Darwin, with 'On the Origin of Species' (1859), proposed natural selection as the mechanism of evolution. His theory not only transformed biology but also deeply influenced modern thought, unifying knowledge from various disciplines to explain the diversity of life. Darwin's work represents a milestone in the understanding of biological evolution. Marie Curie, a pioneer in research on radioactivity, discovered elements such as polonium and radium, opening new avenues in nuclear physics and medicine. Her work had a lasting impact, demonstrating the potential of the scientific method to revolutionize science and its applications, such as radiotherapy for cancer treatment. The Apollo 11 Moon landing (1969) showcased humanity's engineering capabilities, inspiring generations of scientists. Finally, the cloning of Dolly (1996) challenged established theories, opening new perspectives in biology and regenerative medicine, marking a breakthrough in the understanding of cloning and the potential of genetic science." ,
+	scientific:"The selected artifacts highlight the transformative impact of the Scientific Revolution, shedding light on pivotal discoveries, inventions, and ideas that redefined humanity's understanding of the natural world. These objects capture the spirit of inquiry and innovation that characterized this era, reflecting the groundbreaking achievements and the challenges faced by scientists as they questioned traditional beliefs and developed new frameworks of knowledge. By exploring these artifacts, we gain insight into the profound influence of the Scientific Revolution on modern science, technology, and society, as well as the enduring legacy of this period in shaping the way we perceive and engage with the world.",
+	ethics: "The selected artifacts on the ethics of war highlight the moral dilemmas and philosophical debates surrounding armed conflict. They explore key concepts like just war theory, pacifism, and humanitarian principles aimed at reducing suffering. These works reveal how individuals and societies grapple with issues of legitimacy, proportionality, and the rights of combatants and civilians. By examining them, we gain insight into the ethical frameworks that shape decisions on warfare, peacebuilding, and justice, underscoring the enduring quest for ethical conduct in times of conflict." ,
 	women: "The selected artifacts illustrate the diverse and impactful roles women have played throughout history, shedding light on key moments and objects that reflect the evolving status and contributions of women in society. Women’s History encompasses a broad spectrum of experiences and achievements, revealing the struggles, triumphs, and transformations that have defined the female experience across different eras.",
-	religious: "The selected artifacts highlight the diverse and significant roles that religious dissent has played throughout history, offering insights into key moments and objects that reflect the evolving challenges, expressions, and movements of those who questioned or opposed dominant religious authorities. The narrative of religious dissent spans a broad spectrum of experiences and ideologies, revealing the struggles, convictions, and transformations that have shaped spiritual and social landscapes across different eras. These artifacts bear witness to the courage of individuals and groups who sought to redefine faith, challenge orthodoxy, and advocate for freedom of belief.",
+	religious: "The selected artifacts showcase the significant role of religious dissent throughout history, reflecting key moments of challenge and transformation. They reveal the struggles and convictions of individuals and groups who questioned authority, redefined faith, and advocated for freedom of belief, shaping spiritual and social landscapes across eras.",
 	provocative: "Welcome to the realm of Provocative Art, where creative expression pushes the limits of conventional norms and stirs heated debate. This narrative explores how artists use their works to question, confront, and sometimes even outrage societal standards and expectations, with the deliberate intention to provoke a reaction. These artists challenged traditional aesthetics, moral values, and cultural taboos, prompting viewers to reconsider their perspectives and engage in meaningful discussions. ",
 	digital: "The AI-generated image of Pope Francis in a puffer jacket highlights the dangers of digital manipulation in the modern era. These deepfakes undermine trust in the authenticity of images, raising serious concerns about privacy and the integrity of identities. The ease with which false images can be created and spread calls for reflection on how to protect people's reputations and identities in today's digital context. The Enigma encryption system, used by the Germans during World War II, represents a turning point in the history of cryptography and information security. Its decryption by the Allies underscored the importance of protecting sensitive communications, a crucial aspect in the protection of privacy in the digital realm today, where information security is paramount. Edward Snowden's revelations brought to light the NSA's mass surveillance practices, sparking a global debate about the tension between national security and individual privacy. These revelations highlighted the need for transparency and democratic oversight of surveillance programs, raising critical questions about how to balance security with the right to privacy in an increasingly interconnected world. In summary, these examples show the complexity and multidimensionality of the concept of privacy. Digital manipulation, communication security, and mass surveillance are interconnected issues that require a careful and balanced approach. Privacy is not just a technical issue, but an essential element of democracy and individual freedom, which must be protected against modern threats.",
 	texts: "The selected texts illuminate the diverse and influential roles that written works have played throughout history, offering a window into key moments and ideas that reflect the evolving intellectual, cultural, and social landscapes of different eras. Texts, whether literary, philosophical, or political, encompass a wide array of voices and perspectives, revealing the struggles, triumphs, and transformations that have shaped human thought and society. These writings bear witness to the power of words to inspire change, challenge norms, and document the complexities of the human experience across time.",
@@ -263,6 +265,27 @@ let NarSum = {
 
 /* 
 END NARRATIVES PAGE
+*/
+
+/* 
+START MAP PAGE
+*/
+function showList() {
+	const listContainer = document.getElementById('list-container');
+	const icon = document.getElementById('icon');
+  
+	// Toggle display between 'none' and 'block'
+	if (listContainer.style.display === 'none' || listContainer.style.display === '') {
+	  listContainer.style.display = 'block';
+	  icon.style.transform = 'rotate(180deg)'; // Rotate icon by 180°
+	} else {
+	  listContainer.style.display = 'none';
+	  icon.style.transform = 'rotate(0deg)'; // Reset icon rotation
+	}
+  }
+  
+/* 
+END MAP PAGE
 */
 
 /* index.html functions START */
