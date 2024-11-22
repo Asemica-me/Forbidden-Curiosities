@@ -313,47 +313,6 @@ div.navbar-body {visibility: hidden;}
 }
 
 
-
-  
-/* Extra small devices (phones, portrait) 
-@media (max-width: 480px) {
-  .container {
-    display: grid;
-    grid-template-rows: 60vh 35vh  ;
-    gap: 15px; 
-    max-width: 100%;
-  }
-}
-
-/* Small devices (phones, landscape) 
-@media (max-width: 576px) {
-  .container {
-    flex-direction: column; 
-  }
-}
-
-
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column; 
-  }
-
-}
-
-
-@media (max-width: 992px) {
-  .container {
-    flex-direction: column; 
-  }
-}
-
-@media (max-width: 1363px) {
-  .container {
-    flex-direction: column; 
-  }
-} */
-
-
   /*================================================*/
   /* =============== Fine map ===============*/
   /*================================================*/
