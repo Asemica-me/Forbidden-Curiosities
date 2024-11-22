@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Documentation</title>
+</head>
+<style>
+    /* General Styling */
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        color: #333;
+    }
+
+    footer {
+        position: static;
+            background: #0f0007e3;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+    .container {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+    }
+
+    /* Article Styling */
+    .article {
+        flex: 3;
+        overflow-y: auto;
+        padding: 20px;
+        background: #0f0007e3;
+        color: rgba(255, 255, 255, 0.913);
+        box-shadow: inset -3px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .article-header {
+        background: #ff6d6d21;
+        padding: 15px;
+        color: rgba(255, 255, 255, 0.82);
+        text-align: center;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .article h2, .article h3 {
+        color: #745767fc;
+        margin-bottom: 10px;
+    }
+
+    .article p {
+        margin-bottom: 20px;
+        line-height: 1.8;
+        text-align: justify;
+    }
+
+    /* Hide Scrollbars */
+    .article::-webkit-scrollbar,
+    .menu::-webkit-scrollbar {
+        display: none; /* Hide scrollbar in WebKit browsers */
+    }
+
+    .article {
+        -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+        scrollbar-width: none;    /* Hide scrollbar in Firefox */
+    }
+
+    .menu {
+        -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+        scrollbar-width: none;    /* Hide scrollbar in Firefox */
+    }
+
+    /* Separator Line */
+    .menu::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+        background: #b4b4b4ca;
+        z-index: 10;
+    }
+
+    /* Menu Styling */
+    .menu {
+        flex: 1;
+        background: #0f0007e3;
+        padding: 20px;
+        overflow-y: auto;
+        box-shadow: inset 3px 0 5px rgba(0, 0, 0, 0.1);
+        color: white;
+        position: relative;
+    }
+
+    .menu-header {
+        text-align: center;
+        font-size: 1.5em;
+        margin-bottom: 20px;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+        padding-bottom: 10px;
+    }
+
+    .menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu li {
+        margin: 15px 0;
+    }
+
+    .menu a {
+        text-decoration: none;
+        font-weight: bold;
+        display: block;
+        padding: 10px 15px;
+        border-radius: 5px;
+        background: #ff6d6d21;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .menu a:hover {
+        background: rgba(255, 255, 255, 0.4);
+        color: #333;
+    }
+
+    /* Smooth scrolling animation */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Gerarchie del Menu */
+    .menu .chapter {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #ffffffb6;
+        margin: 15px 0;
+        padding-left: 10px;
+        box-shadow: 2px 2px 3px #ffffff17; 
+    }
+
+    .menu .subchapter {
+        font-size: 1rem;
+        font-weight: normal;
+        color: #e0f7faaf;
+        margin: 8px 0;
+        padding-left: 20px; /* Indentazione */
+        box-shadow: 2px 2px 3px #ffffff17; 
+    }
+
+    .menu .subsubchapter {
+        font-size: 0.9rem;
+        font-weight: normal;
+        color: #b2ebf2e7;
+        margin: 5px 0;
+        padding-left: 30px; /* Maggiore indentazione */
+        box-shadow: 2px 2px 3px #ffffff17; 
+    }
+
+    .menu .chapter:active,
+    .menu .subchapter:active 
+    .menu .subchapter.active {
+    border-left: 2px solid #80deea; /* Colore più acceso al clic */
+    background-color: rgba(51, 182, 199, 0.1); /* Sfondo leggermente visibile */
+    transform: scale(0.98); /* Leggera contrazione per un effetto di pressione */
+    }
+
+    /* Hover Effects */
+    .menu .chapter:hover,
+    .menu .subchapter:hover,
+    .menu .subsubchapter:hover,
+    .menu .chapter:active,
+    .menu .subchapter:active,
+    .menu .subsubchapter:active {
+        background: rgba(255, 255, 255, 0.235);
+        cursor: pointer;
+        color: white;
+        transition: background 0.4s ease;
+        border-left: 2px solid rgba(255, 255, 255, 0.5); /* Linea laterale più sottile */
+    }
+
+
+/* highlight animation */
+@keyframes highlightAnimation {
+    0% {
+        background-color: transparent;
+        color: inherit;
+    }
+    50% {
+        background-color: rgba(255, 255, 255, 0.096);
+        color: inherit;
+    }
+    100% {
+        background-color: transparent;
+        color: inherit;
+    }
+}
+
+/* Style for highlighted sections */
+.highlighted {
+    animation: highlightAnimation 1s ease-in-out;
+    border-radius: 2px;
+}
+
+
+    /* Stile per lo spinner */
+    .spinner {
+            border: 5px solid #f3f3f3; /* Colore grigio chiaro */
+            border-top: 5px solid #db3490; /* Colore blu per la parte rotante */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+        }
+
+        /* Animazione per lo spinner */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Quando la pagina è caricata, nascondi lo spinner */
+        .loaded .spinner {
+            display: none;
+        }
+
+        /* Stile per il contenuto principale */
+        .content {
+            display: none; /* Rende invisibile il contenuto fino al caricamento */
+        }
+
+        /* Pagina di caricamento */
+        .loading-screen {
+            position: fixed; /* Posiziona lo spinner in modo fisso */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.804); /* Colore di sfondo, modifica qui */
+            z-index: 9999; /* Lo spinner è sopra gli altri contenuti */
+        }
+
+        /* Classe che nasconde lo spinner e mostra il contenuto */
+        body.loaded .loading-screen {
+            display: none;
+        }
+</style>
+<body>
+
+<div class="loading-screen">
+<!-- Spinner visibile mentre la pagina sta caricando -->
+<div class="spinner"></div>
+</div>
+
+    <div class="content">
+
+    <div class="container">
+        <!-- Scrollable Article Section -->
+        <div class="article">
+            <div class="article-header">
+                <h1>Project Documentation</h1>
+            </div>
+            <section id="abstract">
+                <h2>Abstract</h2>
+                <p>This project will delve into items that stirred debate, challenged norms, or had unexpected impacts, offering a provocative look at how controversy can drive change.
+                    Whether you're exploring the scientific revolutions sparked by Galileo's Telescope or contemplating the cultural provocations of Van Gogh’s "Starry Night", this application is your gateway to discovering the stories behind each artifact, unravelling their roles in shaping our past and present.
+                    Visitors can enjoy a journey through history with this digital companion, empowering them to explore, learn, and reflect on the controversies and innovations that have shaped our world.
+                    </p>
+            </section>
+            <section id="introduction">
+                <h2>1. Introduction</h2>
+                <section id="overview">
+                    <h3>1.1 Overview</h3>
+                    <p>Nullam odio orci, vehicula vitae nisi sed, finibus gravida ligula. Quisque sed lectus non odio dignissim pulvinar vitae consectetur quam. Vivamus hendrerit dui nec dui tristique faucibus. Proin fermentum euismod erat, nec accumsan nunc rhoncus a. In hac habitasse platea dictumst. Nulla facilisi. Vestibulum rhoncus nibh ut libero tincidunt, in tempus libero pretium. Mauris turpis massa, fermentum id egestas et, vulputate quis diam. Etiam malesuada molestie ligula id eleifend.</p>
+                </section>
+                <section id="objectives">
+                    <h3>1.2 Objectives</h3>
+                    <p>The main objectives of the web application for visiting the exhibition are to provide users with an interactive and informative experience that enhances their engagement with the physical artifacts on display. The website will serve as a comprehensive digital companion, aiming to achieve the following:</p>
+                </section>
+                <section id="requirements">
+                    <h3>1.3 Requirements</h3>
+                    <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. Maecenas in velit vel mi feugiat ornare facilisis vitae turpis.</p>
+                </section>
+                <section id="exhibition">
+                    <h2>2. The Exhibition</h2>
+                    <section id="objects">
+                        <h3>2.1 Displayed Objects</h3>
+                    <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. Maecenas in velit vel mi feugiat ornare facilisis vitae turpis.</p>
+                </section>
+                    <section id="map">
+                        <h3>2.2 Map of the Exhibition</h3>
+                    <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. Maecenas in velit vel mi feugiat ornare facilisis vitae turpis.</p>
+                    </section>
+                    <section id="narratives">
+                        <h3 id="narratives">2.3 Narratives</h3>
+                            <h4 id="historical-period">(a) Historical Period</h4>
+                            <p>Lorem ipsum dolor sit amet...</p>
+                            <h4 id="topic">(b) Topic</h4>
+                            <p>Lorem ipsum dolor sit amet...</p>
+                            <h4 id="artifact-type">(c) Artifact Type</h4>
+                            <p>Lorem ipsum dolor sit amet...</p>
+                    </section>
+                
+                <section id="prototype">
+                    <h2>3. Prototype</h2>
+                    <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. 
+                </section>
+
+                <section id="development">
+                    <h2>4. Development</h2>
+                    <section id="ia">
+                        <h3>4.1 Information Architecture</h3>
+                    <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. Maecenas in velit vel mi feugiat ornare facilisis vitae turpis.</p>
+                    </section>
+                    <section id="ux">
+                        <h3>4.2 User Experience (UX)</h3>
+                    <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. Maecenas in velit vel mi feugiat ornare facilisis vitae turpis.</p>
+                </section>
+                <section id="tech-imp">
+                    <h3>4.3 Technical Implementation</h3>
+                <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. Maecenas in velit vel mi feugiat ornare facilisis vitae turpis.</p>
+                </section>
+                <section id="use-cases">
+
+
+                <h2>5. Use Cases</h2>
+                <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. 
+            </section>
+
+            <section id="design">
+                <h2>6. Design Specifications</h2>
+                <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. 
+                <section id="layout">
+                    <h3>6.1 Visual Design and Layout</h3>
+                <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. Maecenas in velit vel mi feugiat ornare facilisis vitae turpis.</p>
+                </section>
+                <section id="color">
+                    <h3>6.2 Color Usage</h3>
+                <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. Maecenas in velit vel mi feugiat ornare facilisis vitae turpis.</p>
+                </section>
+                <section id="feedback">
+                    <h3>6.3 Interactive Elements and Feedback</h3>
+                <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. Maecenas in velit vel mi feugiat ornare facilisis vitae turpis.</p>
+                </section>
+                <section id="typography">
+                    <h3>6.4 Typography</h3>
+                <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. Maecenas in velit vel mi feugiat ornare facilisis vitae turpis.</p>
+                </section>
+            </section>
+
+            <section id="references">
+                <h2>7. Refernces</h2>
+                <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. 
+            </section>
+            <section id="rights">
+                <h2>8. Rights and Licences</h2>
+                <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. 
+            </section>
+            <section id="conclusions">
+                <h2>9. Conclusions</h2>
+                <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. 
+            </section>
+            </section>
+            <!-- Additional sections for rest of the content -->
+             <!-- Footer -->
+<footer>
+    <!-- Copyright -->
+    <p>© 2024 Copyright: <a class="" href="#">Forbidden Curiosities</a></p>
+</footer>
+<!------ Footer End ------->
+        </div>
+
+        <!-- Navigation Menu (summary on the right) -->
+        <div class="menu">
+            <a href="#abstract" class="chapter">Abstract</a>
+            <a href="#introduction" class="chapter">1. Introduction</a>
+            <a href="#overview" class="subchapter">1.1 Overview</a>
+            <a href="#objectives" class="subchapter">1.2 Objectives</a>
+            <a href="#requirements" class="subchapter">1.3 Requirements</a>
+            <a href="#exhibition" class="chapter">2.1 The Exhibition</a>
+            <a href="#objects" class="subchapter">2.1 Displayed objects</a>
+            <a href="#map" class="subchapter">2.2 Map of the exhibition</a>
+            <a href="#narratives" class="subchapter">2.3 Narratives</a>
+            <a href="#historical-period" class="subsubchapter">(a) Historical Period</a>
+            <a href="#topic" class="subsubchapter">(b) Topic</a>
+            <a href="#artifact-type" class="subsubchapter">(c) Artifact Type</a>
+            <a href="#prototype" class="chapter">3. Prototype</a>
+            <a href="#development" class="chapter">4. Development</a>
+            <a href="#ia" class="subchapter">4.1 Information Architecture (IA)</a>
+            <a href="#navigation" class="subchapter">4.2 Navigation Structure</a>
+            <a href="#ui" class="subchapter">4.3 UI Components and Responsiveness</a>
+            <a href="#front-back-end" class="subchapter">4.4 Front-End and Back-End Architecture</a>
+            <a href="#ux" class="subchapter">4.5 User Experience (UX)</a>
+            <a href="#use-cases" class="chapter">5. Use Cases</a>
+            <a href="#design" class="chapter">6. Design Specifications</a>
+            <a href="#design" class="subchapter">6.1 Visual Design</a>
+            <a href="#color" class="subchapter">6.2 Color Specifications</a>
+            <a href="#feedback" class="subchapter">6.3 Interactive Elements and Feedback</a>
+            <a href="#typography" class="subchapter">6.4 Typography</a>
+            <a href="#references" class="chapter">7. References</a>
+            <a href="#rights" class="chapter">8. Rights and Licenses</a>
+            <a href="#conclusions" class="chapter">9. Conclusions</a>
+        </div>
+
+        </div>
+
+    </div>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const menuLinks = document.querySelectorAll(".menu a");
+    const sections = document.querySelectorAll(".article section");
+
+    menuLinks.forEach(link => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            // Remove the 'highlighted' class from all sections
+            sections.forEach(section => {
+                section.classList.remove("highlighted");
+            });
+
+            // Remove the active class from all menu links
+            menuLinks.forEach(link => {
+                link.classList.remove("active");
+            });
+
+            // Add the 'highlighted' class to the selected section
+            const targetSection = document.querySelector(link.getAttribute("href"));
+            targetSection.classList.add("highlighted");
+
+            // Add the 'active' class to the clicked menu link
+            link.classList.add("active");
+
+            // Optional: Scroll to the section smoothly
+            targetSection.scrollIntoView({ behavior: "smooth" });
+        });
+    });
+});
+
+
+    </script>
+    <script src="assets/java/java.js"></script>
+</body>
+</html>
