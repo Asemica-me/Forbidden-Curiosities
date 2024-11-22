@@ -4,58 +4,145 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/css/my_styles.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+    <script src="assets/java/about.js"></script>
     <script src="assets/java/java.js"></script>
     <title>About Us</title>
 </head>
 
-<header class="header">
-    <!-- Navbar -->
-    <div class="rom-navbar">
-        <a class="logo" href="index.html">logo</a>
-        <div class="navbar-body">
-            <div class="nav-link-box">
-                <a class="nav-link" href="narratives.html">Narratives</a>
-                <span class="underline"></span>
-            </div>
-            <div class="nav-link-box">
-                <a class="nav-link" href="items.html">Items</a>
-                <span class="underline"></span>
-            </div>
-            <div class="nav-link-box">
-                <a class="nav-link" href="map.html">Map</a>
-                <span class="underline"></span>
-            </div>
-            <div class="nav-link-box">
-                <a class="nav-link" href="about.html">About us</a>
-                <span class="underline"></span>
-            </div>
-        </div>
-        <!-- Hamburger Menu -->
-        <div class="menu" id="menu-button">
-            <button id="toggleButton" onclick="toggleCurtain()" class="toggle-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </div>
-    <div class="menu" id="menu-links">
-        <a href="#">Narratives</a>
-        <a href="#">Items</a>
-        <a href="#">Map</a>
-        <a href="#">About us</a>
-    </div>
-    <!------- Hamburger Menu End --------->
-    <!------ Navbar End ---------->
-</header>
 <body>
+    <div class="grid-container">
+        <div class="grid-item navbar" >
+            <div class="rom-navbar">
+                <div id="logo-box"><a class="logo" href="index.html">logo</a></div>
+                <div class="navbar-body">
+                    <div class="nav-link-box">
+                        <a class="nav-link" href="narratives.html">Narratives</a>
+                        <span class="underline"></span>
+                    </div>
+                    <div class="nav-link-box">
+                        <a class="nav-link" href="items.html">Items</a>
+                        <span class="underline"></span>
+                    </div>
+                    <div class="nav-link-box">
+                        <a class="nav-link" href="map.html">Map</a>
+                        <span class="underline"></span>
+                    </div>
+                    <div class="nav-link-box">
+                        <a class="nav-link" href="about.html">About us</a>
+                        <span class="underline"></span>
+                    </div>
+                </div>
+                <!-- Hamburger Menu -->
+                <div class="menu" id="menu-button">
+                    <button id="toggleButton" onclick="toggleCurtain()" class="toggle-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+            <div class="menu" id="menu-links">
+                <a href="narratives.html">Narratives</a>
+                <a href="items.html">Items</a>
+                <a href="map.html">Map</a>
+                <a href="about.html">About us</a>
+            </div>            
+        </div>
+        <!-- About start -->
+        <div class="grid-item grid-about">
+            <div class="card">
+                <div class="card-item names">
+                    <h2>PIETR TISCISI</h2>
+                </div>
+                <div class="card-item">
+                    <img src="assets\img\items\4hirst.jpg" class="team-img">
+                </div >
+                <div class="card-item socials">
+                    <div class="social">
+                        <div class="img-container">
+                            <a href="https://github.com">
+                                <img src="assets\img\github3.png" class="social-img"> 
+                            </a>
+                        </div>
+                    </div>
+                    <div class="social">
+                        <div class="img-container">
+                            <a href="https://gmail.com" target="_blank" rel="noopener noreferrer">
+                               <img src="assets\img\email.png" class="social-img"> 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-item names">
+                    <h2>ROLOMO DAVID <br> D'ALESSANDRO</h2>
+                </div>
+                <div class="card-item pictures">
+                    <img src="assets\img\items\4hirst.jpg" class="team-img">
+                </div >
+                <div class="card-item socials">
+                    <div class="social">
+                        <div class="img-container">
+                            <a href="https://github.com">
+                                <img src="assets\img\github3.png" class="social-img"> 
+                            </a>
+                        </div>
+                    </div>
+                    <div class="social">
+                        <div class="img-container">
+                            <a href="https://gmail.com" target="_blank" rel="noopener noreferrer">
+                               <img src="assets\img\email.png" class="social-img"> 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-item names">
+                    <h2>LUCREZIA POGRARI</h2>
+                </div>
+                <div class="card-item">
+                    <img src="assets\img\items\4hirst.jpg" class="team-img">
+                </div >
+                <div class="card-item socials">
+                    <div class="social">
+                        <div class="img-container">
+                            <a href="https://github.com">
+                                <img src="assets\img\github3.png" class="social-img"> 
+                            </a>
+                        </div>
+                    </div>
+                    <div class="social">
+                        <div class="img-container">
+                            <a href="https://gmail.com" target="_blank" rel="noopener noreferrer">
+                               <img src="assets\img\email.png" class="social-img"> 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-</body>
-    <!-- Footer -->
-    <footer>
-        <!-- Copyright -->
-        <p>© 2024 Copyright: <a class="" href="#">Forbidden Curiosities</a></p>
-    </footer>
+
+        </div>
+
+
+
+
+
+
+
+
+        <!-- About end -->
+
+
+        <!-- Footer -->
+        <div class="grid-item footer" >
+            <!-- Copyright -->
+            <p>© 2024 Copyright: <a class="" href="#">Forbidden Curiosities</a></p>
+        </div>
     <!------ Footer End ------->
+    </div>
+</body>
 </html>

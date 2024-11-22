@@ -2,235 +2,188 @@
 /* =============== Inizio Navbar =================*/      
 /*================================================*/
 
+body {
+  background-color: black;
+}
+/* Qui si mettono tutte le variabili */
+:root {
+  --wideScreen: True;
+  --mainColor: #f10ff1;
+}
 @media screen and (max-width: 830px) {
-  
-    div.navbar-body {visibility: hidden;}
-  
-    div#img-right {
-      display: none;
-    }
-  
-    div#img-left {
-      display: none;
-    }
-  
-    div#welcome {
-      display: block;
-      width: 100%;
-    }
-  
-    div#center {
-      display: grid;
-      grid-template-rows: 1fr 1fr 1fr;
-    }
-  
-    div#center h1 {
-      font-size: calc(10vw * 0.9);
-    }
-    
-    div#about {
-      width: 100%;
-    }
-  
-    div#timeline span {
-      left: 7vw;
-    }
-  
-    div.item div.item-content {
-      float: right;
-      width: 60%;
-      right: 5vw;
-    }
-  
-    div.item div.item-content img {
-      height: inherit;
-      width: 70%;
-      
-    }
-  
-    div.item:nth-of-type(odd) .item-content {
-      float: right;
-    }
-  
+
+  :root {
+      --wideScreen: False;
   }
-  
-  @media screen and (min-width: 831px) {
-    div.menu {visibility: hidden;}
-  
-    div#banner {
-      display: none;
-    }
-    
-    div#about {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  
-    div.item:nth-of-type(odd) .item-content {
-      left: 5vw;
-    }
-  
-    div.item:nth-of-type(even) .item-content {
-      right: 5vw;
-    }
+
+  #upButton {
+      height: 70px;
+      width: 70px;
   }
-  
-  #navbar {
-    position: relative;
-    flex: 0 1 auto;
-  }
-  
-  .rom-navbar {
-    position: relative;
-    width: 100%;
-    height: 120px;
-    top: 10px;
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-  }
-  
-  .navbar-body {
-    position: inherit;
-    font-size: calc(15px + 0.390625vw);
-    display: grid;
-    height: 100px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-  
-  .nav-link-box {
-    height: fit-content;
-    display: grid;
-    grid-template-rows: 3fr 1fr;
-    align-self: center;
-  }
-  
-  .underline {
-    position: inherit;
-    background-color: #f10ff1;
-    height: 0.1vw;
-    width: 100%;
-  }
-  
-  .nav-link-box .nav-link:hover + .underline {
-    background-color: white;
-    transition: background-color 0.5s ease; /* Transizione più fluida */
-  }
-  
-  .nav-link:visited {
-    color: #f10ff1;
-  }
-  
-  .nav-link:hover {
-    color: white;
-    transform: scale(1.1) translateY(-3px);
-  }
-  
-  .nav-link {
-    text-decoration: none;
-    position: inherit;
-    color: #f10ff1;
-    text-align: center;
-    align-self: flex-end;
-    transition: color 0.3s ease, transform 0.3s ease; /* Transizione per colore e trasformazione */
-  }
-  
-  .nav-link a { /* Lucrezia */
-    text-decoration: none;
-    color: #f10ff1;
-    font-size: 1em;
-    padding-bottom: 10px;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  #menu-button {
-    position: relative;
-    top: 40px;
-    right: 10px;
-    height: 60px;
-  }
-  
-  .toggle-btn {
-    position: relative;
-    left: calc(55% * 0.9);
-    width: 4vw;
-    height: 4vw;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .toggle-btn span {
-    position: absolute;
-    width: 40px;
-    height: 4px;
-    transition: 0.3s;
-    background-color: #f10ff1;
-  }
-  
-  .toggle-btn span:first-child {
-    transform: translateY(-8px);
-  }
-  
-  .toggle-btn.x span:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .toggle-btn span:last-child {
-    transform: translateY(8px);
-  }
-  
-  .toggle-btn.x span:first-child {
-    transform: rotate(45deg) translateY(0);
-  }
-  
-  .toggle-btn.x span:last-child {
-    transform: rotate(-45deg) translateY(0);
-  }
-  
-  #menu-links {
-    position: absolute;
-    height: 200px;
-    width: 100%;
-    display: none;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    z-index: 2;
-  }
-  
-  #menu-links a {
-    color: #f10ff1;
-    background-color: #323232;
-    text-decoration: none;
-    font-size: calc(15px + 0.390625vw);
-    text-align: center;
-    padding: 10px 0;
-  }
-  
-  #menu-links a:last-child {
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-  }
-  
-  #menu-links a:nth-child(odd) {
-    background-color: #444;
-  }
-  
-  #menu-links a:hover {
-    color: white;
-    background-color: #f10ff1;
-  }
-  
-  .logo {
-    position: inherit;
-    background-color: #444;
-    height: 100px;
-    width: 100px;
-    left: 25%;
-    border: none;
-  }
+
+div.navbar-body {visibility: hidden;}
+}
+
+@media screen and (min-width: 831px) {
+
+  div.menu {visibility: hidden;}
+}
+
+#navbar {
+  position: relative;
+  height: 100%;
+}
+
+.rom-navbar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.rom-navbar #logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#logo-box .logo {
+  position: inherit;
+  background-color: #444;
+  height: 13vh;
+  width: 13vh;
+  border: none;
+}
+
+.navbar-body {
+  position: inherit;
+  font-size: calc(15px + 0.390625vw);
+  display: grid;
+  height: inherit;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.nav-link-box {
+  height: fit-content;
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  align-self: center;
+}
+
+.underline {
+  position: inherit;
+  background-color: var(--mainColor);
+  height: 0.1vw;
+  width: 100%;
+}
+
+.nav-link-box .nav-link:hover + .underline {
+  background-color: white;
+  transition: background-color 0.5s ease; /* Transizione più fluida */
+}
+
+.nav-link:visited {
+  color: var(--mainColor);
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+.nav-link {
+  text-decoration: none;
+  position: inherit;
+  color: var(--mainColor);
+  text-align: center;
+  align-self: flex-end;
+  transition: color 0.3s ease; /* Transizione per colore */
+}
+
+#menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.toggle-btn {
+  position: relative;
+  width: 4vw;
+  height: 4vw;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle-btn span {
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  transition: 0.3s;
+  background-color: var(--mainColor);
+}
+
+.toggle-btn span:first-child {
+  transform: translateY(-8px);
+}
+
+.toggle-btn.x span:nth-child(2) {
+  opacity: 0;
+}
+
+.toggle-btn span:last-child {
+  transform: translateY(8px);
+}
+
+.toggle-btn.x span:first-child {
+  transform: rotate(45deg) translateY(0);
+}
+
+.toggle-btn.x span:last-child {
+  transform: rotate(-45deg) translateY(0);
+}
+
+#menu-links {
+  position: absolute;
+  height: 200px;
+  width: 100%;
+  display: none;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  z-index: 2;
+}
+
+#menu-links a {
+  color: var(--mainColor);
+  background-color: #323232;
+  text-decoration: none;
+  font-size: calc(15px + 0.390625vw);
+  text-align: center;
+  padding: 10px 0;
+}
+
+#menu-links a:last-child {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+#menu-links a:nth-child(odd) {
+  background-color: #444;
+}
+
+#menu-links a:hover {
+  color: white;
+  background-color: var(--mainColor);
+}
+
+.grid-container{
+  display: grid;
+  grid-template-rows: 15vh auto 15vh;
+}
   
   /* =============== Fine Navbar =================*/    
   
@@ -249,8 +202,8 @@ body{
 
 .grid-container {
   display: grid;
-  grid-template-rows: 25vh 50vh 50vh 50vh 25vh ;
-  gap: 10px; /* Optional gap between rows */
+  grid-template-rows: 15vh 50vh 50vh 50vh 25vh ;
+  gap: 10px; 
   max-width: 100%;
 }
 
@@ -423,6 +376,9 @@ background-color: #ffffff; /* Darker blue on hover */
 /* ============ Buttoni Pietro====================*/      
 
 .btnCont{
+    opacity: 0;
+    transform: translateX(-25%); /* Start off-screen to the left */
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
@@ -431,6 +387,11 @@ background-color: #ffffff; /* Darker blue on hover */
     padding: 10px 20px;
     margin: 5px;
     
+}
+
+.btnCont.animate {
+  opacity: 1;
+  transform: translateX(0); /* Move to the original position */
 }
 
 .narBtn {

@@ -2,99 +2,65 @@
 /* =============== Inizio Navbar =================*/      
 /*================================================*/
 
+body {
+  background-color: black;
+}
+/* Qui si mettono tutte le variabili */
+:root {
+  --wideScreen: True;
+  --mainColor: #f10ff1;
+}
 @media screen and (max-width: 830px) {
-  
-  div.navbar-body {visibility: hidden;}
 
-  div#img-right {
-    display: none;
+  :root {
+      --wideScreen: False;
   }
 
-  div#img-left {
-    display: none;
+  #upButton {
+      height: 70px;
+      width: 70px;
   }
 
-  div#welcome {
-    display: block;
-    width: 100%;
-  }
-
-  div#center {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-  }
-
-  div#center h1 {
-    font-size: calc(10vw * 0.9);
-  }
-  
-  div#about {
-    width: 100%;
-  }
-
-  div#timeline span {
-    left: 7vw;
-  }
-
-  div.item div.item-content {
-    float: right;
-    width: 60%;
-    right: 5vw;
-  }
-
-  div.item div.item-content img {
-    height: inherit;
-    width: 70%;
-    
-  }
-
-  div.item:nth-of-type(odd) .item-content {
-    float: right;
-  }
-
+div.navbar-body {visibility: hidden;}
 }
 
 @media screen and (min-width: 831px) {
+
   div.menu {visibility: hidden;}
-
-  div#banner {
-    display: none;
-  }
-  
-  div#about {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  div.item:nth-of-type(odd) .item-content {
-    left: 5vw;
-  }
-
-  div.item:nth-of-type(even) .item-content {
-    right: 5vw;
-  }
 }
 
 #navbar {
   position: relative;
-  flex: 0 1 auto;
+  height: 100%;
 }
 
 .rom-navbar {
   position: relative;
   width: 100%;
-  height: 120px;
-  top: 10px;
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
+}
+
+.rom-navbar #logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#logo-box .logo {
+  position: inherit;
+  background-color: #444;
+  height: 13vh;
+  width: 13vh;
+  border: none;
 }
 
 .navbar-body {
   position: inherit;
   font-size: calc(15px + 0.390625vw);
   display: grid;
-  height: 100px;
+  height: inherit;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
@@ -107,7 +73,7 @@
 
 .underline {
   position: inherit;
-  background-color: #f10ff1;
+  background-color: var(--mainColor);
   height: 0.1vw;
   width: 100%;
 }
@@ -118,41 +84,32 @@
 }
 
 .nav-link:visited {
-  color: #f10ff1;
+  color: var(--mainColor);
 }
 
 .nav-link:hover {
   color: white;
-  transform: scale(1.1) translateY(-3px);
 }
 
 .nav-link {
   text-decoration: none;
   position: inherit;
-  color: #f10ff1;
+  color: var(--mainColor);
   text-align: center;
   align-self: flex-end;
-  transition: color 0.3s ease, transform 0.3s ease; /* Transizione per colore e trasformazione */
-}
-
-.nav-link a { /* Lucrezia */
-  text-decoration: none;
-  color: #f10ff1;
-  font-size: 1em;
-  padding-bottom: 10px;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: color 0.3s ease; /* Transizione per colore */
 }
 
 #menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  top: 40px;
-  right: 10px;
-  height: 60px;
+  z-index: 2;
 }
 
 .toggle-btn {
   position: relative;
-  left: calc(55% * 0.9);
   width: 4vw;
   height: 4vw;
   background-color: transparent;
@@ -168,7 +125,7 @@
   width: 40px;
   height: 4px;
   transition: 0.3s;
-  background-color: #f10ff1;
+  background-color: var(--mainColor);
 }
 
 .toggle-btn span:first-child {
@@ -201,7 +158,7 @@
 }
 
 #menu-links a {
-  color: #f10ff1;
+  color: var(--mainColor);
   background-color: #323232;
   text-decoration: none;
   font-size: calc(15px + 0.390625vw);
@@ -220,16 +177,12 @@
 
 #menu-links a:hover {
   color: white;
-  background-color: #f10ff1;
+  background-color: var(--mainColor);
 }
 
-.logo {
-  position: inherit;
-  background-color: #444;
-  height: 100px;
-  width: 100px;
-  left: 25%;
-  border: none;
+.grid-container{
+  display: grid;
+  grid-template-rows: 15vh auto 15vh;
 }
 
 /* =============== Fine Navbar =================*/ 
@@ -237,9 +190,7 @@
 /* =============== Inizio map ===============*/
 
 
-body {
-  background-color: black;
-}
+
 
 
 .container {
@@ -307,17 +258,10 @@ body {
   font-size: 1.3em;        /* Increase the size of the number */
 }
 
-@media screen and (min-width: 831px) { /* Applies to screens wider than 830px */
-  #list-container {
-    display: block;
-  }
-}
-
-
 @media screen and (max-width: 830px) {
   .container {
-  grid-template-rows: 20vh auto 20vh ; /* Three rows */
-  }
+    grid-template-rows: 20vh auto 20vh ; /* Three rows */
+    }
 
   .content {
   display: grid;
