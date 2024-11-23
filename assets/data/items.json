@@ -2,7 +2,7 @@
 	"meta": {
 		"startWith": 0,
 		"startNarrative": "Historical Period",
-		"startValue": "XV-XVII",
+		"startValue": "XV-XVII Century",
 		"narratives": ["Typology", "Themes", "Historical Period"]
 	},
 	"items": [
@@ -21,7 +21,7 @@
 				"Controversies/Debates": "Sparked debates on the structure of the universe and the role of observational evidence in scientific inquiry",
 				"Exhibition": "Room ",
 				"Themes": "Scientifical revolution, Religious dissent" ,
-				"Historical Period" : "XV-XVII" ,
+				"Historical Period" : "XV-XVII Century" ,
 				"Typology" : "Tool" 
 			},
 			"shortInfo": "Explore Galileo’s telescope replica to see how early scientific breakthroughs reshaped our understanding of the universe and influenced modern innovation.", 
@@ -86,7 +86,7 @@
 				"Controversies/Debates": "Criticized for its ostentatious use of luxury materials and the perceived emptiness of its message",
 				"Exhibition": "Room " ,
 				"Themes": "Provocative art",
-				"Historical Period" : "XXI Century" ,
+				"Historical Period" : "XXI Century",
 				"Typology" : "Artwork" 		
 			},
 			"shortInfo": "\"For the Love of God\" is a platinum cast of a human skull encrusted with diamonds, created by Damien Hirst in 2007, symbolizing themes of mortality and materialism.",
@@ -148,7 +148,7 @@
 				"Controversies/Debates": "Historical and theological implications of religious reform movements",
 				"Exhibition": "Room ",
 				"Themes": "Religious dissent",
-				"Historical Period" : "XV-XVII" ,
+				"Historical Period" : "XV-XVII Century" ,
 				"Typology" : "Text" 
 			},
 			"shortInfo": "Learn about Martin Luther’s 95 Theses, challenging the Catholic Church’s practices in the 16th century. Understand its significance in religious history and the Reformation.",
