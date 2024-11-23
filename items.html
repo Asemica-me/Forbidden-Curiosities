@@ -831,7 +831,7 @@
 
                 const combo = items.filter(item => matchNarratives(item, list));
                 if (combo.length===0) {
-                    noResults(); // Appare il messaggio che comunica il fallimento della ricerca
+                    noResults(); // Appare il messaggio che comunica il fallimento della ricerca e rimane la narrativa selezionata in precedenza
                 } else {
                     currentSelection = combo;
                 }
