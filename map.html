@@ -5,22 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/map.css">
-    <script src="assets/java/map.js"></script> 
     <script src="assets/java/java.js"></script>
+    <script src="assets/java/map.js"></script>
+
     <title>Map of the Exhibition</title>
 </head>
 
-
-    <!------- Hamburger Menu End --------->
-
-
-    <!------ Navbar End ---------->
 <body>
    
     <div class="container">
         <!-- Navbar -->
         
-        <div class="navbar grid-item" >
+        <div class="grid-item" id="navbar">
             <div class="rom-navbar">
                 <div id="logo-box"><a class="logo" href="index.html">logo</a></div>
                 <div class="navbar-body">
@@ -63,6 +59,7 @@
             <div class="grid-element" id="map-container">
                 <img src="assets\img\floorfin.png" alt="map" id="map" /> 
             </div>
+            
             <div class="grid-element" id="list"  >
                 <div id="list-icon">
                     <button id="icon-button" onclick="showList()">

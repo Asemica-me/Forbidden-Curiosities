@@ -1,22 +1,16 @@
-/*================================================*/
-/* =============== Inizio Navbar =================*/      
-/*================================================*/
 
 body {
   background-color: black;
 }
-/* Qui si mettono tutte le variabili */
+
 :root {
   --mainColor: #f10ff1;
 }
+
+/* =============== Inizio Navbar =================*/      
+
 @media screen and (max-width: 830px) {
 
-
-
-  #upButton {
-      height: 70px;
-      width: 70px;
-  }
 
 div.navbar-body {visibility: hidden;}
 }
@@ -177,12 +171,8 @@ div.navbar-body {visibility: hidden;}
   background-color: var(--mainColor);
 }
 
-.grid-container{
-  display: grid;
-  grid-template-rows: 15vh auto 15vh;
-}
 
-/* =============== Fine Navbar =================*/ 
+
 
 /* =============== Inizio map ===============*/
 
@@ -206,17 +196,19 @@ div.navbar-body {visibility: hidden;}
   border-radius: 15px;
 }
 
-#map-container{
+#map-container {
   border: solid fuchsia;
-  width:100%;
-  height:100%;
-  overflow: hidden;
+  display: flex; /* Use flexbox to control content alignment */
+  justify-content: center; /* Center the map horizontally */
+  align-items: center; /* Center the map vertically */
+  overflow: hidden; /* Ensure no content overflows the container */
 }
 
 #map {
   border-radius: 15px;
-
- 
+  width: 100%; /* Make the image fill the container width */
+  height: 100%; /* Make the image fill the container height */
+  object-fit: contain; /* Maintain aspect ratio while fitting inside the parent */
 }
 
 /* =========list block========*/
@@ -258,35 +250,44 @@ div.navbar-body {visibility: hidden;}
   font-size: 1.3em;        /* Increase the size of the number */
 }
 
-@media screen and (max-width: 830px) { 
-  .container {
-    grid-template-rows: 15vh auto 20vh ; /* Three rows */
-    }
-
-  .content {
-  display: grid;
-  grid-template-columns: 1fr; /* Single column */
-  grid-template-rows: auto auto ; /* Stack into two rows */
-  padding-bottom: 0vh;
+@media screen and (max-width: 830px) {
+  /* Hide navbar body */
+  .navbar-body {
+    visibility: hidden;
   }
 
+  /* Adjust container grid */
+  .container {
+    grid-template-rows: 15vh min-content 20vh; /* Three rows */
+  }
+
+  /* Content adjustments */
+  .content {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column */
+    grid-template-rows: 40vh  min-content; /* Stack into two rows */
+    padding-bottom: 0;
+  }
+
+  /* List adjustments */
   #list {
     display: grid;
-    grid-template-rows: auto auto;
+    grid-template-rows: 10vh min-content;
   }
 
-  #map-container{
-    height: fit-content;
+  /* Map container height */
+  #map-container {
+    height: fit-content; /* Ensures height fits content */
   }
 
-
-  #list-icon{
-    display: block;
+  /* List icon alignment */
+  #list-icon {
     display: flex; /* Use flexbox for alignment */
     align-items: center; /* Center items vertically */
-    justify-content: center;
+    justify-content: center; /* Center items horizontally */
   }
 
+  /* Icon button styling */
   #icon-button {
     background: none; /* Remove default button styling */
     border: none; /* Remove border */
@@ -294,23 +295,23 @@ div.navbar-body {visibility: hidden;}
     cursor: pointer; /* Change cursor to pointer for button-like behavior */
   }
 
+  /* Icon styling and hover effect */
   #icon {
     width: 50px;
     height: 50px;
-    transition: transform 0.3s ease;
-  }
-  
-  #icon:hover {
-    width: 50px;
-    height: 50px;
-    transform: scale(1.1);
-  }
-    
-  #list-container{
-    display: none;
+    transition: transform 0.3s ease; /* Smooth scaling effect */
   }
 
+  #icon:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+  }
+
+  /* List container hidden by default */
+  #list-container {
+    display: none;
+  }
 }
+
 
 
   /*================================================*/

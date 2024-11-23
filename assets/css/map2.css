@@ -1,0 +1,288 @@
+
+body {
+    background-color: black;
+}
+  
+:root {
+--mainColor: #f10ff1;
+}
+
+/* =============== Inizio Navbar =================*/      
+@media screen and (max-width: 830px) {
+
+
+    div.navbar-body {visibility: hidden;}
+    }
+    
+    @media screen and (min-width: 831px) {
+    
+      div.menu {visibility: hidden;}
+    }
+    
+    #navbar {
+      position: relative;
+      height: 100%;
+    }
+    
+    .rom-navbar {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+    }
+    
+    .rom-navbar #logo-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    #logo-box .logo {
+      position: inherit;
+      background-color: #444;
+      height: 13vh;
+      width: 13vh;
+      border: none;
+    }
+    
+    .navbar-body {
+      position: inherit;
+      font-size: calc(15px + 0.390625vw);
+      display: grid;
+      height: inherit;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    
+    .nav-link-box {
+      height: fit-content;
+      display: grid;
+      grid-template-rows: 3fr 1fr;
+      align-self: center;
+    }
+    
+    .underline {
+      position: inherit;
+      background-color: var(--mainColor);
+      height: 0.1vw;
+      width: 100%;
+    }
+    
+    .nav-link-box .nav-link:hover + .underline {
+      background-color: white;
+      transition: background-color 0.5s ease; /* Transizione più fluida */
+    }
+    
+    .nav-link:visited {
+      color: var(--mainColor);
+    }
+    
+    .nav-link:hover {
+      color: white;
+    }
+    
+    .nav-link {
+      text-decoration: none;
+      position: inherit;
+      color: var(--mainColor);
+      text-align: center;
+      align-self: flex-end;
+      transition: color 0.3s ease; /* Transizione per colore */
+    }
+    
+    #menu-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .toggle-btn {
+      position: relative;
+      width: 4vw;
+      height: 4vw;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .toggle-btn span {
+      position: absolute;
+      width: 40px;
+      height: 4px;
+      transition: 0.3s;
+      background-color: var(--mainColor);
+    }
+    
+    .toggle-btn span:first-child {
+      transform: translateY(-8px);
+    }
+    
+    .toggle-btn.x span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .toggle-btn span:last-child {
+      transform: translateY(8px);
+    }
+    
+    .toggle-btn.x span:first-child {
+      transform: rotate(45deg) translateY(0);
+    }
+    
+    .toggle-btn.x span:last-child {
+      transform: rotate(-45deg) translateY(0);
+    }
+    
+    #menu-links {
+      position: absolute;
+      height: 200px;
+      width: 100%;
+      display: none;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      z-index: 2;
+    }
+    
+    #menu-links a {
+      color: var(--mainColor);
+      background-color: #323232;
+      text-decoration: none;
+      font-size: calc(15px + 0.390625vw);
+      text-align: center;
+      padding: 10px 0;
+    }
+    
+    #menu-links a:last-child {
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+    
+    #menu-links a:nth-child(odd) {
+      background-color: #444;
+    }
+    
+    #menu-links a:hover {
+      color: white;
+      background-color: var(--mainColor);
+    }
+
+
+
+/* =============== Inizio map ===============*/
+
+.grid-container {
+display: grid;
+grid-template-rows: 15vh 85vh 20vh; 
+max-width: 100%;
+row-gap: 3vh;
+border: solid red;
+
+}
+
+#navbar{
+    border: solid rgb(255, 255, 255);
+    max-width: 100%;
+}
+
+#content {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    height: 100%; /* Optional, ensures proper alignment if the parent has a defined height */
+}
+
+.flex-element{
+    border-radius: 15px;
+    border: solid rgb(255, 0, 255);
+}
+
+#map-container{
+    width: 60vw;
+    height:100%;
+    background-color: aliceblue;
+}
+
+#list{
+    background-color: aliceblue;
+    width: 35vw;
+    height:100%;
+   
+}
+
+
+#list-icon{
+display: none;
+}
+
+
+@media screen and (max-width: 830px) {
+    #content {
+        flex-flow: column;
+        flex-flow: column nowrap;
+        border: solid rgb(33, 210, 80);
+    }
+
+    #map-container{
+        width: 100%;
+        height:40%;
+        background-color: aliceblue;
+    }
+    
+    #list{
+        top: 0px;
+        display: flex;
+        max-width: 100%;
+        height: fit-content;
+        flex-flow: column;
+        
+    }
+
+    #list-icon{
+        display: flex; /* Use flexbox for alignment */
+        align-items: center; /* Center items vertically */
+        justify-content: center; /* Center items horizontally */
+        width: 100% ;
+    }
+
+    #icon-button {
+        background: none; /* Remove default button styling */
+        border: none; /* Remove border */
+        padding: 0; /* Remove padding */
+        cursor: pointer; /* Change cursor to pointer for button-like behavior */
+    }
+   
+    #icon {
+        width: 50px;
+        height: 50px;
+        transition: transform 0.3s ease; /* Smooth scaling effect */
+    }
+
+
+
+
+    
+
+
+}
+
+/*================================================*/
+/* =============== Fine map ===============*/
+/*================================================*/
+
+
+/* =============== Inizio Footer =================*/
+
+#footer {
+    position: relative;
+    height: 100%;
+    background-color: rgb(77, 77, 77);
+    color: #ffffff;
+    text-align: center;
+    font-size: calc(15px + 0.390625vw);
+}
+
+/* =============== Fine Footer =================*/
