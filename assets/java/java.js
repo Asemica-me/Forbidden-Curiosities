@@ -1,10 +1,3 @@
-/* START Items Style */
-
-/* END Items Style */
-
-
-
-
 /* index.html functions START */
 
 // Funzione per attivare e disattivare con un click il menu hamburger
@@ -141,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 	// Rimuovi lo spinner e mostra il contenuto
 	document.body.classList.add('loaded');
 	document.querySelector('.content').style.display = 'block'; // Mostra il contenuto
-}; */
+}; 
 
 // Funzione che nasconde lo spinner e mostra il contenuto dopo un ritardo
 window.onload = function() {
@@ -150,4 +143,4 @@ window.onload = function() {
         document.body.classList.add('loaded');
         document.querySelector('.content').style.display = 'block'; // Mostra il contenuto
     }, 5000); // 3 secondi di ritardo
-};
+};*/
