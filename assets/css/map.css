@@ -197,18 +197,18 @@ div.navbar-body {visibility: hidden;}
 }
 
 #map-container {
-  border: solid fuchsia;
   display: flex; /* Use flexbox to control content alignment */
   justify-content: center; /* Center the map horizontally */
   align-items: center; /* Center the map vertically */
-  overflow: hidden; /* Ensure no content overflows the container */
+  margin-left: 5vh;
+  
 }
 
 #map {
   border-radius: 15px;
   width: 100%; /* Make the image fill the container width */
-  height: 100%; /* Make the image fill the container height */
-  object-fit: contain; /* Maintain aspect ratio while fitting inside the parent */
+   /* Make the image fill the container height */
+ /* Maintain aspect ratio while fitting inside the parent */
 }
 
 /* =========list block========*/
@@ -216,7 +216,7 @@ div.navbar-body {visibility: hidden;}
 #list-container{
   background-color: #f0f0f0;
   border-radius: 15px;
-  padding: 45px;
+  padding: 35px;
 }
 
 #list-icon{
@@ -234,7 +234,7 @@ div.navbar-body {visibility: hidden;}
 
 /* Style the links */
 .itemList a {
-  color: #f10ff1;        /* Make the text purple */
+  color:var(--mainColor);        /* Make the text purple */
   text-decoration: none;   /* Remove underline */
         /* Make the text a bit larger */
 }
@@ -245,7 +245,7 @@ div.navbar-body {visibility: hidden;}
 }
 
 .itemList li::marker {
-  color: #f10ff1;         /* Change the number color */
+  color:var(--mainColor);         /* Change the number color */
   font-weight: bold;       /* Make the number bold */
   font-size: 1.3em;        /* Increase the size of the number */
 }
@@ -278,6 +278,7 @@ div.navbar-body {visibility: hidden;}
   /* Map container height */
   #map-container {
     height: fit-content; /* Ensures height fits content */
+    margin-left: 0vh;
   }
 
   /* List icon alignment */
