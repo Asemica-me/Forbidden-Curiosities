@@ -244,8 +244,13 @@ div.navbar-body {visibility: hidden;}
         grid-template-rows: auto auto auto ; 
         row-gap: 5vh;
     }
+    .card-container{
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+
+    }
     .card{
-    
         height: auto;
         width: 60%;
         aspect-ratio: 339.6 / 522.513;
