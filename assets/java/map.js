@@ -3,7 +3,7 @@ function showList() {
 	const icon = document.getElementById('icon');
   
 	// Toggle display between 'none' and 'block'
-	if (listContainer.style.display === 'none' || listContainer.style.display === '') {
+	if (listContainer.style.display === 'none') {
 	  listContainer.style.display = 'block';
 	  icon.style.transform = 'rotate(180deg)'; // Rotate icon by 180°
 	} else {

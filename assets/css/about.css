@@ -172,11 +172,14 @@ div.navbar-body {visibility: hidden;}
     background-color: var(--mainColor);
   }
 
+
+/*about start*/
+
 .grid-container{
     display: grid;
     grid-template-rows: 15vh auto 15vh;
 }
-/*about start*/
+
 .grid-about{
     max-width: 100%;
     display: grid;
