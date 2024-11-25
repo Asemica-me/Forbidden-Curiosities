@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="assets/css/common.css">
-        <script src="assets/java/java.js"></script>
         <title>Items Gallery</title>
         <style>
             :root {
@@ -408,6 +407,12 @@
             }
 
             /* Fine area filtri */
+
+            #noResults {
+                text-align: center;
+                font-size: calc(11px + 0.390625vw);
+            }
+
             /* FINE Narratives column */
 
             /* INIZIO Image column */
@@ -517,40 +522,51 @@
 
             /* INIZIO Info column */
             #gallery #column-3 {
+                position: relative;
                 width: 100%;
                 height: 100%;
                 border-radius: 5px;
                 background-color: var(--secondColor);
-                font-size: calc(13px + 0.390625vw);
+                display: grid;
+                grid-template-rows: 45% 50% 5%;
                 overflow-y: auto;
             }
 
             #column-3 #info {
                 position: relative;
-                width: 100%;
+                height: 100%;
             }
-
-            #info td {padding: 1%;}
 
             #info tr:nth-child(even){background-color: #d523d5;}
 
             #column-3 #description {
+                height: 100%;
                 position: relative;
-                padding: 2%;
-                padding-left: 4%;
-                padding-right: 4%;
+                display: grid;
+                grid-template-rows: 10% 90%;
             }
 
-            #description h5 {
+            #description #title {
+                position: relative;
+                font-weight: bold;
                 text-align: center;
-                font-size: calc(14px + 0.390625vw);
-                margin-block-start: 0;
-                margin-block-end: 0;
             }
 
-            #description p {
+            #description #infoBox {
+                position: relative;
+            }
+
+            #description #infoBox p {
+                position: relative;
                 text-indent: 5%;
-                line-height: 1.5;
+            }
+
+            #readButtons{
+                height: 100%;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                background-color: #d523d5;
             }
 
             .hidden {display: none;}
@@ -725,20 +741,41 @@
                 byId("img").src = item.image
                 byId("img").alt = item.shortName
                 createInfoTable(item)
-                inner("shortInfo",item.shortInfo + '<a type="button" class="btn" style="margin-left:2%;" onclick="more()">+ info</a>'); 
-                inner("longerInfo","<p>"+item.longerInfo.join("</p>") + '<a type="button" class="btn" style="margin-left:2%;" onclick="less()">- info</a><p>' +
-                    ' <a type="button" class="btn" onclick="muchMore()">+ full info</a></p>');
-                byId("fullInfo").dataset['uri'] = item.fullInfo
+                inner("shortInfo",`<p>${item.shortInfo}</p>`); 
+                inner("longerInfo",`<p>${item.longerInfo.join("</p><p>")}</p>`);
+                byId("fullInfo").dataset['uri'] = item.fullInfo;
                 highlightIndex(index);
             }
             
             function more() {
+                const moreBtn = document.getElementById("moreBtn");
+                const shortBtn = document.getElementById("shortBtn");
+                moreBtn.removeAttribute("href");
+                moreBtn.removeAttribute("onclick");
+                moreBtn.style.cursor = "default";
+                moreBtn.style.opacity = "0.5";
+                shortBtn.style.cursor = "pointer";
+                shortBtn.setAttribute("onclick", "less()");
+                shortBtn.setAttribute("href", "#");
+                shortBtn.style.opacity = "1";
+
                 hide("shortInfo");
                 show("longerInfo");
                 hide("fullInfo");
             }
             
             function less() {
+                const moreBtn = document.getElementById("moreBtn");
+                const shortBtn = document.getElementById("shortBtn");
+                shortBtn.removeAttribute("href");
+                shortBtn.removeAttribute("onclick");
+                shortBtn.style.cursor = "default";
+                shortBtn.style.opacity = "0.5";
+                moreBtn.style.cursor = "pointer";
+                moreBtn.setAttribute("onclick", "more()");
+                moreBtn.setAttribute("href", "#");
+                moreBtn.style.opacity = "1";
+
                 hide("longerInfo");
                 show("shortInfo");
             }
@@ -772,7 +809,9 @@
                                 let themes = item.info[i].split(", ");
                                 let val = [];
                                 for (j in themes) {
-                                    val.push('<a type="button" class="btn" href="#" onclick="changeNarrative(\''+i+'\',\''+themes[j]+'\')">'+themes[j]+'</a>')
+                                    if (themes[j]==="Women's history") {theme = "Women\\&#39;s history";}
+                                    else {theme = themes[j];}
+                                    val.push(`<a type="button" class="btn" href="#" onclick="changeNarrative('${i}', '${theme}')">${themes[j]}</a>`)
                                 }
                                 inner("infoTable","<tr><th>"+i+"</th><td>"+val.join(", ")+"</td></tr>", false);
                             }
@@ -823,6 +862,11 @@
             }
 
             function combinedNarratives() {
+                let alert = document.getElementById("noResults");
+                if (!alert.classList.contains("hidden")) { //All'inizio di una nuova ricerca si rimuove
+                    alert.classList.add("hidden");         //l'avviso di fallimento se è presente.
+                }
+
                 const sel_spans = document.getElementsByClassName("selected");
                 const list = [];
                 for (let i = 0; i < sel_spans.length; i++) {
@@ -830,12 +874,13 @@
                 }
 
                 const combo = items.filter(item => matchNarratives(item, list));
+
+                
                 if (combo.length===0) {
-                    noResults(); // Appare il messaggio che comunica il fallimento della ricerca e rimane la narrativa selezionata in precedenza
+                    alert.classList.remove("hidden"); // Appare il messaggio che comunica il fallimento della ricerca e rimane la narrativa selezionata in precedenza
                 } else {
                     currentSelection = combo;
                 }
-                
                 index = currentSelection.findIndex( i => i['@sort'] == currentSort )
                 if (index == -1) index = 0;
                 updateIndices();
@@ -847,11 +892,11 @@
             }
             
             function show(id) {
-                document.getElementById(id).classList.remove('hidden')
+                document.getElementById(id).classList.remove('hidden');
             }
             
             function hide(id) {
-                document.getElementById(id).classList.add('hidden')
+                document.getElementById(id).classList.add('hidden');
             }
             
             function inner(id,content, emptyFirst=true) {
@@ -872,7 +917,7 @@
         <!-- Elementi che si sovrappongono a tutti -->
         <div id="opaque-page"></div>
         <div class="hidden" id="fullInfo">
-            <div class="hidden" id="fullInfoContent"></div>
+            <div id="fullInfoContent"></div>
         </div>
         <!------------------------------------------->
         <div id="page-container">
@@ -919,7 +964,7 @@
                 <div id="gallery">
                     <div class="g-container">
                         <div class="header">
-                            <h4> Narratives</h4>
+                            <h4>Search</h4>
                         </div>
                     </div>
                     <div class="g-container">
@@ -987,6 +1032,7 @@
                                     </div>
                                 </div>
                                 <div id="showBtn-box"><button id="showBtn" onclick="combinedNarratives()">SHOW >>></button></div>
+                                <p id="noResults" class="hidden">The filter selection didn't match any item.</p>
                             </div>
                         </div>
                     </div>
@@ -1016,9 +1062,16 @@
                                 <tbody id="infoTable"></tbody>
                             </table>
                             <div id="description">
-                                <h5>Description</h5>
-                                <p id="shortInfo"></p>
-                                <p class="hidden" id="longerInfo"></p>
+                                <div id="title">Description</div>
+                                <div id="infoBox">
+                                    <div id="shortInfo"></div>
+                                    <div class="hidden" id="longerInfo"></div>
+                                </div>
+                            </div>
+                            <div id="readButtons">
+                                <a type="button" id="moreBtn" class="btn" href="#" onclick="more()">Read more</a>
+                                <a type="button" id="shortBtn" class="btn" style="margin-left:2%; cursor: default; opacity: 0.5;">Read less</a>
+                                <a type="button" class="btn" href="#" style="margin-left:2%;" onclick="muchMore()">Read a more detailed description</a>
                             </div>
                         </div>
                     </div>
