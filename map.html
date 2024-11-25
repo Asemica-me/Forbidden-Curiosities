@@ -53,20 +53,37 @@
                 <a href="about.html">About us</a>
             </div>            
         </div>   
-         
+        <!-- start nar menu -->
+        <div class="nar-container">
+            <div class="nar-grid">
+              <div class="grid-it" id="nar">
+                <div class="nar-but-container" >
+                  <button class="nar-but active" onclick="subNar(this); activateNarButton(this)">Period</button>        </div>
+                <div class="nar-but-container" ">
+                  <button class="nar-but" onclick="subNar(this); activateNarButton(this)">Tipology</button>
+                </div>
+                <div class="nar-but-container">
+                  <button class="nar-but" onclick="subNar(this); activateNarButton(this)">Themes</button>
+                </div>
+              </div>
+              <div class="grid-it" id="sub-nar">
+              </div>
+            </div>
+        </div>
+        <!-- end nar menu -->
 
         <div class="content grid-item" >
             <div class="grid-element" id="map-container">
                 <img src="assets\img\floorfin.png" alt="map" id="map" /> 
             </div>
             
-            <div class="grid-element" id="list"  >
+            <div class="grid-element" id="list-container"  >
                 <div id="list-icon">
                     <button id="icon-button" onclick="showList()">
                         <img src=assets\img\arrow-sm-down-svgrepo-com.svg id="icon" />
                     </button> 
                 </div>
-                <div id="list-container">
+                <div id="list">
                     <ol class="itemList">
                         <li><a href="https://www.example3.com">Arquebus</a></li>
                         <li><a href="https://www.example3.com">Vitruvian man</a></li>
