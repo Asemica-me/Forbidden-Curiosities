@@ -309,3 +309,37 @@ function switchItem(n) {
         else if (index < 0) index = currentSelection.length - 1;
         showInfo(index);
     };
+
+
+// FUNZIONE ANIMAZIONE DISSOLVENZA BOTTOM-UP
+window.addEventListener('load', () => {
+    const elements = document.querySelectorAll('.hidden-animation-bottom-up'); // Seleziona tutti gli elementi con classe 'hidden'
+    elements.forEach((element, index) => {
+        setTimeout(() => {
+            element.classList.remove('hidden-animation-bottom-up'); // Rimuovi stato iniziale
+            element.classList.add('fade-in-up'); // Aggiungi animazione
+        }, index * 200); // Ritardo sequenziale tra gli elementi
+    });
+});
+
+
+    // FUNZIONE ANIMAZIONE DISSOLVENZA TOP-DOWN
+    window.addEventListener('load', () => {
+    const elements = document.querySelectorAll('.hidden-animation-top-down'); // Seleziona tutti gli elementi con classe 'hidden'
+    elements.forEach((element, index) => {
+        setTimeout(() => {
+            element.classList.remove('hidden-animation-top-down'); // Rimuovi stato iniziale
+            element.classList.add('fade-in-down'); // Aggiungi animazione
+        }, index * 200); // Ritardo sequenziale tra gli elementi
+    });
+});
+
+//=========================
+//  TENDINE              //
+// ========================
+
+
+
+//=========================
+//  FINE TENDINE         //
+// ========================
