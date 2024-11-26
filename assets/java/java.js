@@ -1,6 +1,6 @@
 /* index.html functions START */
 
-// Funzione per attivare e disattivare con un click il menu hamburger
+// Funzione per attivare e disattivare con un click il menu hamburger, quando si attiva il menu hamburger si opacizza lo sfondo
 function toggleCurtain() {
 	let menu_links = document.getElementById('menu-links');
 	let toggleButton = document.getElementById('toggleButton');
@@ -8,17 +8,11 @@ function toggleCurtain() {
 	if (menu_links.style.display === "grid") {
 		menu_links.style.display = "none";
 		opaque.classList.remove("active");
-		setTimeout(() => {
-			opaque.style.visibility = "hidden";
-			document.body.style.overflow = "";
-		}, 500);
+		document.body.style.overflow = "";
 	} else {
 		menu_links.style.display = "grid";
-		opaque.style.visibility = "visible";
-		setTimeout(() => {
-			opaque.classList.add("active");
-			document.body.style.overflow = "hidden";
-		}, 10);	
+		opaque.classList.add("active");
+		document.body.style.overflow = "hidden";	
 	}
 	toggleButton.classList.toggle('x');
   }
@@ -26,7 +20,7 @@ function toggleCurtain() {
 // Funzione per avere un pulsante che rimandi all'inizio della pagina
 window.addEventListener('scroll', function() { // Necessario per controllare il valore dello scroll della pagina 
 	let upButton = document.getElementById("upButton");
-	if (window.scrollY >= document.documentElement.clientHeight) {
+	if (window.scrollY >= document.documentElement.clientHeight) { //clientHeight sarebbe il valore dell'altezza massima della viewport
 	  upButton.style.visibility = "visible";
 	  upButton.addEventListener("click", () => window.scrollTo({
 		top: 0,
@@ -40,7 +34,7 @@ window.addEventListener('scroll', function() { // Necessario per controllare il 
 
 document.addEventListener("DOMContentLoaded", function() { //Necessario per poter agire sugli elementi una volta che sono stati caricati dal browser
 	
-	// Funzione per aprire il pannello informativo sugli oggetti della timeline
+	// Funzione per APRIRE il pannello informativo sugli oggetti della timeline
 	const infoButtons = document.getElementsByClassName("infoButton");
 
 	for (let i = 0; i < infoButtons.length; i++) {
@@ -57,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 		});
 	};
 
-	// Funzione per chiudere il pannello informativo sugli oggetti della timeline
+	// Funzione per CHIUDERE il pannello informativo sugli oggetti della timeline
 	const infoClosers = document.getElementsByClassName("infoCloser");
 
 	for (let i = 0; i < infoClosers.length; i++) {
@@ -74,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 		});
 	};
 
-	// Qui si attribuisce la classe a cui è legata un'animazione
+	// Qui si attribuisce la classe con l'animazione alle immagini per farle entrare dai lati della viewport
 	const elements = document.querySelectorAll('div.image-box');
 
 	const options = {
@@ -96,35 +90,16 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 						entry.target.style.animation = "right-enter 1.5s ease-out forwards";
 					}
 					
-				} else {
+				} else { // questo è il caso della visione da schermo stretto, quindi ingresso solo da destra
 					entry.target.style.animation = "right-enter 1.5s ease-out forwards";
 				}
-				observer.unobserve(entry.target); // Fatta l'animaizone qui si smette di osservare l'elemento
+				observer.unobserve(entry.target); // Fatta l'animaizone qui si smette di osservare l'elemento per non ripeterla
 			}
 		});
 	}, options);
 	elements.forEach(element => {
 		observer.observe(element); // Qui si inizia ad osservare l'elemento
 	});
-
-	// Funzione per aprire i pannelli delle narratives
-	const narBtns = document.getElementsByClassName("nar-btn");
-
-	for (let i = 0; i < narBtns.length; i++) {
-		let btn = narBtns[i];		
-		btn.addEventListener("click", function() {
-			let _ = this.parentElement;
-			let panel = _.nextElementSibling;
-			let symbol = this.innerHTML;
-			if (symbol === "+") {
-				panel.style.display = "grid";
-				this.innerHTML = "-";
-			} else {
-				panel.style.display = "none";
-				this.innerHTML = "+";
-			}
-		});
-	};
 });
 
 /* index.thml functions END */

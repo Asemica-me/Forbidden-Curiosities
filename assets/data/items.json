@@ -20,7 +20,7 @@
 				"Significance": "Catalyzed controversy by challenging the geocentric view of the universe; pivotal in advancing observational astronomy",
 				"Controversies/Debates": "Sparked debates on the structure of the universe and the role of observational evidence in scientific inquiry",
 				"Exhibition": "Room ",
-				"Themes": "Scientifical revolution, Religious dissent" ,
+				"Themes": "Scientific revolution, Religious dissent" ,
 				"Historical Period" : "XV-XVII Century" ,
 				"Typology" : "Tool" 
 			},
@@ -42,7 +42,7 @@
 				"Significance": "Sparked debates on evolution, natural selection, and the relationship between science and religion",
 				"Controversies/Debates": "Provoked discussions on the origin of species, human origins, and implications for religious beliefs",
 				"Exhibition": "Room ",	
-				"Themes": "scientifical revolution, religion dissent" ,
+				"Themes": "Scientific revolution, Religious dissent" ,
 				"Historical Period" : "XVIII-XIX Century" ,
 				"Typology" : "Text" 
 		},
@@ -252,7 +252,7 @@
 				"Significance": "Ethical concerns about the cloning of animals and potential implications for human cloning, including safety, ethical guidelines, and the concept of genetic identity",
 				"Controversies/Debates": "Welfare of cloned animals, the potential for human cloning, genetic modification, and the ethical boundaries of scientific experimentation on living organisms.",
 				"Exhibition": "Room ",
-				"Themes": "Scientifical revolution",
+				"Themes": "Scientific revolution",
 				"Historical Period" : "Second half of XX Century" ,
 				"Typology" : "Event" 	
 			},
@@ -294,7 +294,7 @@
 				"Significance": "Groundbreaking research on radioactivity, crucial contributions to modern physics and chemistry, laying the foundation for the development of X-ray technology",
 				"Controversies/Debates": "Ethical considerations in early radiation research, scientific advancements versus health risks",
 				"Exhibition": "Room " ,
-				"Themes": "Women's history, Scientifical revolution",
+				"Themes": "Women's history, Scientific revolution",
 				"Historical Period" : "First half of XX Century" ,
 				"Typology" : "Text, Event" 
 			},
@@ -385,7 +385,7 @@
 				"Typology" : "Weapon" 
 						
 			},
-			"shortInfo": "The arquebus is an early type of portable gun, a precursor to the musket, used in the 15th to 17th centuries. It was a matchlock firearm, typically loaded with gunpowder and a lead ball. It Symbolizes the transition from medieval to modern warfare and the mechanisation of war. ",
+			"shortInfo": "The arquebus is an early type of portable gun, a precursor to the musket, used in the 15th to 17th centuries. It was a matchlock firearm, typically loaded with gunpowder and a lead ball. It Symbolizes the transition from medieval to modern warfare and the mechanisation of war.",
 			"longerInfo": ["The invention of the arquebus was a turning point in military history, symbolizing the transition from medieval to modern warfare. Its introduction heralded the decline of knightly dominance on the battlefield, the rise of professional standing armies, and the development of new military strategies and fortifications. Beyond its tactical implications, the arquebus played a significant role in the broader social and political transformations of the late Middle Ages and Renaissance, contributing to the decline of feudalism and the rise of centralized states. Although eventually replaced by more advanced firearms, the arquebus laid the groundwork for the future of warfare and the global expansion of European powers."],
 			"fullInfo": "assets/docs/18archibugio.html"
 		},
