@@ -8,17 +8,11 @@ function toggleCurtain() {
 	if (menu_links.style.display === "grid") {
 		menu_links.style.display = "none";
 		opaque.classList.remove("active");
-		setTimeout(() => {
-			opaque.style.visibility = "hidden";
-			document.body.style.overflow = "";
-		}, 500);
+		document.body.style.overflow = "";
 	} else {
 		menu_links.style.display = "grid";
-		opaque.style.visibility = "visible";
-		setTimeout(() => {
-			opaque.classList.add("active");
-			document.body.style.overflow = "hidden";
-		}, 10);	
+		opaque.classList.add("active");
+		document.body.style.overflow = "hidden";	
 	}
 	toggleButton.classList.toggle('x');
   }
