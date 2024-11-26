@@ -6,15 +6,7 @@ body {
     --wideScreen: True;
     --mainColor: #f10ff1;
   }
-@media screen and (max-width: 830px) {
 
-    :root {
-        --wideScreen: False;
-    }
-
-
-div.navbar-body {visibility: hidden;}
-}
 
 @media screen and (min-width: 831px) {
   
@@ -177,9 +169,32 @@ div.navbar-body {visibility: hidden;}
 
 .grid-container{
     display: grid;
-    grid-template-rows: 15vh auto 15vh;
+    grid-template-rows: 15vh auto auto auto 20vh;
 }
 
+
+.intro-content{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width:100%;
+}
+
+.intro-title{
+  text-align: center;
+  font-size: calc(45px + 0.390625vw);
+  font-size: bold;
+  color: fuchsia;
+}
+
+
+.intro-text{
+  text-align: center;
+  color: fuchsia;
+  max-width: 40vw;
+}
 .grid-about{
     max-width: 100%;
     display: grid;
@@ -238,9 +253,20 @@ div.navbar-body {visibility: hidden;}
 
 
 @media screen and (max-width: 830px) {
+    :root {
+        --wideScreen: False;
+    }
 
+    div.navbar-body {visibility: hidden;
+    }
+    
     .grid-container{
         row-gap: 5vh;
+    }
+    .intro-text{
+      text-align: center;
+      color: fuchsia;
+      max-width: 90vw;
     }
     .grid-about {
         grid-template-columns: 1fr ;
