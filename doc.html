@@ -15,17 +15,21 @@
     }
 
     footer {
-        position: static;
-            background: #0f0007e3;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
 
     .container {
         display: flex;
         width: 100%;
         height: 100vh;
+        overflow: hidden;
     }
 
     /* Article Styling */
@@ -75,26 +79,18 @@
         scrollbar-width: none;    /* Hide scrollbar in Firefox */
     }
 
-    /* Separator Line */
-    .menu::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 2px;
-        background: #b4b4b4ca;
-        z-index: 10;
-    }
 
     /* Menu Styling */
     .menu {
         flex: 1;
         background: #0f0007e3;
         padding: 20px;
-        overflow-y: auto;
+        overflow-y: scroll;
         box-shadow: inset 3px 0 5px rgba(0, 0, 0, 0.1);
         color: white;
         position: relative;
+        transition: transform 0.3s ease;
+        height: 100%; /* Assicura che il menu occupi l'intera altezza del contenitore */
     }
 
     .menu-header {
@@ -184,6 +180,50 @@
         transition: background 0.4s ease;
         border-left: 2px solid rgba(255, 255, 255, 0.5); /* Linea laterale più sottile */
     }
+
+
+/* Styling MENU */
+
+.hamburger {
+    display: none; /* Nascondi l'hamburger di default */
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    background: rgba(255, 255, 255, 0.747);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    border-radius: 4px;
+}
+
+
+/* Media Query per Smartphone */
+@media (max-width: 768px) {
+    .menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 70%;
+        transform: translateX(100%); /* Nascondi il menu */
+        background: #0f0007e3;
+        box-shadow: -5px 0 10px rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        overflow-y: auto;
+        padding-top: 60px; /* Per evitare sovrapposizione con l'hamburger */
+    }
+
+    .menu.open {
+        transform: translateX(0); /* Mostra il menu */
+    }
+
+    .hamburger {
+        display: block; /* Mostra l'hamburger */
+    }
+}
+
 
 
 /* highlight animation */
@@ -371,16 +411,16 @@
             </section>
             </section>
             <!-- Additional sections for rest of the content -->
-             <!-- Footer -->
-<footer>
-    <!-- Copyright -->
-    <p>© 2024 Copyright: <a class="" href="#">Forbidden Curiosities</a></p>
-</footer>
-<!------ Footer End ------->
+
         </div>
 
+
         <!-- Navigation Menu (summary on the right) -->
-        <div class="menu">
+        <div class="menu-container">
+            <button class="hamburger" aria-label="Toggle menu">
+                ☰
+            </button>
+            <div class="menu">
             <a href="#abstract" class="chapter">Abstract</a>
             <a href="#introduction" class="chapter">1. Introduction</a>
             <a href="#overview" class="subchapter">1.1 Overview</a>
@@ -410,8 +450,9 @@
             <a href="#rights" class="chapter">8. Rights and Licenses</a>
             <a href="#conclusions" class="chapter">9. Conclusions</a>
         </div>
+    </div>
 
-        </div>
+    </div>
 
     </div>
     <script>
@@ -448,6 +489,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     </script>
-    <script src="assets/java/java.js"></script>
+    <script src="assets/java/common.js"></script>
+    <footer>
+    <!-- Copyright -->
+    © 2024 Copyright: <a href="index.html">Forbidden Curiosities</a>
+    </footer>
 </body>
 </html>
