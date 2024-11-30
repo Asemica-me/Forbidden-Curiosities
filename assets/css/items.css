@@ -1,10 +1,10 @@
 :root {
-    --color1: #f10ff1;
-    --color2: #6b6b6b;
+    --color1: #dadada;
+    --color2: #f7d9ad;
     --color3: #52003a;
     --color4: #4e004f;
     --color5: #4c4c4c;
-    --colorBackground: black;
+    --colorBackground: #100202;
 }
 
 body {
@@ -12,6 +12,7 @@ body {
     width: 100%;
     height: 100%;
     background-color: var(--colorBackground);
+    overflow-x: hidden; /* Rimuove la barra di scorrimento orizzontale */
 }
 
 #opaque-page {
@@ -73,7 +74,10 @@ body {
 
 #logo-box .logo {
     position: relative;
-    background-color: whitesmoke;
+    background-image: url('../img/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     height: 13vh;
     width: 13vh;
     border: none;
@@ -148,7 +152,7 @@ body {
     width: 40px;
     height: 4px;
     transition: 0.3s;
-    background-color: var(--color1);
+    background-color: var(--color2);
 }
 
 .toggle-btn span:first-child {
@@ -213,6 +217,7 @@ body {
     width: 100%;
     display: grid;
     grid-template-rows: 8.5vh 76.5vh auto;
+    z-index: 2;
 }
 
 #search-space {
@@ -221,7 +226,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: 1px solid #3e3e3e;
+    padding-bottom: 2%;
+    width: 80%;
+    margin: auto;
 }
+
 
 #search-bar {
     height: 100%;
@@ -254,17 +264,17 @@ body {
     gap: 5%;
 }
 
-.label {
-}
 
 .select {
     position: relative;
-    height: 1em;
+    height: 1.2em;
     width: auto;
     display: flex;
     flex-direction: column;
     text-wrap: nowrap;
-    background-color: var(--color1);
+    background-color: var(--color2);
+    color: #252222;
+    border-radius: 2px;
 }
 
 .selected-box {
@@ -295,9 +305,14 @@ body {
 }
 
 .options {
-    background-color: var(--color1);
-    z-index: 3;
+    background-color: var(--color2);
+    z-index: 100;
     visibility: hidden;
+    transition: visibility 0.3s ease, opacity 0.3s ease; /* Animazione fluida */
+}
+.options.visible {
+    visibility: visible; /* Mostra il dropdown */
+    opacity: 1; /* Rendi visibile */
 }
 
 .option {
@@ -307,6 +322,7 @@ body {
 .option:hover {
     background-color: rgb(90, 90, 90);
 }
+
 
 /* Fine area filtri */
 
@@ -326,6 +342,8 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding-top: 2%;
+    font-size: 1.5vw;
 }
 
 #details-space {
@@ -333,6 +351,7 @@ body {
     display: flex;
     flex-direction: column;
     color: white;
+    padding: 14%;
 }
 
 #description {
@@ -340,6 +359,8 @@ body {
     display: flex;
     flex-direction: column;
     color: white;
+    padding: 8%;
+    font-size: 1.7vw;
 }
 
 .hidden {
@@ -452,6 +473,8 @@ img {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
+    border-radius: 10px;
+    z-index: 2;
 }
 /* FINE Image column */
 
@@ -495,6 +518,14 @@ img {
 
     div#search-bar {
         width: 80%;
+    }
+    
+    #search-bar .search-div {
+        margin-bottom: 20px; /* Adjust as needed */
+    }
+    
+    #search-bar .narrative {
+        margin-bottom: 20px; /* Add margin for each narrative item */
     }
     
     div#narratives-space {
