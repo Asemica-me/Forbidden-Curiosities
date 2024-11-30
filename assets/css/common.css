@@ -1,7 +1,7 @@
     /* Stile per lo spinner */
     .spinner {
         border: 5px solid #f3f3f3; /* Colore grigio chiaro */
-        border-top: 5px solid #db3490; /* Colore blu per la parte rotante */
+        border-top: 5px solid #f9883d; /* Colore blu per la parte rotante */
         border-radius: 50%;
         width: 50px;
         height: 50px;
