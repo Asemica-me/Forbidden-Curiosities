@@ -9,11 +9,8 @@
         <title>Items Gallery</title>
     </head>
     <body>
-        <!-- Elementi che si sovrappongono a tutti -->
+        <!-- Elemento che si sovrappone a tutti -->
         <div id="opaque-page"></div>
-        <div class="hidden" id="fullInfo">
-            <div id="fullInfoContent"></div>
-        </div>
         <!------------------------------------------->
         <div id="page-container">
             <div id="main-container">
@@ -56,83 +53,83 @@
                     <!------- Hamburger Menu End --------->
                 </div>
                 <!-------- Navbar end --------->
-                <div class="hidden-animation-bottom-up" id="gallery">
-                    <div class="g-container">
-                        <div class="header">
-                            <h4>Search</h4>
-                        </div>
-                    </div>
-                    <div class="g-container">
-                        <div class="header">
-                            <h4 id="title-header"></h4>
-                        </div>
-                    </div>
-                    <div class="g-container">
-                        <div class="header">
-                            <h4>Info</h4>
-                        </div>
-                    </div>
-                    <div class="g-container">
-                        <div id="column-1">
-                            <div id="guide">
-                                <p>Choose one or more filter:</p>
-                                <label for="Typology">&#9827; Typology:</label>
-                                <div class="select">
-                                    <div class="selected-box">                                        
-                                        <span class="selected" data-name="Typology" data-value=""></span>
-                                        <div class="arrow-down"></div>
-                                        <div class="toggle-options"></div>
-                                    </div>
-                                    <div class="options" id="Typology">
-                                        <span data-value="">All</span>
-                                        <span data-value="Text">Text</span>
-                                        <span data-value="Tool">Tool</span>
-                                        <span data-value="Artwork">Artwork</span>
-                                        <span data-value="Garment">Garment</span>
-                                        <span data-value="Event">Event</span>
-                                        <span data-value="Weapon">Weapon</span>
+                <!-------------- Gallery start ---------------->
+                <div id="gallery">
+                    <div id="search-space">
+                        <div id="search-bar">
+                            <div class="search-div" id="narratives-space">
+                                <div class="narrative">
+                                    <div class="label">Themes:</div>
+                                    <div class="select">
+                                        <div class="selected-box">
+                                            <div class="selected" data-name="Themes" data-value=""></div>
+                                            <div class="arrow-down"></div>                                
+                                            <div class="toggle-options"></div>
+                                        </div>
+                                        <div class="options" id="Themes">
+                                            <div class="option" data-value="">All</div>
+                                            <div class="option" data-value="Ethics of war">Ethics of war</div>
+                                            <div class="option" data-value="Scientific revolution">Scientific revolution</div>
+                                            <div class="option" data-value="Women's history">Women's history</div>
+                                            <div class="option" data-value="Religious dissent">Religious dissent</div>
+                                            <div class="option" data-value="Provocative art">Provocative art</div>
+                                            <div class="option" data-value="Digital privacy">Digital privacy</div>
+                                        </div>
                                     </div>
                                 </div>
-                                <label for="Themes">&#9829; Themes:</label>
-                                <div class="select">
-                                    <div class="selected-box">                                        
-                                        <span class="selected" data-name="Themes" data-value=""></span>
-                                        <div class="arrow-down"></div>
-                                        <div class="toggle-options"></div>
-                                    </div>
-                                    <div class="options" id="Themes">
-                                        <span data-value="">All</span>
-                                        <span data-value="Ethics of war">Ethics of war</span>
-                                        <span data-value="Scientific revolution">Scientific revolution</span>
-                                        <span data-value="Women's history">Women's history</span>
-                                        <span data-value="Religious dissent">Religious dissent</span>
-                                        <span data-value="Provocative art">Provocative art</span>
-                                        <span data-value="Digital privacy">Digital privacy</span>
-                                    </div>
-                                </div>
-                                <label for="Historical period">&#9830; Historical period:</label>
-                                <div class="select">
-                                    <div class="selected-box">                                        
-                                        <span class="selected" data-name="Historical period" data-value=""></span>
-                                        <div class="arrow-down"></div>
-                                        <div class="toggle-options"></div>
-                                    </div>
-                                    <div class="options" id="Historical period">
-                                        <span data-value="">All</span>
-                                        <span data-value="XV-XVII Century">15<sup>th</sup>-17<sup>th</sup> Century</span>
-                                        <span data-value="XVIII-XIX Century">18<sup>th</sup>-19<sup>th</sup> Century</span>
-                                        <span data-value="First half of XX Century">1<sup>st</sup> half 20<sup>th</sup> Century</span>
-                                        <span data-value="Second half of XX Century">2<sup>nd</sup> half 20<sup>th</sup> Century</span>
-                                        <span data-value="XXI Century">21<sup>st</sup> Century</span>
+                                <div class="narrative">
+                                    <div class="label">Typology:</div>
+                                    <div class="select">
+                                        <div class="selected-box">
+                                            <div class="selected" data-name="Typology" data-value=""></div>
+                                            <div class="arrow-down"></div>
+                                            <div class="toggle-options"></div>
+                                        </div>
+                                        <div class="options" id="Typology">
+                                            <div class="option" data-value="">All</div>
+                                            <div class="option" data-value="Text">Text</div>
+                                            <div class="option" data-value="Tool">Tool</div>
+                                            <div class="option" data-value="Artwork">Artwork</div>
+                                            <div class="option" data-value="Garment">Garment</div>
+                                            <div class="option" data-value="Event">Event</div>
+                                            <div class="option" data-value="Weapon">Weapon</div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div id="showBtn-box"><button id="showBtn" onclick="combinedNarratives()">SHOW >>></button></div>
-                                <p id="noResults" class="hidden">The filter selection didn't match any item.</p>
+                                <div class="narrative">
+                                    <div class="label">Period:</div>
+                                    <div class="select">
+                                        <div class="selected-box">
+                                            <div class="selected" data-name="Historical period" data-value=""></div>
+                                            <div class="arrow-down"></div>
+                                            <div class="toggle-options"></div>
+                                        </div>
+                                        <div class="options" id="Historical period">
+                                            <div class="option" data-value="">All</div>
+                                            <div class="option" data-value="XV-XVII Century">15th-17th Century</div>
+                                            <div class="option" data-value="XVIII-XIX Century">18th-19th Century</div>
+                                            <div class="option" data-value="First half of XX Century">1st half 20th Century</div>
+                                            <div class="option" data-value="Second half of XX Century">2nd half 20th Century</div>
+                                            <div class="option" data-value="XXI Century">21st Century</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="search-div" id="searchButton-space">
+                                <div><button id="search" onclick="combinedNarratives()">Search</button></div>
+                                <div id="results"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="g-container">
-                        <div id="column-2">
+                    <div id="item-space">
+                        <div id="details-space">
+                            <h3 id="title-header">Title</h3>
+                            <h4>Details</h4>
+                            <table id="details">
+                                <tbody id="infoTable"></tbody>
+                            </table>
+                        </div>
+                        <div id="img-space">
                             <div id="switchPanel">
                                 <div id="arrowSection">
                                     <div class="switch" id="left">
@@ -151,26 +148,20 @@
                             </div>
                         </div>
                     </div>
-                    <div class="g-container">
-                        <div id="column-3">
-                            <table id="info">
-                                <tbody id="infoTable"></tbody>
-                            </table>
-                            <div id="description">
-                                <div id="title">Description</div>
-                                <div id="infoBox">
-                                    <div id="shortInfo"></div>
-                                    <div class="hidden" id="longerInfo"></div>
-                                </div>
-                            </div>
-                            <div id="readButtons">
-                                <a type="button" id="moreBtn" class="btn" href="#" onclick="more()">Read more</a>
-                                <a type="button" id="shortBtn" class="btn" style="margin-left:2%; cursor: default; opacity: 0.5;">Read less</a>
-                                <a type="button" class="btn" href="#" style="margin-left:2%;" onclick="muchMore()">Read a more detailed description</a>
-                            </div>
+                    <div id="description">
+                        <h4 id="title">Description</h4>
+                        <div id="shortInfo"></div>
+                        <div class="hidden" id="longerInfo"></div>
+                        <div class="hidden" id="fullInfo">
+                            <div id="fullInfoContent"></div>
+                        </div>
+                        <div id="readButtons">
+                            <button id="lessBtn" onclick="less()" disabled>Less</button>
+                            <button id="moreBtn" onclick="more()">More</button>
                         </div>
                     </div>
                 </div>
+                <!-------------- Gallery end ---------------->
             </div>
             <footer>
                 <!-- Copyright -->

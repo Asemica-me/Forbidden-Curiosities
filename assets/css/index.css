@@ -39,11 +39,13 @@ a:visited {
   background-color: rgb(0, 0, 0);
   opacity: 0;
   z-index: 1;
+  visibility: hidden;
   transition: opacity 1ms ease;
 }
 
 #opaque-page.active {
   opacity: 0.5;
+  visibility: visible;
   transition: opacity 0.5s ease;
 }
 
@@ -123,14 +125,12 @@ a:visited {
   }
 
   div#timeline div#items div.item div.item-wrapper div.data-box div.data{
-    margin-left: -45%;
-    margin-right: 30%;
     border-radius: 0 5px 5px 0;
   }
 
   div#timeline div.item-wrapper {
     margin-right: 22%;
-    margin-left: 13%;
+    margin-left: 8%;
   }
 }
 
