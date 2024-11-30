@@ -8,49 +8,25 @@ let currentSort = "";
 
 // Funzione per attivare e disattivare con un click il menu hamburger
 function toggleCurtain() {
-    let menu_links = document.getElementById('menu-links');
-    let toggleButton = document.getElementById('toggleButton');
-    let opaque = document.getElementById('opaque-page');
-    if (menu_links.style.display === "grid") {
-        menu_links.style.display = "none";
-        opaque.classList.remove("active");
-        setTimeout(() => {
-            opaque.style.visibility = "hidden";
-            document.body.style.overflow = "";
-        }, 500);
-    } else {
-        menu_links.style.display = "grid";
-        opaque.style.visibility = "visible";
-        setTimeout(() => {
-            opaque.classList.add("active");
-            document.body.style.overflow = "hidden";
-        }, 10);	
-    }
-    toggleButton.classList.toggle('x');
-}
+	let menu_links = document.getElementById('menu-links');
+	let toggleButton = document.getElementById('toggleButton');
+	let opaque = document.getElementById('opaque-page');
+	if (menu_links.style.display === "grid") {
+		menu_links.style.display = "none";
+		opaque.classList.remove("active");
+		document.body.style.overflow = "";
+	} else {
+		menu_links.style.display = "grid";
+		opaque.classList.add("active");
+		document.body.style.overflow = "hidden";	
+	}
+	toggleButton.classList.toggle('x');
+  }
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Event Listener per aprire i pannelli delle narratives
-    const narBtns = document.getElementsByClassName("nar-btn");
-
-    for (let i = 0; i < narBtns.length; i++) {
-        let btn = narBtns[i];		
-        btn.addEventListener("click", function() {
-            let _ = this.parentElement;
-            let panel = _.nextElementSibling;
-            let symbol = this.innerHTML;
-            if (symbol === "+") {
-                panel.style.display = "grid";
-                this.innerHTML = "-";
-            } else {
-                panel.style.display = "none";
-                this.innerHTML = "+";
-            }
-        });
-    };
-
+    
     // Event Listener per far apparire il layer con le frecce di navigazione e 
-    // per farlo sparire dopo 5 secondi
+    // per farlo sparire quando il puntatore esce dall'area
     const switchPanel = document.getElementById("switchPanel");
 
     switchPanel.addEventListener("mouseover", () => {
@@ -63,16 +39,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // inizio FUNZIONI PER SELECTED CUSTOMIZATO
     // Adattamento elementi selected a larghezza loro opzioni
-    const sel_boxes = document.getElementsByClassName("selected-box");
-    const opts_divs = document.getElementsByClassName("options");
     const sel_spans = document.getElementsByClassName("selected");
-    const guide = document.getElementById("guide");
+    const arrowDown = document.getElementsByClassName("arrow-down")[0];
 
     for (let i = 0; i < sel_spans.length; i++) {
         const sel_span = sel_spans[i];
         const name = sel_span.dataset.name;
         const opts_div = document.getElementById(name);
-        sel_span.style.width =  `${opts_div.offsetWidth+7}px`; //non sono quote ma backtick; 7 sono i px della freccetta
+        sel_span.style.width =  `${opts_div.offsetWidth + (arrowDown.offsetWidth * 1.5) }px`; //non sono quote ma backtick;
         
         // auto selezione iniziale e selezione con click
         sel_span.innerHTML = opts_div.children[0].innerHTML;
@@ -123,75 +97,48 @@ document.addEventListener("DOMContentLoaded", async function(event) {
     })
 });
 
-function highlightIndex(index) {
-    const indeces = document.getElementsByClassName("index");
-    for (let i = 0; i < indeces.length; i++) {
-        indeces[i].classList.remove("highlighted");
+function prepareNarratives() {
+    currentSelection = items.filter( i => 
+        i.info[currentNarrative]?.includes(currentValue)
+    );
+    currentSelection.sort( (i,j) =>  
+        i['@sort'] < j['@sort'] ? -1 : 1
+    );
+    if (currentSelection.length==0) currentSelection = items;
+
+    updateIndices();
+    showInfo(0);
+}
+
+function updateIndices() {
+    let indicesBar = "";
+    for (let curSelIndex = 0; curSelIndex < currentSelection.length; curSelIndex++) {
+        let displayedIndex = curSelIndex + 1;
+        indicesBar += "<a class=\"index\" id=\""+curSelIndex+"\" onclick=showInfo("+curSelIndex+")>"+displayedIndex+"</a>"
     }
-    let numBar = document.getElementById(String(index));
-    numBar.classList.add("highlighted");
+    inner("indicesBox", indicesBar, true);
 }
 
 function showInfo(index) {
-    let item = currentSelection[index]
-    currentSort = item['@sort']
-    inner("title-header",item.info.Title) ;
-    byId("img").src = item.image
-    byId("img").alt = item.shortName
-    createInfoTable(item)
+    let item = currentSelection[index];
+    currentSort = item['@sort'];
+    inner("title-header",item.info.Title);
+    byId("img").src = item.image;
+    byId("img").alt = item.shortName;
+    createInfoTable(item);
     inner("shortInfo",`<p>${item.shortInfo}</p>`); 
     inner("longerInfo",`<p>${item.longerInfo.join("</p><p>")}</p>`);
     byId("fullInfo").dataset['uri'] = item.fullInfo;
     highlightIndex(index);
 }
 
-function more() {
-    const moreBtn = document.getElementById("moreBtn");
-    const shortBtn = document.getElementById("shortBtn");
-    moreBtn.removeAttribute("href");
-    moreBtn.removeAttribute("onclick");
-    moreBtn.style.cursor = "default";
-    moreBtn.style.opacity = "0.5";
-    shortBtn.style.cursor = "pointer";
-    shortBtn.setAttribute("onclick", "less()");
-    shortBtn.setAttribute("href", "#");
-    shortBtn.style.opacity = "1";
-
-    hide("shortInfo");
-    show("longerInfo");
-    hide("fullInfo");
+function inner(id,content, emptyFirst=true) {
+    if(emptyFirst) document.getElementById(id).innerHTML = "" ; 
+    document.getElementById(id).innerHTML += content ; 
 }
 
-function less() {
-    const moreBtn = document.getElementById("moreBtn");
-    const shortBtn = document.getElementById("shortBtn");
-    shortBtn.removeAttribute("href");
-    shortBtn.removeAttribute("onclick");
-    shortBtn.style.cursor = "default";
-    shortBtn.style.opacity = "0.5";
-    moreBtn.style.cursor = "pointer";
-    moreBtn.setAttribute("onclick", "more()");
-    moreBtn.setAttribute("href", "#");
-    moreBtn.style.opacity = "1";
-
-    hide("longerInfo");
-    show("shortInfo");
-}
-
-function muchMore() {
-    let uri = byId("fullInfo").dataset['uri']
-    fetch(uri)
-    .then(response => response.text())
-    .then(data => {	
-        inner("fullInfoContent",data) ;
-        show("fullInfo") ;
-    })
-    document.body.style.overflow = "hidden";
-}
-
-function hideFullInfo() {
-    hide("fullInfo");
-    document.body.style.overflow = "";
+function byId(id) {
+    return document.getElementById(id)
 }
 
 function createInfoTable(item) {
@@ -207,8 +154,10 @@ function createInfoTable(item) {
                     let themes = item.info[i].split(", ");
                     let val = [];
                     for (j in themes) {
-                        if (themes[j]==="Women's history") {theme = "Women\\&#39;s history";}
-                        else {theme = themes[j];}
+                        let theme = themes[j];
+                        if (theme==="Women's history") {
+                            theme = "Women\\&#39;s history";
+                        }
                         val.push(`<a type="button" class="btn" href="#" onclick="changeNarrative('${i}', '${theme}')">${themes[j]}</a>`)
                     }
                     inner("infoTable","<tr><th>"+i+"</th><td>"+val.join(", ")+"</td></tr>", false);
@@ -220,34 +169,70 @@ function createInfoTable(item) {
     };
 };
 
-function updateIndices() {
-    let indicesBar = "";
-    for (let curSelIndex = 0; curSelIndex < currentSelection.length; curSelIndex++) {
-        let displayedIndex = curSelIndex + 1;
-        indicesBar += "<a class=\"index\" id=\""+curSelIndex+"\" onclick=showInfo("+curSelIndex+")>"+displayedIndex+"</a>"
+
+// Funzione per evidenziare l'indice corrente nella barra degli indici
+function highlightIndex(n) {
+    const indeces = document.getElementsByClassName("index");
+    for (let i = 0; i < indeces.length; i++) {
+        indeces[i].classList.remove("highlighted");
     }
-    inner("indicesBox", indicesBar, true);
+    let numBar = document.getElementById(String(n));
+    numBar.classList.add("highlighted");
+    index = n;
 }
 
-function prepareNarratives() {
-    currentSelection = items.filter( i => 
-        i.info[currentNarrative]?.includes(currentValue)
-    );
-    currentSelection.sort( (i,j) =>  
-        i['@sort'] < j['@sort'] ? -1 : 1
-    );
-    if (currentSelection.length==0) currentSelection = items;
+// INIZIO funzioni per bottoni LESS - MORE
 
-    index = currentSelection.findIndex( i => i['@sort'] == currentSort )
-    if (index == -1) index = 0;
-    updateIndices();
-    showInfo(index);
+function more() {
+    let lessBtn = document.getElementById("lessBtn");
+    let moreBtn = document.getElementById("moreBtn");
+
+    lessBtn.removeAttribute("disabled");
+    moreBtn.setAttribute("onclick", "muchMore();");
+    show("longerInfo");
 }
+
+function less() {
+    let moreBtn = document.getElementById("moreBtn");
+    let lessBtn = document.getElementById("lessBtn");
+
+    moreBtn.setAttribute("onclick", "more();");
+    lessBtn.setAttribute("disabled", "disabled");
+    hide("longerInfo");
+}
+
+function muchMore() {
+    let uri = byId("fullInfo").dataset['uri']
+    let lessBtn = document.getElementById("lessBtn");
+    let moreBtn = document.getElementById("moreBtn");
+
+    fetch(uri)
+    .then(response => response.text())
+    .then(data => {	
+        inner("fullInfoContent",data) ;
+        show("fullInfo") ;
+    })
+
+    moreBtn.setAttribute("disabled", "disabled");
+    lessBtn.setAttribute("onclick", "hideFullInfo();")
+}
+
+function hideFullInfo() {
+    let moreBtn = document.getElementById("moreBtn");
+    let lessBtn = document.getElementById("lessBtn");
+
+    moreBtn.removeAttribute("disabled");
+    moreBtn.setAttribute("onclick", "muchMore();")
+    lessBtn.setAttribute("onclick", "less();")
+    hide("fullInfo");
+}
+
+// FINE funzioni per bottoni LESS - MORE
 
 function changeNarrative(narrative,value) {
-        currentNarrative = narrative
-        currentValue = value
-        prepareNarratives()
+        currentNarrative = narrative;
+        currentValue = value;
+        prepareNarratives();
 }
 
 function matchNarratives(item, narrativesList) {
@@ -260,11 +245,7 @@ function matchNarratives(item, narrativesList) {
 }
 
 function combinedNarratives() {
-    let alert = document.getElementById("noResults");
-    if (!alert.classList.contains("hidden")) { //All'inizio di una nuova ricerca si rimuove
-        alert.classList.add("hidden");         //l'avviso di fallimento se è presente.
-    }
-
+    const results = document.getElementById("results");
     const sel_spans = document.getElementsByClassName("selected");
     const list = [];
     for (let i = 0; i < sel_spans.length; i++) {
@@ -273,20 +254,17 @@ function combinedNarratives() {
 
     const combo = items.filter(item => matchNarratives(item, list));
 
-    
     if (combo.length===0) {
-        alert.classList.remove("hidden"); // Appare il messaggio che comunica il fallimento della ricerca e rimane la narrativa selezionata in precedenza
+        results.innerHTML = "0 results";
     } else {
+        results.innerHTML = `${combo.length} results`
         currentSelection = combo;
     }
+    results.style.visibility = "visible";
     index = currentSelection.findIndex( i => i['@sort'] == currentSort )
     if (index == -1) index = 0;
     updateIndices();
     showInfo(index);
-}
-
-function byId(id) {
-    return document.getElementById(id)
 }
 
 function show(id) {
@@ -297,15 +275,13 @@ function hide(id) {
     document.getElementById(id).classList.add('hidden');
 }
 
-function inner(id,content, emptyFirst=true) {
-    if(emptyFirst) document.getElementById(id).innerHTML = "" ; 
-    document.getElementById(id).innerHTML += content ; 
-}
-
 // Funzione per cambiare oggetto da vedere da applicare sui pulsanti a destra e a sinistra dell'immagine
 function switchItem(n) {
         index += n;
-        if (index > currentSelection.length) index = 0;
-        else if (index < 0) index = currentSelection.length - 1;
+        if (index === currentSelection.length) {
+            index = 0;
+        } else if (index < 0) {
+            index = currentSelection.length - 1;
+        }
         showInfo(index);
     };
