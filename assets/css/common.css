@@ -42,3 +42,125 @@
     body.loaded .loading-screen {
         display: none;
     }
+
+           /* ANIMAZIONi DISSOLVENZA */
+
+           .hidden-animation-bottom-up {
+            opacity: 0; /* Invisibile all'inizio */
+            transform: translateY(50px); /* Inizia fuori schermo */
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+    
+        /* Keyframe per la dissolvenza con entrata dal basso */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px); /* Partenza dal basso */
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0); /* Posizione finale */
+            }
+        }
+    
+        /* Classe per l'animazione ingrasso dal basso (applicata a gallery) */
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out; /* Durata e tipo di animazione */
+            opacity: 1; /* Garantisce che l'elemento sia visibile */
+        }
+    
+        /* Keyframe per l'animazione dall'alto (applicata a navbar) */
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px); /* Partenza dall'alto */
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0); /* Posizione finale */
+            }
+        }
+    
+        /* Classe animazione per ingresso dall'alto */
+        .fade-in-down {
+            animation: fadeInDown 1s ease-out;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%); /* Sposta l'elemento fuori dalla vista a destra */
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0); /* Posizione iniziale */
+            }
+        }
+    
+        .fade-in-right {
+            animation: fadeInRight 1s ease-out; /* Durata di 1 secondo */
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+
+        /* Animazione di dissolvenza dal centro */
+        @keyframes fadeInCenter {
+            0% {
+                opacity: 0;
+                transform: scale(0.5); /* Inizia più piccolo */
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1); /* Cresce alla dimensione originale */
+            }
+        }
+
+        /* Classe animata per entrata dal centro */
+        .fade-in-center {
+            animation: fadeInCenter 2s ease-out;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+
+        /* Animazione di dissolvenza da sinistra */
+        @keyframes fadeInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-100%); /* Partenza a sinistra fuori schermo */
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0); /* Arrivo alla posizione finale */
+            }
+        }
+
+        /* Classe animata per entrata da sinistra */
+        .fade-in-left {
+            animation: fadeInLeft 1s ease-out;
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+
+        /* Animazione di dissolvenza da destra */
+        @keyframes fadeInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(100%); /* Partenza a destra fuori schermo */
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0); /* Arrivo alla posizione finale */
+            }
+        }
+
+        /* Classe animata per entrata da destra */
+        .fade-in-right {
+            animation: fadeInRight 1s ease-out;
+            opacity: 1;
+            transform: translateX(0);
+        }

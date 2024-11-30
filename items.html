@@ -16,7 +16,7 @@
             <div id="main-container">
                 <div id="navbar" class="hidden-animation-top-down">
                     <div class="rom-navbar">
-                        <div id="logo-box"><a class="logo" href="index.html">logo</a></div>
+                        <div id="logo-box"><a class="logo" href="index.html"></a></div>
                         <div class="navbar-body">
                             <div class="nav-link-box">
                                 <a class="nav-link" href="narratives.html">Narratives</a>
@@ -55,7 +55,7 @@
                 <!-------- Navbar end --------->
                 <!-------------- Gallery start ---------------->
                 <div id="gallery">
-                    <div id="search-space">
+                    <div id="search-space" class="hidden-animation-center">
                         <div id="search-bar">
                             <div class="search-div" id="narratives-space">
                                 <div class="narrative">
@@ -121,22 +121,24 @@
                             </div>
                         </div>
                     </div>
+
+
                     <div id="item-space">
-                        <div id="details-space">
+                        <div id="details-space" class="hidden-animation-left">
                             <h3 id="title-header">Title</h3>
                             <h4>Details</h4>
                             <table id="details">
                                 <tbody id="infoTable"></tbody>
                             </table>
                         </div>
-                        <div id="img-space">
+                        <div id="img-space" class="hidden-animation-right">
                             <div id="switchPanel">
                                 <div id="arrowSection">
                                     <div class="switch" id="left">
-                                        <input class="switchButton" id="leftButton" type="image" src="assets/img/flowArrow.svg" alt="go to back" onclick="switchItem(-1)"/>
+                                        <input class="switchButton" id="leftButton" type="image" src="assets/img/flowArrow.svg" alt="Previous item" onclick="switchItem(-1)"/>
                                     </div>
                                     <div class="switch" id="right">
-                                        <input class="switchButton" id="rightButton" type="image" src="assets/img/flowArrow.svg" alt="go to forward" onclick="switchItem(1)"/>
+                                        <input class="switchButton" id="rightButton" type="image" src="assets/img/flowArrow.svg" alt="Next item" onclick="switchItem(1)"/>
                                     </div>
                                 </div>
                                 <div id="indexSection">
@@ -148,7 +150,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="description">
+                    <div id="description" class="hidden-animation-bottom-up">
                         <h4 id="title">Description</h4>
                         <div id="shortInfo"></div>
                         <div class="hidden" id="longerInfo"></div>

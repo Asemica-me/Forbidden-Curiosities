@@ -190,6 +190,7 @@ function more() {
     lessBtn.removeAttribute("disabled");
     moreBtn.setAttribute("onclick", "muchMore();");
     show("longerInfo");
+    hide("shortInfo")
 }
 
 function less() {
@@ -199,6 +200,7 @@ function less() {
     moreBtn.setAttribute("onclick", "more();");
     lessBtn.setAttribute("disabled", "disabled");
     hide("longerInfo");
+    show("shortInfo")
 }
 
 function muchMore() {
@@ -275,16 +277,15 @@ function hide(id) {
     document.getElementById(id).classList.add('hidden');
 }
 
-// Funzione per cambiare oggetto da vedere da applicare sui pulsanti a destra e a sinistra dell'immagine
 function switchItem(n) {
-        index += n;
-        if (index === currentSelection.length) {
-            index = 0;
-        } else if (index < 0) {
-            index = currentSelection.length - 1;
-        }
-        showInfo(index);
-    };
+    index += n;
+    if (index === currentSelection.length) {
+        index = 0;
+    } else if (index < 0) {
+        index = currentSelection.length - 1;
+    }
+    showInfo(index);
+};
 
 
 // FUNZIONE ANIMAZIONE DISSOLVENZA BOTTOM-UP
@@ -310,10 +311,101 @@ window.addEventListener('load', () => {
     });
 });
 
+window.addEventListener('load', () => {
+    // Animazione dal centro
+    const elementsCenter = document.querySelectorAll('.hidden-animation-center');
+    elementsCenter.forEach((element, index) => {
+        setTimeout(() => {
+            element.classList.remove('hidden-animation-center');
+            element.classList.add('fade-in-center');
+        }, index * 200); // Ritardo sequenziale tra gli elementi
+    });
+
+    // Animazione da sinistra
+    const elementsLeft = document.querySelectorAll('.hidden-animation-left');
+    elementsLeft.forEach((element, index) => {
+        setTimeout(() => {
+            element.classList.remove('hidden-animation-left');
+            element.classList.add('fade-in-left');
+        }, index * 200); // Ritardo sequenziale tra gli elementi
+    });
+
+    // Animazione da destra
+    const elementsRight = document.querySelectorAll('.hidden-animation-right');
+    elementsRight.forEach((element, index) => {
+        setTimeout(() => {
+            element.classList.remove('hidden-animation-right');
+            element.classList.add('fade-in-right');
+        }, index * 200); // Ritardo sequenziale tra gli elementi
+    });
+});
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const element = entry.target;
+            if (element.classList.contains('hidden-animation-center')) {
+                element.classList.remove('hidden-animation-center');
+                element.classList.add('fade-in-center');
+            }
+            if (element.classList.contains('hidden-animation-left')) {
+                element.classList.remove('hidden-animation-left');
+                element.classList.add('fade-in-left');
+            }
+            if (element.classList.contains('hidden-animation-right')) {
+                element.classList.remove('hidden-animation-right');
+                element.classList.add('fade-in-right');
+            }
+            if (element.classList.contains('hidden-animation-top-down')) {
+                element.classList.remove('hidden-animation-top-down');
+                element.classList.add('fade-in-down');
+            }
+            if (element.classList.contains('hidden-animation-bottom-up')) {
+                element.classList.remove('hidden-animation-bottom-up');
+                element.classList.add('fade-in-up');
+            }
+            observer.unobserve(element);
+        }
+    });
+}, { threshold: 0.5 });
+
+window.addEventListener('load', () => {
+    const elements = document.querySelectorAll('.hidden-animation-center, .hidden-animation-left, .hidden-animation-right');
+    elements.forEach(element => {
+        observer.observe(element);
+    });
+});
+
+
 //=========================
 //  TENDINE              //
 // ========================
 
+document.addEventListener('click', (event) => {
+    // Seleziona tutti i dropdown attivi
+    const dropdowns = document.querySelectorAll('.options');
+    const toggles = document.querySelectorAll('.selected-box');
+
+    // Chiudi tutti i dropdown
+    dropdowns.forEach((dropdown) => {
+        if (!dropdown.contains(event.target)) {
+            dropdown.style.visibility = 'hidden';
+            dropdown.style.opacity = '0';
+        }
+    });
+
+    // Controlla se l'utente ha cliccato su un toggle per aprire/chiudere il relativo menu
+    toggles.forEach((toggle) => {
+        if (toggle.contains(event.target)) {
+            const dropdown = toggle.nextElementSibling; // Trova il menu associato
+            const isVisible = dropdown.style.visibility === 'visible';
+
+            // Mostra o nasconde il dropdown
+            dropdown.style.visibility = isVisible ? 'hidden' : 'visible';
+            dropdown.style.opacity = isVisible ? '0' : '1';
+        }
+    });
+});
 
 
 //=========================
