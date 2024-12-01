@@ -327,7 +327,7 @@ body {
 }
 
 .options {
-    background-color: #f7d9ad97;
+    background-color: var(--color5);
     z-index: 10 !important;
     visibility: hidden;
     transition: visibility 0.3s ease, opacity 0.3s ease; /* Animazione fluida */
@@ -600,9 +600,6 @@ img {
     div.narrative {
         height: calc(100% / 3);
     }
-    .narrative {
-        font-size: 2em;
-    }
 
 }
 
@@ -611,3 +608,9 @@ img {
     div.menu {visibility: hidden;}
 }
 /* FINE MEDIA QUERIES */
+
+/* Less & More buttons */
+
+.desc-button {
+    
+}
