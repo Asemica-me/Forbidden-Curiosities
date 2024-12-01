@@ -122,7 +122,7 @@ function updateIndices() {
 function showInfo(index) {
     let item = currentSelection[index];
     currentSort = item['@sort'];
-    inner("title-header",item.info.Title);
+    inner("title-header",item.shortName);
     byId("img").src = item.image;
     byId("img").alt = item.shortName;
     createInfoTable(item);

@@ -1,4 +1,14 @@
-    /* Stile per lo spinner */
+:root {
+    --color1: #dadada;
+    --color2: #f7d9ad;
+    --color3: #52003a;
+    --color4: #de7b0a;
+    --color5: #4c4c4c;
+    --colorBackground: #100202;
+}
+
+
+/* Stile per lo spinner */
     .spinner {
         border: 5px solid #f3f3f3; /* Colore grigio chiaro */
         border-top: 5px solid #f9883d; /* Colore blu per la parte rotante */
