@@ -1,4 +1,14 @@
-    /* Stile per lo spinner */
+:root {
+    --color1: #dadada;
+    --color2: #f7d9ad;
+    --color3: #52003a;
+    --color4: #de7b0a;
+    --color5: #4c4c4c;
+    --colorBackground: #100202;
+}
+
+
+/* Stile per lo spinner */
     .spinner {
         border: 5px solid #f3f3f3; /* Colore grigio chiaro */
         border-top: 5px solid #f9883d; /* Colore blu per la parte rotante */
@@ -34,7 +44,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgba(0, 0, 0, 0.721); /* Colore di sfondo, modifica qui */
+        background-color: #261312c2; /* Colore di sfondo, modifica qui */
         z-index: 9999; /* Lo spinner è sopra gli altri contenuti */
     }
 
@@ -45,25 +55,25 @@
 
            /* ANIMAZIONi DISSOLVENZA */
 
-           .hidden-animation-bottom-up {
-            opacity: 0; /* Invisibile all'inizio */
-            transform: translateY(50px); /* Inizia fuori schermo */
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
+.hidden-animation-bottom-up {
+    opacity: 0; /* Invisibile all'inizio */
+    transform: translateY(50px); /* Inizia fuori schermo */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
     
-        /* Keyframe per la dissolvenza con entrata dal basso */
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(50px); /* Partenza dal basso */
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0); /* Posizione finale */
-            }
-        }
+/* Keyframe per la dissolvenza con entrata dal basso */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* Partenza dal basso */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Posizione finale */
+    }
+}
     
-        /* Classe per l'animazione ingrasso dal basso (applicata a gallery) */
+        /* Classe per l'animazione ingrasso dal basso */
         .fade-in-up {
             animation: fadeInUp 1s ease-out; /* Durata e tipo di animazione */
             opacity: 1; /* Garantisce che l'elemento sia visibile */

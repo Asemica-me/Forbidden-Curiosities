@@ -10,18 +10,19 @@
         <title>Items Gallery</title>
     </head>
     <body>
-        <div class="loading-screen">
-            <!-- Spinner visibile mentre la pagina sta caricando -->
-            <div class="spinner"></div>
-            </div>
+
+    <!-- Pagina di caricamento -->
+    <div class="loading-screen">
+        <div class="spinner"></div>
+    </div>
             
-                <div class="content">
+        <div class="content">
         <!-- Elemento che si sovrappone a tutti -->
         <div id="opaque-page"></div>
         <!------------------------------------------->
         <div id="page-container">
             <div id="main-container">
-                <div id="navbar" class="hidden-animation-top-down">
+                <div id="navbar">
                     <div class="rom-navbar">
                         <div id="logo-box"><a class="logo" href="index.html"></a></div>
                         <div class="navbar-body">
@@ -61,7 +62,10 @@
                 </div>
                 <!-------- Navbar end --------->
                 <!-------------- Gallery start ---------------->
-                <div id="gallery">
+
+                <div id="gallery"> 
+
+                    <!--================= PRIMA RIGA ===================-->
                     <div id="search-space" class="hidden-animation-center">
                         <div id="search-bar">
                             <div class="search-div" id="narratives-space">
@@ -123,17 +127,22 @@
                                 </div>
                             </div>
                             <div class="search-div" id="searchButton-space">
-                                <div><button id="search" onclick="combinedNarratives()">Search</button></div>
+                                <button class="button filter" onclick="combinedNarratives()">
+                                    <img src="assets/img/icons/filter.png" alt="Filter Icon" class="filter-icon">Filter</button>
                                 <div id="results"></div>
                             </div>
                         </div>
                     </div>
 
 
+                <!--================= SECONDA RIGA ===================-->    
+                <div class="space-between"></div>
+
+                    <!--================= TERZA RIGA ===================-->
                     <div id="item-space">
                         <div id="details-space" class="hidden-animation-left">
                             <h3 id="title-header">Title</h3>
-                            <h4>Details</h4>
+                            <h4 class="data-header"></h4>
                             <table id="details">
                                 <tbody id="infoTable"></tbody>
                             </table>
@@ -157,18 +166,25 @@
                             </div>
                         </div>
                     </div>
+
+                    <!--================= QUARTA RIGA ===================-->
+                    <div class="space-between"></div>
+
+                    <!--================= QUINTA RIGA ===================-->
                     <div id="description" class="hidden-animation-bottom-up">
-                        <h4 id="title">Description</h4>
+                        <hr id="divider" class="divider-line">  <!-- Riga prima del padding -->
+                        <h4 class="data-header">Description</h4>
                         <div id="shortInfo"></div>
                         <div class="hidden" id="longerInfo"></div>
                         <div class="hidden" id="fullInfo">
                             <div id="fullInfoContent"></div>
                         </div>
                         <div id="readButtons">
-                            <button id="lessBtn" onclick="less()" disabled>Less</button>
-                            <button id="moreBtn" onclick="more()">More</button>
+                            <button class="desc-button" id="lessBtn" onclick="less()" disabled>Less</button>
+                            <button class="desc-button" id="moreBtn" onclick="more()">More</button>
                         </div>
                     </div>
+
                 </div>
                 <!-------------- Gallery end ---------------->
             </div>

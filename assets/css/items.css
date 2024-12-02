@@ -1,10 +1,12 @@
 :root {
-    --color1: #dadada;
+    --color1: #cacaca;
     --color2: #f7d9ad;
     --color3: #52003a;
-    --color4: #4e004f;
+    --color4: #de7b0a;
     --color5: #4c4c4c;
     --colorBackground: #100202;
+    --text: #dcdcdc;
+    --dividers: #3e3e3e;
 }
 
 body {
@@ -55,14 +57,16 @@ body {
     position: relative;
     height: 100%;
     background-color: var(--colorBackground);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
 .rom-navbar {
     position: relative;
     width: 100%;
-    height: 100%;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
+    background-color: var(--colorBackground);
+    border-bottom: 1px solid var(--dividers);
 }
 
 .rom-navbar #logo-box {
@@ -88,7 +92,8 @@ body {
     font-size: calc(15px + 0.390625vw);
     display: grid;
     height: inherit;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, auto); /* Le colonne si restringono al contenuto */
+    column-gap: 1px; /* Aggiungi uno spazio minimo tra le voci */
 }
 
 .nav-link-box {
@@ -98,33 +103,41 @@ body {
     align-self: center;
 }
 
-.underline {
-    position: inherit;
-    background-color: var(--color1);
-    height: 0.1vw;
-    width: 100%;
-}
-
-.nav-link-box .nav-link:hover + .underline {
+.nav-link-box .nav-link:hover + {
     background-color: white;
-    transition: background-color 0.5s ease; /* Transizione più fluida */
+    transition: background-color 0.5s ease;
 }
 
 .nav-link:visited {
     color: var(--color1);
 }
 
-.nav-link:hover {
-    color: white;
-}
-
 .nav-link {
-    text-decoration: none;
-    position: inherit;
+    text-decoration: none; /* Rimuove la sottolineatura standard */
+    position: relative; /* Necessario per posizionare il ::after */
     color: var(--color1);
     text-align: center;
     align-self: flex-end;
-    transition: color 0.3s ease; /* Transizione per colore */
+    transition: color 0.3s ease; /* Animazione del colore */
+}
+
+.nav-link::after {
+    content: ''; /* Pseudo-elemento vuoto per creare la sottolineatura */
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Posiziona la linea appena sotto il testo */
+    width: 0; /* Larghezza iniziale */
+    height: 2px; /* Spessore della sottolineatura */
+    background-color: white; /* Colore della sottolineatura */
+    transition: width 0.3s ease; /* Animazione della larghezza */
+}
+
+.nav-link:hover {
+    color: white; /* Cambia il colore del testo */
+}
+
+.nav-link:hover::after {
+    width: 100%; /* Espande la linea solo sotto la voce corrente */
 }
 
 #menu-button {
@@ -212,11 +225,16 @@ body {
 /* INIZIO items gallery */
 /************************/
 
+.space-between {
+    position: relative;
+    display: flex;
+    }
+
 #gallery {
     position: relative;
     width: 100%;
     display: grid;
-    grid-template-rows: 8.5vh 76.5vh auto;
+    /* grid-template-rows: 7vh 5vh 65vh 13vh auto; */ /* Five rows in Gallery container */
     z-index: 2;
 }
 
@@ -226,10 +244,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid #3e3e3e;
-    padding-bottom: 2%;
-    width: 80%;
+    width: 100%;
     margin: auto;
+    padding: 7px;
 }
 
 
@@ -247,6 +264,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    gap: 10px;
 }
 
 #narratives-space {
@@ -262,19 +280,25 @@ body {
     flex-direction: row;
     align-items: center;
     gap: 5%;
+    font-size: 1.2em;
 }
-
 
 .select {
     position: relative;
-    height: 1.2em;
+    height: 1.4em;
     width: auto;
     display: flex;
     flex-direction: column;
     text-wrap: nowrap;
-    background-color: var(--color2);
+    background-color: var(--colorBackground);
     color: #252222;
+    border: solid 0.5px rgb(165, 165, 165);
+    color: var(--color1);
     border-radius: 2px;
+}
+
+.select:hover {
+    border: solid 0.5px white;
 }
 
 .selected-box {
@@ -305,10 +329,11 @@ body {
 }
 
 .options {
-    background-color: var(--color2);
-    z-index: 100;
+    background-color: var(--color5);
+    z-index: 10 !important;
     visibility: hidden;
     transition: visibility 0.3s ease, opacity 0.3s ease; /* Animazione fluida */
+    border-radius: 3px;
 }
 .options.visible {
     visibility: visible; /* Mostra il dropdown */
@@ -323,12 +348,65 @@ body {
     background-color: rgb(90, 90, 90);
 }
 
-
 /* Fine area filtri */
+
+/* Stile per il bottone "filter" */
+.button.filter {
+    display: flex;
+    background-color: var(--colorBackground);
+    color: var(--text);
+    border: none;
+    border-radius: 8px;
+    padding: 6px 16px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer; /* Mostra il puntatore come cliccabile */
+    transition: all 0.3s ease; /* Transizioni fluide per hover e active */
+    align-items: center;
+}
+
+.filter-icon {
+    width: 1.7vw;
+    height: 1.7vw;
+    margin-right: 8px; /* Distanza tra l'icona e il testo */
+    padding: 1%;
+    background-color: var(--color2);
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.filter-icon img {
+    max-width: 100%; /* Adatta la larghezza dell'immagine al suo contenitore */
+    height: auto;    /* Mantieni la proporzione originale */
+}
+
+.button.button.filter:hover {
+    background-color: var(--color2);
+    color: var(--colorBackground); /* Contrasto del testo in hover */
+}
+
+.button.filter:active {
+    background-color: calc(--color2); /* Colore più scuro quando viene premuto */
+    color: #ffffff; /* Testo bianco */
+}
+
+.filter-icon:hover {
+    background-color: var(--color2);
+}
+
+/* Hover combinato per il bottone e l'icona */
+.button.filter:hover .filter-icon {
+    background-color: var(--color2); /* Anche l'icona cambia colore in hover */
+}
+
+
+/* Fine bottone Search */
 
 #searchButton-space {
     height: 40%;
     gap: 2%;
+    padding: 2%;
 }
 
 #results {
@@ -342,8 +420,9 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-top: 2%;
-    font-size: 1.5vw;
+    border-top: 1px solid var(--dividers);
+    font-size: 1.3em;
+    z-index: -1;
 }
 
 #details-space {
@@ -360,7 +439,16 @@ body {
     flex-direction: column;
     color: white;
     padding: 8%;
-    font-size: 1.7vw;
+    font-size: 1.5em;
+}
+
+/* Stile per la riga prima del padding */
+#divider {
+    width: 100%; 
+    height: 1px;
+    background-color: var(--dividers);
+    margin-bottom: 10px; /* Distanza tra la riga e il contenuto sottostante */
+    border: none;
 }
 
 .hidden {
@@ -373,20 +461,22 @@ body {
     position: relative;
     height: 100%;
     width: 100%;
+    padding-top: 5%;
 }
 
 #switchPanel {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
+    opacity: 1 !important;
     background-color: transparent;
     display: grid;
     grid-template-rows: 9fr 1fr;
-    opacity: 0;
     transition: opacity 0.5s ease;
+    cursor: pointer;
 }
 
 #switcthPanel #arrowSection .switch {
@@ -469,7 +559,7 @@ body {
     width: 100%;
 }
 
-img {
+.image-box img {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -493,6 +583,8 @@ img {
 }
 
 /* INIZIO MEDIA QUERIES */
+
+/*  Larghezza finestra inferiore o uguale a 830px */
 @media screen and (max-width: 830px) {
 
     div#page-container {
@@ -507,6 +599,10 @@ img {
 
     div#gallery {grid-template-rows: 20vh auto;}
 
+    .space-between {
+        height: 25px;
+    }
+
     div#item-space {
         grid-template-columns: none;
         grid-template-rows: 80vh auto;
@@ -519,13 +615,15 @@ img {
     div#search-bar {
         width: 80%;
     }
-    
-    #search-bar .search-div {
-        margin-bottom: 20px; /* Adjust as needed */
+
+    .options {
+        z-index: 10 !important;
+        background-color: calc(--color2) !important;
     }
+
     
     #search-bar .narrative {
-        margin-bottom: 20px; /* Add margin for each narrative item */
+        margin-bottom: 6%; /* Add margin for each narrative item */
     }
     
     div#narratives-space {
@@ -539,10 +637,113 @@ img {
         height: calc(100% / 3);
     }
 
+    .filter-icon {
+        width: 3vw;
+        height: 3vw;
+    }
 }
 
+/* larghezza finestra superiore o uguale a 831px */
 @media screen and (min-width: 831px) {
 
     div.menu {visibility: hidden;}
 }
 /* FINE MEDIA QUERIES */
+
+/* Style Info Table */
+.data-header{
+    font-size: 0.9em;
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
+
+#title-header {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-family: Arial, sans-serif;
+    color: var(--color1);
+    display: flex;
+    align-items: center;
+}
+
+/* Stile dell'icona */
+.icon-class {
+    margin-right: 20px;  /* Distanza tra l'icona e il titolo */
+    width: 3vw; 
+    height: 3vw;  
+}
+
+/* Stile per l'immagine all'interno dell'icona */
+.icon-class img {
+    width: 100%;  /* L'immagine si adatta alla dimensione del div */
+    height: 100%;  /* L'immagine si adatta alla dimensione del div */
+    object-fit: contain;  /* Mantiene le proporzioni dell'immagine */
+}
+
+#infoTable th {
+    /* Stile specifico per th dentro infoTable */
+    text-align: left;
+    padding: 10px;
+}
+/* Stile generale per la tabella */
+#details {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto; /* Centrare la tabella */
+    border-collapse: collapse;
+    font-size: 1em;
+}
+
+/* Stile per le celle di intestazione (th) */
+#details th {
+    text-align: left;
+    font-family: Arial, sans-serif;
+    color: white; /* Colore del testo nell'intestazione */
+    padding: 12px; /* Spaziatura interna */
+    background-color: var(--colorBackground);
+}
+
+/* Stile per le celle di dati (td) */
+#details td {
+    padding: 12px;
+    vertical-align: top; /* Allineamento verticale */
+    color: var(--text);
+}
+
+#details tr:nth-child(odd) td {
+
+    border-left: solid 1px #919191;
+}
+
+/* Hover effect uniforme per tutte le righe */
+#details tr:hover th,
+#details tr:hover td {
+    background-color: rgb(128, 108, 98); /* Colore uniforme durante l'hover */
+}
+ 
+/* Stile per i link (bottoni) nelle celle */ 
+#details a.btn {
+    display: inline-block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #ff7300;
+    border-radius: 4px;
+    margin-right: 5px; /* Spaziatura tra i bottoni */
+    margin-bottom: 7px;
+    transition: background-color 0.3s ease; /* Transizione per l'hover */
+}
+
+#details a.btn:hover {
+    background-color: #ffa45a;
+}
+/* Fine Info Table */
+
+/* Less & More buttons */
+
+.desc-button {
+    
+}
