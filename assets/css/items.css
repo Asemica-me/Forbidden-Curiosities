@@ -18,7 +18,7 @@ body {
     height: 100%;
     background-color: var(--colorBackground);
     overflow-x: hidden; /* Rimuove la barra di scorrimento orizzontale */
-    font-family: var(--font-family-secondary);
+    font-family: var(--font-family-primary);
     font-weight: 400;
     font-style: normal;
 
@@ -232,11 +232,6 @@ body {
 /* INIZIO items gallery */
 /************************/
 
-.space-between {
-    position: relative;
-    display: flex;
-    }
-
 #gallery {
     position: relative;
     width: 100%;
@@ -302,6 +297,7 @@ body {
     border: solid 0.5px rgb(165, 165, 165);
     color: var(--color1);
     border-radius: 2px;
+    padding: 6px;
 }
 
 .select:hover {
@@ -377,10 +373,6 @@ body {
     width: 1.8vw;
     height: 1.7vw;
     margin-right: 8px; /* Distanza tra l'icona e il testo */
-    padding: 2%;
-    background-color: var(--color2);
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
 }
 
 .filter-icon img {
@@ -398,12 +390,8 @@ body {
     color: #ffffff; /* Testo bianco */
 }
 
-.filter-icon:hover {
-    background-color: var(--color2);
-}
-
 /* Hover combinato per il bottone e l'icona */
-.button.filter:hover .filter-icon {
+.button.filter:hover {
     background-color: var(--color2); /* Anche l'icona cambia colore in hover */
 }
 
@@ -493,8 +481,6 @@ body {
 
 #img-space {
     position: relative;
-    height: 100%;
-    width: 100%;
     padding-top: 5%;
 }
 
@@ -600,8 +586,7 @@ body {
     max-width: 100%;
     border-radius: 10px;
     z-index: 2;
-    object-fit: contain;
-    box-shadow: 0px 4px 20px #93939338;
+    box-shadow: 0px 3px 20px #b0b0b0a3;
 }
 
 /* FINE Image column */
@@ -668,6 +653,21 @@ body {
 
 /* INIZIO MEDIA QUERIES */
 
+/* Stile dell'icona */
+.icon-obj {
+    margin-right: 20px;  /* Distanza tra l'icona e il titolo */
+    width: 5vw; 
+    height: 5vw;  
+}
+
+/* Stile per l'immagine all'interno dell'icona */
+.icon-obj img {
+    width: 100%;  /* L'immagine si adatta alla dimensione del div */
+    height: 100%;  /* L'immagine si adatta alla dimensione del div */
+    object-fit: contain;  /* Mantiene le proporzioni dell'immagine */
+}
+
+
 /*  Larghezza finestra inferiore o uguale a 830px */
 @media screen and (max-width: 830px) {
 
@@ -684,12 +684,12 @@ body {
     div#gallery {grid-template-rows: 20vh auto;}
 
     .space-between {
-        height: 25px;
+        height: 80px;
     }
 
     div#item-space {
         grid-template-columns: none;
-        grid-template-rows: 80vh auto;
+        grid-template-rows: 100vh;
     }
 
     div#img-space {grid-row: 1;}
@@ -704,7 +704,6 @@ body {
         z-index: 10 !important;
         background-color: calc(--color2) !important;
     }
-
     
     #search-bar .narrative {
         margin-bottom: 6%; /* Add margin for each narrative item */
@@ -722,8 +721,13 @@ body {
     }
 
     .filter-icon {
-        width: 3vw;
-        height: 3vw;
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .icon-obj {
+        width: 14vw;
+        height: 14vw;
     }
 }
 
@@ -753,20 +757,6 @@ body {
     align-items: center;
 }
 
-/* Stile dell'icona */
-.icon-class {
-    margin-right: 20px;  /* Distanza tra l'icona e il titolo */
-    width: 3vw; 
-    height: 3vw;  
-}
-
-/* Stile per l'immagine all'interno dell'icona */
-.icon-class img {
-    width: 100%;  /* L'immagine si adatta alla dimensione del div */
-    height: 100%;  /* L'immagine si adatta alla dimensione del div */
-    object-fit: contain;  /* Mantiene le proporzioni dell'immagine */
-}
-
 #infoTable th {
     /* Stile specifico per th dentro infoTable */
     text-align: left;
@@ -778,7 +768,7 @@ body {
     max-width: 800px;
     margin: 20px auto; /* Centrare la tabella */
     border-collapse: collapse;
-    font-size: 1em;
+    font-size: 0.8em;
 }
 
 /* Stile per le celle di intestazione (th) */
