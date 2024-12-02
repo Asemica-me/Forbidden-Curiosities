@@ -43,10 +43,10 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 			let _ = this.parentElement;
 			let info_closer = _.children[1];
 			let img = _.children[2];
-			let info_bar = _.children[3];
+			let info_bar = _.parentElement.children[1];
 			this.style.visibility = "hidden";
 			info_closer.style.visibility = "visible";
-			info_bar.style.visibility = "visible";
+			info_bar.classList.add("active");
 			img.style.filter = "blur(3px)";
 		});
 	};
@@ -60,8 +60,8 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 			let _ = this.parentElement;
 			let info_button = _.children[0];
 			let img = _.children[2];
-			let info_bar = _.children[3];
-			info_bar.style.visibility = "hidden";
+			let info_bar = _.parentElement.children[1];
+			info_bar.classList.remove("active");
 			info_button.style.visibility = "visible";
 			img.style.filter = "none";
 			this.style.visibility = "hidden";
@@ -78,9 +78,10 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 	};
 
 	const elements_array = Array.from(elements);
-	const observer = new IntersectionObserver((entries) => {
+	const observer = new IntersectionObserver((entries) => {  // Si dichiara cosa deve fare l'osservatore agli elementi che gli vengono inseriti (entries)
 		entries.forEach(entry => {
 			const wideScreen = getComputedStyle(document.querySelector(":root")).getPropertyValue("--wideScreen");
+			const dataBox = entry.target.parentElement.parentElement.children[0];
 			if (entry.isIntersecting) {
 				if (wideScreen === "True") {
 					const index = elements_array.indexOf(entry.target);
