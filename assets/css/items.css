@@ -641,7 +641,6 @@ body {
         width: 3vw;
         height: 3vw;
     }
-
 }
 
 /* larghezza finestra superiore o uguale a 831px */
@@ -655,6 +654,7 @@ body {
 .data-header{
     font-size: 0.9em;
     color: var(--text);
+    font-family: Arial, sans-serif;
 }
 
 #title-header {
@@ -665,6 +665,22 @@ body {
     letter-spacing: 1px;
     font-family: Arial, sans-serif;
     color: var(--color1);
+    display: flex;
+    align-items: center;
+}
+
+/* Stile dell'icona */
+.icon-class {
+    margin-right: 20px;  /* Distanza tra l'icona e il titolo */
+    width: 3vw; 
+    height: 3vw;  
+}
+
+/* Stile per l'immagine all'interno dell'icona */
+.icon-class img {
+    width: 100%;  /* L'immagine si adatta alla dimensione del div */
+    height: 100%;  /* L'immagine si adatta alla dimensione del div */
+    object-fit: contain;  /* Mantiene le proporzioni dell'immagine */
 }
 
 #infoTable th {

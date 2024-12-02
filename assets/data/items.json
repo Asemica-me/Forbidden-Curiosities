@@ -69,10 +69,10 @@
 		},
 		{
 			"@sort": "4",
-			"shortName": "\"For the Love of God\", Damien Hirst",
+			"shortName": "For the Love of God",
 			"image": "assets/img/items/4hirst.jpg",
 			"info": {
-				"Title": "\"For the Love of God\" by Damien Hirst",
+				"Title": "\"For the Love of God\"",
 				"Author": "Damien Hirst", 
 				"Date of Creation": "2007",
 				"Original Location": "White Cube Gallery, London, England",
@@ -148,10 +148,10 @@
 		},
 		{
 			"@sort": "8",
-			"shortName": "L'Origin du Monde",
+			"shortName": "L'Origine du Monde",
 			"image": "assets/img/items/8origin-du-monde.jpg",
 			"info": {
-				"Title": "L'Origin du Monde",
+				"Title": "L'Origine du Monde",
 				"Creator": "Gustave Courbet",
 				"Date of Creation": "Painted in 1866",
 				"Original Location": "Musée d'Orsay, Paris, France",
@@ -162,7 +162,7 @@
 				"Historical Period" : "XVIII-XIX Century" ,
 				"Typology" : "Artwork" 	
 			},
-			"shortInfo": "L'Origin du Monde by Gustave Courbet was painted in 1866 and first exposed in Paris. It's a bold representation of the female genitalia.",
+			"shortInfo": "L'Origine du Monde by Gustave Courbet was painted in 1866 and first exposed in Paris. It's a bold representation of the female genitalia.",
 			"longerInfo": ["This way of female depiction broke the academia convention to display female nudity only in mythological or literary contexts. This was a consequence of Courbet interest in realism and erotism. In this paint, as in others of his own, we can appreciate his way to reproduce tonalism following the venetian school, emulating Tiziano, Correggio and Veronese."],
 			"fullInfo": "assets/docs/8origin-du-monde.html"
 		},
@@ -188,10 +188,10 @@
 		},
 		{
 			"@sort": "10",
-			"shortName": "\"Shoot\", Chris Burden",
+			"shortName": "Shoot Performance",
 			"image": "assets/img/items/10shoot.jpg",
 			"info": {
-				"Title": "Video installation of \"Shoot\" performance",
+				"Title": "Video installation of \"Shoot\" Performance",
 				"Artist": "Chris Burden",
 				"Date of Publication": "1971 original performance",
 				"Original Location": "Various art institutions and collections, including museums specializing in contemporary art",
@@ -208,7 +208,7 @@
 		},
 		{
 			"@sort": "11",
-			"shortName": "'Playboy'",
+			"shortName": "Playboy Magazine",
 			"image": "assets/img/items/11playboy.jpg",
 			"info": {
 				"Title": "First Issue of \"Playboy\" Magazine",
@@ -309,11 +309,11 @@
 		},
 		{
 			"@sort": "16",
-			"shortName": "Mary Quant's mini skirt",
+			"shortName": "Mini Skirt",
 			"image": "assets/img/items/16mini-skirt.jpg",
 			"info": {
-				"Title": "Dress",
-				"Author": "Mary Quant(designer)",
+				"Title": "Mary Quant's Mini Skirt",
+				"Author": "Mary Quant (Designer)",
 				"Date of Publication": "designed in 1966",
 				"Original Location": "Victoria and Albert Museum, London, UK",
 				"Significance": "Revolution in skirt design, a new concept of women wearing that took into account also women sexuality.",
@@ -391,7 +391,7 @@
 		},
 		{
 			"@sort": "20",
-			"shortName": "Da Vinci's Vitruvian Man",
+			"shortName": "Vitruvian Man",
 			"image": "assets/img/items/20da-vinci.jpg",
 			"info": {
 				"Title": "Vitruvian Man",
