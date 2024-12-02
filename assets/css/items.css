@@ -7,6 +7,9 @@
     --colorBackground: #100202;
     --text: #dcdcdc;
     --dividers: #3e3e3e;
+    --font-family-primary: "Titillium", sans-serif;
+    --font-family-secondary: "Roboto Condensed", sans-serif;
+    --buttons: 'Arial', sans-serif;
 }
 
 body {
@@ -15,6 +18,10 @@ body {
     height: 100%;
     background-color: var(--colorBackground);
     overflow-x: hidden; /* Rimuove la barra di scorrimento orizzontale */
+    font-family: var(--font-family-secondary);
+    font-weight: 400;
+    font-style: normal;
+
 }
 
 #opaque-page {
@@ -57,7 +64,7 @@ body {
     position: relative;
     height: 100%;
     background-color: var(--colorBackground);
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: var(--font-family-secondary);
 }
 
 .rom-navbar {
@@ -194,7 +201,7 @@ body {
     width: 100%;
     display: none;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    z-index: 2;
+    z-index: 200;
 }
 
 #menu-links a {
@@ -358,7 +365,7 @@ body {
     border: none;
     border-radius: 8px;
     padding: 6px 16px;
-    font-family: 'Arial', sans-serif;
+    font-family: var(--buttons);
     font-weight: bold;
     font-size: 1.2em;
     cursor: pointer; /* Mostra il puntatore come cliccabile */
@@ -367,10 +374,10 @@ body {
 }
 
 .filter-icon {
-    width: 1.7vw;
+    width: 1.8vw;
     height: 1.7vw;
     margin-right: 8px; /* Distanza tra l'icona e il testo */
-    padding: 1%;
+    padding: 2%;
     background-color: var(--color2);
     border-radius: 4px;
     transition: background-color 0.3s ease;
@@ -412,6 +419,9 @@ body {
 #results {
     font-style: italic;
     visibility: hidden;
+    font-family: var(--font-family-primary);
+    font-weight: 300;
+    font-style: italic;
 }
 
 #item-space {
@@ -453,6 +463,30 @@ body {
 
 .hidden {
     display: none;
+}
+
+/* Dissolvenza in entrata */
+.fade-in {
+    display: block;
+    opacity: 0;
+    animation: fadeIn 0.7s forwards;
+}
+
+/* Dissolvenza in uscita */
+.fade-out {
+    opacity: 1;
+    animation: fadeOut 0.3s forwards; /* Durata dell'animazione 0.3s */
+}
+
+/* Keyframes per le animazioni */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 /* INIZIO Image column */
@@ -524,7 +558,7 @@ body {
 }
 
 #switchPanel #indexSection #indicesBox .index {
-    color: var(--color1);
+    color: #b0b0b0;
     font-size: calc(14px + 0.390625vw);
     width: 1.5em;
     height: 1.5em;
@@ -567,6 +601,7 @@ body {
     border-radius: 10px;
     z-index: 2;
     object-fit: contain;
+    box-shadow: 0px 4px 20px #93939338;
 }
 
 /* FINE Image column */
@@ -703,7 +738,7 @@ body {
 .data-header{
     font-size: 0.9em;
     color: var(--text);
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family-secondary);
 }
 
 #title-header {
@@ -712,7 +747,7 @@ body {
     margin-bottom: 30px;
     text-align: center;
     letter-spacing: 1px;
-    font-family: Arial, sans-serif;
+    font-family: "Quicksand", sans-serif;
     color: var(--color1);
     display: flex;
     align-items: center;

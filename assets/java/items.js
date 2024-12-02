@@ -162,7 +162,7 @@ function createInfoTable(item) {
     inner("infoTable","",true) ;
     const exb_room = "<tr><th>Exhibition Room</th><td><a type=\"button\" class=\"btn\" href=\"#\" onclick=\"changeNarrative(\'Historical Period\',\'";
     for (i in item.info) {
-        if (["Type", "Controversies/Debates", "Significance", "Exhibition"].includes(i)) continue; 
+        if (["Type", "Exhibition"].includes(i)) continue; 
         if (item.info[i] !== null) {
             if (narratives.includes(i)) {
                 if (i==="Historical Period") {
@@ -287,7 +287,10 @@ function combinedNarratives() {
 }
 
 function show(id) {
-    document.getElementById(id).classList.remove('hidden');
+    const element = document.getElementById(id);
+    element.classList.remove('hidden'); // Rimuove lo stato "nascosto"
+    element.classList.add('fade-in');  // Aggiunge l'animazione di dissolvenza
+    setTimeout(() => element.classList.remove('fade-in'), 500); // Rimuove la classe dopo l'animazione
 }
 
 function hide(id) {
