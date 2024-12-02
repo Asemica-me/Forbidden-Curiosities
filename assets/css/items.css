@@ -479,7 +479,7 @@ body {
     cursor: pointer;
 }
 
-#switcthPanel #arrowSection .switch {
+#switchPanel #arrowSection .switch {
     height: fit-content;
     width: fit-content;
 }
@@ -544,11 +544,12 @@ body {
 }
 
 #switchPanel #indexSection #indicesBox .highlighted {
-    background-color: var(--color1);
+    background-color: var(--color4);
     color: white;
 }
 
 .switchButton#rightButton {transform: rotate(180deg);}
+
 
 .image-box {
     position: relative;
@@ -565,7 +566,9 @@ body {
     max-width: 100%;
     border-radius: 10px;
     z-index: 2;
+    object-fit: contain;
 }
+
 /* FINE Image column */
 
 
@@ -580,6 +583,52 @@ body {
     color: #ffffff;
     text-align: center;
     font-size: calc(15px + 0.390625vw);
+}
+
+/* Less & More buttons */
+
+.desc-button {
+    padding: 12px 27px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: var(--colorBackground);
+    border: 1px solid var(--color2);
+    border-radius: 8px;
+}
+
+.desc-button:hover {
+    background-color: var(--color2);
+    border: 1px solid var(--color2);
+    color: #fff;
+}
+
+.desc-button:active {
+    background-color: #f5e2c6;
+    transform: scale(0.95); /* Effetto di pressione */
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2); /* Ombra interna */
+}
+
+.desc-button:disabled {
+    background-color: #100202a9;
+    color: #dcdcdcba; /* Colore del testo sbiadito */
+    border: 1px solid #f5e2c6be;
+    cursor: not-allowed; /* Cambia il cursore per indicare che il bottone è disabilitato */
+    opacity: 0.6; /* Riduce l'opacità per un effetto visivo */
+    box-shadow: none; /* Rimuove eventuali ombre */
+    transform: none; /* Disabilita effetti di pressione */
+}
+
+.desc-button:hover:disabled {
+    background-color: #100202a9;
+    color: #dcdcdcba; /* Colore del testo sbiadito */
+    border: 1px solid #f5e2c6be;
+    cursor: not-allowed; /* Cambia il cursore per indicare che il bottone è disabilitato */
+    opacity: 0.6; /* Riduce l'opacità per un effetto visivo */
+    box-shadow: none; /* Rimuove eventuali ombre */
+    transform: none; /* Disabilita effetti di pressione */
 }
 
 /* INIZIO MEDIA QUERIES */
@@ -741,9 +790,3 @@ body {
     background-color: #ffa45a;
 }
 /* Fine Info Table */
-
-/* Less & More buttons */
-
-.desc-button {
-    
-}
