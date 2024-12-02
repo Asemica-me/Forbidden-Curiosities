@@ -20,8 +20,12 @@
 
     /* Animazione per lo spinner */
     @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
     }
 
     /* Quando la pagina è caricata, nascondi lo spinner */
@@ -29,9 +33,8 @@
         display: none;
     }
 
-    /* Stile per il contenuto principale */
-    .content {
-        display: none; /* Rende invisibile il contenuto fino al caricamento */
+    .hide-spinner {
+        display: none;
     }
 
     /* Pagina di caricamento */
