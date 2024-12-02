@@ -5,6 +5,8 @@
     --color4: #de7b0a;
     --color5: #4c4c4c;
     --colorBackground: #100202;
+    --text: #dcdcdc;
+    --dividers: #3e3e3e;
 }
 
 body {
@@ -64,7 +66,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     background-color: var(--colorBackground);
-    border-bottom: 1px solid #3e3e3e;
+    border-bottom: 1px solid var(--dividers);
 }
 
 .rom-navbar #logo-box {
@@ -223,9 +225,8 @@ body {
 /* INIZIO items gallery */
 /************************/
 
-.space_between {
+.space-between {
     position: relative;
-    height: 0px;
     display: flex;
     }
 
@@ -233,7 +234,7 @@ body {
     position: relative;
     width: 100%;
     display: grid;
-    grid-template-rows: 8.5vh 5vh 76.5vh auto;
+    /* grid-template-rows: 7vh 5vh 65vh 13vh auto; */ /* Five rows in Gallery container */
     z-index: 2;
 }
 
@@ -263,6 +264,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    gap: 10px;
 }
 
 #narratives-space {
@@ -348,31 +350,54 @@ body {
 
 /* Fine area filtri */
 
-/* Stile per il bottone "search" */
-.search {
-    background-color: var(--color2);
-    color: var(--colorBackground);
+/* Stile per il bottone "filter" */
+.button.filter {
+    display: flex;
+    background-color: var(--colorBackground);
+    color: var(--text);
     border: none;
     border-radius: 8px;
     padding: 6px 16px;
     font-family: 'Arial', sans-serif;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 1.2em;
     cursor: pointer; /* Mostra il puntatore come cliccabile */
     transition: all 0.3s ease; /* Transizioni fluide per hover e active */
+    align-items: center;
 }
 
-.search:hover {
-    background-color: var(--colorBackground);
-    color: var(--color2); /* Contrasto del testo in hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombra */
-    border: 1px solid #cfcfcf;
+.filter-icon {
+    width: 1.7vw;
+    height: 1.7vw;
+    margin-right: 8px; /* Distanza tra l'icona e il testo */
+    padding: 1%;
+    background-color: var(--color2);
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
-.search:active {
-    background-color: calc(--colorBackground); /* Colore più scuro quando viene premuto */
+.filter-icon img {
+    max-width: 100%; /* Adatta la larghezza dell'immagine al suo contenitore */
+    height: auto;    /* Mantieni la proporzione originale */
+}
+
+.button.button.filter:hover {
+    background-color: var(--color2);
+    color: var(--colorBackground); /* Contrasto del testo in hover */
+}
+
+.button.filter:active {
+    background-color: calc(--color2); /* Colore più scuro quando viene premuto */
     color: #ffffff; /* Testo bianco */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombra ridotta */
+}
+
+.filter-icon:hover {
+    background-color: var(--color2);
+}
+
+/* Hover combinato per il bottone e l'icona */
+.button.filter:hover .filter-icon {
+    background-color: var(--color2); /* Anche l'icona cambia colore in hover */
 }
 
 
@@ -395,7 +420,7 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border-top: 1px solid #3e3e3e;
+    border-top: 1px solid var(--dividers);
     font-size: 1.3em;
     z-index: -1;
 }
@@ -415,6 +440,15 @@ body {
     color: white;
     padding: 8%;
     font-size: 1.5em;
+}
+
+/* Stile per la riga prima del padding */
+#divider {
+    width: 100%; 
+    height: 1px;
+    background-color: var(--dividers);
+    margin-bottom: 10px; /* Distanza tra la riga e il contenuto sottostante */
+    border: none;
 }
 
 .hidden {
@@ -525,7 +559,7 @@ body {
     width: 100%;
 }
 
-img {
+.image-box img {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -549,6 +583,8 @@ img {
 }
 
 /* INIZIO MEDIA QUERIES */
+
+/*  Larghezza finestra inferiore o uguale a 830px */
 @media screen and (max-width: 830px) {
 
     div#page-container {
@@ -601,13 +637,94 @@ img {
         height: calc(100% / 3);
     }
 
+    .filter-icon {
+        width: 3vw;
+        height: 3vw;
+    }
+
 }
 
+/* larghezza finestra superiore o uguale a 831px */
 @media screen and (min-width: 831px) {
 
     div.menu {visibility: hidden;}
 }
 /* FINE MEDIA QUERIES */
+
+/* Style Info Table */
+.data-header{
+    font-size: 0.9em;
+    color: var(--text);
+}
+
+#title-header {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-family: Arial, sans-serif;
+    color: var(--color1);
+}
+
+#infoTable th {
+    /* Stile specifico per th dentro infoTable */
+    text-align: left;
+    padding: 10px;
+}
+/* Stile generale per la tabella */
+#details {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto; /* Centrare la tabella */
+    border-collapse: collapse;
+    font-size: 1em;
+}
+
+/* Stile per le celle di intestazione (th) */
+#details th {
+    text-align: left;
+    font-family: Arial, sans-serif;
+    color: white; /* Colore del testo nell'intestazione */
+    padding: 12px; /* Spaziatura interna */
+    background-color: var(--colorBackground);
+}
+
+/* Stile per le celle di dati (td) */
+#details td {
+    padding: 12px;
+    vertical-align: top; /* Allineamento verticale */
+    color: var(--text);
+}
+
+#details tr:nth-child(odd) td {
+
+    border-left: solid 1px #919191;
+}
+
+/* Hover effect uniforme per tutte le righe */
+#details tr:hover th,
+#details tr:hover td {
+    background-color: rgb(128, 108, 98); /* Colore uniforme durante l'hover */
+}
+ 
+/* Stile per i link (bottoni) nelle celle */ 
+#details a.btn {
+    display: inline-block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #ff7300;
+    border-radius: 4px;
+    margin-right: 5px; /* Spaziatura tra i bottoni */
+    margin-bottom: 7px;
+    transition: background-color 0.3s ease; /* Transizione per l'hover */
+}
+
+#details a.btn:hover {
+    background-color: #ffa45a;
+}
+/* Fine Info Table */
 
 /* Less & More buttons */
 

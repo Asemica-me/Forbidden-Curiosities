@@ -160,7 +160,7 @@ function createInfoTable(item) {
                         }
                         val.push(`<a type="button" class="btn" href="#" onclick="changeNarrative('${i}', '${theme}')">${themes[j]}</a>`)
                     }
-                    inner("infoTable","<tr><th>"+i+"</th><td>"+val.join(", ")+"</td></tr>", false);
+                    inner("infoTable","<tr><th>"+i+"</th><td>"+val.join(" ")+"</td></tr>", false);
                 }
             } else {
                 inner("infoTable","<tr><th>"+i+"</th><td>"+item.info[i]+"</td></tr>", false);
