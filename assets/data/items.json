@@ -133,6 +133,7 @@
 			"image": "assets/img/items/7luther.jpg",
 			"info": {
 				"Title": "Martin Luther’s 95 Theses",
+				"Author": "Martin Luther",
 				"Date of Publication": "Posted in 1517",
 				"Original Location": "Oxford University, UK (facsimile)",
 				"Significance": "Ignited debates on church authority, religious reform, and the spread of Protestantism",

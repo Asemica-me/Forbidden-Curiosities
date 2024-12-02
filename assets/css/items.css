@@ -417,7 +417,7 @@ body {
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 55% 40% auto;
     border-top: 1px solid var(--dividers);
     font-size: 1.3em;
     z-index: -1;
@@ -428,7 +428,7 @@ body {
     display: flex;
     flex-direction: column;
     color: white;
-    padding: 14%;
+    padding: 14% 14% 2% 14%;
 }
 
 #description {
@@ -436,7 +436,7 @@ body {
     display: flex;
     flex-direction: column;
     color: white;
-    padding: 8%;
+    padding: 4% 8% 16% 8%;
     font-size: 1.5em;
 }
 
@@ -686,6 +686,7 @@ body {
     .space-between {
         height: 80px;
     }
+
 
     div#item-space {
         grid-template-columns: none;
