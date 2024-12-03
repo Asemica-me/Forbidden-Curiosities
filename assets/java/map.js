@@ -1,16 +1,17 @@
 function showList() {
     const listContainer = document.getElementById('list');
     const icon = document.getElementById('icon');
-  
-    // Check for empty/undefined initial state
-    if (listContainer.style.display === '' || listContainer.style.display === 'block') {
-        listContainer.style.display = 'none';
-        icon.style.transform = 'rotate(0deg)';
+
+    // Toggle visibility and icon rotation
+    if (listContainer.style.display === 'none' || listContainer.style.display === '') {
+        listContainer.style.display = 'block'; // Show the container
+        icon.style.transform = 'rotate(180deg)'; // Flip the icon
     } else {
-        listContainer.style.display = 'block';
-        icon.style.transform = 'rotate(180deg)';
+        listContainer.style.display = 'none'; // Hide the container
+        icon.style.transform = 'rotate(0deg)'; // Reset icon orientation
     }
 };
+
 
 function createSubButtons(container, items) {
     items.forEach((item) => {
@@ -27,13 +28,7 @@ function createSubButtons(container, items) {
             activateSubNarButton(newButton);
         };
 
-        if (item === "ALL") {
-            newButton.classList.add("active");
-            newButton.onclick = () => {
-                changeList(newButton);
-                activateSubNarButton(newButton);
-            };
-        }
+
 
         // Append the button to the div
         newDiv.appendChild(newButton);
@@ -46,7 +41,8 @@ function createSubButtons(container, items) {
             newDiv.style.transform = "translateY(0)";
         }, 10);
     });
-};
+
+}
 
 function subNar(narButton) {
     const buttonText = narButton.innerText;
@@ -54,7 +50,7 @@ function subNar(narButton) {
     const targetContainer = document.getElementById('sub-nar');
     targetContainer.innerHTML = ""; // Clear the container
 
-    const periods = ["ALL", "XV-XVII", "XVII-XIX", "1th half XX", "2nd half XX", "XXI"];
+    const periods = ["XV-XVII", "XVII-XIX", "1th half XX", "2nd half XX", "XXI"];
     const tipologies = ["Texts", "Tools", "Weapons", "Garments", "Events", "Works Of Art"];
     const themes = ["Ethics Of War", "Scientific Revolution", "Women's History", "Religious Dissent", "Provocative Art", "Digital Privacy"];
 
@@ -73,17 +69,17 @@ function changeList(subNarButton) {
     const listDiv = document.getElementById('list'); // Target container
 
     // Define all object arrays
-    const ALLObj = ['Vitruvian man', 'Arquebus', 'Martin Luther’s 95 Theses (facsimile)', 'Galileo’s Telescope Replica','Victorian-Era Corset', 'Reign of Terror Guillotine Blade', 'The Origin of Species” by Charles Darwin', 'Courbet\'s L\'Origine du Monde','Sheet of the measurements taken by Marie Curie', 'Suffragette Hunger Strike Medal', 'Enigma Machine Model D A1214', 'Replica of the Atomic Bomb “Little Boy”','First Issue of “Playboy” Magazine', 'Mini skirt by Mary Quant', 'NASA Moon Landing Photo', '“Shoot” by Chris Burden','Dolly the Sheep (Cloning)', 'For the Love of God” by Damien Hirst', 'Edward Snowden’s Revelations (facsimile)', 'AI Image of Pope Francis'];
-    const XVXVIIObj = ['Vitruvian man', 'Arquebus', 'Martin Luther’s 95 Theses (facsimile)', 'Galileo’s Telescope Replica'];
-    const XVIIXIXObj = ['Victorian-Era Corset', 'Reign of Terror Guillotine Blade', 'The Origin of Species” by Charles Darwin', 'Courbet\'s L\'Origine du Monde'];
-    const fXXObj = ['Sheet of the measurements taken by Marie Curie', 'Suffragette Hunger Strike Medal', 'Enigma Machine Model D A1214', 'Replica of the Atomic Bomb “Little Boy”'];
-    const sXXObj = ['First Issue of “Playboy” Magazine', 'Mini skirt by Mary Quant', 'NASA Moon Landing Photo', '“Shoot” by Chris Burden','Dolly the Sheep (Cloning)'];
-    const XXIObj = ['For the Love of God” by Damien Hirst', 'Edward Snowden’s Revelations (facsimile)', 'AI Image of Pope Francis'];
-    const TextsObj = ['Martin Luther’s 95 Theses (facsimile)', 'The Origin of Species” by Charles Darwin', 'Sheet of the measurements taken by Marie Curie', 'First Issue of “Playboy” Magazine'];
-    const ToolsObj = ['Galileo’s Telescope Replica', 'Enigma Machine Model D A1214'];
-    const WeaponsObj = ['Arquebus', 'Reign of Terror Guillotine Blade', 'Replica of the Atomic Bomb “Little Boy”'];
-    const GarmentsObj = ['Victorian-Era Corset', 'Mini skirt by Mary Quant'];
-    const EventsObj = ['Sheet of the measurements taken by Marie Curie', 'Suffragette Hunger Strike Medal', 'NASA Moon Landing Photo', 'Dolly the Sheep (Cloning)'];
+    const ALLObj = ['Vitruvian man (1) ', 'Arquebus (2)', 'Martin Luther’s 95 Theses (facsimile) (3)', 'Galileo’s Telescope Replica (4)','Victorian-Era Corset (5)', 'Reign of Terror Guillotine Blade (6)', 'The Origin of Species” by Charles Darwin (7)', 'Courbet\'s L\'Origine du Monde (8)','Sheet of the measurements taken by Marie Curie (9)', 'Suffragette Hunger Strike Medal (10)', 'Enigma Machine Model D A1214 (11)', 'Replica of the Atomic Bomb “Little Boy” (12)','First Issue of “Playboy” Magazine (13)', 'Mini skirt by Mary Quant (14)', 'NASA Moon Landing Photo (15)', '“Shoot” by Chris Burden (16)','Dolly the Sheep (Cloning) (17)', 'For the Love of God” by Damien Hirst (18)', 'Edward Snowden’s Revelations (facsimile) (19)', 'AI Image of Pope Francis (20)'];
+    const XVXVIIObj = ['Vitruvian man (1)', 'Arquebus (2)', 'Martin Luther’s 95 Theses (facsimile) (3)', 'Galileo’s Telescope Replica (4)'];
+    const XVIIXIXObj = ['Victorian-Era Corset (5)', 'Reign of Terror Guillotine Blade (6)', 'The Origin of Species” by Charles Darwin (7)', 'Courbet\'s L\'Origine du Monde (8)'];
+    const fXXObj = ['Sheet of the measurements taken by Marie Curie (9)', 'Suffragette Hunger Strike Medal (10)', 'Enigma Machine Model D A1214 (11)', 'Replica of the Atomic Bomb “Little Boy” (12)'];
+    const sXXObj = ['First Issue of “Playboy” Magazine (13)', 'Mini skirt by Mary Quant (14)', 'NASA Moon Landing Photo (15)', '“Shoot” by Chris Burden (16)','Dolly the Sheep (Cloning) (17)'];
+    const XXIObj = ['For the Love of God” by Damien Hirst (18)', 'Edward Snowden’s Revelations (facsimile) (19)', 'AI Image of Pope Francis (20)'];
+    const TextsObj = ['Martin Luther’s 95 Theses (facsimile) (3)', 'The Origin of Species” by Charles Darwin (7)', 'Sheet of the measurements taken by Marie Curie (9)', 'First Issue of “Playboy” Magazine (13)'];
+    const ToolsObj = ['Galileo’s Telescope Replica (4)', 'Enigma Machine Model D A1214 (11)'];
+    const WeaponsObj = ['Arquebus (2)', 'Reign of Terror Guillotine Blade (6)', 'Replica of the Atomic Bomb “Little Boy” (12)'];
+    const GarmentsObj = ['Victorian-Era Corset (5)', 'Mini skirt by Mary Quant (14)'];
+    const EventsObj = ['Sheet of the measurements taken by Marie Curie (9)', 'Suffragette Hunger Strike Medal (10)', 'NASA Moon Landing Photo (15)', 'Dolly the Sheep (Cloning) (17)'];
     const ArtObj = ['Art Item 1', 'Art Item 2', 'Art Item 3', 'Art Item 4'];
     const EthicsObj = ['Ethics Of War Item 1', 'Ethics Of War Item 2', 'Ethics Of War Item 3', 'Ethics Of War Item 4'];
     const ScientificObj = ['Scientific Revolution Item 1', 'Scientific Revolution Item 2', 'Scientific Revolution Item 3', 'Scientific Revolution Item 4'];
@@ -98,17 +94,17 @@ function changeList(subNarButton) {
         listDiv.innerHTML = '';
 
         // Create and populate an ordered list
-        const ol = document.createElement('ol');
-        ol.className = 'itemList';
+        const ul = document.createElement('ul');
+        ul.className = 'itemList';
 
         items.forEach(item => {
             const li = document.createElement('li');
             li.textContent = item;
-            ol.appendChild(li);
+            ul.appendChild(li);
         });
 
         // Append the ordered list to the container
-        listDiv.appendChild(ol);
+        listDiv.appendChild(ul);
     }
 
     // Match the button text and render the corresponding list
