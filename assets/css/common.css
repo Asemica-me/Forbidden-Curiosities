@@ -29,10 +29,6 @@ a:focus {
     box-shadow: 0 0 5px 2px rgba(222, 123, 10, 0.5); /* Aggiunge una leggera ombra per indicare il focus */
 }
 
-a:active {
-    color: #aa6210; /* Colore quando il link viene cliccato */
-}
-
 /* Stile per lo spinner */
 
 /* Classe che nasconde lo spinner e mostra il contenuto */
