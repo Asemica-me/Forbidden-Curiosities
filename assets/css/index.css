@@ -291,38 +291,33 @@ body {
 }
 
 #center {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-}
-
-#banner {
-  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #center h1 {
   position: relative;
-  margin-top: 15%;
+  margin-top: 20%;
   font-size: calc(50px + 0.390625vw);
   color: var(--mainColor);
   text-align: center;
 }
 
 #arrow {
-  margin-bottom: 15%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+  animation: pointing 2s ease-out;
 }
 
 #arrow img {
   height: 100px;
   width: 100px;
-  transition: 0.7s;
 }
 
-#arrow img:hover {
-  height: 120px;
-  width: 120px;
+@keyframes pointing {
+  from {transform: translateY(-150%);}
+  to {transform: translateY(0%);}
 }
 
 /*================================================*/
@@ -367,6 +362,75 @@ body {
 /*================================================*/
 /* ============== Inizio timeline ================*/
 /*================================================*/
+
+#side-search {
+  position: fixed;
+  top: 30%;
+  left: 0;
+  z-index: 4;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--mainColor);
+}
+
+.search-header {
+  text-align: center;
+}
+
+#side-banner {
+  display: inline-flex;
+  flex-direction: row;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+}
+
+.side-arrow {
+  background-color: white;
+  height: 1em;
+  width: 1em;
+}
+
+.side-arrow img {
+  max-width: 100%;
+  max-width: 100%;
+}
+
+.search-logo {
+  background-color: white;
+  height: 1em;
+  width: 1em;
+}
+
+.search-logo img {
+  max-width: 100%;
+  max-width: 100%;
+}
+
+#top-search {
+  position: fixed;
+  top: 0;
+  justify-self: center;
+  z-index: 4;
+  color: white;
+  background-color: var(--mainColor);
+}
+
+#top-banner {
+  display: flex;
+  flex-direction: row;
+}
+
+.top-arrow {
+  background-color: white;
+  height: 1em;
+  width: 1em;
+}
+
+.top-arrow img {
+  max-width: 100%;
+  max-width: 100%;
+}
 
 #timeline {
   position: relative;
@@ -595,29 +659,6 @@ footer {
   
   div.navbar-body {visibility: hidden;}
 
-  div#img-right {
-    display: none;
-  }
-
-  div#img-left {
-    display: none;
-  }
-
-  div#welcome {
-    display: block;
-    width: 100%;
-  }
-
-  div#center {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-  }
-
-  div#center h1 {
-    font-size: calc(10vw * 0.9vh);
-    margin-top: 10%;
-  }
- 
   span#line {
     left: 7vw;
     width: 1.5vw;
@@ -646,10 +687,6 @@ footer {
   }
 
   div.menu {visibility: hidden;}
-
-  div#banner {
-    display: none;
-  }
 
   span#line {
     width: 0.5vw;
