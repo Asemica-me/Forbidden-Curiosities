@@ -600,15 +600,18 @@ body {
 /* FINE gallery */
 /****************/
 
-#page-container footer {
-    position: relative;
-    padding: 2% 8% 8% 8%;
-    height: 60px;
+footer.footer {
+    height: 100%;
+    bottom: 0; /* Aligns it to the bottom of the parent */
     background-color: var(--footer);
+    display: flex; /* Enables flexbox */
+    flex-direction: column; /* Aligns items vertically */
+    justify-content: center;
+    align-items: center;
+    text-align: center !important; 
     color: var(--text);
-    text-align: center;
-    font-size: 1em;
-    border-top: 1px solid var(--dividers);
+    overflow: hidden;
+    padding: 0% 4% 2% 4%;
 }
 
 /* Less & More buttons */

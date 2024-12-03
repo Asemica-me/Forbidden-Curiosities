@@ -37,7 +37,6 @@ h4 {
 
 p {
     font-family: var(--font-family-primary);
-    text-align: justify;
     color: var(--text);
 }
 
