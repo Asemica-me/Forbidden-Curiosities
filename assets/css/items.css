@@ -298,7 +298,7 @@ body {
     border: solid 0.5px rgb(165, 165, 165);
     color: var(--color1);
     border-radius: 2px;
-    padding: 6px;
+    padding: 8px;
 }
 
 .select:hover {
