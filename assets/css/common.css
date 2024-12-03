@@ -1,13 +1,3 @@
-:root {
-    --color1: #dadada;
-    --color2: #f7d9ad;
-    --color3: #52003a;
-    --color4: #de7b0a;
-    --color5: #4c4c4c;
-    --colorBackground: #100202;
-}
-
-
 /* Stile per lo spinner */
     .spinner {
         border: 5px solid #f3f3f3; /* Colore grigio chiaro */
@@ -20,8 +10,12 @@
 
     /* Animazione per lo spinner */
     @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
     }
 
     /* Quando la pagina è caricata, nascondi lo spinner */
@@ -29,9 +23,8 @@
         display: none;
     }
 
-    /* Stile per il contenuto principale */
-    .content {
-        display: none; /* Rende invisibile il contenuto fino al caricamento */
+    .hide-spinner {
+        display: none;
     }
 
     /* Pagina di caricamento */

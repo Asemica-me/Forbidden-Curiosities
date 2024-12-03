@@ -105,19 +105,3 @@ window.addEventListener('scroll', function() { // Necessario per controllare il 
 });
 
 /* index.thml functions END */
-
-/* Spinner pagine */
-/* window.onload = function() {
-	// Rimuovi lo spinner e mostra il contenuto
-	document.body.classList.add('loaded');
-	document.querySelector('.content').style.display = 'block'; // Mostra il contenuto
-}; 
-
-// Funzione che nasconde lo spinner e mostra il contenuto dopo un ritardo
-window.onload = function() {
-    setTimeout(function() {
-        // Rimuovi lo spinner e mostra il contenuto
-        document.body.classList.add('loaded');
-        document.querySelector('.content').style.display = 'block'; // Mostra il contenuto
-    }, 5000); // 3 secondi di ritardo
-};*/
