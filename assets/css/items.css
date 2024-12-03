@@ -141,6 +141,7 @@ body {
 
 .nav-link:hover {
     color: white; /* Cambia il colore del testo */
+    text-decoration: none !important;
 }
 
 .nav-link:hover::after {
