@@ -32,7 +32,7 @@ window.addEventListener('scroll', function() { // Necessario per controllare il 
   });
 
 
-document.addEventListener("DOMContentLoaded", function() { //Necessario per poter agire sugli elementi una volta che sono stati caricati dal browser
+  document.addEventListener("DOMContentLoaded", function() { //Necessario per poter agire sugli elementi una volta che sono stati caricati dal browser
 	
 	// Funzione per APRIRE il pannello informativo sugli oggetti della timeline
 	const infoButtons = document.getElementsByClassName("infoButton");
@@ -40,10 +40,9 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 	for (let i = 0; i < infoButtons.length; i++) {
 		let button = infoButtons[i];
 		button.addEventListener("click", function() {
-			let _ = this.parentElement;
-			let info_closer = _.children[1];
-			let img = _.children[2];
-			let info_bar = _.parentElement.children[1];
+			let info_closer = this.nextElementSibling;
+			let img = info_closer.nextElementSibling;
+			let info_bar = img.nextElementSibling;
 			this.style.visibility = "hidden";
 			info_closer.style.visibility = "visible";
 			info_bar.classList.add("active");
@@ -57,10 +56,9 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 	for (let i = 0; i < infoClosers.length; i++) {
 		let closer = infoClosers[i];
 		closer.addEventListener("click", function() {
-			let _ = this.parentElement;
-			let info_button = _.children[0];
-			let img = _.children[2];
-			let info_bar = _.parentElement.children[1];
+			let info_button = this.previousElementSibling;
+			let img = this.nextElementSibling;
+			let info_bar = img.nextElementSibling;
 			info_bar.classList.remove("active");
 			info_button.style.visibility = "visible";
 			img.style.filter = "none";
@@ -74,26 +72,29 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 	const options = {
 		root: null, // Valore per ottenere la viewport come contenitore da osservare
 		rootMargin: '0px',
-		threshold: 0.5 // Valore che fa scattare l'animazione quando l'elemento è per il 50% visibile
+		threshold: 0.3 // Valore che fa scattare l'animazione quando l'elemento è per il 50% visibile
 	};
 
 	const elements_array = Array.from(elements);
 	const observer = new IntersectionObserver((entries) => {  // Si dichiara cosa deve fare l'osservatore agli elementi che gli vengono inseriti (entries)
 		entries.forEach(entry => {
 			const wideScreen = getComputedStyle(document.querySelector(":root")).getPropertyValue("--wideScreen");
-			const dataBox = entry.target.parentElement.parentElement.children[0];
+			const data = entry.target.parentElement.children[0].children[0];
 			if (entry.isIntersecting) {
 				if (wideScreen === "True") {
 					const index = elements_array.indexOf(entry.target);
                 	if (index % 2 == 0) {
-						entry.target.style.animation = "left-enter 1.5s ease-out forwards";
+						entry.target.style.animation = "left-enter 1s ease";
 					} else {
-						entry.target.style.animation = "right-enter 1.5s ease-out forwards";
+						entry.target.style.animation = "right-enter 1s ease";
 					}
 					
 				} else { // questo è il caso della visione da schermo stretto, quindi ingresso solo da destra
-					entry.target.style.animation = "right-enter 1.5s ease-out forwards";
+					entry.target.style.animation = "right-enter 1s ease";
 				}
+
+				entry.target.classList.add("enter");
+				data.classList.add("entrance");
 				observer.unobserve(entry.target); // Fatta l'animaizone qui si smette di osservare l'elemento per non ripeterla
 			}
 		});
