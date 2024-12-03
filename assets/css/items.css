@@ -5,6 +5,11 @@
     --color4: #de7b0a;
     --color5: #4c4c4c;
     --colorBackground: #100202;
+    --text: #dcdcdc;
+    --dividers: #3e3e3e;
+    --font-family-primary: "Titillium", sans-serif;
+    --font-family-secondary: "Roboto Condensed", sans-serif;
+    --buttons: 'Arial', sans-serif;
 }
 
 body {
@@ -13,6 +18,10 @@ body {
     height: 100%;
     background-color: var(--colorBackground);
     overflow-x: hidden; /* Rimuove la barra di scorrimento orizzontale */
+    font-family: var(--font-family-primary);
+    font-weight: 400;
+    font-style: normal;
+
 }
 
 #opaque-page {
@@ -55,7 +64,7 @@ body {
     position: relative;
     height: 100%;
     background-color: var(--colorBackground);
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: var(--font-family-secondary);
 }
 
 .rom-navbar {
@@ -64,7 +73,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     background-color: var(--colorBackground);
-    border-bottom: 1px solid #3e3e3e;
+    border-bottom: 1px solid var(--dividers);
 }
 
 .rom-navbar #logo-box {
@@ -132,6 +141,7 @@ body {
 
 .nav-link:hover {
     color: white; /* Cambia il colore del testo */
+    text-decoration: none !important;
 }
 
 .nav-link:hover::after {
@@ -192,7 +202,7 @@ body {
     width: 100%;
     display: none;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    z-index: 2;
+    z-index: 200;
 }
 
 #menu-links a {
@@ -223,17 +233,11 @@ body {
 /* INIZIO items gallery */
 /************************/
 
-.space_between {
-    position: relative;
-    height: 0px;
-    display: flex;
-    }
-
 #gallery {
     position: relative;
     width: 100%;
     display: grid;
-    grid-template-rows: 8.5vh 5vh 76.5vh auto;
+    /* grid-template-rows: 7vh 5vh 65vh 13vh auto; */ /* Five rows in Gallery container */
     z-index: 2;
 }
 
@@ -263,6 +267,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    gap: 10px;
 }
 
 #narratives-space {
@@ -293,6 +298,7 @@ body {
     border: solid 0.5px rgb(165, 165, 165);
     color: var(--color1);
     border-radius: 2px;
+    padding: 8px;
 }
 
 .select:hover {
@@ -327,7 +333,7 @@ body {
 }
 
 .options {
-    background-color: #f7d9ad97;
+    background-color: var(--color5);
     z-index: 10 !important;
     visibility: hidden;
     transition: visibility 0.3s ease, opacity 0.3s ease; /* Animazione fluida */
@@ -348,31 +354,46 @@ body {
 
 /* Fine area filtri */
 
-/* Stile per il bottone "search" */
-.search {
-    background-color: var(--color2);
-    color: var(--colorBackground);
+/* Stile per il bottone "filter" */
+.button.filter {
+    display: flex;
+    background-color: var(--colorBackground);
+    color: var(--text);
     border: none;
     border-radius: 8px;
     padding: 6px 16px;
-    font-family: 'Arial', sans-serif;
+    font-family: var(--buttons);
     font-weight: bold;
-    font-size: 1em;
+    font-size: 1.2em;
     cursor: pointer; /* Mostra il puntatore come cliccabile */
     transition: all 0.3s ease; /* Transizioni fluide per hover e active */
+    align-items: center;
 }
 
-.search:hover {
-    background-color: var(--colorBackground);
-    color: var(--color2); /* Contrasto del testo in hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombra */
-    border: 1px solid #cfcfcf;
+.filter-icon {
+    width: 1.8vw;
+    height: 1.7vw;
+    margin-right: 8px; /* Distanza tra l'icona e il testo */
 }
 
-.search:active {
-    background-color: calc(--colorBackground); /* Colore più scuro quando viene premuto */
+.filter-icon img {
+    max-width: 100%; /* Adatta la larghezza dell'immagine al suo contenitore */
+    height: auto;    /* Mantieni la proporzione originale */
+}
+
+.button.button.filter:hover {
+    background-color: var(--color2);
+    color: var(--colorBackground); /* Contrasto del testo in hover */
+}
+
+.button.filter:active {
+    background-color: calc(--color2); /* Colore più scuro quando viene premuto */
     color: #ffffff; /* Testo bianco */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombra ridotta */
+}
+
+/* Hover combinato per il bottone e l'icona */
+.button.filter:hover {
+    background-color: var(--color2); /* Anche l'icona cambia colore in hover */
 }
 
 
@@ -387,6 +408,9 @@ body {
 #results {
     font-style: italic;
     visibility: hidden;
+    font-family: var(--font-family-primary);
+    font-weight: 300;
+    font-style: italic;
 }
 
 #item-space {
@@ -394,8 +418,8 @@ body {
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-top: 1px solid #3e3e3e;
+    grid-template-columns: 55% 40% auto;
+    border-top: 1px solid var(--dividers);
     font-size: 1.3em;
     z-index: -1;
 }
@@ -405,7 +429,7 @@ body {
     display: flex;
     flex-direction: column;
     color: white;
-    padding: 14%;
+    padding: 14% 14% 2% 14%;
 }
 
 #description {
@@ -413,20 +437,51 @@ body {
     display: flex;
     flex-direction: column;
     color: white;
-    padding: 8%;
+    padding: 4% 8% 16% 8%;
     font-size: 1.5em;
+}
+
+/* Stile per la riga prima del padding */
+#divider {
+    width: 100%; 
+    height: 1px;
+    background-color: var(--dividers);
+    margin-bottom: 10px; /* Distanza tra la riga e il contenuto sottostante */
+    border: none;
 }
 
 .hidden {
     display: none;
 }
 
+/* Dissolvenza in entrata */
+.fade-in {
+    display: block;
+    opacity: 0;
+    animation: fadeIn 0.7s forwards;
+}
+
+/* Dissolvenza in uscita */
+.fade-out {
+    opacity: 1;
+    animation: fadeOut 0.3s forwards; /* Durata dell'animazione 0.3s */
+}
+
+/* Keyframes per le animazioni */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
 /* INIZIO Image column */
 
 #img-space {
     position: relative;
-    height: 100%;
-    width: 100%;
     padding-top: 5%;
 }
 
@@ -445,7 +500,7 @@ body {
     cursor: pointer;
 }
 
-#switcthPanel #arrowSection .switch {
+#switchPanel #arrowSection .switch {
     height: fit-content;
     width: fit-content;
 }
@@ -490,7 +545,7 @@ body {
 }
 
 #switchPanel #indexSection #indicesBox .index {
-    color: var(--color1);
+    color: #b0b0b0;
     font-size: calc(14px + 0.390625vw);
     width: 1.5em;
     height: 1.5em;
@@ -510,11 +565,12 @@ body {
 }
 
 #switchPanel #indexSection #indicesBox .highlighted {
-    background-color: var(--color1);
+    background-color: var(--color4);
     color: white;
 }
 
 .switchButton#rightButton {transform: rotate(180deg);}
+
 
 .image-box {
     position: relative;
@@ -525,13 +581,15 @@ body {
     width: 100%;
 }
 
-img {
+.image-box img {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
     border-radius: 10px;
     z-index: 2;
+    box-shadow: 0px 3px 20px #b0b0b0a3;
 }
+
 /* FINE Image column */
 
 
@@ -548,7 +606,70 @@ img {
     font-size: calc(15px + 0.390625vw);
 }
 
+/* Less & More buttons */
+
+.desc-button {
+    padding: 12px 27px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: var(--colorBackground);
+    border: 1px solid var(--color2);
+    border-radius: 8px;
+}
+
+.desc-button:hover {
+    background-color: var(--color2);
+    border: 1px solid var(--color2);
+    color: #fff;
+}
+
+.desc-button:active {
+    background-color: #f5e2c6;
+    transform: scale(0.95); /* Effetto di pressione */
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2); /* Ombra interna */
+}
+
+.desc-button:disabled {
+    background-color: #100202a9;
+    color: #dcdcdcba; /* Colore del testo sbiadito */
+    border: 1px solid #f5e2c6be;
+    cursor: not-allowed; /* Cambia il cursore per indicare che il bottone è disabilitato */
+    opacity: 0.6; /* Riduce l'opacità per un effetto visivo */
+    box-shadow: none; /* Rimuove eventuali ombre */
+    transform: none; /* Disabilita effetti di pressione */
+}
+
+.desc-button:hover:disabled {
+    background-color: #100202a9;
+    color: #dcdcdcba; /* Colore del testo sbiadito */
+    border: 1px solid #f5e2c6be;
+    cursor: not-allowed; /* Cambia il cursore per indicare che il bottone è disabilitato */
+    opacity: 0.6; /* Riduce l'opacità per un effetto visivo */
+    box-shadow: none; /* Rimuove eventuali ombre */
+    transform: none; /* Disabilita effetti di pressione */
+}
+
 /* INIZIO MEDIA QUERIES */
+
+/* Stile dell'icona */
+.icon-obj {
+    margin-right: 20px;  /* Distanza tra l'icona e il titolo */
+    width: 5vw; 
+    height: 5vw;  
+}
+
+/* Stile per l'immagine all'interno dell'icona */
+.icon-obj img {
+    width: 100%;  /* L'immagine si adatta alla dimensione del div */
+    height: 100%;  /* L'immagine si adatta alla dimensione del div */
+    object-fit: contain;  /* Mantiene le proporzioni dell'immagine */
+}
+
+
+/*  Larghezza finestra inferiore o uguale a 830px */
 @media screen and (max-width: 830px) {
 
     div#page-container {
@@ -564,12 +685,13 @@ img {
     div#gallery {grid-template-rows: 20vh auto;}
 
     .space-between {
-        height: 25px;
+        height: 80px;
     }
+
 
     div#item-space {
         grid-template-columns: none;
-        grid-template-rows: 80vh auto;
+        grid-template-rows: 100vh;
     }
 
     div#img-space {grid-row: 1;}
@@ -584,7 +706,6 @@ img {
         z-index: 10 !important;
         background-color: calc(--color2) !important;
     }
-
     
     #search-bar .narrative {
         margin-bottom: 6%; /* Add margin for each narrative item */
@@ -600,14 +721,99 @@ img {
     div.narrative {
         height: calc(100% / 3);
     }
-    .narrative {
-        font-size: 2em;
+
+    .filter-icon {
+        width: 5vw;
+        height: 5vw;
     }
 
+    .icon-obj {
+        width: 14vw;
+        height: 14vw;
+    }
 }
 
+/* larghezza finestra superiore o uguale a 831px */
 @media screen and (min-width: 831px) {
 
     div.menu {visibility: hidden;}
 }
 /* FINE MEDIA QUERIES */
+
+/* Style Info Table */
+.data-header{
+    font-size: 0.9em;
+    color: var(--text);
+    font-family: var(--font-family-secondary);
+}
+
+#title-header {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-family: "Quicksand", sans-serif;
+    color: var(--color1);
+    display: flex;
+    align-items: center;
+}
+
+#infoTable th {
+    /* Stile specifico per th dentro infoTable */
+    text-align: left;
+    padding: 10px;
+}
+/* Stile generale per la tabella */
+#details {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto; /* Centrare la tabella */
+    border-collapse: collapse;
+    font-size: 0.8em;
+}
+
+/* Stile per le celle di intestazione (th) */
+#details th {
+    text-align: left;
+    font-family: Arial, sans-serif;
+    color: white; /* Colore del testo nell'intestazione */
+    padding: 12px; /* Spaziatura interna */
+    background-color: var(--colorBackground);
+}
+
+/* Stile per le celle di dati (td) */
+#details td {
+    padding: 12px;
+    vertical-align: top; /* Allineamento verticale */
+    color: var(--text);
+}
+
+#details tr:nth-child(odd) td {
+
+    border-left: solid 1px #919191;
+}
+
+/* Hover effect uniforme per tutte le righe */
+#details tr:hover th,
+#details tr:hover td {
+    background-color: rgb(128, 108, 98); /* Colore uniforme durante l'hover */
+}
+ 
+/* Stile per i link (bottoni) nelle celle */ 
+#details a.btn {
+    display: inline-block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #ff7300;
+    border-radius: 4px;
+    margin-right: 5px; /* Spaziatura tra i bottoni */
+    margin-bottom: 7px;
+    transition: background-color 0.3s ease; /* Transizione per l'hover */
+}
+
+#details a.btn:hover {
+    background-color: #ffa45a;
+}
+/* Fine Info Table */

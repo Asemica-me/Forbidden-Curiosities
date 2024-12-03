@@ -1,14 +1,45 @@
 :root {
-    --color1: #dadada;
+    --color1: #cacaca;
     --color2: #f7d9ad;
     --color3: #52003a;
     --color4: #de7b0a;
     --color5: #4c4c4c;
     --colorBackground: #100202;
+    --text: #dcdcdc;
+    --dividers: #3e3e3e;
+    --font-family-primary: "Titillium", sans-serif;
+    --font-family-secondary: "Roboto Condensed", sans-serif;
+    --buttons: 'Arial', sans-serif;
 }
 
+/* Stile per i link */
+a {
+    color: var(--color4); /* Colore di base */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Transizione morbida per il cambio di colore e la sottolineatura */
+}
+
+a:hover {
+    color: #f9a340; /* Colore quando il mouse è sopra il link */
+    text-decoration: underline; /* Sottolinea il link al passaggio del mouse */
+}
+
+a:focus {
+    outline: none; /* Rimuove il bordo di focus predefinito */
+    box-shadow: 0 0 5px 2px rgba(222, 123, 10, 0.5); /* Aggiunge una leggera ombra per indicare il focus */
+}
+
+a:active {
+    color: #aa6210; /* Colore quando il link viene cliccato */
+}
 
 /* Stile per lo spinner */
+
+/* Classe che nasconde lo spinner e mostra il contenuto */
+body.loaded .loading-screen {
+    display: none;
+}
+
     .spinner {
         border: 5px solid #f3f3f3; /* Colore grigio chiaro */
         border-top: 5px solid #f9883d; /* Colore blu per la parte rotante */
@@ -20,8 +51,12 @@
 
     /* Animazione per lo spinner */
     @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
     }
 
     /* Quando la pagina è caricata, nascondi lo spinner */
@@ -29,9 +64,8 @@
         display: none;
     }
 
-    /* Stile per il contenuto principale */
-    .content {
-        display: none; /* Rende invisibile il contenuto fino al caricamento */
+    .hide-spinner {
+        display: none;
     }
 
     /* Pagina di caricamento */
@@ -44,7 +78,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgba(0, 0, 0, 0.721); /* Colore di sfondo, modifica qui */
+        background-color: #261312c2; /* Colore di sfondo, modifica qui */
         z-index: 9999; /* Lo spinner è sopra gli altri contenuti */
     }
 
@@ -55,25 +89,25 @@
 
            /* ANIMAZIONi DISSOLVENZA */
 
-           .hidden-animation-bottom-up {
-            opacity: 0; /* Invisibile all'inizio */
-            transform: translateY(50px); /* Inizia fuori schermo */
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
+.hidden-animation-bottom-up {
+    opacity: 0; /* Invisibile all'inizio */
+    transform: translateY(50px); /* Inizia fuori schermo */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
     
-        /* Keyframe per la dissolvenza con entrata dal basso */
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(50px); /* Partenza dal basso */
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0); /* Posizione finale */
-            }
-        }
+/* Keyframe per la dissolvenza con entrata dal basso */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* Partenza dal basso */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Posizione finale */
+    }
+}
     
-        /* Classe per l'animazione ingrasso dal basso (applicata a gallery) */
+        /* Classe per l'animazione ingrasso dal basso */
         .fade-in-up {
             animation: fadeInUp 1s ease-out; /* Durata e tipo di animazione */
             opacity: 1; /* Garantisce che l'elemento sia visibile */

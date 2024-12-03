@@ -12,9 +12,51 @@ body {
   overflow-x: hidden;
 }
 
-a:visited {
-  color: var(--mainColor);
+/* INZIO classi bottoni */
+
+.btn {
+  background-color: var(--mainColor);
+  color: white;
+  text-decoration: none;
+  padding: 1%;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
 }
+
+#about-content .btn span {
+  position: relative;
+  transition: 0.5s;
+}
+
+#about-content .btn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#about-content .btn:hover span {
+  padding-right: 25px;
+}
+
+#about-content .btn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.item-btn .btn {
+  padding: 2%;
+  transition: box-shadow 0.4s;
+}
+
+.item-btn .btn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.44), 0 17px 50px 0 rgba(0, 0, 0, 0.39);
+}
+
+/* FINE classi bottoni */
 
 #box {
   display: grid;
@@ -57,6 +99,15 @@ a:visited {
   visibility: hidden;
 }
 
+#upButton:hover {
+  transition: transform 0.4s;
+  transform: scale(1.1,1.1);
+}
+
+#upButton:active {
+  transform: scale(0.5,0.5);
+}
+
 #first-page {
   position: relative;
   height: inherit;
@@ -68,121 +119,6 @@ a:visited {
 /*================================================*/
 /* =============== Inizio Navbar =================*/      
 /*================================================*/
-
-@media screen and (min-height: 890px) {
-  div#timeline #line {
-    top: 2%;
-  }
-}
-
-@media screen and (max-width: 830px) {
-  
-  :root {
-    --wideScreen: False;
-  }
-
-  #upButton {
-    height: 70px;
-    width: 70px;
-  }
-  
-  div.navbar-body {visibility: hidden;}
-
-  div#img-right {
-    display: none;
-  }
-
-  div#img-left {
-    display: none;
-  }
-
-  div#welcome {
-    display: block;
-    width: 100%;
-  }
-
-  div#center {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-  }
-
-  div#center h1 {
-    font-size: calc(10vw * 0.9vh);
-    margin-top: 10%;
-  }
- 
-  div#timeline #line {
-    left: 7vw;
-    width: 1.5vw;
-  }
-
-  div#timeline div.item div.empty-box {
-    display:none;
-  }
-
-  div#timeline div.item{
-    grid-template-columns: 1fr;
-  }
-
-  div#timeline div#items div.item div.item-wrapper div.data-box div.data{
-    border-radius: 0 5px 5px 0;
-  }
-
-  div#timeline div.item-wrapper {
-    margin-right: 22%;
-    margin-left: 8%;
-  }
-}
-
-@media screen and (min-width: 831px) {
-  
-  #upButton {
-    height: 90px;
-    width: 90px;
-  }
-
-  div.menu {visibility: hidden;}
-
-  div#banner {
-    display: none;
-  }
-
-  div#timeline #line {
-    width: 0.5vw;
-  }
-
-  div#timeline div#items div.item:nth-child(odd) div.item-wrapper{
-    grid-template-columns: 5fr 1fr;
-    grid-column: 1;
-  }
-
-  div#timeline div#items div.item:nth-child(odd) div.empty-box{
-    grid-column: 2;
-  }
-
-  div#timeline div#items div.item:nth-child(odd) div.item-wrapper div.data-box div.data{
-    grid-column: 2;
-    margin-left: 30%;
-    border-radius: 5px 0 0 5px;
-  }
-
-  div#timeline div#items div.item:nth-child(even) div.item-wrapper div.data-box div.data{
-    margin-right: 30%;
-    border-radius: 0 5px 5px 0;
-  }
-
-  div#timeline div#items div.item:nth-child(odd) div.item-wrapper div.item-space{
-    grid-row: 1;
-  }
-
-  div#timeline div#items div.item:nth-child(odd) div.item-wrapper div.item-space div.image-box {
-    right: 0;
-  }
-
-  div#timeline div#items div.item:nth-child(even) div.item-wrapper div.item-space div.image-box {
-    left: 0;
-  }
-}
 
 #navbar {
   position: relative;
@@ -197,13 +133,13 @@ a:visited {
   grid-template-columns: 1fr 2fr 1fr;
 }
 
-.rom-navbar #logo-box {
+#logo-box {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#logo-box .logo {
+.logo {
   position: inherit;
   background-color: #444;
   height: 13vh;
@@ -355,38 +291,33 @@ a:visited {
 }
 
 #center {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-}
-
-#center #banner {
-  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #center h1 {
   position: relative;
-  margin-top: 15%;
+  margin-top: 20%;
   font-size: calc(50px + 0.390625vw);
   color: var(--mainColor);
   text-align: center;
 }
 
-#center #arrow {
-  margin-bottom: 15%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+#arrow {
+  position: absolute;
+  bottom: 0;
+  animation: pointing 2s ease-out;
 }
 
-#center #arrow img {
+#arrow img {
   height: 100px;
   width: 100px;
-  transition: 0.7s;
 }
 
-#center #arrow img:hover {
-  height: 120px;
-  width: 120px;
+@keyframes pointing {
+  from {transform: translateY(-150%);}
+  to {transform: translateY(0%);}
 }
 
 /*================================================*/
@@ -406,27 +337,22 @@ a:visited {
   color: var(--mainColor);
 }
 
-#about #about-content {
+#about-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-#about #about-content h2 {
+#about-content h2 {
   text-align: center;
   font-size: calc(45px + 0.390625vw);
 }
 
-#about #about-content p {
+#about-content p {
   max-width: 500px;
   text-align: justify;
   font-size: calc(15px + 0.390625vw);
-}
-
-#about #about-content button {
-  width: 10%;
-  min-width: 128px;
 }
 
 /*================================================*/
@@ -436,6 +362,75 @@ a:visited {
 /*================================================*/
 /* ============== Inizio timeline ================*/
 /*================================================*/
+
+#side-search {
+  position: fixed;
+  top: 30%;
+  left: 0;
+  z-index: 4;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--mainColor);
+}
+
+.search-header {
+  text-align: center;
+}
+
+#side-banner {
+  display: inline-flex;
+  flex-direction: row;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+}
+
+.side-arrow {
+  background-color: white;
+  height: 1em;
+  width: 1em;
+}
+
+.side-arrow img {
+  max-width: 100%;
+  max-width: 100%;
+}
+
+.search-logo {
+  background-color: white;
+  height: 1em;
+  width: 1em;
+}
+
+.search-logo img {
+  max-width: 100%;
+  max-width: 100%;
+}
+
+#top-search {
+  position: fixed;
+  top: 0;
+  justify-self: center;
+  z-index: 4;
+  color: white;
+  background-color: var(--mainColor);
+}
+
+#top-banner {
+  display: flex;
+  flex-direction: row;
+}
+
+.top-arrow {
+  background-color: white;
+  height: 1em;
+  width: 1em;
+}
+
+.top-arrow img {
+  max-width: 100%;
+  max-width: 100%;
+}
 
 #timeline {
   position: relative;
@@ -465,14 +460,14 @@ a:visited {
   text-align: center;
 }
 
-#timeline #items {
+#items {
   position: relative;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
 }
 
-#timeline #line {
+#line {
   position: absolute;
   left: 49.5vw;
   top: 2.8%;
@@ -483,88 +478,130 @@ a:visited {
   background-color: var(--mainColor);
 }
 
-#timeline .item {
+.item {
   position: relative;
   margin-top: 5vh;
   height: 50vh;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
 }
 
-#timeline .item:last-child {
+.item:last-child {
   margin-bottom: 15vh;
 }
 
-#timeline .item-wrapper {
-  position: relative;
-  height: inherit;
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-}
-
-.item-wrapper .item-space {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  height: inherit;
-  border-radius: 10px;
-}
-
-.item-wrapper .item-space .image-box {
+/*media query: width: 50%/100% left/right, row/row-reverse*/
+.item-wrapper {
   position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: inherit;
-  min-width: 30%;
-  border-radius: 10px;
-  opacity: 0;
-  animation: "";
+  display: flex;
 }
 
-/* Animations for images - START */
-@keyframes right-enter {
-  from {opacity: 0; transform: translateX(100%);}
-  to {opacity: 1; transform: translateX(0);}
+.data-box {
+  position: relative;
+  width: 4em;
+}
+
+/*media query: left/right*/
+.data {
+  position: absolute;
+  background-color: var(--mainColor);
+  color: white;
+  text-align: center;
+  width: 0;
+  opacity: 0;
+  transition: opacity 2s ease, width 1s ease;
+}
+
+.entrance {
+  width: 3em;
+  opacity: 1;
+}
+
+.image-box {
+  position: relative;
+  height: inherit;
+  width: auto;
+  opacity: 0;
 }
 
 @keyframes left-enter {
-  from {opacity: 0; transform: translateX(-100%);}
-  to {opacity: 1; transform: translateX(0);}
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }  
 }
-/* Animations for images - END */
 
-.item-wrapper .item-space .image-box .info-bar {
+@keyframes right-enter {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.enter {
+  opacity: 1;
+}
+
+.image-box img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.info-bar {
+  position: absolute;
+  top: 0;
   height: 100%;
   width: 100%;
-  border-radius: 10px;
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.4);
-  visibility: hidden;
-}
-
-.item-wrapper .item-space .image-box .info-bar p {
-  padding: 0 10% 0 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.4s;
+  color: white;
+  box-shadow: 6px 6px 6px 6px rgba(0, 0, 0), 6px 6px 6px 6px rgba(0, 0, 0);
 }
 
-.item-wrapper .item-space .image-box .infoButton {
+.active {
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+
+.info-btn {
+  transition: box-shadow 0.4s;
+}
+
+.info-btn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.44), 0 17px 50px 0 rgba(0, 0, 0, 0.39);
+}
+
+.infoButton {
   position: absolute;
   right: 0;
   top: 0;
   height: 50px;
   width: 50px;
+  border-radius: 50%;
+  z-index: 1;
   visibility: visible;
 }
 
-.item-wrapper .item-space .image-box .infoCloser {
+.infoCloser {
   position: absolute;
   right: 0;
   top: 0;
   height: 50px;
   width: 50px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -572,262 +609,23 @@ a:visited {
   visibility: hidden;
 }
 
-.item-wrapper .item-space .image-box .info-bar h4 {
+.info-bar h4 {
+  position: relative;
   text-align: center;
   color: white;
   font-size: calc(20px + 0.390625vw);
 }
 
-.item-wrapper .item-space .image-box .info-bar p {
-  color: white;
-  font-size: calc(15px + 0.390625vw);
-}
 
-#timeline .item-wrapper .item-space .image-box img {
-  border-radius: 10px;
-  max-height: 100%;
-  max-width: 100%;
-}
-
-.item-wrapper .item-space .image-box .info-bar .bottone{
+.item-btn {
   display: flex;
+  align-items: center;
   justify-content: center;
-  height: 10%;
-}
-
-.item-wrapper .item-space .image-box .info-bar .bottone #timeButton{
-  border-radius: 5px;
-  border: 0;
-  background-color:var(--mainColor);
-  color: white;
-  width: 50%;
-  font-size: calc(10px + 0.390625vw);
-}
-
-.item-wrapper .item-space .image-box .info-bar .bottone #timeButton:hover {
-  color:var(--mainColor);
-  background-color: black;
-  border: 2px solid var(--mainColor);
-}
-
-#timeline .item-wrapper .data-box {
-  position: relative;
-  margin-top: 25%;
-  overflow: hidden;
-}
-
-
-#timeline .item-wrapper .data-box .data {
-  position: relative;
-  color:#ffffff;
-  font-size: calc(18px + 0.390625vw);
-  height: fit-content;
-  text-align: center;
-  background-color: var(--mainColor);
-  transition: width 0.5s ease;
 }
 
 /*================================================*/
 /* ============== Fine timeline ================*/
 /*================================================*/
-
-/*================================================*/
-/* ============= inizio narratives ===============*/
-/*================================================*/
-.content {
-  text-align: center;
-}
-
-.icon{
-  align-self: center;
-  margin: 50px 0;
-  width: 100px;
-  height: auto;
-}
-
-.nar-h2 {
-  font-size: 20px;
-  margin: 20px 0;
-  color: #f2f2f2;
-}
-
-/*modal*/
-
-#sumModal {
-  display: none; 
-  position: fixed; 
-  width: 60%; 
-  height: 80%; 
-  background-color: var(--mainColor); 
-  border-radius: 10px;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%); 
-  z-index: 1000;
-}
-
-#closebtn {
-  background: none;
-  border: none;
-  color: #fb0505; 
-  font-size: 20px; 
-  font-weight: bold;
-  cursor: pointer; 
-  position: absolute; 
-  top: 10px;
-  right: 15px;
-}
-
-#modalContent {
-  margin-top: 40px; /* Adds space below the close button */
-}
-
-#sumTitle {
-  font-size: 24px; /* Larger title */
-  margin-bottom: 10px;
-  color: #333; /* Dark text for the title */
-}
-
-#sumCont {
-  margin-top: 5%;
-  padding-left: 3%;
-  font-size: 16px;
-  color: #555; /* Slightly lighter text for the content */
-  line-height: 1.5; /* Improve readability */
-  text-align: left;
-  overflow-y: auto;
-
-}
-
-#goNar {
-  height: 40px;
-  width: 40%;
-  position: absolute;
-  bottom: 10px; 
-  left: 50%; 
-  transform: translateX(-50%); 
-  background-color: #6c6c6c; 
-  color: rgb(35, 179, 219); 
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  
-  transition: background-color 0.3s ease; 
-}
-
-#goNar:hover {
-  background-color: #ffffff; /* Darker blue on hover */
-}
-
-@media (max-width: 1200px) {
-  #sumModal {
-    width: 60%; 
-  }
-
-}
-
-@media (max-width: 1000px) {
-  #sumModal {
-    width: 70%; 
-  }
-
-
-}
-
-@media (max-width: 800px) {
-  #sumModal {
-    width: 80%; 
-    
-  }
-
-  
-}
-
-@media (max-width: 600px) {
-  #sumModal {
-    width: 90%;
-  }
-  #goNar {
-    font-size: 14px;
-  }
-
-  #sumCont {
-    font-size: 14px;
-  }
-
-  
-}
-
-@media (max-width: 300px) {
-  #sumModal {
-    width: 90%;
-  }
-  
-  #goNar {
-    font-size: 14px;
-  }
-
-  #sumCont {
-    font-size: 12px;
-  }
-
-
-}
- 
-
-
-
-
-/* ============ Buttoni Pietro====================*/      
-
-.btnCont{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    height: 50px ;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    
-}
-
-.narBtn {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-  background-color:  var(--mainColor);
-  color: white;
-  height: 5vh ;
-  border: none;
-  padding: 10px 20px;
-  margin: 5px;
-  cursor: pointer;
-  border-radius: 10px;
-  transition: background-color 0.3s;
-  width: 40%;  /*Responsive button width */
-  max-width: 250px; /* Limit the button width */
-}
-
-.narBtn:hover {
-  background-color: black;
-  border: 1px solid var(--mainColor);
-}
-
-.narBtn:active {
-  background-color: black;
-  border: 1px solid var(--mainColor);
-}
-
-
-/* ============ Fine Buttoni Pietro ==============*/      
-
-
-/*================================================*/
-/* =============== Fine narratives ===============*/
-/*================================================*/
-
 
 /* =============== Inizio Footer =================*/   
 
@@ -841,3 +639,80 @@ footer {
 }
 
 /* =============== Fine Footer =================*/
+
+@media screen and (min-height: 890px) {
+  #line {
+    top: 2%;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  
+  :root {
+    --wideScreen: False;
+  }
+
+  #upButton {
+    height: 70px;
+    width: 70px;
+  }
+  
+  div.navbar-body {visibility: hidden;}
+
+  span#line {
+    left: 7vw;
+    width: 1.5vw;
+  }
+  
+  div.image-box {
+    max-width: 75%;
+  }
+
+  div.item-wrapper {
+    width: 93vw; /* deve essere regolato in base a left e alle immagini */
+    left: 7vw; /* deve essere lo stesso valore di #line*/
+    flex-direction: row;
+  }
+
+  div.data {
+    left: 0;
+  }
+}
+
+@media screen and (min-width: 831px) {
+  
+  #upButton {
+    height: 90px;
+    width: 90px;
+  }
+
+  div.menu {visibility: hidden;}
+
+  span#line {
+    width: 0.5vw;
+  }
+
+  div.item-wrapper {
+    width: 50%;
+  }
+
+  /*media query: left/right, row/row-reverse*/
+  div.item:nth-child(odd) div.item-wrapper {
+    left: 0;
+    flex-direction: row-reverse;
+  }
+
+  div.item:nth-child(even) div.item-wrapper {
+    right: 0;
+    flex-direction: row;
+  }
+
+  /*media query: left/right*/
+  div.item:nth-child(odd) div.data {
+    right: 0;
+  }
+
+  div.item:nth-child(even) div.data {
+    left: 0;
+  }
+}

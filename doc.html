@@ -4,304 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Documentation</title>
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/doc.css">
+    <script src="assets/java/common.js"></script>
 </head>
-<style>
-    /* General Styling */
-    body {
-        margin: 0;
-        font-family: 'Poppins', sans-serif;
-        display: flex;
-        color: #333;
-    }
-
-    footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 11px 0;
-}
-
-    .container {
-        display: flex;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-    }
-
-    /* Article Styling */
-    .article {
-        flex: 3;
-        overflow-y: auto;
-        padding: 20px;
-        background: #0f0007e3;
-        color: rgba(255, 255, 255, 0.913);
-        box-shadow: inset -3px 0 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .article-header {
-        background: #ff6d6d21;
-        padding: 15px;
-        color: rgba(255, 255, 255, 0.82);
-        text-align: center;
-        border-radius: 5px;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .article h2, .article h3 {
-        color: #745767fc;
-        margin-bottom: 10px;
-    }
-
-    .article p {
-        margin-bottom: 20px;
-        line-height: 1.8;
-        text-align: justify;
-    }
-
-    /* Hide Scrollbars */
-    .article::-webkit-scrollbar,
-    .menu::-webkit-scrollbar {
-        display: none; /* Hide scrollbar in WebKit browsers */
-    }
-
-    .article {
-        -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
-        scrollbar-width: none;    /* Hide scrollbar in Firefox */
-    }
-
-    .menu {
-        -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
-        scrollbar-width: none;    /* Hide scrollbar in Firefox */
-    }
-
-
-    /* Menu Styling */
-    .menu {
-        flex: 1;
-        background: #0f0007e3;
-        padding: 20px;
-        overflow-y: scroll;
-        box-shadow: inset 3px 0 5px rgba(0, 0, 0, 0.1);
-        color: white;
-        position: relative;
-        transition: transform 0.3s ease;
-        height: 100%; /* Assicura che il menu occupi l'intera altezza del contenitore */
-    }
-
-    .menu-header {
-        text-align: center;
-        font-size: 1.5em;
-        margin-bottom: 20px;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.4);
-        padding-bottom: 10px;
-    }
-
-    .menu ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .menu li {
-        margin: 15px 0;
-    }
-
-    .menu a {
-        text-decoration: none;
-        font-weight: bold;
-        display: block;
-        padding: 10px 15px;
-        border-radius: 5px;
-        background: #ff6d6d21;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .menu a:hover {
-        background: rgba(255, 255, 255, 0.4);
-        color: #333;
-    }
-
-    /* Smooth scrolling animation */
-    html {
-        scroll-behavior: smooth;
-    }
-
-    /* Gerarchie del Menu */
-    .menu .chapter {
-        font-size: 1.2rem;
-        font-weight: bold;
-        color: #ffffffb6;
-        margin: 15px 0;
-        padding-left: 10px;
-        box-shadow: 2px 2px 3px #ffffff17; 
-    }
-
-    .menu .subchapter {
-        font-size: 1rem;
-        font-weight: normal;
-        color: #e0f7faaf;
-        margin: 8px 0;
-        padding-left: 20px; /* Indentazione */
-        box-shadow: 2px 2px 3px #ffffff17; 
-    }
-
-    .menu .subsubchapter {
-        font-size: 0.9rem;
-        font-weight: normal;
-        color: #b2ebf2e7;
-        margin: 5px 0;
-        padding-left: 30px; /* Maggiore indentazione */
-        box-shadow: 2px 2px 3px #ffffff17; 
-    }
-
-    .menu .chapter:active,
-    .menu .subchapter:active 
-    .menu .subchapter.active {
-    border-left: 2px solid #80deea; /* Colore più acceso al clic */
-    background-color: rgba(51, 182, 199, 0.1); /* Sfondo leggermente visibile */
-    transform: scale(0.98); /* Leggera contrazione per un effetto di pressione */
-    }
-
-    /* Hover Effects */
-    .menu .chapter:hover,
-    .menu .subchapter:hover,
-    .menu .subsubchapter:hover,
-    .menu .chapter:active,
-    .menu .subchapter:active,
-    .menu .subsubchapter:active {
-        background: rgba(255, 255, 255, 0.235);
-        cursor: pointer;
-        color: white;
-        transition: background 0.4s ease;
-        border-left: 2px solid rgba(255, 255, 255, 0.5); /* Linea laterale più sottile */
-    }
-
-
-/* Styling MENU */
-
-.hamburger {
-    display: none; /* Nascondi l'hamburger di default */
-    position: absolute;
-    top: 50px;
-    right: 30px;
-    background: rgba(255, 255, 255, 0.747);
-    border: none;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 1000;
-    border-radius: 4px;
-}
-
-
-/* Media Query per Smartphone */
-@media (max-width: 768px) {
-    .menu {
-        position: fixed;
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 70%;
-        transform: translateX(100%); /* Nascondi il menu */
-        background: #0f0007e3;
-        box-shadow: -5px 0 10px rgba(0, 0, 0, 0.5);
-        z-index: 999;
-        overflow-y: auto;
-        padding-top: 60px; /* Per evitare sovrapposizione con l'hamburger */
-    }
-
-    .menu.open {
-        transform: translateX(0); /* Mostra il menu */
-    }
-
-    .hamburger {
-        display: block; /* Mostra l'hamburger */
-    }
-}
-
-
-
-/* highlight animation */
-@keyframes highlightAnimation {
-    0% {
-        background-color: transparent;
-        color: inherit;
-    }
-    50% {
-        background-color: rgba(255, 255, 255, 0.096);
-        color: inherit;
-    }
-    100% {
-        background-color: transparent;
-        color: inherit;
-    }
-}
-
-/* Style for highlighted sections */
-.highlighted {
-    animation: highlightAnimation 1s ease-in-out;
-    border-radius: 2px;
-}
-
-
-    /* Stile per lo spinner */
-    .spinner {
-            border: 5px solid #f3f3f3; /* Colore grigio chiaro */
-            border-top: 5px solid #db3490; /* Colore blu per la parte rotante */
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 2s linear infinite;
-        }
-
-        /* Animazione per lo spinner */
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Quando la pagina è caricata, nascondi lo spinner */
-        .loaded .spinner {
-            display: none;
-        }
-
-        /* Stile per il contenuto principale */
-        .content {
-            display: none; /* Rende invisibile il contenuto fino al caricamento */
-        }
-
-        /* Pagina di caricamento */
-        .loading-screen {
-            position: fixed; /* Posiziona lo spinner in modo fisso */
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.804); /* Colore di sfondo, modifica qui */
-            z-index: 9999; /* Lo spinner è sopra gli altri contenuti */
-        }
-
-        /* Classe che nasconde lo spinner e mostra il contenuto */
-        body.loaded .loading-screen {
-            display: none;
-        }
-</style>
 <body>
 
-<div class="loading-screen">
-<!-- Spinner visibile mentre la pagina sta caricando -->
-<div class="spinner"></div>
-</div>
-
-    <div class="content">
+    <!-- Pagina di caricamento (spinner) -->
+    <div class="loading-screen">
+        <div class="spinner"></div>
+    </div>
 
     <div class="container">
         <!-- Scrollable Article Section -->
@@ -311,30 +23,76 @@
             </div>
             <section id="abstract">
                 <h2>Abstract</h2>
-                <p>This project will delve into items that stirred debate, challenged norms, or had unexpected impacts, offering a provocative look at how controversy can drive change.
-                    Whether you're exploring the scientific revolutions sparked by Galileo's Telescope or contemplating the cultural provocations of Van Gogh’s "Starry Night", this application is your gateway to discovering the stories behind each artifact, unravelling their roles in shaping our past and present.
-                    Visitors can enjoy a journey through history with this digital companion, empowering them to explore, learn, and reflect on the controversies and innovations that have shaped our world.
-                    </p>
+                <p>This project delves into items that stirred debate, challenged norms, or had unexpected impacts, offering a provocative look at how controversy can drive change. Bridging the gap between physical exhibits and digital engagement, the project aims at fostering deeper understanding and reflection on the dynamic intersections of culture, science, and societal evolution.</p>
+                <p>Whether you're exploring the scientific revolutions sparked by Galileo's Telescope or contemplating the cultural provocations of Courbet’s "L’Origine du Monde", this application is your gateway to discovering the stories behind each artifact, unravelling their roles in shaping our past and present.</p>
+                <p>Visitors can enjoy a journey through history with this digital companion, empowering them to explore, learn, and reflect on the controversies and innovations that have shaped our world.</p>
             </section>
             <section id="introduction">
                 <h2>1. Introduction</h2>
                 <section id="overview">
                     <h3>1.1 Overview</h3>
-                    <p>Nullam odio orci, vehicula vitae nisi sed, finibus gravida ligula. Quisque sed lectus non odio dignissim pulvinar vitae consectetur quam. Vivamus hendrerit dui nec dui tristique faucibus. Proin fermentum euismod erat, nec accumsan nunc rhoncus a. In hac habitasse platea dictumst. Nulla facilisi. Vestibulum rhoncus nibh ut libero tincidunt, in tempus libero pretium. Mauris turpis massa, fermentum id egestas et, vulputate quis diam. Etiam malesuada molestie ligula id eleifend.</p>
+                    <p>This project introduces a framework for virtual exploration and narrative engagement with a collection of physical artifacts. The exhibition focuses on items that have sparked debate, challenged societal norms, or catalyzed unexpected impacts, providing a thought-provoking examination of how controversy can drive societal change.</p>
+                    <p>The digital companion facilitates immersive experiences for visitors, offering in-depth narratives and multimedia content that illuminate the significance of each artifact. Through the digital application, visitors are invited to embark on a journey through history, enabling them to explore, learn, and contemplate the controversies and innovations that have shaped our collective past and present. </p>
+                    <p>As visitors navigate the exhibition, the app offers detailed descriptions and narratives tailored to enhance their understanding based on their interests and background. For those on the go, concise summaries highlight key facts and significance. For educators and curious minds, delve deeper with pedagogical insights and historical contexts, fostering a deeper appreciation of each artifact's impact. </p>
                 </section>
                 <section id="objectives">
                     <h3>1.2 Objectives</h3>
                     <p>The main objectives of the web application for visiting the exhibition are to provide users with an interactive and informative experience that enhances their engagement with the physical artifacts on display. The website will serve as a comprehensive digital companion, aiming to achieve the following:</p>
+                    <p><ul>
+                        <li><b>Enhanced Engagement:</b> Create an immersive experience that allows users to explore each exhibit in detail through multimedia elements such as images and interactive info boxes.</li>
+                        <li><b>Educational Value:</b> Provide informative narratives and historical contexts tailored to different levels of interest and understanding, including concise summaries for quick insights and detailed explanations for deeper exploration.</li>
+                        <li><b>Accessibility and Convenience:</b> Facilitate easy navigation through the exhibition via online explanations, ensuring visitors can access relevant information seamlessly on their personal devices.</li>
+                        <li><b>Reflection and Learning:</b> Foster critical thinking and reflection on the controversies and innovations represented by each object, prompting users to consider their broader societal and historical impacts.</li>
+                        <li><b>Technical Reliability:</b> Ensure the web application is robust, user-friendly, and compatible across various devices, providing a smooth and uninterrupted user experience during the exhibition visit.</li>
+                        <li><b>Promotion of Cultural Heritage:</b> Promote cultural heritage and historical awareness by presenting the stories and significance of each artifact in a compelling and accessible manner.</li>
+                    </ul></p>
                 </section>
                 <section id="requirements">
                     <h3>1.3 Requirements</h3>
-                    <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. Maecenas in velit vel mi feugiat ornare facilisis vitae turpis.</p>
+                    <p>See <a href="https://github.com/Asemica-me/Forbidden-Curiosities/blob/main/assets/data/items.json" target="_blank">here</a> the full dataset of the items.</p>
                 </section>
                 <section id="exhibition">
                     <h2>2. The Exhibition</h2>
                     <section id="objects">
                         <h3>2.1 Displayed Objects</h3>
-                    <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. Maecenas in velit vel mi feugiat ornare facilisis vitae turpis.</p>
+                    <p>The team selected the following items.</p>
+                
+                    <table>
+                        <thead>
+                            <tr class="align-center">
+                                <th rowspan="2">Item Title</th>
+                                <th colspan="3" class="narratives-cell">Narratives</th>
+                            </tr>
+                            <tr class="align-center">
+                                <td>Period</td>
+                                <td>Theme</td>
+                                <td>Typology</td>
+                            </tr>
+                        </thead>
+                        <tbody class="align-left">
+                            <tr><td>1. Arquebus</td><td>XV-XVII Century</td><td>Ethics of war</td><td>Weapon</td></tr>
+                            <tr><td>2. Vitruvian Man</td><td>XV-XVII Century</td><td>Religious dissent</td><td>Artwork</td></tr>
+                            <tr><td>3. Luther’s 95 Theses</td><td>XV-XVII Century</td><td>Religious dissent</td><td>Text</td></tr>
+                            <tr><td>4. Galileo's Telescope</td><td>XV-XVII Century</td><td>Scientific revolution; Religious dissent</td><td>Tool</td></tr>
+                            <tr><td>5. Victorian Corset</td><td>XVIII-XIX Century</td><td>Women's history</td><td>Garment</td></tr>
+                            <tr><td>6. Guillotine</td><td>XVIII-XIX Century</td><td>Etichs of war</td><td>Weapon</td></tr>
+                            <tr><td>7. On the Origin of Species, Darwin</td><td>XVIII-XIX Century</td><td>Scientific revolution; Religious dissent</td><td>Text</td></tr>
+                            <tr><td>8. Origine du Monde by Gustave Courbet</td><td>XVIII-XIX Century</td><td>Provocative art</td><td>Artwork</td></tr>
+                            <tr><td>9. Marie Curie’s Studies</td><td>First half of XX Century</td><td>Women's history; Scientific revolution</td><td>Text; Event</td></tr>
+                            <tr><td>10. Suffragettes' Hunger Strike Medal</td><td>First half of XX Century</td><td>Women’s history</td><td>Event</td></tr>
+                            <tr><td>11. Enigma Machine</td><td>First half of XX Century</td><td>Ethics of war; Digital privacy</td><td>Tool</td></tr>
+                            <tr><td>12. "Little Boy" Atomic Bomb</td><td>First half of XX Century</td><td>Ethics of war</td><td>Weapon</td></tr>
+                            <tr><td>13. PlayBoy Magazine's first issue</td><td>Second half of XX Century</td><td>Women's history</td><td>Text</td></tr>
+                            <tr><td>14. Mini-skirt by Mary Quant</td><td>Second half of XX Century</td><td>Women's history</td><td>Garment</td></tr>
+                            <tr><td>15. Nasa Moon Landing photo</td><td>Second half of XX Century</td><td>Scientific revolution</td><td>Event</td></tr>
+                            <tr><td>16. "Shoot" by Chris Burden</td><td>Second half of XX Century</td><td>Provocative art</td><td>Artwork</td></tr>
+                            <tr><td>17. Dolly the Cloned Sheep</td><td>Second half of XX Century</td><td>Scientific revolution</td><td>Event</td></tr>
+                            <tr><td>18. "For the Love of God" by Damien Hirst</td><td>XXI Century</td><td>Provocative art</td><td>Artwork</td></tr>
+                            <tr><td>19. Snowden’s Revelations</td><td>XXI Century</td><td>Digital privacy</td><td>Event</td></tr>
+                            <tr><td>20. AI Image of Pope Francis</td><td>XXI Century</td><td>Digital privacy; Religious dissent</td><td>Artwork</td></tr>
+                        </tbody>
+                    </table>
+                
                 </section>
                     <section id="map">
                         <h3>2.2 Map of the Exhibition</h3>
@@ -342,12 +100,17 @@
                     </section>
                     <section id="narratives">
                         <h3 id="narratives">2.3 Narratives</h3>
+                        <p>The texts of the visit are organized around a set of narratives, guiding visitors through the rooms in a purposeful way rather than allowing them to wander randomly. This structure encourages visitors to move back and forth as they follow the specific storytelling approach of the app. As a result, the order, and even the inclusion, of each item in the visit depends entirely on the narrative chosen by the visitor, with the interface adjusting accordingly.</p>
+                        <p>By choosing from these narratives, visitors can tailor their experience to their interests, with the interface dynamically adjusting to support their chosen perspective. This tailored approach not only enriches the visitor's engagement with the content but also enhances the overall effectiveness of the storytelling within the app.</p>
+                        <ul>
                             <h4 id="historical-period">(a) Historical Period</h4>
-                            <p>Lorem ipsum dolor sit amet...</p>
+                            <p>This narrative breaks down the content into specific time periods, including the XV-XVII centuries, XVIII-XIX centuries, the first half of the XX century, the second half of the XX century, and the XXI century. This approach allows visitors to experience the exhibits in chronological order, providing a historical context to the artifacts.</p>
                             <h4 id="topic">(b) Topic</h4>
-                            <p>Lorem ipsum dolor sit amet...</p>
+                            <p>Visitors can explore the exhibits through various thematic lenses, such as Women's History, the Scientific Revolution, the Ethics of War, Religious Dissent, Provocative Art, and Digital Privacy. This narrative emphasizes the thematic connections between different artifacts and events, offering a deeper understanding of the issues and ideas represented.</p>
                             <h4 id="artifact-type">(c) Artifact Type</h4>
-                            <p>Lorem ipsum dolor sit amet...</p>
+                            <p>This narrative categorizes the exhibits by their types, including Event, Text, Tool, Artwork, Garment, and Weapon. By focusing on the nature of the artifacts themselves, this approach allows visitors to explore the diverse forms of historical and cultural objects on display.</p>
+                        </ul>
+                        <p>To see more about these narratives, visit the <a href="https://asemica-me.github.io/Forbidden-Curiosities/" target="_blank">online platform</a> of the application, either in its desktop version or smartphone.</p>
                     </section>
                 
                 <section id="prototype">
@@ -373,7 +136,25 @@
 
 
                 <h2>5. Use Cases</h2>
-                <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. 
+                <p>The application develops personalized narratives for three different user personas, customize the level of detail and language complexity based on each user's age, competencies, native language and available time.</p>
+                <p><ul>
+                    <b>1. Bruno the Businessman:</b></br>
+                    <li>Narrative tailored to a busy professional with limited time (shorter description).</li>
+                        <li>Concise descriptions and quick navigation options for efficient exploration.</li>
+                        <li>Highlight practical applications or business-related insights related to the exhibition's theme.</li>
+                        </p>
+                    <b>2. Alice the Middle-School Teacher:</b></br>
+                    <li>Narrative focused on pedagogical interest (longer description).</li>
+                        <li>Simple language and clear explanations suitable for middle-school students.</li>
+                        <li>Emphasis on educational value and learning objectives.</li>
+                        </p>
+                    <b>3. Carla the PhD Student:</b></br>
+                    <li>Narrative designed for an academic audience seeking in-depth analysis (full description).</li>
+                        <li>Detailed descriptions and references to scholarly research.</li>
+                        <li>Opportunities for deeper exploration and critical thinking.</li>
+                        </p>
+                </ul><p>
+                <p>To see more about these descriptions, visit the online platform of the application.</p>
             </section>
 
             <section id="design">
@@ -385,7 +166,23 @@
                 </section>
                 <section id="color">
                     <h3>6.2 Color Usage</h3>
-                <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. Maecenas in velit vel mi feugiat ornare facilisis vitae turpis.</p>
+                <p>boh</p>
+                <h4>Why choosing a dark background color?</h4>
+                <ul>
+                   <li><b>Enhanced Focus on Content:</b><br>
+                    Dark backgrounds help to direct the user's attention to the content, such as album art, track names, and playback controls. By providing a dark backdrop, the vibrant colors of images, buttons, links and other visual elements stand out more prominently. This creates a more immersive experience where the primary focus remains on the content and its associated visuals.</li> 
+                    <li><b>Reduced Eye Strain:</b><br>
+                    For users who spend long periods using the app, black or dark backgrounds can reduce eye strain compared to bright, white backgrounds. This is particularly beneficial in low-light environments such a museum exhibition, where dark mode can be easier on the eyes and more comfortable for extended reading sessions.</li>
+                    <li><b>Battery Efficiency:</b><br>
+                    On OLED and AMOLED screens, dark backgrounds can contribute to better battery efficiency. These screens work by lighting up individual pixels, so displaying black or dark colors uses less power compared to bright colors. As a result, dark backgrounds can help extend battery life, which is advantageous for users who rely on their mobile devices throughout the day.</li>
+                    <li><b>Elegant and Modern Aesthetic:</b><br>
+                    Dark backgrounds are often associated with sophistication and modernity. Considering for instance apps like Spotify, which are deeply integrated into the entertainment and music industry, a sleek, dark design can convey a sense of high-end quality and style. This aesthetic aligns well with the app's branding of Forbidden Curiosities project and the overall user experience.</li>
+                    <li><b>Improved Visual Contrast:</b><br>
+                    Dark backgrounds enhance the contrast of text and interactive elements, making them more readable and visually striking. For instance, white or brightly colored text and icons pop against a dark background, which can improve accessibility and user interface clarity.</li>
+                    <li><b>Minimal Distractions:</b><br>
+                    Dark backgrounds create a minimalist environment that reduces visual clutter. This focus on simplicity allows users to concentrate on the content and interactions without being distracted by a busy or colorful interface. It promotes a more seamless and enjoyable listening experience.</li>
+                </ul>
+                <p>In summary, a dark color for the background is chosen for its ability to enhance content visibility, reduce eye strain, improve battery efficiency, and maintain a modern aesthetic. It aligns with the app's brand identity and provides a user-friendly experience that supports extended use and visual comfort.</p>
                 </section>
                 <section id="feedback">
                     <h3>6.3 Interactive Elements and Feedback</h3>
@@ -399,7 +196,13 @@
 
             <section id="references">
                 <h2>7. Refernces</h2>
-                <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. 
+                <p><ul>
+                    <li><a href="https://www.labonne.mx/en" target="_blank">La Bonne</a></li>
+                    <li><a href="https://www.w3schools.com/" target="_blank">W3Schools</a></li> 
+                    <li><a href="https://www.browserstack.com/guide/ideal-screen-sizes-for-responsive-design" target="_blank">BrowserStack</a></li>
+                    <li><a href="https://www.britishmuseum.org/" target="_blank">The British Museum</a></li>
+                    <li><a href="https://www.metmuseum.org/" target="_blank">The MET</a></li> 
+                </ul></p>                    
             </section>
             <section id="rights">
                 <h2>8. Rights and Licences</h2>
@@ -443,7 +246,7 @@
             <a href="#use-cases" class="chapter">5. Use Cases</a>
             <a href="#design" class="chapter">6. Design Specifications</a>
             <a href="#design" class="subchapter">6.1 Visual Design</a>
-            <a href="#color" class="subchapter">6.2 Color Specifications</a>
+            <a href="#color" class="subchapter">6.2 Color Usage</a>
             <a href="#feedback" class="subchapter">6.3 Interactive Elements and Feedback</a>
             <a href="#typography" class="subchapter">6.4 Typography</a>
             <a href="#references" class="chapter">7. References</a>
@@ -489,7 +292,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     </script>
-    <script src="assets/java/common.js"></script>
+
     <footer>
     <!-- Copyright -->
     © 2024 Copyright: <a href="index.html">Forbidden Curiosities</a>

@@ -123,6 +123,23 @@ function showInfo(index) {
     let item = currentSelection[index];
     currentSort = item['@sort'];
     inner("title-header",item.shortName);
+
+    // Creazione dell'elemento div contenente l'icona
+    const iconDiv = document.createElement("div");
+    iconDiv.classList.add("icon-class");  // Aggiungi classe div
+
+    const iconImg = document.createElement("img");
+    iconImg.src = "assets/img/icons/obj-icon.png"; 
+    iconImg.alt = "Icona";
+    iconImg.classList.add("icon-obj");
+    iconDiv.appendChild(iconImg);
+
+    // Seleziona l'elemento h3 title-header
+    const titleHeader = byId("title-header");
+
+    // Inserisci l'icona prima dell'h3
+    titleHeader.insertBefore(iconDiv, titleHeader.firstChild);
+
     byId("img").src = item.image;
     byId("img").alt = item.shortName;
     createInfoTable(item);
@@ -145,7 +162,7 @@ function createInfoTable(item) {
     inner("infoTable","",true) ;
     const exb_room = "<tr><th>Exhibition Room</th><td><a type=\"button\" class=\"btn\" href=\"#\" onclick=\"changeNarrative(\'Historical Period\',\'";
     for (i in item.info) {
-        if (["Type", "Controversies/Debates", "Significance", "Exhibition"].includes(i)) continue; 
+        if (["Type", "Exhibition"].includes(i)) continue; 
         if (item.info[i] !== null) {
             if (narratives.includes(i)) {
                 if (i==="Historical Period") {
@@ -160,7 +177,7 @@ function createInfoTable(item) {
                         }
                         val.push(`<a type="button" class="btn" href="#" onclick="changeNarrative('${i}', '${theme}')">${themes[j]}</a>`)
                     }
-                    inner("infoTable","<tr><th>"+i+"</th><td>"+val.join(", ")+"</td></tr>", false);
+                    inner("infoTable","<tr><th>"+i+"</th><td>"+val.join(" ")+"</td></tr>", false);
                 }
             } else {
                 inner("infoTable","<tr><th>"+i+"</th><td>"+item.info[i]+"</td></tr>", false);
@@ -270,7 +287,10 @@ function combinedNarratives() {
 }
 
 function show(id) {
-    document.getElementById(id).classList.remove('hidden');
+    const element = document.getElementById(id);
+    element.classList.remove('hidden'); // Rimuove lo stato "nascosto"
+    element.classList.add('fade-in');  // Aggiunge l'animazione di dissolvenza
+    setTimeout(() => element.classList.remove('fade-in'), 500); // Rimuove la classe dopo l'animazione
 }
 
 function hide(id) {
@@ -339,43 +359,6 @@ window.addEventListener('load', () => {
         }, index * 200); // Ritardo sequenziale tra gli elementi
     });
 });
-
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const element = entry.target;
-            if (element.classList.contains('hidden-animation-center')) {
-                element.classList.remove('hidden-animation-center');
-                element.classList.add('fade-in-center');
-            }
-            if (element.classList.contains('hidden-animation-left')) {
-                element.classList.remove('hidden-animation-left');
-                element.classList.add('fade-in-left');
-            }
-            if (element.classList.contains('hidden-animation-right')) {
-                element.classList.remove('hidden-animation-right');
-                element.classList.add('fade-in-right');
-            }
-            if (element.classList.contains('hidden-animation-top-down')) {
-                element.classList.remove('hidden-animation-top-down');
-                element.classList.add('fade-in-down');
-            }
-            if (element.classList.contains('hidden-animation-bottom-up')) {
-                element.classList.remove('hidden-animation-bottom-up');
-                element.classList.add('fade-in-up');
-            }
-            observer.unobserve(element);
-        }
-    });
-}, { threshold: 0.5 });
-
-window.addEventListener('load', () => {
-    const elements = document.querySelectorAll('.hidden-animation-center, .hidden-animation-left, .hidden-animation-right');
-    elements.forEach(element => {
-        observer.observe(element);
-    });
-});
-
 
 //=========================
 //  TENDINE              //
