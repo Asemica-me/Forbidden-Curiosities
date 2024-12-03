@@ -32,7 +32,12 @@ window.addEventListener('scroll', function() { // Necessario per controllare il 
   });
 
 
-  document.addEventListener("DOMContentLoaded", function() { //Necessario per poter agire sugli elementi una volta che sono stati caricati dal browser
+document.addEventListener("DOMContentLoaded", function() { //Necessario per poter agire sugli elementi una volta che sono stati caricati dal browser
+	
+	// Animazione freccia nella prima sezione della pagina #arrow
+
+	const arrow = document.getElementById("arrow");
+	arrow.classList.add("pointed");
 	
 	// Funzione per APRIRE il pannello informativo sugli oggetti della timeline
 	const infoButtons = document.getElementsByClassName("infoButton");
