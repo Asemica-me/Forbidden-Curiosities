@@ -249,7 +249,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
     margin: auto;
     padding: 7px;
 }
@@ -399,7 +398,7 @@ body {
 }
 
 
-/* Fine bottone Search */
+/* Fine bottone Filter */
 
 #searchButton-space {
     height: 40%;
@@ -415,6 +414,8 @@ body {
     font-style: italic;
 }
 
+/* Fine spazio search/filter */
+
 #item-space {
     position: relative;
     height: 100%;
@@ -426,6 +427,8 @@ body {
     z-index: -1;
 }
 
+/* Inizio colonna sinistra, details e tabella */
+
 #details-space {
     position: relative;
     display: flex;
@@ -434,16 +437,86 @@ body {
     padding: 14% 14% 2% 14%;
 }
 
-#description {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    color: white;
-    padding: 4% 8% 8% 8%;
-    font-size: 1.5em;
+/* Style Info Table */
+.data-header{
+    font-size: 0.9em;
+    color: var(--text);
+    font-family: var(--font-family-secondary);
 }
 
-/* Stile per la riga prima del padding */
+#title-header {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-family: "Quicksand", sans-serif;
+    color: var(--color1);
+    display: flex;
+    align-items: center;
+}
+
+#infoTable th {
+    /* Stile specifico per th dentro infoTable */
+    text-align: left;
+    padding: 10px;
+}
+/* Stile generale per la tabella */
+#details {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto; /* Centrare la tabella */
+    border-collapse: collapse;
+    font-size: 0.8em;
+}
+
+/* Stile per le celle di intestazione (th) */
+#details th {
+    text-align: left;
+    font-family: Arial, sans-serif;
+    color: white; /* Colore del testo nell'intestazione */
+    padding: 12px; /* Spaziatura interna */
+    background-color: var(--colorBackground);
+}
+
+/* Stile per le celle di dati (td) */
+#details td {
+    padding: 12px;
+    vertical-align: top; /* Allineamento verticale */
+    color: var(--text);
+}
+
+#details tr:nth-child(odd) td {
+
+    border-left: solid 1px #919191;
+}
+
+/* Hover effect uniforme per tutte le righe */
+#details tr:hover th,
+#details tr:hover td {
+    background-color: rgb(128, 108, 98); /* Colore uniforme durante l'hover */
+}
+ 
+/* Stile per i link (bottoni) nelle celle */ 
+#details a.btn {
+    display: inline-block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #ff7300;
+    border-radius: 4px;
+    margin-right: 5px; /* Spaziatura tra i bottoni */
+    margin-bottom: 7px;
+    transition: background-color 0.3s ease; /* Transizione per l'hover */
+}
+
+#details a.btn:hover {
+    background-color: #ffa45a;
+}
+
+/* Fine Info Table */
+
+/* Stile per divisore prima del padding */
 #divider {
     width: 100%; 
     height: 1px;
@@ -456,31 +529,7 @@ body {
     display: none;
 }
 
-/* Dissolvenza in entrata */
-.fade-in {
-    display: block;
-    opacity: 0;
-    animation: fadeIn 0.7s forwards;
-}
-
-/* Dissolvenza in uscita */
-.fade-out {
-    opacity: 1;
-    animation: fadeOut 0.3s forwards; /* Durata dell'animazione 0.3s */
-}
-
-/* Keyframes per le animazioni */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
-/* INIZIO Image column */
+/* Inizio colonna destra, Image column */
 
 #img-space {
     position: relative;
@@ -574,6 +623,7 @@ body {
 
 .switchButton#rightButton {transform: rotate(180deg);}
 
+/* Fine pannello switch */
 
 .image-box {
     position: relative;
@@ -595,6 +645,14 @@ body {
 
 /* FINE Image column */
 
+#description {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 4% 8% 8% 8%;
+    font-size: 1.5em;
+}
 
 /****************/
 /* FINE gallery */
@@ -612,6 +670,7 @@ footer.footer {
     color: var(--text);
     overflow: hidden;
     padding: 0% 4% 2% 4%;
+    position: static;
 }
 
 /* Less & More buttons */
@@ -660,22 +719,23 @@ footer.footer {
     transform: none; /* Disabilita effetti di pressione */
 }
 
-/* INIZIO MEDIA QUERIES */
 
-/* Stile dell'icona */
+/* Stile icona OGETTI */
 .icon-obj {
     margin-right: 20px;  /* Distanza tra l'icona e il titolo */
     width: 5vw; 
     height: 5vw;  
 }
 
-/* Stile per l'immagine all'interno dell'icona */
+/* Stile per l'immagine all'interno dellO spazio icona */
 .icon-obj img {
     width: 100%;  /* L'immagine si adatta alla dimensione del div */
     height: 100%;  /* L'immagine si adatta alla dimensione del div */
     object-fit: contain;  /* Mantiene le proporzioni dell'immagine */
 }
 
+
+/* INIZIO MEDIA QUERIES */
 
 /*  Larghezza finestra inferiore o uguale a 830px */
 @media screen and (max-width: 830px) {
@@ -739,6 +799,14 @@ footer.footer {
         width: 14vw;
         height: 14vw;
     }
+
+    footer.footer {
+        padding: 3% 5%;
+        font-size: 0.85rem; 
+        word-break: break-word; 
+        margin-right: 0;
+    }
+
 }
 
 /* larghezza finestra superiore o uguale a 831px */
@@ -748,80 +816,32 @@ footer.footer {
 }
 /* FINE MEDIA QUERIES */
 
-/* Style Info Table */
-.data-header{
-    font-size: 0.9em;
-    color: var(--text);
-    font-family: var(--font-family-secondary);
+
+
+/* ============================== */
+/*         ANIMAZIONI            */
+/* ============================== */
+
+/* Dissolvenza in entrata */
+.fade-in {
+    display: block;
+    opacity: 0;
+    animation: fadeIn 0.7s forwards;
 }
 
-#title-header {
-    font-size: 2em;
-    font-weight: bold;
-    margin-bottom: 30px;
-    text-align: center;
-    letter-spacing: 1px;
-    font-family: "Quicksand", sans-serif;
-    color: var(--color1);
-    display: flex;
-    align-items: center;
+/* Dissolvenza in uscita */
+.fade-out {
+    opacity: 1;
+    animation: fadeOut 0.3s forwards; /* Durata dell'animazione 0.3s */
 }
 
-#infoTable th {
-    /* Stile specifico per th dentro infoTable */
-    text-align: left;
-    padding: 10px;
-}
-/* Stile generale per la tabella */
-#details {
-    width: 100%;
-    max-width: 800px;
-    margin: 20px auto; /* Centrare la tabella */
-    border-collapse: collapse;
-    font-size: 0.8em;
+/* Keyframes per le animazioni */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
-/* Stile per le celle di intestazione (th) */
-#details th {
-    text-align: left;
-    font-family: Arial, sans-serif;
-    color: white; /* Colore del testo nell'intestazione */
-    padding: 12px; /* Spaziatura interna */
-    background-color: var(--colorBackground);
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
 }
-
-/* Stile per le celle di dati (td) */
-#details td {
-    padding: 12px;
-    vertical-align: top; /* Allineamento verticale */
-    color: var(--text);
-}
-
-#details tr:nth-child(odd) td {
-
-    border-left: solid 1px #919191;
-}
-
-/* Hover effect uniforme per tutte le righe */
-#details tr:hover th,
-#details tr:hover td {
-    background-color: rgb(128, 108, 98); /* Colore uniforme durante l'hover */
-}
- 
-/* Stile per i link (bottoni) nelle celle */ 
-#details a.btn {
-    display: inline-block;
-    padding: 5px 10px;
-    text-decoration: none;
-    color: white;
-    background-color: #ff7300;
-    border-radius: 4px;
-    margin-right: 5px; /* Spaziatura tra i bottoni */
-    margin-bottom: 7px;
-    transition: background-color 0.3s ease; /* Transizione per l'hover */
-}
-
-#details a.btn:hover {
-    background-color: #ffa45a;
-}
-/* Fine Info Table */
