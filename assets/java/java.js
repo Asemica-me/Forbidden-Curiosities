@@ -38,6 +38,44 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 
 	const arrow = document.getElementById("arrow");
 	arrow.classList.add("pointed");
+
+	// InterSectionObserver per far apparire side-search solo quando inizia la timeline
+	const sideSearch = document.getElementById("side-search");
+	const timeline = document.getElementById("timeline");
+	const opts = {
+		root: null, // Valore per ottenere la viewport come contenitore da osservare
+		rootMargin: '0px',
+		threshold: 0.07 // Valore che fa scattare l'animazione quando l'elemento è per il 8% visibile
+	};
+
+	const timelineObserver = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				sideSearch.classList.add("show");
+			} else {
+				sideSearch.classList.remove("show");
+			}
+		});
+	}, opts);
+
+	timelineObserver.observe(timeline);
+	
+	// Si aggiunge un EventListener a tutti i link della side-search per centrare gli elementi selezionati e farlo in maniera fluida.
+	document.querySelectorAll('#search-list a').forEach(anchor => {
+		anchor.addEventListener('click', function(e) {
+			e.preventDefault();
+	
+			const targetId = this.getAttribute('href');
+			const targetElement = document.querySelector(targetId);
+			
+			const offsetPosition = targetElement.getBoundingClientRect().top + window.scrollY - (window.innerHeight / 2) + (targetElement.offsetHeight / 2);
+	
+			window.scrollTo({
+				top: offsetPosition,
+				behavior: 'smooth'
+			});
+		});
+	});
 	
 	// Funzione per APRIRE il pannello informativo sugli oggetti della timeline
 	const infoButtons = document.getElementsByClassName("infoButton");
@@ -77,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 	const options = {
 		root: null, // Valore per ottenere la viewport come contenitore da osservare
 		rootMargin: '0px',
-		threshold: 0.3 // Valore che fa scattare l'animazione quando l'elemento è per il 50% visibile
+		threshold: 0.3 // Valore che fa scattare l'animazione quando l'elemento è per il 30% visibile
 	};
 
 	const elements_array = Array.from(elements);

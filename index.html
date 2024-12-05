@@ -17,7 +17,7 @@
             <!-- Navbar -->
             <div id="navbar">
                 <div class="rom-navbar">
-                    <div id="logo-box"><a class="logo" href="index.html">logo</a></div>
+                    <div id="logo-box"><a class="logo" href="index.html"></a></div>
                     <div class="navbar-body">
                         <div class="nav-link-box">
                             <a class="nav-link" href="narratives.html">Narratives</a>
@@ -76,41 +76,20 @@
 
         <!-- Timeline -->
          <div id="side-search">
-            <div class="search-list">
-                <div class="search-header">PERIODS</div>
-                <ul>
-                    <li>XV-XVII</li>
-                    <li>XVIII-XIX</li>
-                    <li>XX (I half)</li>
-                    <li>XX (II half)</li>
-                    <li>XXI</li>
-                </ul>
-            </div>
-            <div id="side-banner">
-                <div class="side-arrow"><img src="assets/img/arrow-left.svg"></div>
-                <div class="search-logo"><img src="assets/img/magnifying-glass.svg"></div>
-                SEARCH
-                <div class="side-arrow"><img src="assets/img/arrow-left.svg"></div>
-            </div>
-         </div>
-         <div id="top-search">
-            <div class="search-list">
-                <div class="search-header">PERIODS</div>
-                <ul>
-                    <li>XV-XVII</li>
-                    <li>XVIII-XIX</li>
-                    <li>XX (I half)</li>
-                    <li>XX (II half)</li>
-                    <li>XXI</li>
-                </ul>
-                <div id="top-banner">
-                    <div class="top-arrow"><img src="assets/img/arrow-left.svg"></div>
-                    <div class="search-logo"><img src="assets/img/magnifying-glass.svg"></div>
-                    SEARCH
-                    <div class="top-arrow"><img src="assets/img/arrow-left.svg"></div>
+                <div id="search-list">
+                    <div id="search-header">PERIODS</div>
+                    <ul>
+                        <li><a href="#XV-XVII">XV-XVII</a></li>
+                        <li><a href="#XVIII-XIX">XVIII-XIX</a></li>
+                        <li><a href="#XX-I">XX (I half)</a></li>
+                        <li><a href="#XX-II">XX (II half)</a></li>
+                        <li><a href="#XXI">XXI</a></li>
+                    </ul>
                 </div>
-            </div>
-         </div>
+                <div id="side-banner">
+                    <div id="search-icon"><img src="assets/img/list.svg"></div>
+                </div>
+        </div>
         <div id="timeline">
             <div id="timeline-start">
                 <h2>THE TIMELINE</h2>
@@ -118,7 +97,7 @@
             </div>
             <span id="line"></span>
             <div id="items">
-                <div class="item">
+                <div class="item" id="XV-XVII">
                     <div class="item-wrapper">
                         <div class="data-box">
                             <div class="data">1400</div>
@@ -182,7 +161,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="item">
+                <div class="item" id="XVIII-XIX">
                     <div class="item-wrapper">
                         <div class="data-box">
                             <div class="data">1789</div>
@@ -246,7 +225,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="item">
+                <div class="item" id="XX-I">
                     <div class="item-wrapper">
                         <div class="data-box">
                             <div class="data">1902</div>
@@ -310,7 +289,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="item">
+                <div class="item" id="XX-II">
                     <div class="item-wrapper">
                         <div class="data-box">
                             <div class="data">1953</div>
@@ -390,7 +369,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="item">
+                <div class="item" id="XXI">
                     <div class="item-wrapper">
                         <div class="data-box">
                             <div class="data">2007</div>
@@ -445,6 +424,7 @@
         <footer>
             <!-- Copyright -->
             <p>© 2024 Copyright: <a href="#">Forbidden Curiosities</a></p>
+            <p>Read the full documentation <a href="doc.html" target="_blank">here</a>.</p>
         </footer>
     </div>
     
