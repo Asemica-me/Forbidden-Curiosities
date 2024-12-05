@@ -5,6 +5,7 @@ body {
 
 :root {
   --mainColor: #f10ff1;
+  --secondaryColor: grey;
 }
 
 /* =============== Inizio Navbar =================*/      
@@ -206,8 +207,8 @@ div.navbar-body {visibility: hidden;}
 
 #nar{
   display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  background-color: gray;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  background-color: var(--secondaryColor);
   border-radius: 15px;
 }
 
@@ -219,7 +220,7 @@ div.navbar-body {visibility: hidden;}
 }
 
 .nar-but {
-  background-color:  #f10ff1;
+  background-color: var(--mainColor);
   color: white;
   cursor: pointer;
   width: 50%;
@@ -230,7 +231,7 @@ div.navbar-body {visibility: hidden;}
 
 .nar-but:hover {
   background-color: black;
-  border: 1px solid #f10ff1;
+  border: 1px solid var(--mainColor);
 
 }
 
@@ -253,12 +254,13 @@ div.navbar-body {visibility: hidden;}
   justify-content: center;
   transform: translateY(-30px); /* Start slightly above */
   transition: transform 0.5s ease;
-  min-width: 72px;
+  min-width: 80px;
+  height: 50px;
   
 }
 
 .sub-nar-but {
-  background-color:  #f10ff1;
+  background-color: var(--mainColor);
   color: white;
   cursor: pointer;
   width: 100%;
@@ -270,17 +272,17 @@ div.navbar-body {visibility: hidden;}
 
 .sub-nar-but:hover {
   background-color: black;
-  border: 1px solid #f10ff1;
+  border: 1px solid var(--mainColor);
 
 }
 
 .active {
   background-color: rgb(0, 0, 0);
-  border: 1px solid #f10ff1;
+  border: 1px solid var(--mainColor);
   color: white;
 }
 
-/* =============== Inizio nar menu ===============*/
+/* =============== fine nar menu ===============*/
 
 
 .content {
@@ -300,7 +302,7 @@ div.navbar-body {visibility: hidden;}
   justify-content: center; /* Center the map horizontally */
   align-items: center; /* Center the map vertically */
   margin-left: 5vh;
-  background-color: #ffffff;
+  
   
   
 }
@@ -321,22 +323,28 @@ div.navbar-body {visibility: hidden;}
 }
 
 #list {
+  padding:0px;
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 100%;
   width: 100%;
-  background-color: #ffffff;
+  
   border-radius: 15px;
   min-height: 480px;
 
 }
 
 .itemList{
-  list-style-type: number;
-  width: 300px; /* Fixed width */
-  height: 400px;
+  margin-top: 10%;
+  width: 100%;
+  height:90%;
+  color: #ffffff;
+}
 
+
+.itemList li::marker {
+  font-size: 1.5em; /* Increase the size of the bullet */
+  color:var(--mainColor);   /* Change the color to purple */
 }
 
 /* Style the links */
@@ -351,11 +359,6 @@ div.navbar-body {visibility: hidden;}
   color: white;       /* Darker shade of purple on hover */
 }
 
-.itemList li::marker {
-  color:var(--mainColor);         /* Change the number color */
-  font-weight: bold;       /* Make the number bold */
-  font-size: 1.3em;        /* Increase the size of the number */
-}
 
 @media screen and (max-width: 830px) {
   /* Hide navbar body */
@@ -366,6 +369,7 @@ div.navbar-body {visibility: hidden;}
   /* Adjust container grid */
   .container {
     grid-template-rows: 15vh auto min-content 20vh; /* Three rows */
+    
   }
 
   /* Content adjustments */
@@ -374,6 +378,7 @@ div.navbar-body {visibility: hidden;}
     grid-template-columns: 1fr; /* Single column */
     grid-template-rows: 40vh  min-content; /* Stack into two rows */
     padding-bottom: 0;
+    
   }
 
   /* List adjustments */
@@ -414,6 +419,10 @@ div.navbar-body {visibility: hidden;}
 
   #icon:hover {
     transform: scale(1.1); /* Slightly enlarge on hover */
+  }
+
+  .itemList{
+    margin-top: 0%;
   }
 
   /* List container hidden by default */
