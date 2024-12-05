@@ -5,10 +5,11 @@
     --color4: #de7b0a;
     --color5: #4c4c4c;
     --colorBackground: #100202;
+    --footer: #403939;
     --text: #dcdcdc;
     --dividers: #3e3e3e;
-    --font-family-primary: "Titillium", sans-serif; /* paragrafi */
-    --font-family-secondary: "Roboto Condensed", sans-serif; /* titoli */
+    --font-family-primary: "Titillium", sans-serif;
+    --font-family-secondary: "Roboto Condensed", sans-serif;
     --buttons: 'Arial', sans-serif; /* bottoni */
 }
 

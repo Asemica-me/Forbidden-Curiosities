@@ -129,8 +129,8 @@ function showInfo(index) {
     iconDiv.classList.add("icon-class");  // Aggiungi classe div
 
     const iconImg = document.createElement("img");
-    iconImg.src = "assets/img/icons/obj-icon.png"; 
-    iconImg.alt = "Icona";
+    iconImg.src = item.info.icon;
+    iconImg.alt = "Icon of:";
     iconImg.classList.add("icon-obj");
     iconDiv.appendChild(iconImg);
 
@@ -162,7 +162,7 @@ function createInfoTable(item) {
     inner("infoTable","",true) ;
     const exb_room = "<tr><th>Exhibition Room</th><td><a type=\"button\" class=\"btn\" href=\"#\" onclick=\"changeNarrative(\'Historical Period\',\'";
     for (i in item.info) {
-        if (["Type", "Exhibition"].includes(i)) continue; 
+        if (["Type", "Exhibition", "icon"].includes(i)) continue; 
         if (item.info[i] !== null) {
             if (narratives.includes(i)) {
                 if (i==="Historical Period") {

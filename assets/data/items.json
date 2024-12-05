@@ -13,6 +13,7 @@
 			"info": {
 				"Title": "Galileo’s Telescope Replica",
 				"Creator": "Galileo Galilei",
+				"icon": "assets/img/icons/telescope.png",
 				"Date of Creation": "Original telescope circa 1609; \nreplica created in 1923",
 				"Original Location": "Museo di Fisica e Storia Naturale, Florence, Italy",
 				"Significance": "Challenging the geocentric view of the universe; pivotal in advancing observational astronomy",
@@ -32,6 +33,7 @@
 			"image": "assets/img/items/2darwin.jpg",
 			"info": {
 				"Title": "On the Origin of Species by Means of Natural Selection, or the Preservation of Favoured Races in the Struggle for Life",
+				"icon": "assets/img/icons/evolution.png",
 				"Author": "Charles Darwin", 
 				"Date of Publication": "First published in 1859",
 				"Original Location": "Private collection, Virginia, USA",
@@ -52,6 +54,7 @@
 			"image": "assets/img/items/3enigma.jpg",
 			"info": {
 				"Title": "Enigma Machine",
+				"icon": "assets/img/icons/turing.png",
 				"Creator": "Alan Turing and various German engineers and cryptologists", 
 				"Date of Creation": "Developed in the early 20th century; significant during WWII",
 				"Original Location": "Bletchely Park Museum, UK",
@@ -73,6 +76,7 @@
 			"image": "assets/img/items/4hirst.jpg",
 			"info": {
 				"Title": "For the Love of God",
+				"icon": "assets/img/icons/skull.png",
 				"Author": "Damien Hirst", 
 				"Date of Creation": "2007",
 				"Original Location": "White Cube Gallery, London, UK",
@@ -93,6 +97,7 @@
 			"image": "assets/img/items/5corset.jpg",
 			"info": {
 				"Title": "Victorian-Era Corset",
+				"icon": "assets/img/icons/corset.png",
 				"Creator": "Victorian garment manufacturers",
 				"Date of Creation": "Made in 1864. Popular throughout the Victorian era (19th century)",
 				"Original Location": "Victoria and Albert Museum, London, UK",
@@ -113,6 +118,7 @@
 			"image": "assets/img/items/6bomb.jpg",
 			"info": {
 				"Title": "Replica of the Atomic Bomb 'Little Boy'",
+				"icon": "assets/img/icons/bomb.png",
 				"Creator": "Manhattan Project scientists and engineers",
 				"Date of Creation": "The original bomb was dropped in 1945",
 				"Original Location": "Air & Space Museum, Denver, USA",
@@ -133,6 +139,7 @@
 			"image": "assets/img/items/7luther.jpg",
 			"info": {
 				"Title": "Martin Luther’s 95 Theses",
+				"icon": "assets/img/icons/luther.png",
 				"Author": "Martin Luther",
 				"Date of Publication": "Posted in 1517",
 				"Original Location": "Oxford University, UK (facsimile)",
@@ -153,6 +160,7 @@
 			"image": "assets/img/items/8origin-du-monde.jpg",
 			"info": {
 				"Title": "L'Origine du Monde",
+				"icon": "assets/img/icons/courbet.png",
 				"Creator": "Gustave Courbet",
 				"Date of Creation": "Painted in 1866",
 				"Original Location": "Musée d'Orsay, Paris, France",
@@ -173,6 +181,7 @@
 			"image": "assets/img/items/9medal.jpeg",
 			"info": {
 				"Title": "Suffragette Hunger Strike Medal",
+				"icon": "assets/img/icons/medal.png",
 				"Creator": "Suffragette organizations and medal makers",
 				"Date of Creation": "Early 20th century",
 				"Original Location": "Museum of London, UK",
@@ -193,6 +202,7 @@
 			"image": "assets/img/items/10shoot.jpg",
 			"info": {
 				"Title": "Video installation of \"Shoot\" Performance",
+				"icon": "assets/img/icons/shooting.png",
 				"Artist": "Chris Burden",
 				"Date of Publication": "1971 original performance",
 				"Original Location": "Various art institutions and collections, including museums specializing in contemporary art",
@@ -213,6 +223,7 @@
 			"image": "assets/img/items/11playboy.jpg",
 			"info": {
 				"Title": "First Issue of \"Playboy\" Magazine",
+				"icon": "assets/img/icons/rabbit.png",
 				"Creator": "Hugh Hefner and Playboy Enterprises",
 				"Date of Creation": "First published in December 1953",
 				"Original Location": "Various museums and private collections worldwide",
@@ -233,6 +244,7 @@
 			"image": "assets/img/items/12dolly.jpg",
 			"info": {
 				"Title": "Photograph of Dolly the Sheep, an animal clone",
+				"icon": "assets/img/icons/sheep.png",
 				"Creator": "Scientists at the Roslin Institute, led by Dr. Ian Wilmut",
 				"Date of Creation": "1996: Birth of Dolly, 1997: Announcement",
 				"Original Location": "Roslin Institute, Scotland.",
@@ -253,6 +265,7 @@
 			"image": "assets/img/items/13nasa.jpg",
 			"info": {
 				"Title": "NASA Moon Landing Photograph",
+				"icon": "assets/img/icons/moon.png",
 				"Author": "NASA astronauts and mission team",
 				"Date of Creation/Publication": "July 20, 1969",
 				"Original Location": "NASA's Johnson Space Center (JSC), Houston, Texas, USA",
@@ -273,6 +286,7 @@
 			"image": "assets/img/items/14curie.jpg",
 			"info": {
 				"Title": "Reproduction of the sheet of the measurements taken by Pierre and Marie Curie on 0.1 g of RaCl₂ (radium chloride)",
+				"icon": "assets/img/icons/bottle.png",
 				"Author": "Marie Curie and Pierre Curie",
 				"Date of Creation": "April 22, 1902",
 				"Original Location": "Curie Museum, Paris, France",
@@ -293,6 +307,7 @@
 			"image": "assets/img/items/15revel.jpg",
 			"info": {
 				"Title": "Edward Snowden’s Revelations",
+				"icon": "assets/img/icons/folder.png",
 				"Creator": "Edward Snowden and NSA documents",
 				"Date of Publication": "Leaks occurred in 2013",
 				"Original Location": "National Security Archive, G. Washington University, USA",
@@ -313,6 +328,7 @@
 			"image": "assets/img/items/16mini-skirt.jpg",
 			"info": {
 				"Title": "Mary Quant's Mini Skirt",
+				"icon": "assets/img/icons/skirt.png",
 				"Author": "Mary Quant (Designer)",
 				"Date of Publication": "Designed in 1966",
 				"Original Location": "Victoria and Albert Museum, London, UK",
@@ -333,6 +349,7 @@
 			"image": "assets/img/items/17pope.jpg",
 			"info": {
 				"Title": "AI Image of Pope Francis",
+				"icon": "assets/img/icons/ai.png",
 				"Author": "Pablo Xavier",
 				"Date of Publication": "March 2023",
 				"Original Location": "Reddit Social Network",
@@ -353,7 +370,8 @@
 			"image": "assets/img/items/18arquebus.jpeg",
 			"info": {
 				"Title": "Combination Wheellock Matchlock Gun",
-				"Author": "N.A.",
+				"icon": "assets/img/icons/rifle.png",
+				"Author": "-",
 				"Date of Creation": "1560",
 				"Original Location": "The MET museum, New York, USA",
 				"Significance": "Symbolizes the transition from medieval to modern warfare and the mechanisation of war",
@@ -374,6 +392,7 @@
 			"image": "assets/img/items/19guillotine1.jpg",
 			"info": {
 				"Title": "Reign of Terror Guillotine Blade",
+				"icon": "assets/img/icons/guillotine.png",
 				"Author": "-",
 				"Date of Creation": "1793",
 				"Original Location": "Madame Tussauds, London, UK",
@@ -395,6 +414,7 @@
 			"image": "assets/img/items/20da-vinci.jpg",
 			"info": {
 				"Title": "Vitruvian Man",
+				"icon": "assets/img/icons/vitru.png",
 				"Author": "Leonardo Da Vinci",
 				"Date of Publication": "1490 ca.",
 				"Original Location": "Gallerie dell'Accademia, Venezia, Italy",

@@ -1,17 +1,22 @@
 :root {
-    --color1: #cacaca;
-    --color2: #f7d9ad;
-    --color3: #52003a;
+    --wideScreen: True;
+    --color1: #cacaca; /* colore headers */
+    --color2: #f7d9ad; /* colore oggettini */
+    --color3: #542E71; /* colore pannello side search */
     --color4: #de7b0a;
     --color5: #4c4c4c;
-    --colorBackground: #100202;
-    --footer: #403939;
-    --text: #dcdcdc;
-    --dividers: #3e3e3e;
-    --font-family-primary: "Titillium", sans-serif;
-    --font-family-secondary: "Roboto Condensed", sans-serif;
-    --buttons: 'Arial', sans-serif;
-}
+    --color6: #2B1F4D;
+    --navBarHover: #d7b052;
+    --colorBackground: #140221;
+    --text: #e5e5e5;
+    --dividers: #d1c2adda;
+    --footer: #3b373dc7;
+    --font-family-header: "Garamond", serif;
+    --items-titles: ""Quicksand", sans-serif";
+    --font-family-text: "Trebuchet MS", sans-serif;
+    --font-family-navbar: "Georgia", serif;
+    --buttons: 'Tahoma', sans-serif;
+  }
 
 body {
     margin: 0;
@@ -111,18 +116,14 @@ body {
 }
 
 .nav-link-box .nav-link:hover + {
-    background-color: white;
+    background-color: var(--navBarHover);
     transition: background-color 0.5s ease;
-}
-
-.nav-link:visited {
-    color: var(--color1);
 }
 
 .nav-link {
     text-decoration: none; /* Rimuove la sottolineatura standard */
     position: relative; /* Necessario per posizionare il ::after */
-    color: var(--color1);
+    color: var(--color2);
     text-align: center;
     align-self: flex-end;
     transition: color 0.3s ease; /* Animazione del colore */
@@ -136,12 +137,12 @@ body {
     bottom: -2px; /* Posiziona la linea appena sotto il testo */
     width: 0; /* Larghezza iniziale */
     height: 2px; /* Spessore della sottolineatura */
-    background-color: white; /* Colore della sottolineatura */
+    background-color: var(--navBarHover); /* Colore della sottolineatura */
     transition: width 0.3s ease; /* Animazione della larghezza */
 }
 
 .nav-link:hover {
-    color: white; /* Cambia il colore del testo */
+    color: var(--navBarHover); /* Cambia il colore del testo */
     text-decoration: none !important;
 }
 
@@ -207,7 +208,7 @@ body {
 }
 
 #menu-links a {
-    color: var(--color1);
+    color: var(--color);
     background-color: var(--color2);
     text-decoration: none;
     font-size: calc(15px + 0.390625vw);
@@ -294,14 +295,14 @@ body {
     text-wrap: nowrap;
     background-color: var(--colorBackground);
     color: #252222;
-    border: solid 0.5px rgb(165, 165, 165);
+    border: solid 0.5px #8a7d61b0;
     color: var(--color1);
     border-radius: 2px;
     padding: 8px;
 }
 
 .select:hover {
-    border: solid 0.5px white;
+    border: solid 0.5px var(--dividers);
 }
 
 .selected-box {
@@ -448,7 +449,7 @@ body {
     margin-bottom: 30px;
     text-align: center;
     letter-spacing: 1px;
-    font-family: "Quicksand", sans-serif;
+    font-family: var(--items-titles);
     color: var(--color1);
     display: flex;
     align-items: center;
@@ -649,7 +650,7 @@ body {
     flex-direction: column;
     color: white;
     padding: 4% 8% 8% 8%;
-    font-size: 1.5em;
+    font-size: 1.4em;
 }
 
 /****************/
