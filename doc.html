@@ -134,13 +134,20 @@
                         <h3>4.1 Information Architecture</h3>
                     <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. Maecenas in velit vel mi feugiat ornare facilisis vitae turpis.</p>
                     </section>
-                    <section id="ux">
-                        <h3>4.2 User Experience (UX)</h3>
+                    <section id="navigation">
+                        <h3>4.2 User Experience (UX) and Navigation Structure</h3>
                     <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. Maecenas in velit vel mi feugiat ornare facilisis vitae turpis.</p>
                 </section>
                 <section id="tech-imp">
                     <h3>4.3 Technical Implementation</h3>
-                <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. Maecenas in velit vel mi feugiat ornare facilisis vitae turpis.</p>
+                <p>The technical implementation of this project revolves around dynamically handling and displaying data loaded from a JSON file. Its technical implementation is centered on creating an interactive experience where data is fetched, filtered, sorted, and displayed in response to certain predefined rules or user actions.</p>
+
+                <p>At its core, the project begins by leveraging the `DOMContentLoaded` event listener to ensure all DOM elements are fully loaded before executing JavaScript. Once the event triggers, an asynchronous function is executed to fetch the .json file, which contains both the data and metadata needed for the application. This file is parsed into JavaScript objects, and key pieces of information, such as the starting narrative, value, and items, are extracted for further use.</p>
+                    
+                <p>The project utilizes a prepareNarratives function to process the data according to the selected narrative and value. This function filters the items array to match specific conditions based on the metadata. It then sorts the filtered items using a custom comparator that orders them based on a sorting property (`@sort`). If no matching items are found after filtering, the function reverts to using the entire dataset. Once the relevant data is prepared, additional helper functions are called to update the state of the application and render the information for the user.</p>
+                    
+                <p>The technical design is modular, with specific tasks divided into discrete functions. The use of promises, asynchronous operations, and event listeners highlights the project's focus on asynchronous workflows and responsive design. Callback functions are used to handle events and trigger processes, such as updating the DOM after preparing the narratives.
+                The implementation adheres to modern JavaScript standards, including `async`, optional chaining (`?.`), and array methods like `filter` and `sort`. These tools help streamline the handling of dynamic data and ensure the project is maintainable and scalable. </p>
                 </section>
             </section>
 
@@ -194,8 +201,8 @@
                 </ul>
                 <p>In summary, a dark color for the background is chosen for its ability to enhance content visibility, reduce eye strain, improve battery efficiency, and maintain a modern aesthetic. It aligns with the app's brand identity and provides a user-friendly experience that supports extended use and visual comfort.</p>
                 </section>
-                <section id="feedback">
-                    <h3>6.3 Interactive Elements and Feedback</h3>
+                <section id="ui">
+                    <h3>6.3 UI Components and Responsiveness</h3>
                 <p>Cras massa libero, maximus a mollis et, ultricies at felis. Nullam diam risus, elementum et eros eget, bibendum ultricies massa. Etiam vestibulum turpis lacus. Curabitur aliquet nibh augue, eget ultrices sapien suscipit quis. Aliquam rutrum luctus ante. Mauris quis nulla iaculis, volutpat nisi vitae, condimentum felis. Maecenas in velit vel mi feugiat ornare facilisis vitae turpis.</p>
                 </section>
                 <section id="typography">
@@ -258,15 +265,13 @@
             <a href="#prototype" class="chapter">3. Prototype</a>
             <a href="#development" class="chapter">4. Development</a>
             <a href="#ia" class="subchapter">4.1 Information Architecture (IA)</a>
-            <a href="#navigation" class="subchapter">4.2 Navigation Structure</a>
-            <a href="#ui" class="subchapter">4.3 UI Components and Responsiveness</a>
-            <a href="#front-back-end" class="subchapter">4.4 Front-End and Back-End Architecture</a>
-            <a href="#ux" class="subchapter">4.5 User Experience (UX)</a>
+            <a href="#navigation" class="subchapter">4.2 User Experience (UX)</a>
+            <a href="#tech-imp" class="subchapter">4.3 Technical Implementation</a>
             <a href="#use-cases" class="chapter">5. Use Cases</a>
             <a href="#design" class="chapter">6. Design Specifications</a>
             <a href="#design" class="subchapter">6.1 Visual Design</a>
             <a href="#color" class="subchapter">6.2 Color Usage</a>
-            <a href="#feedback" class="subchapter">6.3 Interactive Elements and Feedback</a>
+            <a href="#ui" class="subchapter">6.3 UI Components and Responsiveness</a>
             <a href="#typography" class="subchapter">6.4 Typography</a>
             <a href="#references" class="chapter">7. References</a>
             <a href="#rights" class="chapter">8. Rights and Licenses</a>
@@ -279,6 +284,14 @@
     </div>
     <script>
 document.addEventListener("DOMContentLoaded", () => {
+    const menu = document.querySelector(".menu");
+    const hamburger = document.querySelector(".hamburger");
+
+    // Aggiunge un event listener per il click sull'hamburger
+    hamburger.addEventListener("click", () => {
+        menu.classList.toggle("open"); // Aggiunge o rimuove la classe "open"
+    });
+
     const menuLinks = document.querySelectorAll(".menu a");
     const sections = document.querySelectorAll(".article section");
 
@@ -286,29 +299,31 @@ document.addEventListener("DOMContentLoaded", () => {
         link.addEventListener("click", (event) => {
             event.preventDefault();
 
-            // Remove the 'highlighted' class from all sections
+            // Rimuove la classe 'highlighted' da tutte le sezioni
             sections.forEach(section => {
                 section.classList.remove("highlighted");
             });
 
-            // Remove the active class from all menu links
+            // Rimuove la classe active da tutti i link
             menuLinks.forEach(link => {
                 link.classList.remove("active");
             });
 
-            // Add the 'highlighted' class to the selected section
+            // Evidenzia la sezione target
             const targetSection = document.querySelector(link.getAttribute("href"));
             targetSection.classList.add("highlighted");
 
-            // Add the 'active' class to the clicked menu link
+            // Aggiunge la classe active al link cliccato
             link.classList.add("active");
 
-            // Optional: Scroll to the section smoothly
+            // Scorre fino alla sezione selezionata
             targetSection.scrollIntoView({ behavior: "smooth" });
+
+            // Chiude il menu (opzionale)
+            menu.classList.remove("open");
         });
     });
 });
-
 
     </script>
 </body>
