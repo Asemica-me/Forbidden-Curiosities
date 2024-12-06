@@ -200,12 +200,8 @@ p {font-size: calc(15px + 0.390625vw);}
 }
 
 .nav-link-box .nav-link:hover + {
-  background-color: white;
+  background-color: var(--color2);
   transition: background-color 0.5s ease;
-}
-
-.nav-link:visited {
-  color: var(--color1);
 }
 
 .nav-link {
@@ -220,7 +216,8 @@ p {font-size: calc(15px + 0.390625vw);}
 .nav-link::after {
   content: ''; /* Pseudo-elemento vuoto per creare la sottolineatura */
   position: absolute;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: -2px; /* Posiziona la linea appena sotto il testo */
   width: 0; /* Larghezza iniziale */
   height: 2px; /* Spessore della sottolineatura */
@@ -234,7 +231,7 @@ p {font-size: calc(15px + 0.390625vw);}
 }
 
 .nav-link:hover::after {
-  width: 100%; /* Espande la linea solo sotto la voce corrente */
+  width: 140px; /* Espande la linea solo sotto la voce corrente */
 }
 
 #menu-button {
@@ -314,7 +311,6 @@ p {font-size: calc(15px + 0.390625vw);}
 }
 
 #menu-links a:hover {
-  color: var(--text);
   background-color: var(--color2);
 }
 

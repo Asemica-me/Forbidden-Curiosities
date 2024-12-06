@@ -1,31 +1,19 @@
 :root {
     --color1: #cacaca;
     --color2: #f7d9ad;
-    --color3: #52003a;
+    --color3: #542E71;
     --color4: #de7b0a;
-    --color5: #4c4c4c;
-    --colorBackground: #100202;
-    --text: #dcdcdc;
-    --dividers: #3e3e3e;
-    --font-family-primary: "Titillium", sans-serif; /* paragrafi */
-    --font-family-secondary: "Roboto Condensed", sans-serif; /* titoli */
-    --buttons: 'Arial', sans-serif; /* bottoni */
-}
-
-:root {
-    --color1: #cacaca;
-    --color2: #f7d9ad;
-    --color3: #52003a;
-    --color4: #de7b0a;
-    --color5: #4c4c4c;
-    --colorBackground: #100202;
-    --footer: #403939;
-    --text: #dcdcdc;
-    --dividers: #3e3e3e;
-    --font-family-primary: "Titillium", sans-serif;
-    --font-family-secondary: "Roboto Condensed", sans-serif;
-    --buttons: 'Arial', sans-serif; /* bottoni */
-}
+    --color5: #d7b052;
+    --color6: #2B1F4D;
+    --colorBackground: #140221;
+    --text: #e5e5e5;
+    --dividers: #d1c2adda;
+    --footer: #3b373dc7;
+    --font-family-header: "Garamond", serif;
+    --font-family-text: "Trebuchet MS", sans-serif;
+    --font-family-navbar: "Roboto Condensed", sans-serif;
+    --buttons: 'Tahoma', sans-serif;
+  }
 
 /* Stile per i link */
 a {
