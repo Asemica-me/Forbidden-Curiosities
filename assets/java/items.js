@@ -5,6 +5,9 @@ let currentSelection = [];
 let currentNarrative = "";
 let currentValue = "";
 let currentSort = "";
+let nar = sessionStorage.getItem("nar");
+let value = sessionStorage.getItem("value");
+
 
 // Funzione per attivare e disattivare con un click il menu hamburger
 function toggleCurtain() {
@@ -89,15 +92,21 @@ document.addEventListener("DOMContentLoaded", async function(event) {
         items = data.items;
         let startWith = data.meta.startWith;
         let item = items[startWith];
-
         narratives = data.meta.narratives;
         currentNarrative = data.meta.startNarrative;
         currentValue = data.meta.startValue;
         prepareNarratives();                  
     })
+    
 });
 
+
+
 function prepareNarratives() {
+    if (sessionStorage.getItem("redirect")){
+        currentNarrative = sessionStorage.getItem("nar")
+        currentValue = sessionStorage.getItem("value")
+    }
     currentSelection = items.filter( i => 
         i.info[currentNarrative]?.includes(currentValue)
     );
@@ -393,4 +402,27 @@ document.addEventListener('click', (event) => {
 
 //=========================
 //  FINE TENDINE         //
+// ========================
+
+//=========================
+//  INIZIO NARRATIVE     //
+// ========================
+
+function goNar(btn){
+    let redirect = true;
+
+    let nar = btn.dataset.nar; 
+    let value = btn.dataset.value;
+    
+    sessionStorage.setItem("nar",nar);
+    sessionStorage.setItem("value",value);
+    sessionStorage.setItem("redirect",redirect);
+    window.location.href = `items.html`;
+
+}
+
+
+
+//=========================
+//  FINE NARRATIVE         //
 // ========================

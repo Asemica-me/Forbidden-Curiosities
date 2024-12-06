@@ -1,9 +1,14 @@
 /*modal */
 
 function openModalBtn(btn) {
+	const goBtn = document.getElementById("goNar")
 	document.getElementById("sumModal").classList.add('visible') ;
 	document.getElementById("content").classList.add('opaque');
 	document.body.style.overflow = 'hidden';
+	goBtn.dataset.value = btn.dataset.value;
+	goBtn.dataset.nar=btn.parentElement.parentElement.dataset.nar;
+	
+	
    
         var buttonText = btn.innerText;
         var title = document.getElementById('sumTitle');

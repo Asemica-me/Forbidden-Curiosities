@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="assets/css/narratives.css">
     <script src="assets/java/narratives.js"></script>
     <script src="assets/java/java.js"></script>
+    <script src="assets/java/items.js"></script>
+
     <title>Forbidden Curiosities - Narratives</title>
 
 </head>
@@ -24,7 +26,7 @@
             <p id="sumCont"></p>
         </div >
         <div class="modal-grid-item ">
-            <button id="goNar">Explore this Narrative</button>
+            <button id="goNar" data-value="" data-nar="h" onclick="goNar(this)">Explore this Narrative</button>
         </div>
     </div>
     <!-- FineModal --> 
@@ -73,61 +75,59 @@
 
     <!------- Hamburger Menu End --------->
     <!------ Navbar End ---------->
-            <div class="grid-item">
+            <div class="grid-item" data-nar="Themes" id="themes">
                 <div class="icon-container">
                     <img src="C:\Users\pietr\Desktop\5078755.png" alt="Book Icon" class="icon">
                 </div>
 
                 <h2 class = "nar-h2">WALK THROUGH DIFFERENT THEMES TO UNDERSTAND THE VALUE OF EACH PIECE OF THE EXHIBITION</h2>
 
-                <div class="btnCont" id = "themes">
-                    <button class="narBtn" id = "ethics-btn" onclick="openModalBtn(this)">ETHICS OF WAR</button>
-                    <button class="narBtn" id = "scientific-btn" onclick="openModalBtn(this)">SCIENTIFIC REVOLUTION</button>
-                    <button class="narBtn" id = "women-btn" onclick="openModalBtn(this)">WOMEN'S HISTORY</button>
+                <div class="btnCont" >
+                    <button class="narBtn" id = "ethics-btn" data-value="Ethics of war" onclick="openModalBtn(this)">ETHICS OF WAR</button>
+                    <button class="narBtn" id = "scientific-btn" data-value="Scientific revolution" onclick="openModalBtn(this)">SCIENTIFIC REVOLUTION</button>
+                    <button class="narBtn" id = "women-btn" data-value="Women's history" onclick="openModalBtn(this)">WOMEN'S HISTORY</button>
                 </div>
-                <div class="btnCont">
-                    <button class="narBtn" id = "religious-btn" onclick="openModalBtn(this)">RELIGIOUS DISSENT</button>
-                    <button class="narBtn" id = "provocative-btn" onclick="openModalBtn(this)">PROVOCATIVE ART</button>
-                    <button class="narBtn" id = "digital-btn" onclick="openModalBtn(this)">DIGITAL PRIVACY</button>
+                <div class="btnCont" >
+                    <button class="narBtn" id = "religious-btn" data-value="Religious dissent" onclick="openModalBtn(this)">RELIGIOUS DISSENT</button>
+                    <button class="narBtn" id = "provocative-btn" data-value="Provocative art" onclick="openModalBtn(this)">PROVOCATIVE ART</button>
+                    <button class="narBtn" id = "digital-btn" data-value="Digital privacy" onclick="openModalBtn(this)">DIGITAL PRIVACY</button>
                 </div>
             </div>
-            <div class="grid-item">
+            <div class="grid-item" data-nar="Typology" id="typology">
                 <div class="icon-container">
                     <img src="tipology-icon.png" alt="Tipology Icon" class="icon">
                 </div>
                 
-                <h2 class = "nar-h2">DISCOVER WHAT TIPOLOGY OF CURIOSITY HAS MARKED HISTORY</h2>
+                <h2 class = "nar-h2">DISCOVER WHAT TYPOLOGY OF CURIOSITY HAS MARKED HISTORY</h2>
                 
                 <div class="btnCont">
-                    <button class="narBtn" id = "texts-btn" onclick="openModalBtn(this)">TEXTS</button>
-                    <button class="narBtn" id = "tools-btn" onclick="openModalBtn(this)">TOOLS</button>
-                    <button class="narBtn" id = "weapons-btn" onclick="openModalBtn(this)">WEAPONS</button>
+                    <button class="narBtn" id = "texts-btn" data-value="Text" onclick="openModalBtn(this)">TEXTS</button>
+                    <button class="narBtn" id = "tools-btn" data-value="Tool" onclick="openModalBtn(this)">TOOLS</button>
+                    <button class="narBtn" id = "weapons-btn" data-value="Weapon" onclick="openModalBtn(this)">WEAPONS</button>
                 </div>
                 <div class="btnCont">
-                    <button class="narBtn" id = "garments-btn" onclick="openModalBtn(this)">GARMENTS</button>
-                    <button class="narBtn" id = "events-btn" onclick="openModalBtn(this)">EVENTS</button>
-                    <button class="narBtn" id = "works-btn" onclick="openModalBtn(this)">WORKS OF ART</button>
+                    <button class="narBtn" id = "garments-btn" data-value="Garment" onclick="openModalBtn(this)">GARMENTS</button>
+                    <button class="narBtn" id = "events-btn" data-value="Event" onclick="openModalBtn(this)">EVENTS</button>
+                    <button class="narBtn" id = "works-btn" data-value="Artwork" onclick="openModalBtn(this)">WORKS OF ART</button>
                 </div>
             </div>
-            <div class="grid-item">
-                <div>
-                    <div class="icon-container">
-                        <img src="periods-icon.png" alt="Periods Icon" class="icon">
-                    </div>
-                    
-                    <h2 class = "nar-h2">DISCOVER WHAT THE PERIODS THAT PRODUCED THE CURIOSITIES</h2>
-                    
-                    <div class="btnCont">
-                        <button class="narBtn" id = "XV-XVII-btn" onclick="openModalBtn(this)">XV-XVII</button>
-                        <button class="narBtn" id = "XVII-XIX-btn" onclick="openModalBtn(this)">XVII-XIX</button>
-                        <button class="narBtn" id = "FIRST-btn" onclick="openModalBtn(this)">FIRST HALF XX</button>
-                    </div>
-                    <div class="btnCont">
-                        <button class="narBtn" id = "SECOND-btn" onclick="openModalBtn(this)">SECOND HALF XX</button>
-                        <button class="narBtn" id = "XXI-btn" onclick="openModalBtn(this)"> XXI</button>
-                        
-                    </div>  
+            <div class="grid-item" data-nar="Historical Period" id="period" >
+                <div class="icon-container">
+                    <img src="periods-icon.png" alt="Periods Icon" class="icon">
                 </div>
+                
+                <h2 class = "nar-h2">DISCOVER WHAT THE PERIODS THAT PRODUCED THE CURIOSITIES</h2>
+                
+                <div class="btnCont">
+                    <button class="narBtn" id = "XV-XVII-btn" data-value="XV-XVII Century" onclick="openModalBtn(this)">XV-XVII</button>
+                    <button class="narBtn" id = "XVII-XIX-btn" data-value="XVIII-XIX Century" onclick="openModalBtn(this)">XVII-XIX</button>
+                    <button class="narBtn" id = "FIRST-btn"  data-value="First half of XX Century" onclick="openModalBtn(this)">FIRST HALF XX</button>
+                </div>
+                <div class="btnCont">
+                    <button class="narBtn" id = "SECOND-btn" data-value="Second half of XX Century" onclick="openModalBtn(this)">SECOND HALF XX</button>
+                    <button class="narBtn" id = "XXI-btn" data-value="XXI Century" onclick="openModalBtn(this)"> XXI</button>
+                    
+                </div>  
             </div>
             <div class="grid-item">
                 <footer>
