@@ -4,8 +4,8 @@
     --color3: #52003a;
     --color4: #de7b0a;
     --color5: #4c4c4c;
-    --colorBackground: #100202;
-    --footer: #403939;
+    --colorBackground: #0c000fe3;
+    --footer: #3b373dc7;
     --text: #dcdcdc;
     --dividers: #3e3e3e;
     --font-family-primary: "Titillium", sans-serif;
@@ -52,7 +52,7 @@ footer.documentation {
 div.column-1 {
     flex: 3;
     overflow-y: auto; 
-    background: #0f0007e3;
+    background: #0c000fe3;
     color: rgba(255, 255, 255, 0.913);
     box-shadow: inset -3px 0 5px rgba(0, 0, 0, 0.1);
 }
@@ -104,8 +104,8 @@ div.column-1 {
     /* Menu Styling */
     .menu {
         flex: 1;
-        background: #0f0007e3;
-        padding: 20px;
+        background: #0c000fe3;
+        padding: 0px 20px 10px 20px;
         overflow-y: scroll;
         box-shadow: inset 3px 0 5px rgba(0, 0, 0, 0.1);
         color: white;
@@ -229,11 +229,10 @@ div.column-1 {
         height: 100%;
         width: 70%;
         transform: translateX(100%); /* Nascondi il menu */
-        background: #0f0007e3;
+        background: #0c000fe3;
         box-shadow: -5px 0 10px rgba(0, 0, 0, 0.5);
         z-index: 999;
         overflow-y: auto;
-        padding-top: 60px; /* Per evitare sovrapposizione con l'hamburger */
     }
 
     .menu.open {
@@ -289,7 +288,7 @@ th, td {
 
 .align-left { /*  table body */
     text-align: left;
-    background-color: #0f0007e3;
+    background-color: #0c000fe3;
     transition: background-color 0.3s ease;
 }
 

@@ -129,8 +129,8 @@ function showInfo(index) {
     iconDiv.classList.add("icon-class");  // Aggiungi classe div
 
     const iconImg = document.createElement("img");
-    iconImg.src = "assets/img/icons/obj-icon.png"; 
-    iconImg.alt = "Icona";
+    iconImg.src = item.info.icon;
+    iconImg.alt = "Icon of:";
     iconImg.classList.add("icon-obj");
     iconDiv.appendChild(iconImg);
 
@@ -162,7 +162,7 @@ function createInfoTable(item) {
     inner("infoTable","",true) ;
     const exb_room = "<tr><th>Exhibition Room</th><td><a type=\"button\" class=\"btn\" href=\"#\" onclick=\"changeNarrative(\'Historical Period\',\'";
     for (i in item.info) {
-        if (["Type", "Exhibition"].includes(i)) continue; 
+        if (["Type", "Exhibition", "icon"].includes(i)) continue; 
         if (item.info[i] !== null) {
             if (narratives.includes(i)) {
                 if (i==="Historical Period") {
@@ -308,30 +308,31 @@ function switchItem(n) {
 };
 
 
-// FUNZIONE ANIMAZIONE DISSOLVENZA BOTTOM-UP
-window.addEventListener('load', () => {
-    const elements = document.querySelectorAll('.hidden-animation-bottom-up'); // Seleziona tutti gli elementi con classe 'hidden'
-    elements.forEach((element, index) => {
-        setTimeout(() => {
-            element.classList.remove('hidden-animation-bottom-up'); // Rimuovi stato iniziale
-            element.classList.add('fade-in-up'); // Aggiungi animazione
-        }, index * 200); // Ritardo sequenziale tra gli elementi
-    });
-});
-
-
-    // FUNZIONE ANIMAZIONE DISSOLVENZA TOP-DOWN
-    window.addEventListener('load', () => {
-    const elements = document.querySelectorAll('.hidden-animation-top-down'); // Seleziona tutti gli elementi con classe 'hidden'
-    elements.forEach((element, index) => {
-        setTimeout(() => {
-            element.classList.remove('hidden-animation-top-down'); // Rimuovi stato iniziale
-            element.classList.add('fade-in-down'); // Aggiungi animazione
-        }, index * 200); // Ritardo sequenziale tra gli elementi
-    });
-});
+//=========================
+//
+// ANIMAZIONI DISSOLVENZA  
+//
+// ========================
 
 window.addEventListener('load', () => {
+    // Animazione dal basso verso l'alto
+    const elementsBottomUp = document.querySelectorAll('.hidden-animation-bottom-up');
+    elementsBottomUp.forEach((element, index) => {
+        setTimeout(() => {
+            element.classList.remove('hidden-animation-bottom-up');
+            element.classList.add('fade-in-up');
+        }, index * 200); // Ritardo sequenziale tra gli elementi
+    });
+
+    // Animazione dall'alto verso il basso
+    const elementsTopDown = document.querySelectorAll('.hidden-animation-top-down');
+    elementsTopDown.forEach((element, index) => {
+        setTimeout(() => {
+            element.classList.remove('hidden-animation-top-down');
+            element.classList.add('fade-in-down');
+        }, index * 200); // Ritardo sequenziale tra gli elementi
+    });
+
     // Animazione dal centro
     const elementsCenter = document.querySelectorAll('.hidden-animation-center');
     elementsCenter.forEach((element, index) => {
@@ -361,7 +362,7 @@ window.addEventListener('load', () => {
 });
 
 //=========================
-//  TENDINE              //
+//  INIZIO TENDINE FILTER  //
 // ========================
 
 document.addEventListener('click', (event) => {
@@ -392,5 +393,5 @@ document.addEventListener('click', (event) => {
 
 
 //=========================
-//  FINE TENDINE         //
+//      FINE TENDINE      //
 // ========================
