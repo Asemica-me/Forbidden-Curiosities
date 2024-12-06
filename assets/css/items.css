@@ -1,20 +1,18 @@
 :root {
     --wideScreen: True;
-    --color1: #cacaca; /* colore headers */
-    --color2: #f7d9ad; /* colore oggettini */
-    --color3: #542E71; /* colore pannello side search */
+    --color1: #cacaca;
+    --color2: #f7d9ad;
+    --color3: #542E71;
     --color4: #de7b0a;
-    --color5: #4c4c4c;
+    --color5: #d7b052;
     --color6: #2B1F4D;
-    --navBarHover: #d7b052;
     --colorBackground: #140221;
     --text: #e5e5e5;
     --dividers: #d1c2adda;
     --footer: #3b373dc7;
     --font-family-header: "Garamond", serif;
-    --items-titles: ""Quicksand", sans-serif";
     --font-family-text: "Trebuchet MS", sans-serif;
-    --font-family-navbar: "Georgia", serif;
+    --font-family-navbar: "Roboto Condensed", sans-serif;
     --buttons: 'Tahoma', sans-serif;
   }
 
@@ -24,7 +22,7 @@ body {
     height: 100%;
     background-color: var(--colorBackground);
     overflow-x: hidden; /* Rimuove la barra di scorrimento orizzontale */
-    font-family: var(--font-family-primary);
+    font-family: var(--font-family-text);
     font-weight: 400;
     font-style: normal;
 }
@@ -69,7 +67,7 @@ body {
     position: relative;
     height: 100%;
     background-color: var(--colorBackground);
-    font-family: var(--font-family-secondary);
+    font-family: var(--font-family-navbar);
 }
 
 .rom-navbar {
@@ -116,7 +114,7 @@ body {
 }
 
 .nav-link-box .nav-link:hover + {
-    background-color: var(--navBarHover);
+    background-color: var(--color5);
     transition: background-color 0.5s ease;
 }
 
@@ -137,12 +135,12 @@ body {
     bottom: -2px; /* Posiziona la linea appena sotto il testo */
     width: 0; /* Larghezza iniziale */
     height: 2px; /* Spessore della sottolineatura */
-    background-color: var(--navBarHover); /* Colore della sottolineatura */
+    background-color: var(--color5); /* Colore della sottolineatura */
     transition: width 0.3s ease; /* Animazione della larghezza */
 }
 
 .nav-link:hover {
-    color: var(--navBarHover); /* Cambia il colore del testo */
+    color: var(--color5); /* Cambia il colore del testo */
     text-decoration: none !important;
 }
 
@@ -208,8 +206,8 @@ body {
 }
 
 #menu-links a {
-    color: var(--color);
-    background-color: var(--color2);
+    color: var(--text);
+    background-color: var(--color6);
     text-decoration: none;
     font-size: calc(15px + 0.390625vw);
     text-align: center;
@@ -222,12 +220,11 @@ body {
 }
 
 #menu-links a:nth-child(odd) {
-    background-color: var(--color5);
+    background-color: var(--color3);
 }
 
 #menu-links a:hover {
-    color: white;
-    background-color: var(--color1);
+    background-color: var(--color5);
 }
 /* FINE Navbar/Hamburger-Menu */
 
@@ -333,7 +330,7 @@ body {
 }
 
 .options {
-    background-color: var(--color5);
+    background-color: var(--color3);
     z-index: 10 !important;
     visibility: hidden;
     transition: visibility 0.3s ease, opacity 0.3s ease; /* Animazione fluida */
@@ -349,7 +346,7 @@ body {
 }
 
 .option:hover {
-    background-color: rgb(90, 90, 90);
+    background-color: var(--color6);
 }
 
 /* Fine area filtri */
@@ -408,7 +405,6 @@ body {
 #results {
     font-style: italic;
     visibility: hidden;
-    font-family: var(--font-family-primary);
     font-weight: 300;
     font-style: italic;
 }
@@ -440,7 +436,7 @@ body {
 .data-header{
     font-size: 0.9em;
     color: var(--text);
-    font-family: var(--font-family-secondary);
+    font-family: var(--font-family-text);
 }
 
 #title-header {
@@ -449,7 +445,7 @@ body {
     margin-bottom: 30px;
     text-align: center;
     letter-spacing: 1px;
-    font-family: var(--items-titles);
+    font-family: var(--font-family-header);
     color: var(--color1);
     display: flex;
     align-items: center;
@@ -472,7 +468,7 @@ body {
 /* Stile per le celle di intestazione (th) */
 #details th {
     text-align: left;
-    font-family: Arial, sans-serif;
+    font-family: var(--buttons);
     color: white; /* Colore del testo nell'intestazione */
     padding: 12px; /* Spaziatura interna */
     background-color: var(--colorBackground);
