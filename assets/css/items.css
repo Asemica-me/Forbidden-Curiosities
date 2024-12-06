@@ -493,7 +493,7 @@ body {
 /* Hover effect uniforme per tutte le righe */
 #details tr:hover th,
 #details tr:hover td {
-    background-color: rgb(128, 108, 98); /* Colore uniforme durante l'hover */
+    background-color: #fff1d68d; /* Colore uniforme durante l'hover */
 }
  
 /* Stile per i link (bottoni) nelle celle */ 

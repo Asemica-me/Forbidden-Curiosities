@@ -5,6 +5,20 @@
     --color4: #de7b0a;
     --color5: #4c4c4c;
     --colorBackground: #100202;
+    --text: #dcdcdc;
+    --dividers: #3e3e3e;
+    --font-family-primary: "Titillium", sans-serif; /* paragrafi */
+    --font-family-secondary: "Roboto Condensed", sans-serif; /* titoli */
+    --buttons: 'Arial', sans-serif; /* bottoni */
+}
+
+:root {
+    --color1: #cacaca;
+    --color2: #f7d9ad;
+    --color3: #52003a;
+    --color4: #de7b0a;
+    --color5: #4c4c4c;
+    --colorBackground: #100202;
     --footer: #403939;
     --text: #dcdcdc;
     --dividers: #3e3e3e;
@@ -86,7 +100,7 @@ body.loaded .loading-screen {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #261312c2; /* Colore di sfondo, modifica qui */
+        background-color: #27232a; /* Colore di sfondo, modifica qui */
         z-index: 9999; /* Lo spinner è sopra gli altri contenuti */
     }
 
