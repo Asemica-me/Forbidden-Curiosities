@@ -424,6 +424,20 @@ function goNar(btn){
 
 
 
+// Function to call when an item is clicked
+function goItem(listElement) {
+    
+    let redirect = true;
+    let itemRedirect =  listElement.dataset.item
+    let nar = listElement.dataset.nar; 
+    let value = listElement.dataset.value;
+    
+    sessionStorage.setItem("nar",nar);
+    sessionStorage.setItem("value",value);
+    sessionStorage.setItem("redirect",redirect);
+    window.location.href = `items.html`;
+}
+
 //=========================
 //  FINE NARRATIVE         //
 // ========================

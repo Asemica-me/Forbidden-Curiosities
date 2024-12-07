@@ -133,6 +133,7 @@ function changeList(subNarButton) {
             li.dataset.item = itemDict[item] ;            
             li.dataset.value = value; //subnarrative
             li.dataset.nar = nar ;
+            li.setAttribute("onclick", "goItem(this)");
             
 
             ul.appendChild(li);
