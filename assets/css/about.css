@@ -1,177 +1,204 @@
-body {
-    background-color: black;
-  }
-/* Qui si mettono tutte le variabili */
 :root {
-    --wideScreen: True;
-    --mainColor: #f10ff1;
-  }
-
-
-@media screen and (min-width: 831px) {
-  
-    div.menu {visibility: hidden;}
+  --wideScreen: True;
+  --color1: #cacaca;
+  --color2: #f7d9ad;
+  --color3: #542E71;
+  --color4: #de7b0a;
+  --color5: #d7b052;
+  --color6: #2B1F4D;
+  --colorBackground: #140221;
+  --text: #e5e5e5;
+  --dividers: #d1c2adda;
+  --footer: #3b373dc7;
+  --font-family-header: "Garamond", serif;
+  --font-family-text: "Trebuchet MS", sans-serif;
+  --font-family-navbar: "Roboto Condensed", sans-serif;
+  --buttons: 'Tahoma', sans-serif;
 }
 
-#navbar {
-    position: relative;
-    height: 100%;
-  }
-  
-  .rom-navbar {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-  }
-  
-  .rom-navbar #logo-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  #logo-box .logo {
-    position: inherit;
-    background-color: #444;
-    height: 13vh;
-    width: 13vh;
-    border: none;
-  }
-  
-  .navbar-body {
-    position: inherit;
-    font-size: calc(15px + 0.390625vw);
-    display: grid;
-    height: inherit;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-  
-  .nav-link-box {
-    height: fit-content;
-    display: grid;
-    grid-template-rows: 3fr 1fr;
-    align-self: center;
-  }
-  
-  .underline {
-    position: inherit;
-    background-color: var(--mainColor);
-    height: 0.1vw;
-    width: 100%;
-  }
-  
-  .nav-link-box .nav-link:hover + .underline {
-    background-color: white;
-    transition: background-color 0.5s ease; /* Transizione più fluida */
-  }
-  
-  .nav-link:visited {
-    color: var(--mainColor);
-  }
-  
-  .nav-link:hover {
-    color: white;
-  }
-  
-  .nav-link {
-    text-decoration: none;
-    position: inherit;
-    color: var(--mainColor);
-    text-align: center;
-    align-self: flex-end;
-    transition: color 0.3s ease; /* Transizione per colore */
-  }
-  
-  #menu-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 2;
-  }
-  
-  .toggle-btn {
-    position: relative;
-    width: 4vw;
-    height: 4vw;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .toggle-btn span {
-    position: absolute;
-    width: 40px;
-    height: 4px;
-    transition: 0.3s;
-    background-color: var(--mainColor);
-  }
-  
-  .toggle-btn span:first-child {
-    transform: translateY(-8px);
-  }
-  
-  .toggle-btn.x span:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .toggle-btn span:last-child {
-    transform: translateY(8px);
-  }
-  
-  .toggle-btn.x span:first-child {
-    transform: rotate(45deg) translateY(0);
-  }
-  
-  .toggle-btn.x span:last-child {
-    transform: rotate(-45deg) translateY(0);
-  }
-  
-  #menu-links {
-    position: absolute;
-    height: 200px;
-    width: 100%;
-    display: none;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    z-index: 2;
-  }
-  
-  #menu-links a {
-    color: var(--mainColor);
-    background-color: #323232;
-    text-decoration: none;
-    font-size: calc(15px + 0.390625vw);
-    text-align: center;
-    padding: 10px 0;
-  }
-  
-  #menu-links a:last-child {
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-  }
-  
-  #menu-links a:nth-child(odd) {
-    background-color: #444;
-  }
-  
-  #menu-links a:hover {
-    color: white;
-    background-color: var(--mainColor);
-  }
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--colorBackground);
+  overflow-x: hidden; /* Rimuove la barra di scorrimento orizzontale */
+  font-family: var(--font-family-text);
+  font-weight: 400;
+  font-style: normal;
+}
 
+/* INIZIO Navbar/Hamburger-Menu */
+#page-container #main-container #navbar {
+  position: relative;
+  height: 100%;
+  background-color: var(--colorBackground);
+  font-family: var(--font-family-navbar);
+}
+
+.rom-navbar {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  background-color: var(--colorBackground);
+  border-bottom: 1px solid var(--dividers);
+}
+
+.rom-navbar #logo-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#logo-box .logo {
+  position: relative;
+  background-image: url('../img/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 13vh;
+  width: 13vh;
+  border: none;
+}
+
+.navbar-body {
+  position: inherit;
+  font-size: calc(15px + 0.390625vw);
+  display: grid;
+  height: inherit;
+  grid-template-columns: repeat(4, auto); /* Le colonne si restringono al contenuto */
+  column-gap: 1px; /* Aggiungi uno spazio minimo tra le voci */
+}
+
+.nav-link-box {
+  height: fit-content;
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  align-self: center;
+}
+
+.nav-link-box .nav-link:hover + {
+  background-color: var(--color5);
+  transition: background-color 0.5s ease;
+}
+
+.nav-link {
+  text-decoration: none; /* Rimuove la sottolineatura standard */
+  position: relative; /* Necessario per posizionare il ::after */
+  color: var(--color2);
+  text-align: center;
+  align-self: flex-end;
+  transition: color 0.3s ease; /* Animazione del colore */
+}
+
+.nav-link::after {
+  content: ''; /* Pseudo-elemento vuoto per creare la sottolineatura */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -2px; /* Posiziona la linea appena sotto il testo */
+  width: 0; /* Larghezza iniziale */
+  height: 2px; /* Spessore della sottolineatura */
+  background-color: var(--color5); /* Colore della sottolineatura */
+  transition: width 0.3s ease; /* Animazione della larghezza */
+}
+
+.nav-link:hover {
+  color: var(--color5); /* Cambia il colore del testo */
+  text-decoration: none !important;
+}
+
+.nav-link:hover::after {
+  width: 140px; /* Espande la linea solo sotto la voce corrente */
+}
+
+#menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.toggle-btn {
+  position: relative;
+  width: 4vw;
+  height: 4vw;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle-btn span {
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  transition: 0.3s;
+  background-color: var(--color2);
+}
+
+.toggle-btn span:first-child {
+  transform: translateY(-8px);
+}
+
+.toggle-btn.x span:nth-child(2) {
+  opacity: 0;
+}
+
+.toggle-btn span:last-child {
+  transform: translateY(8px);
+}
+
+.toggle-btn.x span:first-child {
+  transform: rotate(45deg) translateY(0);
+}
+
+.toggle-btn.x span:last-child {
+  transform: rotate(-45deg) translateY(0);
+}
+
+#menu-links {
+  position: absolute;
+  height: 200px;
+  width: 100%;
+  display: none;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  z-index: 200;
+}
+
+#menu-links a {
+  color: var(--text);
+  background-color: var(--color6);
+  text-decoration: none;
+  font-size: calc(15px + 0.390625vw);
+  text-align: center;
+  padding: 10px 0;
+}
+
+#menu-links a:last-child {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+#menu-links a:nth-child(odd) {
+  background-color: var(--color3);
+}
+
+#menu-links a:hover {
+  background-color: var(--color5);
+}
+/* FINE Navbar/Hamburger-Menu */
 
 /*about start*/
 
 .grid-container{
     display: grid;
-    grid-template-rows: 15vh auto auto auto 20vh;
+    grid-template-rows: 15vh  auto auto 20vh;
 }
-
 
 .intro-content{
   display: flex;
@@ -186,13 +213,13 @@ body {
   text-align: center;
   font-size: calc(45px + 0.390625vw);
   font-size: bold;
-  color: fuchsia;
+  color: var(--color5);
 }
 
 
 .intro-text{
   text-align: center;
-  color: fuchsia;
+  color: var(--color5);
   max-width: 40vw;
 }
 .grid-about{
@@ -209,7 +236,7 @@ body {
     grid-template-rows: 15% 70% 15%;
     height: 80%;
     width: auto;
-    background-color: #969696;
+    background-color: var(--color3);
     border-radius: 15px;
     aspect-ratio: 339.6 / 522.513;
 }
@@ -251,7 +278,10 @@ body {
     object-fit: contain; 
 }
 
-
+@media screen and (min-width: 831px) {
+  
+  div.menu {visibility: hidden;}
+}
 @media screen and (max-width: 830px) {
     :root {
         --wideScreen: False;
@@ -265,7 +295,6 @@ body {
     }
     .intro-text{
       text-align: center;
-      color: fuchsia;
       max-width: 90vw;
     }
     .grid-about {
