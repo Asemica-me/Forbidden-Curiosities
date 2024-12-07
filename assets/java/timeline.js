@@ -1,3 +1,21 @@
+// Funzione per avere un pulsante che rimandi all'inizio della pagina
+window.addEventListener('scroll', function() { // Necessario per controllare il valore dello scroll della pagina 
+	let upButton = document.getElementById("upButton");
+	if (window.scrollY >= document.documentElement.clientHeight) { //clientHeight sarebbe il valore dell'altezza massima della viewport
+	  upButton.classList.add("appear");
+      upButton.removeAttribute("disabled");
+	  upButton.addEventListener("click", () => window.scrollTo({
+		top: 0,
+		behavior: "smooth",
+	  }));
+	} else if (window.scrollY < document.documentElement.clientHeight) {
+        upButton.classList.remove("appear");
+        upButton.setAttribute("disabled", "disabled");
+	}
+});
+
+
+
 document.addEventListener("DOMContentLoaded", function() { //Necessario per poter agire sugli elementi una volta che sono stati caricati dal browser
     // InterSectionObserver per far apparire side-search solo quando inizia la timeline
 	const sideSearch = document.getElementById("side-search");
@@ -19,6 +37,35 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 	}, opts);
 
 	timelineObserver.observe(timeline);
+
+
+    const sections = document.querySelectorAll(".section");
+    const sectionOpts = {
+		root: null, // Valore per ottenere la viewport come contenitore da osservare
+		rootMargin: '0px',
+		threshold: 0.8 // Valore che fa scattare l'animazione quando l'elemento è per il 80% visibile
+	};
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            
+        });
+    }, sectionOpts);
+
+    sections.forEach(section => {console.log(section.dataset.value);});
+
+
+
+
+
+    const searchIcon = document.getElementById("search-icon");
+    const wideScreen = getComputedStyle(document.querySelector(":root")).getPropertyValue("--wideScreen");
+
+    searchIcon.addEventListener("click", function() {
+        sideSearch.classList.toggle("no-hover");
+        sideSearch.classList.toggle("shift");
+    });
+
+
 	
 	// Si aggiunge un EventListener a tutti i link della side-search per centrare gli elementi selezionati e farlo in maniera fluida.
 	document.querySelectorAll('#search-list a').forEach(anchor => {
@@ -28,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 			const targetId = this.getAttribute('href');
 			const targetElement = document.querySelector(targetId);
 			
+            //Il calcolo è fatto per centrare il primo elemento di un periodo selezionato.
 			const offsetPosition = targetElement.getBoundingClientRect().top + window.scrollY - (window.innerHeight / 2) + (targetElement.offsetHeight / 2);
 	
 			window.scrollTo({
@@ -36,6 +84,8 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 			});
 		});
 	});
+
+
 	
 	// Funzione per APRIRE il pannello informativo sugli oggetti della timeline
 	const infoButtons = document.getElementsByClassName("infoButton");
@@ -53,6 +103,8 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 		});
 	};
 
+
+
 	// Funzione per CHIUDERE il pannello informativo sugli oggetti della timeline
 	const infoClosers = document.getElementsByClassName("infoCloser");
 
@@ -69,6 +121,8 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 		});
 	};
 
+
+
 	// Qui si attribuisce la classe con l'animazione alle immagini per farle entrare dai lati della viewport
 	const elements = document.querySelectorAll('div.image-box');
 
@@ -81,7 +135,6 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 	const elements_array = Array.from(elements);
 	const observer = new IntersectionObserver((entries) => {  // Si dichiara cosa deve fare l'osservatore agli elementi che gli vengono inseriti (entries)
 		entries.forEach(entry => {
-			const wideScreen = getComputedStyle(document.querySelector(":root")).getPropertyValue("--wideScreen");
 			const data = entry.target.parentElement.children[0].children[0];
 			if (entry.isIntersecting) {
 				if (wideScreen === "True") {

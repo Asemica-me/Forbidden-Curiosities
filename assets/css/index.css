@@ -1,21 +1,3 @@
-/* Qui si mettono tutte le variabili */
-:root {
-  --wideScreen: True;
-
-  --color2: #f7d9ad; /* colore headers */
-  --color3: #542E71; /* colore pannello side search */
-
-  --color5: #d7b052; /* colore oggettini */
-  --color6: #2B1F4D;
-  --colorBackground: #140221;
-  --text: #e5e5e5;
-  --dividers: #d1c2adda;
-  --font-family-header: "Garamond", serif;
-  --font-family-text: "Trebuchet MS", sans-serif;
-  --font-family-navbar: "Georgia", serif;
-  --buttons: 'Tahoma', sans-serif;
-}
-
 body {
   margin: 0;
   width: 100%;

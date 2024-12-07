@@ -21,15 +21,17 @@ function toggleCurtain() {
 window.addEventListener('scroll', function() { // Necessario per controllare il valore dello scroll della pagina 
 	let upButton = document.getElementById("upButton");
 	if (window.scrollY >= document.documentElement.clientHeight) { //clientHeight sarebbe il valore dell'altezza massima della viewport
-	  upButton.style.visibility = "visible";
+	  upButton.classList.add("appear");
+      upButton.removeAttribute("disabled");
 	  upButton.addEventListener("click", () => window.scrollTo({
 		top: 0,
 		behavior: "smooth",
 	  }));
 	} else if (window.scrollY < document.documentElement.clientHeight) {
-	  upButton.style.visibility = "hidden";
+        upButton.classList.remove("appear");
+        upButton.setAttribute("disabled", "disabled");
 	}
-  });
+});
 
 
 document.addEventListener("DOMContentLoaded", function() { //Necessario per poter agire sugli elementi una volta che sono stati caricati dal browser
