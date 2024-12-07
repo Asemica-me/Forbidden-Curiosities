@@ -459,10 +459,18 @@ body {
   .footer {
     position: relative;
     height: 100%;
-    background-color: rgb(77, 77, 77);
-    color: #ffffff;
-    text-align: center;
-    font-size: calc(15px + 0.390625vw);
-  }
+    bottom: 0; /* Aligns it to the bottom of the parent */
+    background-color: var(--footer);
+    display: flex; /* Enables flexbox */
+    flex-direction: column; /* Aligns items vertically */
+    justify-content: center;
+    align-items: center;
+    text-align: center !important; 
+    color: var(--text);
+    overflow: hidden;
+    padding: 0% 4% 2% 4%;
+    
+    }
+  
   
  /* =============== Fine Footer =================*/
