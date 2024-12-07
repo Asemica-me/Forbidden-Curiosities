@@ -101,7 +101,6 @@ document.addEventListener("DOMContentLoaded", async function(event) {
 });
 
 
-
 function prepareNarratives() {
     if (sessionStorage.getItem("redirect")) { // redirect da nar e map
         redirectTrue();
@@ -120,7 +119,6 @@ function redirectTrue(){
     currentSelection = items.filter( i => {
         i.info[currentNarrative]?.includes(currentValue);
         counter++;
-
         if (i["@sort"] === itemRedirect){
             sortItemIndex = counter
         }
@@ -145,6 +143,7 @@ function redirectFalse(){
     currentSelection.sort( (i,j) =>  
         i['@sort'] < j['@sort'] ? -1 : 1
     );
+
     if (currentSelection.length==0) currentSelection = items;
 
     updateIndices();
