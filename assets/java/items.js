@@ -103,10 +103,42 @@ document.addEventListener("DOMContentLoaded", async function(event) {
 
 
 function prepareNarratives() {
-    if (sessionStorage.getItem("redirect")){
-        currentNarrative = sessionStorage.getItem("nar")
-        currentValue = sessionStorage.getItem("value")
+    if (sessionStorage.getItem("redirect")){ // redirect da nar e map
+        redirectTrue()
+    }else{
+        redirectFalse()
     }
+
+}
+
+function redirectTrue(){
+    let itemRedirect = sessionStorage.getItem("itemRedirect")
+    currentNarrative = sessionStorage.getItem("nar")
+    currentValue = sessionStorage.getItem("value")
+    counter = -1;
+    sortItemIndex = 0;
+    currentSelection = items.filter( i => {
+        i.info[currentNarrative]?.includes(currentValue);
+        counter++;
+
+        if (i["@sort"] === itemRedirect){
+            sortItemIndex = counter
+        } ;
+    }
+    );
+    currentSelection.sort( (i,j) =>  
+        i['@sort'] < j['@sort'] ? -1 : 1
+    );
+    if (currentSelection.length==0) currentSelection = items;
+
+    updateIndices();
+    showInfo(sortItemIndex);
+
+
+}
+
+
+function redirectFalse(){
     currentSelection = items.filter( i => 
         i.info[currentNarrative]?.includes(currentValue)
     );
@@ -118,6 +150,7 @@ function prepareNarratives() {
     updateIndices();
     showInfo(0);
 }
+
 
 function updateIndices() {
     let indicesBar = "";
@@ -431,12 +464,13 @@ function goItem(listElement) {
     let itemRedirect =  listElement.dataset.item
     let nar = listElement.dataset.nar; 
     let value = listElement.dataset.value;
-    
+    sessionStorage.setItem("itemRedirect",itemRedirect);
     sessionStorage.setItem("nar",nar);
     sessionStorage.setItem("value",value);
     sessionStorage.setItem("redirect",redirect);
     window.location.href = `items.html`;
 }
+
 
 //=========================
 //  FINE NARRATIVE         //

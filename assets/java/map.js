@@ -69,47 +69,47 @@ function changeList(subNarButton) {
     const listDiv = document.getElementById('list'); // Target container
 
     // Define all object arrays
-    const ALLObj = ['Vitruvian man (1)', 'Arquebus (2)', 'Martin Luther’s 95 Theses (facsimile) (3)', 'Galileo’s Telescope Replica (4)','Victorian-Era Corset (5)', 'Reign of Terror Guillotine Blade (6)', 'The Origin of Species” by Charles Darwin (7)', 'Courbet\'s L\'Origine du Monde (8)','Sheet of the measurements taken by Marie Curie (9)', 'Suffragette Hunger Strike Medal (10)', 'Enigma Machine Model D A1214 (11)', 'Replica of the Atomic Bomb “Little Boy” (12)','First Issue of “Playboy” Magazine (13)', 'Mini skirt by Mary Quant (14)', 'NASA Moon Landing Photo (15)', '“Shoot” by Chris Burden (16)','Dolly the Sheep (Cloning) (17)', 'For the Love of God” by Damien Hirst (18)', 'Edward Snowden’s Revelations (facsimile) (19)', 'AI Image of Pope Francis (20)'];
-    const XVXVIIObj = ['Vitruvian man (1)', 'Arquebus (2)', 'Martin Luther’s 95 Theses (facsimile) (3)', 'Galileo’s Telescope Replica (4)'];
-    const XVIIXIXObj = ['Victorian-Era Corset (5)', 'Reign of Terror Guillotine Blade (6)', 'The Origin of Species” by Charles Darwin (7)', 'Courbet\'s L\'Origine du Monde (8)'];
+    const ALLObj = ["Arquebus (1)",'Vitruvian man (2)', 'Martin Luther’s 95 Theses (facsimile) (3)', 'Galileo’s Telescope Replica (4)','Reign of Terror Guillotine Blade (5)', 'The Origin of Species” by Charles Darwin (6)','Victorian-Era Corset (7)', 'Courbet\'s L\'Origine du Monde (8)','Sheet of the measurements taken by Marie Curie (9)', 'Suffragette Hunger Strike Medal (10)', 'Enigma Machine Model D A1214 (11)', 'Replica of the Atomic Bomb “Little Boy” (12)','First Issue of “Playboy” Magazine (13)', 'Mini skirt by Mary Quant (14)', 'NASA Moon Landing Photo (15)', '“Shoot” by Chris Burden (16)','Dolly the Sheep (Cloning) (17)', 'For the Love of God” by Damien Hirst (18)', 'Edward Snowden’s Revelations (facsimile) (19)', 'AI Image of Pope Francis (20)'];
+    const XVXVIIObj = ['Vitruvian man (2)', 'Arquebus (1)', 'Martin Luther’s 95 Theses (facsimile) (3)', 'Galileo’s Telescope Replica (4)'];
+    const XVIIXIXObj = ['Victorian-Era Corset (7)', 'Reign of Terror Guillotine Blade (5)', 'The Origin of Species” by Charles Darwin (6)', 'Courbet\'s L\'Origine du Monde (8)'];
     const fXXObj = ['Sheet of the measurements taken by Marie Curie (9)', 'Suffragette Hunger Strike Medal (10)', 'Enigma Machine Model D A1214 (11)', 'Replica of the Atomic Bomb “Little Boy” (12)'];
     const sXXObj = ['First Issue of “Playboy” Magazine (13)', 'Mini skirt by Mary Quant (14)', 'NASA Moon Landing Photo (15)', '“Shoot” by Chris Burden (16)','Dolly the Sheep (Cloning) (17)'];
     const XXIObj = ['For the Love of God” by Damien Hirst (18)', 'Edward Snowden’s Revelations (facsimile) (19)', 'AI Image of Pope Francis (20)'];
-    const TextsObj = ['Martin Luther’s 95 Theses (facsimile) (3)', 'The Origin of Species” by Charles Darwin (7)', 'Sheet of the measurements taken by Marie Curie (9)', 'First Issue of “Playboy” Magazine (13)'];
+    const TextsObj = ['Martin Luther’s 95 Theses (facsimile) (3)', 'The Origin of Species” by Charles Darwin (6)', 'Sheet of the measurements taken by Marie Curie (9)', 'First Issue of “Playboy” Magazine (13)'];
     const ToolsObj = ['Galileo’s Telescope Replica (4)', 'Enigma Machine Model D A1214 (11)'];
-    const WeaponsObj = ['Arquebus (2)', 'Reign of Terror Guillotine Blade (6)', 'Replica of the Atomic Bomb “Little Boy” (12)'];
-    const GarmentsObj = ['Victorian-Era Corset (5)', 'Mini skirt by Mary Quant (14)'];
+    const WeaponsObj = ['Arquebus (1)', 'Reign of Terror Guillotine Blade (5)', 'Replica of the Atomic Bomb “Little Boy” (12)'];
+    const GarmentsObj = ['Victorian-Era Corset (7)', 'Mini skirt by Mary Quant (14)'];
     const EventsObj = ['Sheet of the measurements taken by Marie Curie (9)', 'Suffragette Hunger Strike Medal (10)', 'NASA Moon Landing Photo (15)', 'Dolly the Sheep (Cloning) (17)'];
-    const ArtObj = ['For the Love of God” by Damien Hirst (18)', 'Courbet\'s L\'Origine du Monde (8)', '“Shoot” by Chris Burden (16)', 'AI Image of Pope Francis (20)','Vitruvian man (1)'];
-    const EthicsObj = ['Enigma Machine Model D A1214 (11)', 'Replica of the Atomic Bomb “Little Boy” (12)', 'Arquebus (2)', 'Reign of Terror Guillotine Blade (6)'];
-    const ScientificObj = ['Galileo’s Telescope Replica (4)', 'The Origin of Species” by Charles Darwin (7)', 'Dolly the Sheep (Cloning) (17)', 'NASA Moon Landing Photo (15)', 'Sheet of the measurements taken by Marie Curie (9)'];
-    const WomenObj = ['Victorian-Era Corset (5)', 'First Issue of “Playboy” Magazine (13)', 'Sheet of the measurements taken by Marie Curie (9)', 'Mini skirt by Mary Quant (14)'];
-    const ReligiousObj = ['Galileo’s Telescope Replica (4)', 'The Origin of Species” by Charles Darwin (7)', 'Martin Luther’s 95 Theses (facsimile) (3)', 'AI Image of Pope Francis (20)','Vitruvian man (1)'];
+    const ArtObj = ['For the Love of God” by Damien Hirst (18)', 'Courbet\'s L\'Origine du Monde (8)', '“Shoot” by Chris Burden (16)', 'AI Image of Pope Francis (20)','Vitruvian man (2)'];
+    const EthicsObj = ['Enigma Machine Model D A1214 (11)', 'Replica of the Atomic Bomb “Little Boy” (12)', 'Arquebus (1)', 'Reign of Terror Guillotine Blade (5)'];
+    const ScientificObj = ['Galileo’s Telescope Replica (4)', 'The Origin of Species” by Charles Darwin (6)', 'Dolly the Sheep (Cloning) (17)', 'NASA Moon Landing Photo (15)', 'Sheet of the measurements taken by Marie Curie (9)'];
+    const WomenObj = ['Victorian-Era Corset (7)', 'First Issue of “Playboy” Magazine (13)', 'Sheet of the measurements taken by Marie Curie (9)', 'Mini skirt by Mary Quant (14)'];
+    const ReligiousObj = ['Galileo’s Telescope Replica (4)', 'The Origin of Species” by Charles Darwin (6)', 'Martin Luther’s 95 Theses (facsimile) (3)', 'AI Image of Pope Francis (20)','Vitruvian man (2)'];
     const ProvocativeObj = ['For the Love of God” by Damien Hirst (18)', 'Courbet\'s L\'Origine du Monde (8)', '“Shoot” by Chris Burden (16)'];
     const DigitalObj = ['AI Image of Pope Francis (20)', 'Edward Snowden’s Revelations (facsimile) (19)', 'Enigma Machine Model D A1214 (11)'];
 
 
     const itemDict = {
-        "Vitruvian man (1)": 20,
-        "Arquebus (2)": 18,
-        "Martin Luther's 95 Theses (facsimile) (3)": 7,
-        "Galileo's Telescope Replica (4)": 1,
-        "Victorian-Era Corset (5)": 5,
-        "Reign of Terror Guillotine Blade (6)": 19,
-        '"The Origin of Species" by Charles Darwin (7)': 2,
+        "Arquebus (1)": 1,
+        "Vitruvian man (2)": 2,
+        "Martin Luther's 95 Theses (facsimile) (3)": 3,
+        "Galileo's Telescope Replica (4)": 4,
+        "Reign of Terror Guillotine Blade (5)": 5,
+        '"The Origin of Species" by Charles Darwin (6)': 6,
+        "Victorian-Era Corset (7)": 7,
         "Courbet's L'Origine du Monde (8)": 8,
-        "Sheet of the measurements taken by Marie Curie (9)": 14,
-        "Suffragette Hunger Strike Medal (10)": 9,
-        "Enigma Machine Model D A1214 (11)": 3,
-        'Replica of the Atomic Bomb "Little Boy" (12)': 6,
-        'First Issue of "Playboy" Magazine (13)': 11,
-        "Mini skirt by Mary Quant (14)": 16,
-        "NASA Moon Landing Photo (15)": 13,
-        '"Shoot" by Chris Burden (16)': 10,
-        "Dolly the Sheep (Cloning) (17)": 12,
-        '"For the Love of God" by Damien Hirst (18)': 4,
-        "Edward Snowden's Revelations (facsimile) (19)": 15,
-        "AI Image of Pope Francis (20)": 17
+        "Sheet of the measurements taken by Marie Curie (9)": 9,
+        "Suffragette Hunger Strike Medal (10)": 10,
+        "Enigma Machine Model D A1214 (11)": 11,
+        'Replica of the Atomic Bomb "Little Boy" (12)': 12,
+        'First Issue of "Playboy" Magazine (13)': 13,
+        "Mini skirt by Mary Quant (14)": 14,
+        "NASA Moon Landing Photo (15)": 15,
+        '"Shoot" by Chris Burden (16)': 16,
+        "Dolly the Sheep (Cloning) (17)": 17,
+        '"For the Love of God" by Damien Hirst (18)': 18,
+        "Edward Snowden's Revelations (facsimile) (19)": 19,
+        "AI Image of Pope Francis (20)": 20
     };
 
     let value = "";
