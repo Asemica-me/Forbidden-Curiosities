@@ -102,34 +102,37 @@ document.addEventListener("DOMContentLoaded", async function(event) {
 
 
 function prepareNarratives() {
-    if (sessionStorage.getItem("redirect")) { // redirect da nar e map
+    if (sessionStorage.getItem("redirect")) {
         redirectTrue();
     } else {
         redirectFalse();
-    }
+    }   
 };
 
 function redirectTrue(){
     let itemRedirect = sessionStorage.getItem("itemRedirect")
     currentNarrative = sessionStorage.getItem("nar")
     currentValue = sessionStorage.getItem("value")
+    sessionStorage.clear();
     console.log("itemRedirect", itemRedirect, "currentNarrative", currentNarrative, "currentValue", currentValue);
     counter = -1;
     sortItemIndex = 0;
-    currentSelection = items.filter( i => {
-        i.info[currentNarrative]?.includes(currentValue);
-        counter++;
-        if (i["@sort"] === itemRedirect){
-            sortItemIndex = counter
-        }
-        console.log("counter", counter, "sortItemIndex", sortItemIndex, "i[\"@sort\"]", i["@sort"]);
-    });
+    currentSelection = items.filter( i =>
+        i.info[currentNarrative]?.includes(currentValue));
+
+    console.log(currentSelection)
     
     if (currentSelection.length==0) currentSelection = items;
 
-    currentSelection.sort( (i,j) =>  
-        i['@sort'] < j['@sort'] ? -1 : 1
-    );
+    currentSelection.sort( (i,j) => i['@sort'] - j['@sort']);
+
+    currentSelection.forEach(sel => {
+        counter++;
+        if (sel["@sort"] === itemRedirect){
+            sortItemIndex = counter
+        }
+        console.log("counter", counter, "sortItemIndex", sortItemIndex, "sel[\"@sort\"]", sel["@sort"]);
+    })
 
     updateIndices();
     showInfo(sortItemIndex);
@@ -140,9 +143,7 @@ function redirectFalse(){
     currentSelection = items.filter( i => 
         i.info[currentNarrative]?.includes(currentValue)
     );
-    currentSelection.sort( (i,j) =>  
-        i['@sort'] < j['@sort'] ? -1 : 1
-    );
+    currentSelection.sort( (i,j) => i['@sort'] - j['@sort']);
 
     if (currentSelection.length==0) currentSelection = items;
 
