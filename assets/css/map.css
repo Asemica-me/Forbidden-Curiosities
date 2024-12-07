@@ -347,16 +347,15 @@ div.navbar-body {visibility: hidden;}
   color:var(--mainColor);   /* Change the color to purple */
 }
 
-/* Style the links */
-.itemList a {
-  color:var(--mainColor);        /* Make the text purple */
-  text-decoration: none;   /* Remove underline */
-        /* Make the text a bit larger */
+.itemList li {
+  cursor: pointer; /* Makes the element appear clickable */
+  transition: border 0.2s ease, background-color 0.2s ease; /* Smooth transition effect */
 }
 
-/* Optional: Add hover effect */
-.itemList a:hover {
-  color: white;       /* Darker shade of purple on hover */
+.itemList li:hover {
+  border: 1px solid #e10000; /* Black 1px border on hover */
+  border-radius: 5px; /* Rounded corners for the border */
+  background-color: #000000; /* Optional: Light gray background color on hover */
 }
 
 
@@ -424,6 +423,7 @@ div.navbar-body {visibility: hidden;}
   .itemList{
     margin-top: 0%;
   }
+
 
   /* List container hidden by default */
   #list {
