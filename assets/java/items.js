@@ -101,15 +101,11 @@ document.addEventListener("DOMContentLoaded", async function(event) {
 });
 
 
-
 function prepareNarratives() {
-    if (sessionStorage.getItem("redirect")){ // redirect da nar e map
-        redirectTrue()
-    }else{
+
         redirectFalse()
     }
 
-}
 
 function redirectTrue(){
     let itemRedirect = sessionStorage.getItem("itemRedirect")
@@ -120,17 +116,15 @@ function redirectTrue(){
     currentSelection = items.filter( i => {
         i.info[currentNarrative]?.includes(currentValue);
         counter++;
-
         if (i["@sort"] === itemRedirect){
             sortItemIndex = counter
         } ;
-    }
-    );
+    });
     currentSelection.sort( (i,j) =>  
         i['@sort'] < j['@sort'] ? -1 : 1
     );
-    if (currentSelection.length==0) currentSelection = items;
 
+    if (currentSelection.length==0) currentSelection = items;
     updateIndices();
     showInfo(sortItemIndex);
 
@@ -145,6 +139,7 @@ function redirectFalse(){
     currentSelection.sort( (i,j) =>  
         i['@sort'] < j['@sort'] ? -1 : 1
     );
+
     if (currentSelection.length==0) currentSelection = items;
 
     updateIndices();
