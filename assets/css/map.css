@@ -1,48 +1,64 @@
-
-body {
-  background-color: black;
+:root {
+  --wideScreen: True;
+  --color1: #cacaca;
+  --color2: #f7d9ad;
+  --color3: #542E71;
+  --color4: #de7b0a;
+  --color5: #d7b052;
+  --color6: #2B1F4D;
+  --colorBackground: #140221;
+  --text: #e5e5e5;
+  --dividers: #d1c2adda;
+  --footer: #3b373dc7;
+  --font-family-header: "Garamond", serif;
+  --font-family-text: "Trebuchet MS", sans-serif;
+  --font-family-navbar: "Roboto Condensed", sans-serif;
+  --buttons: 'Tahoma', sans-serif;
 }
 
-:root {
-  --mainColor: #f10ff1;
-  --secondaryColor: grey;
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--colorBackground);
+  overflow-x: hidden; /* Rimuove la barra di scorrimento orizzontale */
+  font-family: var(--font-family-text);
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* =============== Inizio Navbar =================*/      
 
-@media screen and (max-width: 830px) {
-
-
-div.navbar-body {visibility: hidden;}
-}
-
-@media screen and (min-width: 831px) {
-
-  div.menu {visibility: hidden;}
-}
-
-#navbar {
+/* INIZIO Navbar/Hamburger-Menu */
+#page-container #main-container #navbar {
   position: relative;
   height: 100%;
+  background-color: var(--colorBackground);
+  font-family: var(--font-family-navbar);
 }
 
 .rom-navbar {
   position: relative;
   width: 100%;
-  height: 100%;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
+  background-color: var(--colorBackground);
+  border-bottom: 1px solid var(--dividers);
 }
 
 .rom-navbar #logo-box {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 #logo-box .logo {
-  position: inherit;
-  background-color: #444;
+  position: relative;
+  background-image: url('../img/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   height: 13vh;
   width: 13vh;
   border: none;
@@ -53,7 +69,8 @@ div.navbar-body {visibility: hidden;}
   font-size: calc(15px + 0.390625vw);
   display: grid;
   height: inherit;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, auto); /* Le colonne si restringono al contenuto */
+  column-gap: 1px; /* Aggiungi uno spazio minimo tra le voci */
 }
 
 .nav-link-box {
@@ -63,33 +80,39 @@ div.navbar-body {visibility: hidden;}
   align-self: center;
 }
 
-.underline {
-  position: inherit;
-  background-color: var(--mainColor);
-  height: 0.1vw;
-  width: 100%;
-}
-
-.nav-link-box .nav-link:hover + .underline {
-  background-color: white;
-  transition: background-color 0.5s ease; /* Transizione più fluida */
-}
-
-.nav-link:visited {
-  color: var(--mainColor);
-}
-
-.nav-link:hover {
-  color: white;
+.nav-link-box .nav-link:hover + {
+  background-color: var(--color5);
+  transition: background-color 0.5s ease;
 }
 
 .nav-link {
-  text-decoration: none;
-  position: inherit;
-  color: var(--mainColor);
+  text-decoration: none; /* Rimuove la sottolineatura standard */
+  position: relative; /* Necessario per posizionare il ::after */
+  color: var(--color2);
   text-align: center;
   align-self: flex-end;
-  transition: color 0.3s ease; /* Transizione per colore */
+  transition: color 0.3s ease; /* Animazione del colore */
+}
+
+.nav-link::after {
+  content: ''; /* Pseudo-elemento vuoto per creare la sottolineatura */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -2px; /* Posiziona la linea appena sotto il testo */
+  width: 0; /* Larghezza iniziale */
+  height: 2px; /* Spessore della sottolineatura */
+  background-color: var(--color5); /* Colore della sottolineatura */
+  transition: width 0.3s ease; /* Animazione della larghezza */
+}
+
+.nav-link:hover {
+  color: var(--color5); /* Cambia il colore del testo */
+  text-decoration: none !important;
+}
+
+.nav-link:hover::after {
+  width: 140px; /* Espande la linea solo sotto la voce corrente */
 }
 
 #menu-button {
@@ -117,7 +140,7 @@ div.navbar-body {visibility: hidden;}
   width: 40px;
   height: 4px;
   transition: 0.3s;
-  background-color: var(--mainColor);
+  background-color: var(--color2);
 }
 
 .toggle-btn span:first-child {
@@ -146,12 +169,12 @@ div.navbar-body {visibility: hidden;}
   width: 100%;
   display: none;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  z-index: 2;
+  z-index: 200;
 }
 
 #menu-links a {
-  color: var(--mainColor);
-  background-color: #323232;
+  color: var(--text);
+  background-color: var(--color6);
   text-decoration: none;
   font-size: calc(15px + 0.390625vw);
   text-align: center;
@@ -164,17 +187,13 @@ div.navbar-body {visibility: hidden;}
 }
 
 #menu-links a:nth-child(odd) {
-  background-color: #444;
+  background-color: var(--color3);
 }
 
 #menu-links a:hover {
-  color: white;
-  background-color: var(--mainColor);
+  background-color: var(--color5);
 }
-
-
-
-
+/* FINE Navbar/Hamburger-Menu */
 /* =============== Inizio map ===============*/
 
 .container {
@@ -187,7 +206,6 @@ div.navbar-body {visibility: hidden;}
 /* =============== Inizio nar menu ===============*/
 .nar-container{
   display:flex;
-  background-color: rgb(0, 0, 0);
   min-height: 30vh;
   height: 30vh;
   width: 100%;
@@ -208,7 +226,6 @@ div.navbar-body {visibility: hidden;}
 #nar{
   display:grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  background-color: var(--secondaryColor);
   border-radius: 15px;
 }
 
@@ -220,8 +237,9 @@ div.navbar-body {visibility: hidden;}
 }
 
 .nar-but {
-  background-color: var(--mainColor);
-  color: white;
+  background-color: var(--colorBackground);
+  color: var(--text);
+  border: 1px solid var(--color5);
   cursor: pointer;
   width: 50%;
   height:70%;
@@ -230,9 +248,7 @@ div.navbar-body {visibility: hidden;}
 }
 
 .nar-but:hover {
-  background-color: black;
-  border: 1px solid var(--mainColor);
-
+  background-color: var(--color5);
 }
 
 #sub-nar {
@@ -260,8 +276,10 @@ div.navbar-body {visibility: hidden;}
 }
 
 .sub-nar-but {
-  background-color: var(--mainColor);
-  color: white;
+  background-color: var(--colorBackground);
+  color: var(--text);
+  border: 1px solid var(--color5);
+  color: --text;
   cursor: pointer;
   width: 100%;
   height:100%;
@@ -271,15 +289,14 @@ div.navbar-body {visibility: hidden;}
 }
 
 .sub-nar-but:hover {
-  background-color: black;
-  border: 1px solid var(--mainColor);
+  background-color: var(--color5);
+  
 
 }
 
 .active {
-  background-color: rgb(0, 0, 0);
-  border: 1px solid var(--mainColor);
-  color: white;
+  background-color: var(--color5);
+  
 }
 
 /* =============== fine nar menu ===============*/
@@ -302,14 +319,13 @@ div.navbar-body {visibility: hidden;}
   justify-content: center; /* Center the map horizontally */
   align-items: center; /* Center the map vertically */
   margin-left: 5vh;
-  
-  
-  
 }
 
 #map {
   border-radius: 15px;
   width: 100%; 
+  box-shadow: 0 0 10px 5px white;
+  
 }
 
 /* =========list block========*/
@@ -338,13 +354,13 @@ div.navbar-body {visibility: hidden;}
   margin-top: 10%;
   width: 100%;
   height:90%;
-  color: #ffffff;
+  color: var(--text);
 }
 
 
 .itemList li::marker {
   font-size: 1.5em; /* Increase the size of the bullet */
-  color:var(--mainColor);   /* Change the color to purple */
+  color:var(--color4);   /* Change the color to purple */
 }
 
 .itemList li {
@@ -353,9 +369,9 @@ div.navbar-body {visibility: hidden;}
 }
 
 .itemList li:hover {
-  border: 1px solid #e10000; /* Black 1px border on hover */
+  color: var(--color4); /* Black 1px border on hover */
   border-radius: 5px; /* Rounded corners for the border */
-  background-color: #000000; /* Optional: Light gray background color on hover */
+  background-color: var(--color6); /* Optional: Light gray background color on hover */
 }
 
 
@@ -443,10 +459,18 @@ div.navbar-body {visibility: hidden;}
   .footer {
     position: relative;
     height: 100%;
-    background-color: rgb(77, 77, 77);
-    color: #ffffff;
-    text-align: center;
-    font-size: calc(15px + 0.390625vw);
+    bottom: 0; /* Aligns it to the bottom of the parent */
+    background-color: var(--footer);
+    display: flex; /* Enables flexbox */
+    flex-direction: column; /* Aligns items vertically */
+    justify-content: center;
+    align-items: center;
+    text-align: center !important; 
+    color: var(--text);
+    overflow: hidden;
+    padding: 0% 4% 2% 4%;
+    
   }
+  
   
  /* =============== Fine Footer =================*/

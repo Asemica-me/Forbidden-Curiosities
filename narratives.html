@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="stylesheet" href="assets/css/narratives.css">
     <script src="assets/java/narratives.js"></script>
     <script src="assets/java/java.js"></script>
     <script src="assets/java/items.js"></script>
-
+    <link rel="icon" type="image/png" href="assets/img/favIcon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <title>Forbidden Curiosities - Narratives</title>
 
 </head>
 <body>
+    <!-- Pagina di caricamento (spinner) -->
+    <div class="loading-screen">
+        <div class="spinner"></div>
+    </div>
 
     <!-- Modal -->
     <div id="sumModal" >
@@ -34,9 +40,9 @@
     <div id="content">
         <div class="grid-container">
                 <!-- Navbar -->
-            <div class="navbar" >
+            <div id="navbar">
                 <div class="rom-navbar">
-                    <div id="logo-box"><a class="logo" href="index.html">logo</a></div>
+                    <div id="logo-box"><a class="logo" href="index.html"></a></div>
                     <div class="navbar-body">
                         <div class="nav-link-box">
                             <a class="nav-link" href="narratives.html">Narratives</a>
@@ -69,16 +75,12 @@
                     <a href="items.html">Items</a>
                     <a href="map.html">Map</a>
                     <a href="about.html">About us</a>
-                </div>            
-            </div>
-        
-
-    <!------- Hamburger Menu End --------->
-    <!------ Navbar End ---------->
-            <div class="grid-item" data-nar="Themes" id="themes">
-                <div class="icon-container">
-                    <img src="C:\Users\pietr\Desktop\5078755.png" alt="Book Icon" class="icon">
                 </div>
+                <!------- Hamburger Menu End --------->
+            </div>
+            <!-------- Navbar end --------->
+
+            <div class="grid-item" data-nar="Themes" id="themes">
 
                 <h2 class = "nar-h2">WALK THROUGH DIFFERENT THEMES TO UNDERSTAND THE VALUE OF EACH PIECE OF THE EXHIBITION</h2>
 
@@ -94,9 +96,7 @@
                 </div>
             </div>
             <div class="grid-item" data-nar="Typology" id="typology">
-                <div class="icon-container">
-                    <img src="tipology-icon.png" alt="Tipology Icon" class="icon">
-                </div>
+    
                 
                 <h2 class = "nar-h2">DISCOVER WHAT TYPOLOGY OF CURIOSITY HAS MARKED HISTORY</h2>
                 
@@ -112,9 +112,7 @@
                 </div>
             </div>
             <div class="grid-item" data-nar="Historical Period" id="period" >
-                <div class="icon-container">
-                    <img src="periods-icon.png" alt="Periods Icon" class="icon">
-                </div>
+
                 
                 <h2 class = "nar-h2">DISCOVER WHAT THE PERIODS THAT PRODUCED THE CURIOSITIES</h2>
                 
@@ -131,7 +129,10 @@
             </div>
             <div class="grid-item">
                 <footer>
-                    <p>© 2024 Copyright: <a class="" href="#">Forbidden Curiosities</a></p>
+                    <!-- Copyright -->
+                <p>&#169; 2024 Copyright: <a href="#">Forbidden Curiosities</a></p>
+                <p><i>This is the final project for the course <a href="https://www.unibo.it/it/studiare/dottorati-master-specializzazioni-e-altra-formazione/insegnamenti/insegnamento/2023/454464" target="_blank">Information Modelling and Web Technologies</a>, taught by Professor Fabio Vitali at the University of Bologna during the 2023/2024 academic year, as part of the Master's program in <a href="https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge" target="_blank">Digital Humanities and Digital Knowledge</a>.</i></p>
+                <p>Read the full documentation of the project <a href="doc.html" target="_blank">here</a>.</p>
                 </footer>
             </div>
         </div>
