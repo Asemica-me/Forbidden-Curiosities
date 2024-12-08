@@ -50,7 +50,7 @@ function subNar(narButton) {
     const targetContainer = document.getElementById('sub-nar');
     targetContainer.innerHTML = ""; // Clear the container
 
-    const periods = ["XV-XVII", "XVII-XIX", "1th half XX", "2nd half XX", "XXI"];
+    const periods = ["XV-XVII", "XVIII-XIX", "1th half XX", "2nd half XX", "XXI"];
     const tipologies = ["Texts", "Tools", "Weapons", "Garments", "Events", "Works Of Art"];
     const themes = ["Ethics Of War", "Scientific Revolution", "Women's History", "Religious Dissent", "Provocative Art", "Digital Privacy"];
 
@@ -150,7 +150,7 @@ function changeList(subNarButton) {
         value = 'XV-XVII Century';
         nar = "Historical Period";
         renderList(XVXVIIObj);
-    } else if (subButtonText === 'XVII-XIX') {
+    } else if (subButtonText === 'XVIII-XIX') {
         value = "XVII-XIX Century";
         nar = "Historical Period";
         renderList(XVIIXIXObj);
