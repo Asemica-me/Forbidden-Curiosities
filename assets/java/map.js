@@ -92,23 +92,23 @@ function changeList(subNarButton) {
     const itemDict = {
         "Arquebus (1)": 1,
         "Vitruvian man (2)": 2,
-        "Martin Luther's 95 Theses (facsimile) (3)": 3,
-        "Galileo's Telescope Replica (4)": 4,
+        "Martin Luther’s 95 Theses (facsimile) (3)": 3,
+        "Galileo’s Telescope Replica (4)": 4,
         "Reign of Terror Guillotine Blade (5)": 5,
-        '"The Origin of Species" by Charles Darwin (6)': 6,
+        "The Origin of Species” by Charles Darwin (6)": 6,
         "Victorian-Era Corset (7)": 7,
         "Courbet's L'Origine du Monde (8)": 8,
         "Sheet of the measurements taken by Marie Curie (9)": 9,
         "Suffragette Hunger Strike Medal (10)": 10,
         "Enigma Machine Model D A1214 (11)": 11,
-        'Replica of the Atomic Bomb "Little Boy" (12)': 12,
-        'First Issue of "Playboy" Magazine (13)': 13,
+        "Replica of the Atomic Bomb “Little Boy” (12)": 12,
+        "First Issue of “Playboy” Magazine (13)": 13,
         "Mini skirt by Mary Quant (14)": 14,
         "NASA Moon Landing Photo (15)": 15,
-        '"Shoot" by Chris Burden (16)': 16,
+        "“Shoot” by Chris Burden (16)": 16,
         "Dolly the Sheep (Cloning) (17)": 17,
-        '"For the Love of God" by Damien Hirst (18)': 18,
-        "Edward Snowden's Revelations (facsimile) (19)": 19,
+        "For the Love of God” by Damien Hirst (18)": 18,
+        "Edward Snowden’s Revelations (facsimile) (19)": 19,
         "AI Image of Pope Francis (20)": 20
     };
 
@@ -151,7 +151,7 @@ function changeList(subNarButton) {
         nar = "Historical Period";
         renderList(XVXVIIObj);
     } else if (subButtonText === 'XVIII-XIX') {
-        value = "XVII-XIX Century";
+        value = "XVIII-XIX Century";
         nar = "Historical Period";
         renderList(XVIIXIXObj);
     } else if (subButtonText === '1th half XX') {
