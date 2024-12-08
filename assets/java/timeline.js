@@ -39,24 +39,6 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 	timelineObserver.observe(timeline);
 
 
-    const sections = document.querySelectorAll(".section");
-    const sectionOpts = {
-		root: null, // Valore per ottenere la viewport come contenitore da osservare
-		rootMargin: '0px',
-		threshold: 0.8 // Valore che fa scattare l'animazione quando l'elemento è per il 80% visibile
-	};
-    const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            
-        });
-    }, sectionOpts);
-
-    sections.forEach(section => {console.log(section.dataset.value);});
-
-
-
-
-
     const searchIcon = document.getElementById("search-icon");
     const wideScreen = getComputedStyle(document.querySelector(":root")).getPropertyValue("--wideScreen");
 
