@@ -17,30 +17,8 @@ window.addEventListener('scroll', function() { // Necessario per controllare il 
 
 
 document.addEventListener("DOMContentLoaded", function() { //Necessario per poter agire sugli elementi una volta che sono stati caricati dal browser
-    // InterSectionObserver per far apparire side-search solo quando inizia la timeline
-	const sideSearch = document.getElementById("side-search");
-	const timeline = document.getElementById("timeline");
-	const opts = {
-		root: null, // Valore per ottenere la viewport come contenitore da osservare
-		rootMargin: '0px',
-		threshold: 0.07 // Valore che fa scattare l'animazione quando l'elemento è per il 8% visibile
-	};
-
-	const timelineObserver = new IntersectionObserver((entries) => {
-		entries.forEach(entry => {
-			if (entry.isIntersecting) {
-				sideSearch.classList.add("show");
-			} else {
-				sideSearch.classList.remove("show");
-			}
-		});
-	}, opts);
-
-	timelineObserver.observe(timeline);
-
 
     const searchIcon = document.getElementById("search-icon");
-    const wideScreen = getComputedStyle(document.querySelector(":root")).getPropertyValue("--wideScreen");
 
     searchIcon.addEventListener("click", function() {
         sideSearch.classList.toggle("no-hover");
@@ -119,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 		entries.forEach(entry => {
 			const data = entry.target.parentElement.children[0].children[0];
 			if (entry.isIntersecting) {
-				if (wideScreen === "True") {
+				if (document.body.offsetWidth > "830") {
 					const index = elements_array.indexOf(entry.target);
                 	if (index % 2 == 0) {
 						entry.target.style.animation = "left-enter 1s ease";
