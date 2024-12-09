@@ -356,7 +356,7 @@ function switchItem(n) {
 //
 // ========================
 
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
     // Animazione dal basso verso l'alto
     const elementsBottomUp = document.querySelectorAll('.hidden-animation-bottom-up');
     elementsBottomUp.forEach((element, index) => {
