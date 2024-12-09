@@ -14,7 +14,7 @@ body {
 
 .grid-container{
     display: grid;
-    grid-template-rows: 15vh auto auto 10vh 25vh;
+    grid-template-rows: 15vh auto auto 10vh auto;
     
 }
 
@@ -103,18 +103,7 @@ body {
     object-fit: contain; 
 }
 
-@media screen and (min-width: 831px) {
-  
-  div.menu {visibility: hidden;}
-}
 @media screen and (max-width: 830px) {
-    :root {
-        --wideScreen: False;
-    }
-
-    div.navbar-body {visibility: hidden;
-    }
-    
     .grid-container{
         row-gap: 5vh;
     }

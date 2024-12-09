@@ -13,7 +13,7 @@ body {
 
 .container {
   display: grid;
-  grid-template-rows: 15vh auto 85vh 25vh; 
+  grid-template-rows: 15vh auto 85vh auto; 
   max-width: 100vw;
   row-gap: 3vh;
  
@@ -193,7 +193,7 @@ body {
 
   /* Adjust container grid */
   .container {
-    grid-template-rows: 15vh auto auto 25vh; /* Three rows */
+    grid-template-rows: 15vh auto auto auto; /* Three rows */
     
   }
 
