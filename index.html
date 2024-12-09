@@ -18,7 +18,7 @@
             <!-- Navbar -->
             <div id="navbar">
                 <div class="rom-navbar">
-                    <div id="logo-box"><a class="logo" href="index.html"></a></div>
+                    <div id="logo-box"><a class="logo" href="index.html" title="Home"></a></div>
                     <div class="navbar-body">
                         <div class="nav-link-box">
                             <a class="nav-link" href="narratives.html">Narratives</a>
@@ -70,16 +70,91 @@
             </div>
         </div>
         <div id="about">
-            <div></div>
-            <div id="about-content">
-                <h2>DISCOVER THE EXHIBITION</h2>
-                <p>The exhibition delve into items that stirred debate, challenged norms, or had unexpected impacts, offering a provocative look at how controversy can drive change. 
-                    Whether you're exploring the scientific revolutions sparked by Galileo's Telescope or contemplating the cultural provocations of Gustave Courbet’s "Origin du monde", this application is your gateway to discovering the stories behind each artifact, unravelling their roles in shaping our past and present.</p>
-                    <button class="btn" onclick="location.href='narratives.html'"><span>EXPLORE</span></button>
+            <div id="description">
+                <div id="texts">
+                    <div id="part-1">
+                        <h2>BEYOND BOUNDARIES</h2>
+                        <p>This temporary art exhibition presents a provocative collection of objects that have stirred debate, challenged societal norms, or had unexpected cultural impacts. By showcasing these items, the exhibition invites visitors to explore how controversy can drive change, spark innovation, and redefine values. Each object tells a story of disruption, inspiring reflection and dialogue.</p>
+                        <button class="btn" onclick="location.href='narratives.html'"><span>NARRATIVES</span></button>
+                    </div>
+                    <div id="part-2">
+                        <h2>DISCOVER THE EXHIBITION</h2>
+                        <p>The exhibition delve into items that stirred debate, challenged norms, or had unexpected impacts, offering a provocative look at how controversy can drive change. 
+                            Whether you're exploring the scientific revolutions sparked by Galileo's Telescope or contemplating the cultural provocations of Gustave Courbet’s "Origin du monde", this application is your gateway to discovering the stories behind each artifact, unravelling their roles in shaping our past and present.</p>
+                        <button class="btn" onclick="location.href='items.html'"><span>ITEMS</span></button>
+                    </div>
+                </div>
+                <div id="buttons">
+                    <h3>EXPLORE:</h3>
+                    <button type="button" class="btn" onclick="location.href='timeline.html'">
+                        <span>TIMELINE</span>
+                    </button>
+                    <button type="button" class="btn" onclick="location.href='map.html'">
+                        <span>MAP</span>
+                    </button>
+                </div>
             </div>
-            <div></div>
+            <div id="exhib-info">
+                <div id="info-box">
+                    <h2>Visiting information</h2>
+                    <div id="info-contents">
+                        <div>
+                            <h3>Exhibition period:</h3>
+                            <p>March 15, 2025 – June 30, 2025</p>
+                        </div>
+                        <div>
+                            <h3>Special offer:</h3>
+                            <p>Every Wednesday, entry is free after 4:00 PM as part of the "Art for All" initiative.</p>
+                        </div>
+                        <div>
+                            <h3>Tickets:</h3>
+                            <ul>
+                                <li>General Admission: €12</li>
+                                <li>Reduced Admission (students, seniors, groups of 10+): €8</li>
+                                <li>Children under 12: Free</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Guided tours:</h3>
+                            <p>Available daily at 11:00 AM, 2:00 PM, and 5:00 PM. Advance booking required ( €5 supplement).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="museum-panel">
+                <div id="museum-image">
+                    <img src="assets/img/day-mast.jpg" title="Museum Mast">
+                    <div id="museum-descr">
+                        <h3>Location: MAST</h3>
+                        <p>Fondazione MAST is an international, cultural and philanthropic institution based on Technology, Art and Innovation.</p>
+                        <p>Founded in Bologna in 2013, the Foundation aims to promote projects that leverage identity and creativity in order to develop new ideas and create new connections.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="logistics">
+                <div id="logi-info">
+                    <div>
+                        <h3>Opening hours:</h3>
+                        <ul>
+                            <li>Monday to Friday: 10:00 AM – 6:00 PM</li>
+                            <li>Saturday and Sunday: 10:00 AM – 8:00 PM</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Where we are:</h3>
+                        <p>Via Speranza, 42, 40133 Bologna BO</p>
+                    </div>
+                    <div>
+                        <h3>Facilities:</h3>
+                        <ul>
+                            <li>Free parking area.</li>
+                            <li>On-site café featuring locally sourced delicacies.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="google-maps"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2193.3814586562244!2d11.296152112397795!3d44.504691198909455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477fd40dbf4f9021%3A0x644ea399b30c42f7!2sMAST!5e1!3m2!1sit!2sit!4v1733754123004!5m2!1sit!2sit" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+            </div>
         </div>
-        <div></div> <!-- Empty between timeline and footer-->
         <footer class="footer">
             <!-- Copyright -->
             <p>&#169; 2024 Copyright: <a href="#">Forbidden Curiosities</a></p>
@@ -90,3 +165,14 @@
     
 </body>
 </html>
+
+<!--
+            <div></div>
+            <div id="about-content">
+                <h2>DISCOVER THE EXHIBITION</h2>
+                <p>The exhibition delve into items that stirred debate, challenged norms, or had unexpected impacts, offering a provocative look at how controversy can drive change. 
+                    Whether you're exploring the scientific revolutions sparked by Galileo's Telescope or contemplating the cultural provocations of Gustave Courbet’s "Origin du monde", this application is your gateway to discovering the stories behind each artifact, unravelling their roles in shaping our past and present.</p>
+                    
+            </div>
+            <div></div>
+            -->
