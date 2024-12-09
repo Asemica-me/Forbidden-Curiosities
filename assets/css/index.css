@@ -251,7 +251,11 @@ p {line-height: 1.5em;}
 /*================================================*/
 
 @media screen and (max-width: 830px) {
-  
+
+  h1 {font-size: 47px;}
+  h2 {font-size: 25px;}
+  h3 {font-size: 20px;}
+
   #about {
     padding-left: 10%;
     padding-right: 10%;
