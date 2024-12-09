@@ -9,7 +9,7 @@ let nar = sessionStorage.getItem("nar");
 let value = sessionStorage.getItem("value");
 
 
-// Funzione per attivare e disattivare con un click il menu hamburger
+// Funzione per attivare e disattivare con un click il menu hamburger / Romolo
 function toggleCurtain() {
 	let menu_links = document.getElementById('menu-links');
 	let toggleButton = document.getElementById('toggleButton');
@@ -28,7 +28,7 @@ function toggleCurtain() {
 
 document.addEventListener("DOMContentLoaded", function() {
     
-    // Event Listener per far apparire il layer con le frecce di navigazione e 
+    // Romolo // Event Listener per far apparire il layer con le frecce di navigazione e 
     // per farlo sparire quando il puntatore esce dall'area
     const switchPanel = document.getElementById("switchPanel");
 
@@ -84,7 +84,9 @@ document.addEventListener("DOMContentLoaded", function() {
     
 });
 
-// JSON Data
+
+// JSON Data / Lucrezia
+
 document.addEventListener("DOMContentLoaded", async function(event) {
     fetch('assets/data/items.json')
     .then(response => response.json())
@@ -229,7 +231,7 @@ function createInfoTable(item) {
 };
 
 
-// Funzione per evidenziare l'indice corrente nella barra degli indici
+// Funzione per evidenziare l'indice corrente nella barra degli indici / Romolo
 function highlightIndex(n) {
     const indeces = document.getElementsByClassName("index");
     for (let i = 0; i < indeces.length; i++) {
@@ -240,7 +242,7 @@ function highlightIndex(n) {
     index = n;
 }
 
-// INIZIO funzioni per bottoni LESS - MORE
+// INIZIO funzioni per bottoni LESS - MORE / Lucrezia
 
 function more() {
     let lessBtn = document.getElementById("lessBtn");
@@ -289,6 +291,8 @@ function hideFullInfo() {
 }
 
 // FINE funzioni per bottoni LESS - MORE
+
+// Funzioni narrative / Lucrezia e Romolo
 
 function changeNarrative(narrative,value) {
         currentNarrative = narrative;
@@ -352,7 +356,7 @@ function switchItem(n) {
 
 //=========================
 //
-// ANIMAZIONI DISSOLVENZA  
+// ANIMAZIONI DISSOLVENZA  / Lucrezia
 //
 // ========================
 
@@ -404,7 +408,7 @@ window.addEventListener('load', () => {
 });
 
 //=========================
-//  INIZIO TENDINE FILTER  //
+//  INIZIO TENDINE FILTER  // Lucrezia
 // ========================
 
 document.addEventListener('click', (event) => {
@@ -424,22 +428,22 @@ document.addEventListener('click', (event) => {
     toggles.forEach((toggle) => {
         if (toggle.contains(event.target)) {
             const dropdown = toggle.nextElementSibling; // Trova il menu associato
-            const isVisible = dropdown.style.visibility === 'visible';
+            const isVisible = dropdown.style.visibility === 'visible'; //check visibility of dropdown element (le tendine)
 
             // Mostra o nasconde il dropdown
             dropdown.style.visibility = isVisible ? 'hidden' : 'visible';
             dropdown.style.opacity = isVisible ? '0' : '1';
+            // if true hidden and 0, if false visible and 1
         }
     });
 });
-
 
 //=========================
 //  FINE TENDINE         //
 // ========================
 
 //=========================
-//  INIZIO NARRATIVE     //
+//  INIZIO NARRATIVE     // Funzioni Pietro
 // ========================
 
 function goNar(btn){
@@ -454,8 +458,6 @@ function goNar(btn){
     window.location.href = `items.html`;
 
 }
-
-
 
 // Function to call when an item is clicked
 function goItem(listElement) {
@@ -473,5 +475,5 @@ function goItem(listElement) {
 
 
 //=========================
-//  FINE NARRATIVE         //
+//  FINE NARRATIVE       //
 // ========================
