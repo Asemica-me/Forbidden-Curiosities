@@ -83,7 +83,7 @@ li {color: var(--text)}
   margin: 0;
   height: inherit;
   width: inherit;
-  grid-template-rows: 100vh auto 25vh;
+  grid-template-rows: 100vh auto auto;
   gap: 20vh;
 }
 
@@ -284,6 +284,7 @@ li {color: var(--text)}
 /*================================================*/
 /* =============== Fine about ==================*/
 /*================================================*/
+
 
 @media screen and (max-width: 830px) {
 
