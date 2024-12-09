@@ -1,3 +1,20 @@
+// Funzione per attivare e disattivare con un click il menu hamburger, quando si attiva il menu hamburger si opacizza lo sfondo
+function toggleCurtain() {
+	let menu_links = document.getElementById('menu-links');
+	let toggleButton = document.getElementById('toggleButton');
+	let opaque = document.getElementById('opaque-page');
+	if (menu_links.style.display === "grid") {
+		menu_links.style.display = "none";
+		opaque.classList.remove("active");
+		document.body.style.overflow = "";
+	} else {
+		menu_links.style.display = "grid";
+		opaque.classList.add("active");
+		document.body.style.overflow = "hidden";	
+	}
+	toggleButton.classList.toggle('x');
+  }
+
 // Funzione per avere un pulsante che rimandi all'inizio della pagina
 window.addEventListener('scroll', function() { // Necessario per controllare il valore dello scroll della pagina 
 	let upButton = document.getElementById("upButton");
@@ -44,6 +61,54 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 				behavior: 'smooth'
 			});
 		});
+	});
+
+
+	// IntersectionObserver per illuminare un indice in base al periodo storico di appartenenza degli oggetti visualizzati a schermo
+	const itemsArray = Array.from(document.querySelectorAll("div.item"));
+	const option = {
+		root: null, // Valore per ottenere la viewport come contenitore da osservare
+		rootMargin: '0px',
+		threshold: 1 // Valore che fa scattare l'animazione quando l'elemento è per il 100% visibile
+	};
+	const first_p = document.querySelector("li.XV-XVII a");
+	const second_p = document.querySelector("li.XVIII-XIX a");
+	const third_p = document.querySelector("li.XX-I a");
+	const fourth_p = document.querySelector("li.XX-II a");
+	const fifth_p = document.querySelector("li.XXI a");
+	let preavious = fifth_p;
+
+	const itemObserver = new IntersectionObserver((entries) => {  // Si dichiara cosa deve fare l'osservatore agli elementi che gli vengono inseriti (entries)
+		entries.forEach(entry => {
+			let n = parseInt(entry.target.dataset.item, 10);
+			if (entry.isIntersecting) {
+				console.log(entry.target, n);
+				if (1 <= n && n <= 4) {
+					preavious.style.textDecoration= "none";
+					first_p.style.textDecoration= "underline";
+					preavious = first_p;
+				} else if (5 <= n && n <= 8) {
+					preavious.style.textDecoration= "none";
+					second_p.style.textDecoration= "underline";
+					preavious = second_p;
+				} else if (9 <= n && n <= 12) {
+					preavious.style.textDecoration= "none";
+					third_p.style.textDecoration= "underline";
+					preavious = third_p;
+				} else if (13 <= n && n <= 17) {
+					preavious.style.textDecoration= "none";
+					fourth_p.style.textDecoration= "underline";
+					preavious = fourth_p;
+				} else if (18 <= n) {
+					preavious.style.textDecoration= "none";
+					fifth_p.style.textDecoration= "underline";
+					preavious = fifth_p;
+				}
+			}
+		});
+	}, option);
+	itemsArray.forEach(element => {
+		itemObserver.observe(element); // Qui si inizia ad osservare l'elemento
 	});
 
 

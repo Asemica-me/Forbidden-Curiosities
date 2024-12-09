@@ -200,7 +200,7 @@ box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2); /* Ombra interna */
     width: 100%;
 }
 
-.item:last-child {
+.item.last {
     margin-bottom: 15vh;
 }
 
@@ -348,6 +348,7 @@ to {
 
     /* media query: left/right, row/row-reverse */
     div#side-search {
+        top: 15%;
         right: 0;
         left: unset;
         flex-direction: row-reverse;
