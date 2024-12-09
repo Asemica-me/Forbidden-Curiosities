@@ -348,6 +348,7 @@ to {
 
     /* media query: left/right, row/row-reverse */
     div#side-search {
+        top: 15%;
         right: 0;
         left: unset;
         flex-direction: row-reverse;
