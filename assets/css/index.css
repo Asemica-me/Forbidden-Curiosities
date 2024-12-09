@@ -83,7 +83,7 @@ li {color: var(--text)}
   margin: 0;
   height: inherit;
   width: inherit;
-  grid-template-rows: 100vh auto 25vh;
+  grid-template-rows: 100vh auto auto;
   gap: 20vh;
 }
 
@@ -285,6 +285,7 @@ li {color: var(--text)}
 /* =============== Fine about ==================*/
 /*================================================*/
 
+
 @media screen and (max-width: 830px) {
 
   h1 {font-size: 47px;}
@@ -320,6 +321,12 @@ li {color: var(--text)}
     height: 70vh;
     background-color: var(--color3);
     border-radius: 8px;
+    animation: "";
+  }
+
+  @keyframes grow {
+    from {height: 40vh;}
+    to {height: 70vh;}
   }
     
   #museum-descr {

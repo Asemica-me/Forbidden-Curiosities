@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 	
 	// Qui si attribuisce la classe con l'animazione alle immagini per farle entrare dai lati della viewport
 	const museumDescr_arr = Array.from([document.getElementById("museum-descr")]);
-
+	const museumImage = document.getElementById("museum-image");
 	const option = {
 		root: null, // Valore per ottenere la viewport come contenitore da osservare
 		rootMargin: '0px',
@@ -57,8 +57,10 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 		entries.forEach(entry => {
 			if (entry.isIntersecting) {
 				
+				if (document.body.offsetWidth <= "830") {
+					museumImage.style.animation = "grow 0.4s ease";
+				}
 				entry.target.style.opacity = "1";
-				observer.unobserve(entry.target); // Fatta l'animaizone qui si smette di osservare l'elemento per non ripeterla
 			}
 		});
 	}, option);
