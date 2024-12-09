@@ -41,6 +41,31 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 	const arrow = document.getElementById("arrow");
 	arrow.classList.add("pointed");
 
+	
+	
+	// Qui si attribuisce la classe con l'animazione alle immagini per farle entrare dai lati della viewport
+	const museumDescr_arr = Array.from([document.getElementById("museum-descr")]);
+
+	const option = {
+		root: null, // Valore per ottenere la viewport come contenitore da osservare
+		rootMargin: '0px',
+		threshold: 0.6 // Valore che fa scattare l'animazione quando l'elemento è per il 100% visibile
+	};
+
+	
+	const observer = new IntersectionObserver((entries) => {  // Si dichiara cosa deve fare l'osservatore agli elementi che gli vengono inseriti (entries)
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				
+				entry.target.style.opacity = "1";
+				observer.unobserve(entry.target); // Fatta l'animaizone qui si smette di osservare l'elemento per non ripeterla
+			}
+		});
+	}, option);
+	museumDescr_arr.forEach(element => {
+		observer.observe(element); // Qui si inizia ad osservare l'elemento
+	});
+
 });
 
 /* index.thml functions END */

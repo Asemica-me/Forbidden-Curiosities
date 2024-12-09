@@ -19,6 +19,7 @@ window.addEventListener('scroll', function() { // Necessario per controllare il 
 document.addEventListener("DOMContentLoaded", function() { //Necessario per poter agire sugli elementi una volta che sono stati caricati dal browser
 
     const searchIcon = document.getElementById("search-icon");
+	const sideSearch = document.getElementById("side-search");
 
     searchIcon.addEventListener("click", function() {
         sideSearch.classList.toggle("no-hover");
