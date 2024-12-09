@@ -154,7 +154,7 @@ p {line-height: 1.5em;}
   flex-direction: column;
   padding-left: 20%;
   padding-right: 20%;
-  gap: 50vh;
+  gap: 40vh;
 }
 
 /*============ Inizio Description ==============*/
@@ -208,20 +208,6 @@ p {line-height: 1.5em;}
   padding: 2%;
 }
 
-#image-box {
-  position: absolute;
-  right: -15%;
-  top: -35%;
-  height: 200px;
-  width: 500px;
-}
-
-#image-box img {
-  max-width: 100%;
-  max-width: 100%;
-  border-radius: 8px;
-}
-
 #info-contents {
   position: relative;
   display: grid;
@@ -242,7 +228,34 @@ p {line-height: 1.5em;}
 
 /*============ Inizio Museum-panel ==============*/
 
+#museum-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+#museum-image {
+  position: relative;
+  width: 150%;
+  height: 90vh;
+}
+
+#museum-image img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+}
+
+#museum-descr {
+  position: absolute;
+  background-color: var(--color3);
+  padding: 0 2% 0 2%;
+  border-radius: 8px;
+  width: 33%;
+  bottom: -10%;
+  right: 5%;
+}
 
 /*============ Fine Museum-panel ==============*/
 
@@ -256,6 +269,11 @@ p {line-height: 1.5em;}
   h2 {font-size: 25px;}
   h3 {font-size: 20px;}
 
+  #center h1 {
+    position: relative;
+    margin-top: 40%;
+  }
+
   #about {
     padding-left: 10%;
     padding-right: 10%;
@@ -267,15 +285,21 @@ p {line-height: 1.5em;}
     width: 120px;
   }
 
-  #image-box {
-    position: relative;
-    width: 100%;
-    top: unset;
-    right: unset;
+  #museum-image {
+    width: 120%;
+    height: 70vh;
+    background-color: var(--color3);
+    border-radius: 8px;
   }
-
-  #image-box img {
-    max-width: 100%;
-    max-height: 100%;
+    
+  #museum-descr {
+    position: relative;
+    background-color: transparent;
+    padding: 0.5% 2% 0.5% 2%;
+    border-radius: 0;
+    margin-left: 3%;
+    width: 90%;
+    bottom: unset;
+    right: unset;
   }
 }
