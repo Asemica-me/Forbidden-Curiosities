@@ -1,23 +1,3 @@
-/*================================================*/
-/* =============== Inizio Navbar =================*/      
-/*================================================*/
-:root {
-  --wideScreen: True;
-  --color1: #cacaca;
-  --color2: #f7d9ad;
-  --color3: #542E71;
-  --color4: #de7b0a;
-  --color5: #d7b052;
-  --color6: #2B1F4D;
-  --colorBackground: #140221;
-  --text: #e5e5e5;
-  --dividers: #d1c2adda;
-  --footer: #3b373dc7;
-  --font-family-header: "Garamond", serif;
-  --font-family-text: "Trebuchet MS", sans-serif;
-  --font-family-navbar: "Roboto Condensed", sans-serif;
-  --buttons: 'Tahoma', sans-serif;
-}
 
 body {
   margin: 0;
@@ -29,172 +9,6 @@ body {
   font-weight: 400;
   font-style: normal;
 }
-
-/* INIZIO Navbar/Hamburger-Menu */
-#page-container #main-container #navbar {
-  position: relative;
-  height: 100%;
-  background-color: var(--colorBackground);
-  font-family: var(--font-family-navbar);
-}
-
-.rom-navbar {
-  position: relative;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  background-color: var(--colorBackground);
-  border-bottom: 1px solid var(--dividers);
-}
-
-.rom-navbar #logo-box {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#logo-box .logo {
-  position: relative;
-  background-image: url('../img/logo.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 13vh;
-  width: 13vh;
-  border: none;
-}
-
-.navbar-body {
-  position: inherit;
-  font-size: calc(15px + 0.390625vw);
-  display: grid;
-  height: inherit;
-  grid-template-columns: repeat(4, auto); /* Le colonne si restringono al contenuto */
-  column-gap: 1px; /* Aggiungi uno spazio minimo tra le voci */
-}
-
-.nav-link-box {
-  height: fit-content;
-  display: grid;
-  grid-template-rows: 3fr 1fr;
-  align-self: center;
-}
-
-.nav-link-box .nav-link:hover + {
-  background-color: var(--color5);
-  transition: background-color 0.5s ease;
-}
-
-.nav-link {
-  text-decoration: none; /* Rimuove la sottolineatura standard */
-  position: relative; /* Necessario per posizionare il ::after */
-  color: var(--color2);
-  text-align: center;
-  align-self: flex-end;
-  transition: color 0.3s ease; /* Animazione del colore */
-}
-
-.nav-link::after {
-  content: ''; /* Pseudo-elemento vuoto per creare la sottolineatura */
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -2px; /* Posiziona la linea appena sotto il testo */
-  width: 0; /* Larghezza iniziale */
-  height: 2px; /* Spessore della sottolineatura */
-  background-color: var(--color5); /* Colore della sottolineatura */
-  transition: width 0.3s ease; /* Animazione della larghezza */
-}
-
-.nav-link:hover {
-  color: var(--color5); /* Cambia il colore del testo */
-  text-decoration: none !important;
-}
-
-.nav-link:hover::after {
-  width: 140px; /* Espande la linea solo sotto la voce corrente */
-}
-
-#menu-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 2;
-}
-
-.toggle-btn {
-  position: relative;
-  width: 4vw;
-  height: 4vw;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.toggle-btn span {
-  position: absolute;
-  width: 40px;
-  height: 4px;
-  transition: 0.3s;
-  background-color: var(--color2);
-}
-
-.toggle-btn span:first-child {
-  transform: translateY(-8px);
-}
-
-.toggle-btn.x span:nth-child(2) {
-  opacity: 0;
-}
-
-.toggle-btn span:last-child {
-  transform: translateY(8px);
-}
-
-.toggle-btn.x span:first-child {
-  transform: rotate(45deg) translateY(0);
-}
-
-.toggle-btn.x span:last-child {
-  transform: rotate(-45deg) translateY(0);
-}
-
-#menu-links {
-  position: absolute;
-  height: 200px;
-  width: 100%;
-  display: none;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  z-index: 200;
-}
-
-#menu-links a {
-  color: var(--text);
-  background-color: var(--color6);
-  text-decoration: none;
-  font-size: calc(15px + 0.390625vw);
-  text-align: center;
-  padding: 10px 0;
-}
-
-#menu-links a:last-child {
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-}
-
-#menu-links a:nth-child(odd) {
-  background-color: var(--color3);
-}
-
-#menu-links a:hover {
-  background-color: var(--color5);
-}
-/* FINE Navbar/Hamburger-Menu */
 
 /* ============= inizio narratives ===============*/
 
@@ -233,7 +47,7 @@ body {
     pointer-events: none;
     overflow: "";
     
-  }
+}
 
 #sum{
   overflow: auto; /* Enable vertical scrolling */
@@ -259,10 +73,10 @@ body {
 }
 
 #sumModal.visible{
-    pointer-events: all;
-    opacity: 1 ;
-    visibility: visible ;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
+  pointer-events: all;
+  opacity: 1 ;
+  visibility: visible ;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 #closebtn {
@@ -355,166 +169,60 @@ body {
 /* ============ Buttoni Pietro====================*/      
 
 .btnCont{
-    opacity: 0;
-    transform: translateX(-25%); /* Start off-screen to the left */
-    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    height: 50px ;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    
+  opacity: 0;
+  transform: translateX(-25%); /* Start off-screen to the left */
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  height: 50px ;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
 }
 
 .narBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    background-color:var(--colorBackground);
-    color: var(--text);
-    height: 50px ;
-    border: 1px solid var(--color5);
-    padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: background-color 0.3s;
-    width: 40%;
-    max-width: 250px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-color:var(--colorBackground);
+  color: var(--text);
+  height: 50px ;
+  border: 1px solid var(--color5);
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+  width: 40%;
+  max-width: 250px; 
 }
 
 .narBtn:hover {
-    background-color: var(--color5);
+  background-color: var(--color5);
     
 
 }
 
 .narBtn:active,
 .narBtn.active {
-    background-color: var(--color5);
+  background-color: var(--color5);
     
 }
 
-
 /* ============ Fine Buttoni Pietro ==============*/     
 
-/*  Larghezza finestra inferiore o uguale a 830px */
-@media screen and (max-width: 830px) {
-
-  div#page-container {
-      grid-template-rows: auto 25vh;
-  }
-  
-  div#page-container div#main-container {
-      grid-template-rows: 15vh auto;
-  }
-
-  div.navbar-body {visibility: hidden;}
-
-  div#gallery {grid-template-rows: 20vh auto;}
-
-  .space-between {
-      height: 80px;
-  }
-
-
-  div#item-space {
-      grid-template-columns: none;
-      grid-template-rows: 100vh;
-  }
-
-  div#img-space {grid-row: 1;}
-
-  div#info-space {grid-row: 2;}
-
-  div#search-bar {
-      width: 80%;
-  }
-
-  .options {
-      z-index: 10 !important;
-      background-color: calc(--color2) !important;
-  }
-  
-  #search-bar .narrative {
-      margin-bottom: 6%; /* Add margin for each narrative item */
-  }
-  
-  div#narratives-space {
-      width: fit-content;
-      align-self: center;
-      align-items: flex-start;
-      flex-direction: column;
-  }
-
-  div.narrative {
-      height: calc(100% / 3);
-  }
-
-  .filter-icon {
-      width: 5vw;
-      height: 5vw;
-  }
-
-  .icon-obj {
-      width: 14vw;
-      height: 14vw;
-  }
-
-  footer.footer {
-      padding: 3% 5%;
-      font-size: 0.85rem; 
-      word-break: break-word; 
-      margin-right: 0;
-  }
-
-}
-
-/* larghezza finestra superiore o uguale a 831px */
-@media screen and (min-width: 831px) {
-
-  div.menu {visibility: hidden;}
-}
-
-@media (max-width: 1200px) {
-  #sumModal {
-      width: 60%; 
-  }
-}
-
-@media (max-width: 1000px) {
-  #sumModal {
-      width: 70%; 
-  }
-}
-
-@media (max-width: 800px) {
-  #sumModal {
-      width: 80%; 
-  }
-}
 
 @media (max-width: 600px) {
   #sumModal {
-      width: 90%;
+      width: 80%;
   }
-
 }
 
 @media (max-width: 300px) {
   #sumModal {
-      width: 90%;
-  }
-
-  #goNar {
-      font-size: 14px;
-  }
-
-  #sumCont {
-      font-size: 12px;
+    width: 90%;
   }
 }
 
@@ -533,17 +241,3 @@ body {
 /*================================================*/
 
 
-footer {
-  height: 100%;
-  bottom: 0; /* Aligns it to the bottom of the parent */
-  background-color: var(--footer);
-  display: flex; /* Enables flexbox */
-  flex-direction: column; /* Aligns items vertically */
-  justify-content: center;
-  align-items: center;
-  text-align: center !important; 
-  color: var(--text);
-  overflow: hidden;
-  padding: 0% 4% 2% 4%;
-  position: static;
-}

@@ -1,21 +1,3 @@
-:root {
-  --wideScreen: True;
-  --color1: #cacaca;
-  --color2: #f7d9ad;
-  --color3: #542E71;
-  --color4: #de7b0a;
-  --color5: #d7b052;
-  --color6: #2B1F4D;
-  --colorBackground: #140221;
-  --text: #e5e5e5;
-  --dividers: #d1c2adda;
-  --footer: #3b373dc7;
-  --font-family-header: "Garamond", serif;
-  --font-family-text: "Trebuchet MS", sans-serif;
-  --font-family-navbar: "Roboto Condensed", sans-serif;
-  --buttons: 'Tahoma', sans-serif;
-}
-
 body {
   margin: 0;
   width: 100%;
@@ -27,178 +9,11 @@ body {
   font-style: normal;
 }
 
-/* =============== Inizio Navbar =================*/      
-
-/* INIZIO Navbar/Hamburger-Menu */
-#page-container #main-container #navbar {
-  position: relative;
-  height: 100%;
-  background-color: var(--colorBackground);
-  font-family: var(--font-family-navbar);
-}
-
-.rom-navbar {
-  position: relative;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  background-color: var(--colorBackground);
-  border-bottom: 1px solid var(--dividers);
-}
-
-.rom-navbar #logo-box {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#logo-box .logo {
-  position: relative;
-  background-image: url('../img/logo.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 13vh;
-  width: 13vh;
-  border: none;
-}
-
-.navbar-body {
-  position: inherit;
-  font-size: calc(15px + 0.390625vw);
-  display: grid;
-  height: inherit;
-  grid-template-columns: repeat(4, auto); /* Le colonne si restringono al contenuto */
-  column-gap: 1px; /* Aggiungi uno spazio minimo tra le voci */
-}
-
-.nav-link-box {
-  height: fit-content;
-  display: grid;
-  grid-template-rows: 3fr 1fr;
-  align-self: center;
-}
-
-.nav-link-box .nav-link:hover + {
-  background-color: var(--color5);
-  transition: background-color 0.5s ease;
-}
-
-.nav-link {
-  text-decoration: none; /* Rimuove la sottolineatura standard */
-  position: relative; /* Necessario per posizionare il ::after */
-  color: var(--color2);
-  text-align: center;
-  align-self: flex-end;
-  transition: color 0.3s ease; /* Animazione del colore */
-}
-
-.nav-link::after {
-  content: ''; /* Pseudo-elemento vuoto per creare la sottolineatura */
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -2px; /* Posiziona la linea appena sotto il testo */
-  width: 0; /* Larghezza iniziale */
-  height: 2px; /* Spessore della sottolineatura */
-  background-color: var(--color5); /* Colore della sottolineatura */
-  transition: width 0.3s ease; /* Animazione della larghezza */
-}
-
-.nav-link:hover {
-  color: var(--color5); /* Cambia il colore del testo */
-  text-decoration: none !important;
-}
-
-.nav-link:hover::after {
-  width: 140px; /* Espande la linea solo sotto la voce corrente */
-}
-
-#menu-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 2;
-}
-
-.toggle-btn {
-  position: relative;
-  width: 4vw;
-  height: 4vw;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.toggle-btn span {
-  position: absolute;
-  width: 40px;
-  height: 4px;
-  transition: 0.3s;
-  background-color: var(--color2);
-}
-
-.toggle-btn span:first-child {
-  transform: translateY(-8px);
-}
-
-.toggle-btn.x span:nth-child(2) {
-  opacity: 0;
-}
-
-.toggle-btn span:last-child {
-  transform: translateY(8px);
-}
-
-.toggle-btn.x span:first-child {
-  transform: rotate(45deg) translateY(0);
-}
-
-.toggle-btn.x span:last-child {
-  transform: rotate(-45deg) translateY(0);
-}
-
-#menu-links {
-  position: absolute;
-  height: 200px;
-  width: 100%;
-  display: none;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  z-index: 200;
-}
-
-#menu-links a {
-  color: var(--text);
-  background-color: var(--color6);
-  text-decoration: none;
-  font-size: calc(15px + 0.390625vw);
-  text-align: center;
-  padding: 10px 0;
-}
-
-#menu-links a:last-child {
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-}
-
-#menu-links a:nth-child(odd) {
-  background-color: var(--color3);
-}
-
-#menu-links a:hover {
-  background-color: var(--color5);
-}
-/* FINE Navbar/Hamburger-Menu */
 /* =============== Inizio map ===============*/
 
 .container {
   display: grid;
-  grid-template-rows: 15vh auto 85vh 20vh; 
+  grid-template-rows: 15vh auto 85vh 25vh; 
   max-width: 100vw;
   row-gap: 3vh;
  
@@ -212,10 +27,17 @@ body {
 }
 .nar-grid {
   display: grid;
-  grid-template-rows: 45% 45%; /* Each row takes 45% of the parent's height */
+  grid-template-rows: 45% 1px auto; 
   gap: 10%; /* Adds spacing between rows (adjust as needed) */
   height: 100%; /* Ensure the parent container uses its full height */
   width: 100%; /* Ensure the parent container uses its full width */
+}
+
+#gap{
+  justify-self: center;
+  height: 1px;
+  width: 60%;
+  background-color: var(--color5);
 }
 
 .grid-it {
@@ -243,6 +65,8 @@ body {
   cursor: pointer;
   width: 50%;
   height:70%;
+  max-height:50px ;
+  min-width: 180px;
   border-radius: 10px;
   
 }
@@ -283,6 +107,7 @@ body {
   cursor: pointer;
   width: 100%;
   height:100%;
+  max-height:42.55px ;
   padding: 10px;
   border-radius: 10px;
   
@@ -344,7 +169,6 @@ body {
   justify-content: center;
   height: 100%;
   width: 100%;
-  
   border-radius: 15px;
   min-height: 480px;
 
@@ -376,14 +200,11 @@ body {
 
 
 @media screen and (max-width: 830px) {
-  /* Hide navbar body */
-  .navbar-body {
-    visibility: hidden;
-  }
+
 
   /* Adjust container grid */
   .container {
-    grid-template-rows: 15vh auto min-content 20vh; /* Three rows */
+    grid-template-rows: 15vh auto auto 25vh; /* Three rows */
     
   }
 
@@ -396,13 +217,27 @@ body {
     
   }
 
+  .nar-grid{
+    gap:0;
+  }
+
+  .nar-but{
+    min-width: fit-content;
+    min-height:42.55px ;
+  }
+  #sub-nar {
+
+    gap: 2%; /* Adds spacing between buttons */
+
+    
+  }
+
   /* List adjustments */
   #list-container {
     display: grid;
     grid-template-rows: 10vh min-content;
   }
 
-  
 
   /* Map container height */
   #map-container {
@@ -440,7 +275,6 @@ body {
     margin-top: 0%;
   }
 
-
   /* List container hidden by default */
   #list {
     display: none;
@@ -454,23 +288,3 @@ body {
   /*================================================*/
   
   
-  /* =============== Inizio Footer =================*/
-  
-  .footer {
-    position: relative;
-    height: 100%;
-    bottom: 0; /* Aligns it to the bottom of the parent */
-    background-color: var(--footer);
-    display: flex; /* Enables flexbox */
-    flex-direction: column; /* Aligns items vertically */
-    justify-content: center;
-    align-items: center;
-    text-align: center !important; 
-    color: var(--text);
-    overflow: hidden;
-    padding: 0% 4% 2% 4%;
-    
-  }
-  
-  
- /* =============== Fine Footer =================*/
