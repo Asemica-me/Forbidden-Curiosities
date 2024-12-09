@@ -320,6 +320,12 @@ li {color: var(--text)}
     height: 70vh;
     background-color: var(--color3);
     border-radius: 8px;
+    animation: "";
+  }
+
+  @keyframes grow {
+    from {height: 40vh;}
+    to {height: 70vh;}
   }
     
   #museum-descr {
