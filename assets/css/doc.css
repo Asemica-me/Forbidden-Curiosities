@@ -340,3 +340,23 @@ th, td {
     background-color: #fbdcdcd9;
     color: #4c4c4c;
 }
+
+
+/* Per Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 10px; /* Larghezza della barra di scorrimento */
+}
+
+::-webkit-scrollbar-track {
+    background: #0c000fe3; /* Colore dello sfondo della barra */
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3d333e; /* Colore del cursore */
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #524754; /* Colore del cursore al passaggio del mouse */
+}

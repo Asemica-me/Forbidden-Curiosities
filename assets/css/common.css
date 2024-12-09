@@ -483,3 +483,22 @@ body.loaded .loading-screen {
             opacity: 1;
             transform: translateX(0);
         }
+
+/* Per Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 10px; /* Larghezza della barra di scorrimento */
+}
+
+::-webkit-scrollbar-track {
+  background: #d1c2ad4f; /* Colore dello sfondo della barra */
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1c2ad3b; /* Colore del cursore */
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e4d3bd52; /* Colore del cursore al passaggio del mouse */
+}
