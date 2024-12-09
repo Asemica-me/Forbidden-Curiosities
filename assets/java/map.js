@@ -67,6 +67,7 @@ function subNar(narButton) {
 function changeList(subNarButton) {
     const subButtonText = subNarButton.innerText; // Get the button's text
     const listDiv = document.getElementById('list'); // Target container
+    const mapImage = document.getElementById('map');
 
     // Define all object arrays
     const ALLObj = ["Arquebus (1)",'Vitruvian man (2)', 'Martin Luther’s 95 Theses (facsimile) (3)', 'Galileo’s Telescope Replica (4)','Reign of Terror Guillotine Blade (5)', 'The Origin of Species” by Charles Darwin (6)','Victorian-Era Corset (7)', 'Courbet\'s L\'Origine du Monde (8)','Sheet of the measurements taken by Marie Curie (9)', 'Suffragette Hunger Strike Medal (10)', 'Enigma Machine Model D A1214 (11)', 'Replica of the Atomic Bomb “Little Boy” (12)','First Issue of “Playboy” Magazine (13)', 'Mini skirt by Mary Quant (14)', 'NASA Moon Landing Photo (15)', '“Shoot” by Chris Burden (16)','Dolly the Sheep (Cloning) (17)', 'For the Love of God” by Damien Hirst (18)', 'Edward Snowden’s Revelations (facsimile) (19)', 'AI Image of Pope Francis (20)'];
@@ -143,79 +144,102 @@ function changeList(subNarButton) {
         listDiv.appendChild(ul);
     }
 
+    function changeMapImage(narrative) {
+        mapImage.src = `assets/img/maps/${narrative}.png`; 
+        mapImage.alt = `${narrative} Map`; 
+    }
+
     // Match the button text and render the corresponding list
     if (subButtonText === 'ALL') {
         renderList(ALLObj);
+        changeMapImage("ALL");
     } else if (subButtonText === 'XV-XVII') {
         value = 'XV-XVII Century';
         nar = "Historical Period";
         renderList(XVXVIIObj);
+        changeMapImage("XV-XVII");
     } else if (subButtonText === 'XVIII-XIX') {
         value = "XVIII-XIX Century";
         nar = "Historical Period";
         renderList(XVIIXIXObj);
+        changeMapImage("XVIII-XIX");
     } else if (subButtonText === '1th half XX') {
         value = "First half of XX Century";
         nar = "Historical Period";
         renderList(fXXObj);
+        changeMapImage("1th-half-XX");
     } else if (subButtonText === '2nd half XX') {
         value = "Second half of XX Century";
         nar = "Historical Period";
         renderList(sXXObj);
+        changeMapImage("2nd-half-XX");
     } else if (subButtonText === 'XXI') {
         value = "XXI Century";
         nar = "Historical Period";
         renderList(XXIObj);
+        changeMapImage("XXI");
     } else if (subButtonText === 'Texts') {
         value = "Text";
         nar = "Typology";
         renderList(TextsObj);
+        changeMapImage("Texts");
     } else if (subButtonText === 'Tools') {
         value = "Tools";
         nar = "Typology";
         renderList(ToolsObj);
+        changeMapImage("Tools");
     } else if (subButtonText === 'Weapons') {
         value = "Weapon";
         nar = "Typology";
         renderList(WeaponsObj);
+        changeMapImage("Weapons");
     } else if (subButtonText === 'Garments') {
         value = "Garment";
         nar = "Typology";
         renderList(GarmentsObj);
+        changeMapImage("Garments");
     } else if (subButtonText === 'Events') {
         value = "Event";
         nar = "Typology";
         renderList(EventsObj);
+        changeMapImage("Events");
     } else if (subButtonText === 'Works Of Art') {
         value = "Artwork";
         nar = "Typology";
         renderList(ArtObj);
+        changeMapImage("Art");
     } else if (subButtonText === 'Ethics Of War') {
         value = "Ethics of war";
         nar = "Themes";
         renderList(EthicsObj);
+        changeMapImage("Ethics");
     } else if (subButtonText === 'Scientific Revolution') {
         value = "Scientific revolution";
         nar = "Themes";
         renderList(ScientificObj);
+        changeMapImage("Scientific");
     } else if (subButtonText === 'Women\'s History') {
         value = "Women's history";
         nar = "Themes";
         renderList(WomenObj);
+        changeMapImage("Women");
     } else if (subButtonText === 'Religious Dissent') {
         value = "Religious dissent";
         nar = "Themes";
         renderList(ReligiousObj);
+        changeMapImage("Religious");
     } else if (subButtonText === 'Provocative Art') {
         value = "Provocative art";
         nar = "Themes";
         renderList(ProvocativeObj);
+        changeMapImage("Provocative");
     } else if (subButtonText === 'Digital Privacy') {
         value = "Digital privacy";
         nar = "Themes";
         renderList(DigitalObj);
-    } 
-};
+        changeMapImage("Digital");
+    }
+}
 
 function activateNarButton(button) {
     // Remove "active" class from all buttons

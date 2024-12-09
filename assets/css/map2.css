@@ -1,577 +1,287 @@
-
 body {
-    background-color: black;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--colorBackground);
+  overflow-x: hidden; /* Rimuove la barra di scorrimento orizzontale */
+  font-family: var(--font-family-text);
+  font-weight: 400;
+  font-style: normal;
 }
-  
-:root {
---mainColor: #f10ff1;
-}
-
-/* =============== Inizio Navbar =================*/      
-@media screen and (max-width: 830px) {
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--colorBackground);
-    overflow-x: hidden; /* Rimuove la barra di scorrimento orizzontale */
-    font-family: var(--font-family-text);
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  /* =============== Inizio map ===============*/
-  
-  .container {
-    display: grid;
-    grid-template-rows: 15vh auto 85vh 25vh; 
-    max-width: 100vw;
-    row-gap: 3vh;
-   
-  }
-  /* =============== Inizio nar menu ===============*/
-  .nar-container{
-    display:flex;
-    min-height: 30vh;
-    height: 30vh;
-    width: 100%;
-  }
-  .nar-grid {
-    display: grid;
-    grid-template-rows: 45% 1px auto; 
-    gap: 10%; /* Adds spacing between rows (adjust as needed) */
-    height: 100%; /* Ensure the parent container uses its full height */
-    width: 100%; /* Ensure the parent container uses its full width */
-  }
-  
-  #gap{
-    justify-self: center;
-    height: 1px;
-    width: 60%;
-    background-color: var(--color5);
-  }
-  
-  .grid-it {
-    width: 100%; /* Each grid item spans the full width */
-   
-  }
-  
-  #nar{
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    border-radius: 15px;
-  }
-  
-  .nar-but-container{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    
-  }
-  
-  .nar-but {
-    background-color: var(--colorBackground);
-    color: var(--text);
-    border: 1px solid var(--color5);
-    cursor: pointer;
-    width: 50%;
-    height:70%;
-    max-height:50px ;
-    min-width: 180px;
-    border-radius: 10px;
-    
-  }
-  
-  .nar-but:hover {
-    background-color: var(--color5);
-  }
-  
-  #sub-nar {
-    display: flex;
-    flex-wrap: wrap; /* Allows buttons to wrap if needed */
-    gap: 5%; /* Adds spacing between buttons */
-    align-items: center;
-    justify-content: center; /* Aligns buttons in a row, starting from the left */
-    min-height: 12%;
-    height: auto;
-    margin-bottom: 2vh;
-    
-  }
-  
-  .sub-nar-but-container {
-    width: auto; /* Ensures the width of the buttons adapts to the content */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: translateY(-30px); /* Start slightly above */
-    transition: transform 0.5s ease;
-    min-width: 80px;
-    height: 50px;
-    
-  }
-  
-  .sub-nar-but {
-    background-color: var(--colorBackground);
-    color: var(--text);
-    border: 1px solid var(--color5);
-    color: --text;
-    cursor: pointer;
-    width: 100%;
-    height:100%;
-    max-height:42.55px ;
-    padding: 10px;
-    border-radius: 10px;
-    
-  }
-  
-  .sub-nar-but:hover {
-    background-color: var(--color5);
-    
-  
-  }
-  
-  .active {
-    background-color: var(--color5);
-    
-  }
-  
-  /* =============== fine nar menu ===============*/
-  
-  
-  .content {
-    display: grid;
-    grid-template-columns: 60vw 30vw; /* Two columns within second row */
-    gap: 5vw;
-    width: 100%;
-    padding-bottom: 3vh;
-  }
-  
-  .grid-element{
-    border-radius: 15px;
-  }
-  
-  #map-container {
-    display: flex; /* Use flexbox to control content alignment */
-    justify-content: center; /* Center the map horizontally */
-    align-items: center; /* Center the map vertically */
-    margin-left: 5vh;
-  }
-  
-  #map {
-    border-radius: 15px;
-    width: 100%; 
-    box-shadow: 0 0 10px 5px white;
-    
-  }
-  
-  /* =========list block========*/
-  #list-container{
-   height: 100%;
-   width: 100%;
-  }
-  
-  #list-icon{
-    display: none;
-  }
-  
-  #list {
-    padding:0px;
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    border-radius: 15px;
-    min-height: 480px;
-  
-  }
-  
-  .itemList{
-    margin-top: 10%;
-    width: 100%;
-    height:90%;
-    color: var(--text);
-  }
-  
-  
-  .itemList li::marker {
-    font-size: 1.5em; /* Increase the size of the bullet */
-    color:var(--color4);   /* Change the color to purple */
-  }
-  
-  .itemList li {
-    cursor: pointer; /* Makes the element appear clickable */
-    transition: border 0.2s ease, background-color 0.2s ease; /* Smooth transition effect */
-  }
-  
-  .itemList li:hover {
-    color: var(--color4); /* Black 1px border on hover */
-    border-radius: 5px; /* Rounded corners for the border */
-    background-color: var(--color6); /* Optional: Light gray background color on hover */
-  }
-  
-  
-  @media screen and (max-width: 830px) {
-  
-  
-    /* Adjust container grid */
-    .container {
-      grid-template-rows: 15vh auto auto 25vh; /* Three rows */
-      
-    }
-  
-    /* Content adjustments */
-    .content {
-      display: grid;
-      grid-template-columns: 1fr; /* Single column */
-      grid-template-rows: 40vh  min-content; /* Stack into two rows */
-      padding-bottom: 0;
-      
-    }
-  
-    .nar-grid{
-      gap:0;
-    }
-  
-    .nar-but{
-      min-width: fit-content;
-      min-height:42.55px ;
-    }
-    #sub-nar {
-  
-      gap: 2%; /* Adds spacing between buttons */
-  
-      
-    }
-  
-    /* List adjustments */
-    #list-container {
-      display: grid;
-      grid-template-rows: 10vh min-content;
-    }
-  
-  
-    /* Map container height */
-    #map-container {
-      height: fit-content; /* Ensures height fits content */
-      margin-left: 0vh;
-    }
-  
-    /* List icon alignment */
-    #list-icon {
-      display: flex; /* Use flexbox for alignment */
-      align-items: center; /* Center items vertically */
-      justify-content: center; /* Center items horizontally */
-    }
-  
-    /* Icon button styling */
-    #icon-button {
-      background: none; /* Remove default button styling */
-      border: none; /* Remove border */
-      padding: 0; /* Remove padding */
-      cursor: pointer; /* Change cursor to pointer for button-like behavior */
-    }
-  
-    /* Icon styling and hover effect */
-    #icon {
-      width: 50px;
-      height: 50px;
-      transition: transform 0.3s ease; /* Smooth scaling effect */
-    }
-  
-    #icon:hover {
-      transform: scale(1.1); /* Slightly enlarge on hover */
-    }
-  
-    .itemList{
-      margin-top: 0%;
-    }
-  
-    /* List container hidden by default */
-    #list {
-      display: none;
-    }
-  }
-  
-  
-  
-    /*================================================*/
-    /* =============== Fine map ===============*/
-    /*================================================*/
-    
-    
-
-    div.navbar-body {visibility: hidden;}
-    }
-    
-    @media screen and (min-width: 831px) {
-    
-      div.menu {visibility: hidden;}
-    }
-    
-    #navbar {
-      position: relative;
-      height: 100%;
-    }
-    
-    .rom-navbar {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      display: grid;
-      grid-template-columns: 1fr 2fr 1fr;
-    }
-    
-    .rom-navbar #logo-box {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    #logo-box .logo {
-      position: inherit;
-      background-color: #444;
-      height: 13vh;
-      width: 13vh;
-      border: none;
-    }
-    
-    .navbar-body {
-      position: inherit;
-      font-size: calc(15px + 0.390625vw);
-      display: grid;
-      height: inherit;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-    
-    .nav-link-box {
-      height: fit-content;
-      display: grid;
-      grid-template-rows: 3fr 1fr;
-      align-self: center;
-    }
-    
-    .underline {
-      position: inherit;
-      background-color: var(--mainColor);
-      height: 0.1vw;
-      width: 100%;
-    }
-    
-    .nav-link-box .nav-link:hover + .underline {
-      background-color: white;
-      transition: background-color 0.5s ease; /* Transizione più fluida */
-    }
-    
-    .nav-link:visited {
-      color: var(--mainColor);
-    }
-    
-    .nav-link:hover {
-      color: white;
-    }
-    
-    .nav-link {
-      text-decoration: none;
-      position: inherit;
-      color: var(--mainColor);
-      text-align: center;
-      align-self: flex-end;
-      transition: color 0.3s ease; /* Transizione per colore */
-    }
-    
-    #menu-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      z-index: 2;
-    }
-    
-    .toggle-btn {
-      position: relative;
-      width: 4vw;
-      height: 4vw;
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .toggle-btn span {
-      position: absolute;
-      width: 40px;
-      height: 4px;
-      transition: 0.3s;
-      background-color: var(--mainColor);
-    }
-    
-    .toggle-btn span:first-child {
-      transform: translateY(-8px);
-    }
-    
-    .toggle-btn.x span:nth-child(2) {
-      opacity: 0;
-    }
-    
-    .toggle-btn span:last-child {
-      transform: translateY(8px);
-    }
-    
-    .toggle-btn.x span:first-child {
-      transform: rotate(45deg) translateY(0);
-    }
-    
-    .toggle-btn.x span:last-child {
-      transform: rotate(-45deg) translateY(0);
-    }
-    
-    #menu-links {
-      position: absolute;
-      height: 200px;
-      width: 100%;
-      display: none;
-      grid-template-rows: 1fr 1fr 1fr 1fr;
-      z-index: 2;
-    }
-    
-    #menu-links a {
-      color: var(--mainColor);
-      background-color: #323232;
-      text-decoration: none;
-      font-size: calc(15px + 0.390625vw);
-      text-align: center;
-      padding: 10px 0;
-    }
-    
-    #menu-links a:last-child {
-      border-bottom-left-radius: 15px;
-      border-bottom-right-radius: 15px;
-    }
-    
-    #menu-links a:nth-child(odd) {
-      background-color: #444;
-    }
-    
-    #menu-links a:hover {
-      color: white;
-      background-color: var(--mainColor);
-    }
-
-
 
 /* =============== Inizio map ===============*/
 
-.grid-container {
-display: grid;
-grid-template-rows: 15vh 85vh 20vh; 
-max-width: 100%;
-row-gap: 3vh;
-border: solid red;
+.container {
+  display: grid;
+  grid-template-rows: 15vh auto 85vh 25vh; 
+  max-width: 100vw;
+  row-gap: 3vh;
+ 
+}
+/* =============== Inizio nar menu ===============*/
+.nar-container{
+  display:flex;
+  min-height: 30vh;
+  height: 30vh;
+  width: 100%;
+}
+.nar-grid {
+  display: grid;
+  grid-template-rows: 45% 1px auto; 
+  gap: 10%; /* Adds spacing between rows (adjust as needed) */
+  height: 100%; /* Ensure the parent container uses its full height */
+  width: 100%; /* Ensure the parent container uses its full width */
+}
+
+#gap{
+  justify-self: center;
+  height: 1px;
+  width: 60%;
+  background-color: var(--color5);
+}
+
+.grid-it {
+  width: 100%; /* Each grid item spans the full width */
+ 
+}
+
+#nar{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border-radius: 15px;
+}
+
+.nar-but-container{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.nar-but {
+  background-color: var(--colorBackground);
+  color: var(--text);
+  border: 1px solid var(--color5);
+  cursor: pointer;
+  width: 50%;
+  height:70%;
+  max-height:50px ;
+  min-width: 180px;
+  border-radius: 10px;
+  
+}
+
+.nar-but:hover {
+  background-color: var(--color5);
+}
+
+#sub-nar {
+  display: flex;
+  flex-wrap: wrap; /* Allows buttons to wrap if needed */
+  align-items: center;
+  justify-content: center; /* Aligns buttons in a row, starting from the left */
+  
 
 }
 
-#navbar{
-    border: solid rgb(255, 255, 255);
-    max-width: 100%;
+.sub-nar-but-container {
+  width: auto; /* Ensures the width of the buttons adapts to the content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-30px); /* Start slightly above */
+  transition: transform 0.5s ease;
+  min-width: 80px;
+  
+  
 }
 
-#content {
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    height: 100%; /* Optional, ensures proper alignment if the parent has a defined height */
+.sub-nar-but {
+  background-color: var(--colorBackground);
+  color: var(--text);
+  border: 1px solid var(--color5);
+  color: --text;
+  cursor: pointer;
+  width: 100%;
+  height:100%;
+  max-height:42.55px ;
+  padding: 10px;
+  border-radius: 10px;
+  
 }
 
-.flex-element{
-    border-radius: 15px;
-    border: solid rgb(255, 0, 255);
+.sub-nar-but:hover {
+  background-color: var(--color5);
+  
+
 }
 
-#map-container{
-    width: 60vw;
-    height:100%;
-    background-color: aliceblue;
+.active {
+  background-color: var(--color5);
+  
 }
 
-#list{
-    background-color: aliceblue;
-    width: 35vw;
-    height:100%;
-   
+/* =============== fine nar menu ===============*/
+
+
+.content {
+  display: grid;
+  grid-template-columns: 60vw 30vw; /* Two columns within second row */
+  gap: 5vw;
+  width: 100%;
+  padding-bottom: 3vh;
 }
 
+.grid-element{
+  border-radius: 15px;
+}
+
+#map-container {
+  display: flex; /* Use flexbox to control content alignment */
+  justify-content: center; /* Center the map horizontally */
+  align-items: center; /* Center the map vertically */
+  margin-left: 5vh;
+}
+
+#map {
+  border-radius: 15px;
+  width: 100%; 
+  box-shadow: 0 0 10px 5px white;
+  
+}
+
+/* =========list block========*/
+#list-container{
+ height: 100%;
+ width: 100%;
+}
 
 #list-icon{
-display: none;
+  display: none;
+}
+
+#list {
+  padding:0px;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  min-height: 480px;
+
+}
+
+.itemList{
+  margin-top: 10%;
+  width: 100%;
+  height:90%;
+  color: var(--text);
+}
+
+
+.itemList li::marker {
+  font-size: 1.5em; /* Increase the size of the bullet */
+  color:var(--color4);   /* Change the color to purple */
+}
+
+.itemList li {
+  cursor: pointer; /* Makes the element appear clickable */
+  transition: border 0.2s ease, background-color 0.2s ease; /* Smooth transition effect */
+}
+
+.itemList li:hover {
+  color: var(--color4); /* Black 1px border on hover */
+  border-radius: 5px; /* Rounded corners for the border */
+  background-color: var(--color6); /* Optional: Light gray background color on hover */
 }
 
 
 @media screen and (max-width: 830px) {
-    #content {
-        flex-flow: column;
-        flex-flow: column nowrap;
-        border: solid rgb(33, 210, 80);
-    }
 
-    #map-container{
-        width: 100%;
-        height:40%;
-        background-color: aliceblue;
-    }
+
+  /* Adjust container grid */
+  .container {
+    grid-template-rows: 15vh auto auto 25vh; /* Three rows */
     
-    #list{
-        top: 0px;
-        display: flex;
-        max-width: 100%;
-        height: fit-content;
-        flex-flow: column;
-        
-    }
+  }
 
-    #list-icon{
-        display: flex; /* Use flexbox for alignment */
-        align-items: center; /* Center items vertically */
-        justify-content: center; /* Center items horizontally */
-        width: 100% ;
-    }
+  /* Content adjustments */
+  .content {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column */
+    grid-template-rows: 40vh  min-content; /* Stack into two rows */
+    padding-bottom: 0;
+    
+  }
 
-    #icon-button {
-        background: none; /* Remove default button styling */
-        border: none; /* Remove border */
-        padding: 0; /* Remove padding */
-        cursor: pointer; /* Change cursor to pointer for button-like behavior */
-    }
-   
-    #icon {
-        width: 50px;
-        height: 50px;
-        transition: transform 0.3s ease; /* Smooth scaling effect */
-    }
+  .nar-grid{
+    gap:0;
+  }
 
+  .nar-but{
+    min-width: fit-content;
+    min-height:42.55px ;
+  }
+  #sub-nar {
 
-
+    gap: 2%; /* Adds spacing between buttons */
 
     
+  }
+
+  /* List adjustments */
+  #list-container {
+    display: grid;
+    grid-template-rows: 10vh min-content;
+  }
 
 
+  /* Map container height */
+  #map-container {
+    height: fit-content; /* Ensures height fits content */
+    margin-left: 0vh;
+  }
+
+  /* List icon alignment */
+  #list-icon {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+  }
+
+  /* Icon button styling */
+  #icon-button {
+    background: none; /* Remove default button styling */
+    border: none; /* Remove border */
+    padding: 0; /* Remove padding */
+    cursor: pointer; /* Change cursor to pointer for button-like behavior */
+  }
+
+  /* Icon styling and hover effect */
+  #icon {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease; /* Smooth scaling effect */
+  }
+
+  #icon:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+  }
+
+  .itemList{
+    margin-top: 0%;
+  }
+
+  /* List container hidden by default */
+  #list {
+    display: none;
+  }
 }
 
-/*================================================*/
-/* =============== Fine map ===============*/
-/*================================================*/
 
 
-/* =============== Inizio Footer =================*/
-
-#footer {
-    position: relative;
-    height: 100%;
-    background-color: rgb(77, 77, 77);
-    color: #ffffff;
-    text-align: center;
-    font-size: calc(15px + 0.390625vw);
-}
-
-/* =============== Fine Footer =================*/
+  /*================================================*/
+  /* =============== Fine map ===============*/
+  /*================================================*/
+  
+  
