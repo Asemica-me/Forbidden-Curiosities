@@ -42,6 +42,21 @@ footer.documentation {
     overflow: hidden;
 }
 
+a {
+    color: var(--color4); /* Colore di base */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Transizione morbida per il cambio di colore e la sottolineatura */
+}
+
+a:hover {
+    color: #f9a340; /* Colore quando il mouse è sopra il link */
+    text-decoration: underline; /* Sottolinea il link al passaggio del mouse */
+}
+
+a:active {
+    color: #f5cea1; /* Colore quando il link viene cliccato */
+}
+
 .container {
     display: flex;
     width: 100%;
