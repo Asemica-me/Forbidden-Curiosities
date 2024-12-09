@@ -35,6 +35,20 @@ window.addEventListener('scroll', function() { // Necessario per controllare il 
 
 document.addEventListener("DOMContentLoaded", function() { //Necessario per poter agire sugli elementi una volta che sono stati caricati dal browser
 
+	// Ottieni l'URL corrente
+    const currentUrl = window.location.href;
+
+    // Seleziona tutti i link con la classe nav-link
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+        // Controlla se l'href del link corrisponde all'URL corrente
+        if (link.href === currentUrl) {
+            // Aggiungi la classe 'active' al link corrispondente
+            link.classList.add('perm');
+        }
+    });
+
     const searchIcon = document.getElementById("search-icon");
 	const sideSearch = document.getElementById("side-search");
 

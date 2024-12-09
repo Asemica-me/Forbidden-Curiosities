@@ -29,97 +29,105 @@
     z-index: 1;
     visibility: hidden;
     transition: opacity 1ms ease;
-  }
-  
-  #opaque-page.active {
-    opacity: 0.5;
-    visibility: visible;
-    transition: opacity 0.5s ease;
-  }
+}
 
-  #navbar {
-    position: relative;
-    height: 100%;
-    background-color: var(--colorBackground);
-    font-family: var(--font-family-navbar);
-  }
-  
-  .rom-navbar {
-    position: relative;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    background-color: var(--colorBackground);
-    border-bottom: 1px solid var(--dividers);
-  }
-  
-  .rom-navbar #logo-box {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  #logo-box .logo {
-    position: relative;
-    background-image: url('../img/logo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 13vh;
-    width: 13vh;
-    border: none;
-  }
-  
-  .navbar-body {
-    position: inherit;
-    display: grid;
-    height: inherit;
-    grid-template-columns: repeat(5, auto); /* Le colonne si restringono al contenuto */
-    column-gap: 1px; /* Aggiungi uno spazio minimo tra le voci */
-  }
-  
-  .nav-link-box {
-    height: fit-content;
-    display: grid;
-    grid-template-rows: 3fr 1fr;
-    align-self: center;
-  }
-  
-  .nav-link-box .nav-link:hover + {
-    background-color: var(--color5);
-    transition: background-color 0.5s ease;
-  }
-  
-  .nav-link {
-    text-decoration: none; /* Rimuove la sottolineatura standard */
-    position: relative; /* Necessario per posizionare il ::after */
-    color: var(--color2);
-    text-align: center;
-    align-self: flex-end;
-    transition: color 0.3s ease; /* Animazione del colore */
-  }
-  
-  .nav-link::after {
-    content: ''; /* Pseudo-elemento vuoto per creare la sottolineatura */
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -2px; /* Posiziona la linea appena sotto il testo */
-    width: 0; /* Larghezza iniziale */
-    height: 2px; /* Spessore della sottolineatura */
-    background-color: var(--color5); /* Colore della sottolineatura */
-    transition: width 0.3s ease; /* Animazione della larghezza */
-  }
-  
-  .nav-link:hover {
-    color: var(--color5); /* Cambia il colore del testo */
-    text-decoration: none !important;
-  }
-  
-  .nav-link:hover::after {
-    width: 140px; /* Espande la linea solo sotto la voce corrente */
-  }
+#opaque-page.active {
+  opacity: 0.5;
+  visibility: visible;
+  transition: opacity 0.5s ease;
+}
+
+#navbar {
+  position: relative;
+  height: 100%;
+  background-color: var(--colorBackground);
+  font-family: var(--font-family-navbar);
+}
+
+.rom-navbar {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  background-color: var(--colorBackground);
+  border-bottom: 1px solid var(--dividers);
+}
+
+.rom-navbar #logo-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#logo-box .logo {
+  position: relative;
+  background-image: url('../img/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 13vh;
+  width: 13vh;
+  border: none;
+}
+
+.navbar-body {
+  position: inherit;
+  display: grid;
+  height: inherit;
+  grid-template-columns: repeat(5, auto); /* Le colonne si restringono al contenuto */
+  column-gap: 1px; /* Aggiungi uno spazio minimo tra le voci */
+}
+
+.nav-link-box {
+  height: fit-content;
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  align-self: center;
+}
+
+.nav-link-box .nav-link:hover + {
+  background-color: var(--color5);
+  transition: background-color 0.5s ease;
+}
+
+.nav-link {
+  text-decoration: none; /* Rimuove la sottolineatura standard */
+  position: relative; /* Necessario per posizionare il ::after */
+  color: var(--color2);
+  text-align: center;
+  align-self: flex-end;
+  transition: color 0.3s ease; /* Animazione del colore */
+}
+
+.nav-link::after {
+  content: ''; /* Pseudo-elemento vuoto per creare la sottolineatura */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -2px; /* Posiziona la linea appena sotto il testo */
+  width: 0; /* Larghezza iniziale */
+  height: 2px; /* Spessore della sottolineatura */
+  background-color: var(--color5); /* Colore della sottolineatura */
+  transition: width 0.3s ease; /* Animazione della larghezza */
+}
+
+.nav-link:hover {
+  color: var(--color5); /* Cambia il colore del testo */
+  text-decoration: none !important;
+}
+
+.nav-link:hover::after {
+  width: 140px; /* Espande la linea solo sotto la voce corrente */
+}
+
+.nav-link.perm {
+  color: var(--color5); /* Colore del testo attivo */
+}
+
+.nav-link.perm::after {
+    width: 140px; /* Larghezza della sottolineatura attiva */
+}
   
   #menu-button {
     display: flex;
