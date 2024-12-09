@@ -53,7 +53,7 @@ function openModalBtn(btn) {
 		if (btn.innerText == "XV-XVII"){
 			var summary = NarSum["XV"];
 		}
-		if (btn.innerText == "XVII-XIX"){
+		if (btn.innerText == "XVIII-XIX"){
 			var summary = NarSum["XVII"];
 		}
 		if (btn.innerText == "FIRST HALF XX"){
