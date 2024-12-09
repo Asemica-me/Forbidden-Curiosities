@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="assets/css/common.css">
         <link rel="stylesheet" href="assets/css/timeline.css">
         <script src="assets/java/timeline.js"></script>
+        <script src="assets/java/items.js"></script>
         <title>Forbidden Curiosities</title>
     </head>
 
@@ -17,7 +18,7 @@
             <!-- Navbar -->
             <div id="navbar">
                 <div class="rom-navbar">
-                    <div id="logo-box"><a class="logo" href="index.html"></a></div>
+                    <div id="logo-box"><a class="logo" href="index.html" title="Home"></a></div>
                     <div class="navbar-body">
                         <div class="nav-link-box">
                             <a class="nav-link" href="narratives.html">Narratives</a>
@@ -81,7 +82,7 @@
                     <p>Retrace the items through time</p>
                 </div>
                 <div id="items">
-                    <div class="item" id="XV-XVII">
+                    <div class="item" data-item="1" id="XV-XVII">
                         <div class="item-wrapper">
                             <div class="data-box">
                                 <div class="data">1400</div>
@@ -91,13 +92,13 @@
                                 <input class="infoCloser info-btn" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
                                 <img src="assets/img/items/18arquebus.jpeg" alt="the arquebus">
                                 <div class="info-bar">
-                                    <h4>Arquebus</h4>
-                                    <div class="item-btn"><button class="btn"><span>SEE MORE</span></button></div>
+                                    <h3>Arquebus</h3>
+                                    <div class="item-btn"><button class="btn" onclick="goItem(this)" data-item="1" data-value="" data-nar=""><span>SEE MORE</span></button></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+                    <div class="item" data-item="2">
                         <div class="item-wrapper">
                             <div class="data-box">
                                 <div class="data">1490</div>
@@ -107,13 +108,13 @@
                                 <input class="infoCloser info-btn" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
                                 <img src="assets/img/items/20da-vinci.jpg" alt="Leonardo Da Vinci's vitruvian man">
                                 <div class="info-bar">
-                                    <h4>Vitruvian Man</h4>
-                                    <div class="item-btn"><button class="btn"><span>SEE MORE</span></button></div>
+                                    <h3>Vitruvian Man</h3>
+                                    <div class="item-btn"><button class="btn" onclick="goItem(this)" data-item="2" data-value="" data-nar=""><span>SEE MORE</span></button></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+                    <div class="item" data-item="3">
                         <div class="item-wrapper">
                             <div class="data-box">
                                 <div class="data">1517</div>
@@ -123,13 +124,13 @@
                                 <input class="infoCloser info-btn" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
                                 <img src="assets/img/items/7luther.jpg" alt="Martin Luther ninty-five theses">
                                 <div class="info-bar">
-                                    <h4>Luther's Thesis</h4>
-                                    <div class="item-btn"><button class="btn"><span>SEE MORE</span></button></div>
+                                    <h3>Luther's Thesis</h3>
+                                    <div class="item-btn"><button class="btn" onclick="goItem(this)" data-item="3" data-value="" data-nar=""><span>SEE MORE</span></button></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+                    <div class="item" data-item="4">
                         <div class="item-wrapper">
                             <div class="data-box">
                                 <div class="data">1608</div>
@@ -139,13 +140,13 @@
                                 <input class="infoCloser info-btn" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
                                 <img src="assets/img/items/1galileo.png" alt="Galileo Galilei's telescope">
                                 <div class="info-bar">
-                                    <h4>Galileo's Telescope</h4>
-                                    <div class="item-btn"><button class="btn"><span>SEE MORE</span></button></div>
+                                    <h3>Galileo's Telescope</h3>
+                                    <div class="item-btn"><button class="btn" onclick="goItem(this)" data-item="4" data-value="" data-nar=""><span>SEE MORE</span></button></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item" id="XVIII-XIX">
+                    <div class="item" data-item="5" id="XVIII-XIX">
                         <div class="item-wrapper">
                             <div class="data-box">
                                 <div class="data">1789</div>
@@ -155,13 +156,13 @@
                                 <input class="infoCloser info-btn" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
                                 <img src="assets/img/items/19guillotine.jpg" alt="A gullotine used in nineteenth century">
                                 <div class="info-bar">
-                                    <h4>Guillotine</h4>
-                                    <div class="item-btn"><button class="btn"><span>SEE MORE</span></button></div>
+                                    <h3>Guillotine</h3>
+                                    <div class="item-btn"><button class="btn" onclick="goItem(this)" data-item="5" data-value="" data-nar=""><span>SEE MORE</span></button></div>
                                 </div>
                             </div>
                         </div>
                     </div>   
-                    <div class="item">
+                    <div class="item" data-item="6">
                         <div class="item-wrapper">
                             <div class="data-box">
                                 <div class="data">1859</div>
@@ -171,13 +172,13 @@
                                 <input class="infoCloser info-btn" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
                                 <img src="assets/img/items/2darwin.jpg" alt="First edition Charles Darwin's On origin of species">
                                 <div class="info-bar">
-                                    <h4>"Origin of Species"<br>by Charles Darwin</h4>
-                                    <div class="item-btn"><button class="btn"><span>SEE MORE</span></button></div>
+                                    <h3>"Origin of Species"<br>by Charles Darwin</h3>
+                                    <div class="item-btn"><button class="btn" onclick="goItem(this)" data-item="6" data-value="" data-nar=""><span>SEE MORE</span></button></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+                    <div class="item" data-item="7">
                         <div class="item-wrapper">
                             <div class="data-box">
                                 <div class="data">1864</div>
@@ -187,13 +188,13 @@
                                 <input class="infoCloser info-btn" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
                                 <img src="assets/img/items/5corset.jpg" alt="Victorian age corset">
                                 <div class="info-bar">
-                                    <h4>Victorian Corset</h4>
-                                    <div class="item-btn"><button class="btn"><span>SEE MORE</span></button></div>
+                                    <h3>Victorian Corset</h3>
+                                    <div class="item-btn"><button class="btn" onclick="goItem(this)" data-item="7" data-value="" data-nar=""><span>SEE MORE</span></button></div>
                                 </div>
                             </div>
                         </div>
                     </div>             
-                    <div class="item">
+                    <div class="item" data-item="8">
                         <div class="item-wrapper">
                             <div class="data-box">
                                 <div class="data">1866</div>
@@ -203,13 +204,13 @@
                                 <input class="infoCloser info-btn" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
                                 <img src="assets/img/items/8origin-du-monde.jpg" alt="Gustave Courbet painting L'origin du monde">
                                 <div class="info-bar">
-                                    <h4>"Origin du Monde"<br>by Gustave Courbet</h4>
-                                    <div class="item-btn"><button class="btn"><span>SEE MORE</span></button></div>
+                                    <h3>"Origin du Monde"<br>by Gustave Courbet</h3>
+                                    <div class="item-btn"><button class="btn" onclick="goItem(this)" data-item="8" data-value="" data-nar=""><span>SEE MORE</span></button></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item" id="XX-I">
+                    <div class="item" data-item="9" id="XX-I">
                         <div class="item-wrapper">
                             <div class="data-box">
                                 <div class="data">1902</div>
@@ -219,13 +220,13 @@
                                 <input class="infoCloser info-btn" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
                                 <img src="assets/img/items/14curie.jpg" alt="Marie Curie's laboratory notes">
                                 <div class="info-bar">
-                                    <h4>Marie Curie's studies</h4>
-                                    <div class="item-btn"><button class="btn"><span>SEE MORE</span></button></div>
+                                    <h3>Marie Curie's studies</h3>
+                                    <div class="item-btn"><button class="btn" onclick="goItem(this)" data-item="9" data-value="" data-nar=""><span>SEE MORE</span></button></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+                    <div class="item" data-item="10">
                         <div class="item-wrapper">
                             <div class="data-box">
                                 <div class="data">1914</div>
@@ -235,13 +236,13 @@
                                 <input class="infoCloser info-btn" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
                                 <img src="assets/img/items/9medal.jpeg" alt="Medal of honor for hunger strike">
                                 <div class="info-bar">
-                                    <h4>Hunger Strike Medal</h4>
-                                    <div class="item-btn"><button class="btn"><span>SEE MORE</span></button></div>
+                                    <h3>Hunger Strike Medal</h3>
+                                    <div class="item-btn"><button class="btn" onclick="goItem(this)" data-item="10" data-value="" data-nar=""><span>SEE MORE</span></button></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+                    <div class="item" data-item="11">
                         <div class="item-wrapper">
                             <div class="data-box">
                                 <div class="data">1926</div>
@@ -251,13 +252,13 @@
                                 <input class="infoCloser info-btn" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
                                 <img src="assets/img/items/3enigma.jpg" alt="an exemplar of the Enigma encoder-decoder">
                                 <div class="info-bar">
-                                    <h4>Enigma Machine</h4>
-                                    <div class="item-btn"><button class="btn"><span>SEE MORE</span></button></div>
+                                    <h3>Enigma Machine</h3>
+                                    <div class="item-btn"><button class="btn" onclick="goItem(this)" data-item="11" data-value="" data-nar=""><span>SEE MORE</span></button></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+                    <div class="item" data-item="12">
                         <div class="item-wrapper">
                             <div class="data-box">
                                 <div class="data">1945</div>
@@ -267,13 +268,13 @@
                                 <input class="infoCloser info-btn" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
                                 <img src="assets/img/items/6bomb.jpg" alt="the so called Little Boy atomic bomb">
                                 <div class="info-bar">
-                                    <h4>Atomic Bomb<br>"Little Boy"</h4>
-                                    <div class="item-btn"><button class="btn"><span>SEE MORE</span></button></div>
+                                    <h3>Atomic Bomb<br>"Little Boy"</h3>
+                                    <div class="item-btn"><button class="btn" onclick="goItem(this)" data-item="12" data-value="" data-nar=""><span>SEE MORE</span></button></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item" id="XX-II">
+                    <div class="item" data-item="13" id="XX-II">
                         <div class="item-wrapper">
                             <div class="data-box">
                                 <div class="data">1953</div>
@@ -283,13 +284,13 @@
                                 <input class="infoCloser info-btn" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
                                 <img src="assets/img/items/11playboy.jpg" alt="Playboy's first issue magazine">
                                 <div class="info-bar">
-                                    <h4>Playboy First Issue</h4>
-                                    <div class="item-btn"><button class="btn"><span>SEE MORE</span></button></div>
+                                    <h3>Playboy First Issue</h3>
+                                    <div class="item-btn"><button class="btn" onclick="goItem(this)" data-item="13" data-value="" data-nar=""><span>SEE MORE</span></button></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+                    <div class="item" data-item="14">
                         <div class="item-wrapper">
                             <div class="data-box">
                                 <div class="data">1966</div>
@@ -299,13 +300,13 @@
                                 <input class="infoCloser info-btn" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
                                 <img src="assets/img/items/16mini-skirt.jpg" alt="Mary Quant's miniskirt">
                                 <div class="info-bar">
-                                    <h4>Miniskirt<br>by Mary Quant</h4>
-                                    <div class="item-btn"><button class="btn"><span>SEE MORE</span></button></div>
+                                    <h3>Miniskirt<br>by Mary Quant</h3>
+                                    <div class="item-btn"><button class="btn" onclick="goItem(this)" data-item="14" data-value="" data-nar=""><span>SEE MORE</span></button></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+                    <div class="item" data-item="15">
                         <div class="item-wrapper">
                             <div class="data-box">
                                 <div class="data">1969</div>
@@ -315,13 +316,13 @@
                                 <input class="infoCloser info-btn" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
                                 <img src="assets/img/items/13nasa.jpg" alt="A picture of the NASA first moon landing">
                                 <div class="info-bar">
-                                    <h4>Nasa Moon Landing</h4>
-                                    <div class="item-btn"><button class="btn"><span>SEE MORE</span></button></div>
+                                    <h3>Nasa Moon Landing</h3>
+                                    <div class="item-btn"><button class="btn" onclick="goItem(this)" data-item="15" data-value="" data-nar=""><span>SEE MORE</span></button></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+                    <div class="item" data-item="16">
                         <div class="item-wrapper">
                             <div class="data-box">
                                 <div class="data">1971</div>
@@ -331,13 +332,13 @@
                                 <input class="infoCloser info-btn" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
                                 <img src="assets/img/items/10shoot.jpg" alt="A picture of the Chris Burder Shoot performance">
                                 <div class="info-bar">
-                                    <h4>"Shoot"<br>by Chris Burden</h4>
-                                    <div class="item-btn"><button class="btn"><span>SEE MORE</span></button></div>
+                                    <h3>"Shoot"<br>by Chris Burden</h3>
+                                    <div class="item-btn"><button class="btn" onclick="goItem(this)" data-item="16" data-value="" data-nar=""><span>SEE MORE</span></button></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+                    <div class="item" data-item="17">
                         <div class="item-wrapper">
                             <div class="data-box">
                                 <div class="data">1996</div>
@@ -347,13 +348,13 @@
                                 <input class="infoCloser info-btn" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
                                 <img src="assets/img/items/12dolly.jpg" alt="The cloned sheep Dolly">
                                 <div class="info-bar">
-                                    <h4>Dolly the Cloned Sheep</h4>
-                                    <div class="item-btn"><button class="btn"><span>SEE MORE</span></button></div>
+                                    <h3>Dolly the Cloned Sheep</h3>
+                                    <div class="item-btn"><button class="btn" onclick="goItem(this)" data-item="17" data-value="" data-nar=""><span>SEE MORE</span></button></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item" id="XXI">
+                    <div class="item" data-item="18" id="XXI">
                         <div class="item-wrapper">
                             <div class="data-box">
                                 <div class="data">2007</div>
@@ -363,13 +364,13 @@
                                 <input class="infoCloser info-btn" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
                                 <img src="assets/img/items/4hirst.jpg" alt="the artwork For the love of God by Hirst">
                                 <div class="info-bar">
-                                    <h4>"For the Love of God"<br>by Hirst</h4>
-                                    <div class="item-btn"><button class="btn"><span>SEE MORE</span></button></div>
+                                    <h3>"For the Love of God"<br>by Hirst</h3>
+                                    <div class="item-btn"><button class="btn" onclick="goItem(this)" data-item="18" data-value="" data-nar=""><span>SEE MORE</span></button></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+                    <div class="item" data-item="19">
                         <div class="item-wrapper">
                             <div class="data-box">
                                 <div class="data">2013</div>
@@ -379,13 +380,13 @@
                                 <input class="infoCloser info-btn" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
                                 <img src="assets/img/items/15revel.jpg" alt="A picture of Edward Snowden">
                                 <div class="info-bar">
-                                    <h4>Snowden's Revelations</h4>
-                                    <div class="item-btn"><button class="btn"><span>SEE MORE</span></button></div>
+                                    <h3>Snowden's Revelations</h3>
+                                    <div class="item-btn"><button class="btn" onclick="goItem(this)" data-item="19" data-value="" data-nar=""><span>SEE MORE</span></button></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+                    <div class="item last" data-item="20">
                         <div class="item-wrapper">
                             <div class="data-box">
                                 <div class="data">2023</div>
@@ -395,8 +396,8 @@
                                 <input class="infoCloser info-btn" type="image" src="assets/img/infoCloser.svg" alt="close info"/>
                                 <img src="assets/img/items/17pope.jpg" alt="A ai-generated image of Pope Francis">
                                 <div class="info-bar">
-                                    <h4>AI image of Pope Francis</h4>
-                                    <div class="item-btn"><button class="btn"><span>SEE MORE</span></button></div>
+                                    <h3>AI image of Pope Francis</h3>
+                                    <div class="item-btn"><button class="btn" onclick="goItem(this)" data-item="20" data-value="" data-nar=""><span>SEE MORE</span></button></div>
                                 </div>
                             </div>
                         </div>
