@@ -207,7 +207,7 @@ function changeList(subNarButton) {
         value = "Artwork";
         nar = "Typology";
         renderList(ArtObj);
-        changeMapImage("Art");
+        changeMapImage("Artwork");
     } else if (subButtonText === 'Ethics Of War') {
         value = "Ethics of war";
         nar = "Themes";
