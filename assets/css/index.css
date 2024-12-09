@@ -9,10 +9,17 @@ body {
   font-style: normal;
 }
 
-h1, h2, h4 {
+h1, h2, h3, h4 {
   color: var(--color2);
   font-family: var(--font-family-header);
 }
+
+h1 {font-size: 70px;}
+h2 {font-size: 30px;}
+h3 {font-size: 25px;}
+h4 {font-size: 15px;}
+
+p {line-height: 1.5em;}
 
 
 /* INZIO classi bottoni */
@@ -141,6 +148,17 @@ h1, h2, h4 {
 /* =============== Inizio about ==================*/
 /*================================================*/
 
+#about {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20%;
+  padding-right: 20%;
+  gap: 50vh;
+}
+
+/*============ Inizio Description ==============*/
+
 #description {
   display: flex;
   flex-direction: column;
@@ -149,8 +167,6 @@ h1, h2, h4 {
 
 #texts {
   position: relative;
-  padding-left: 20%;
-  padding-right: 20%;
   display: flex;
   flex-direction: column;
   gap: 5vh;
@@ -176,6 +192,49 @@ h1, h2, h4 {
   align-items: center;
   justify-content: center;
 }
+
+/*============ Fine Description ==============*/
+
+/*============ Inizio Exhib-info ==============*/
+
+#exhib-info {
+  position: relative;
+}
+
+#info-box {
+  position: relative;
+  background-color: var(--color3);
+  border-radius: 8px;
+  padding: 2%;
+}
+
+#image-box {
+  position: absolute;
+  right: -15%;
+  top: -35%;
+  height: 200px;
+  width: 500px;
+}
+
+#image-box img {
+  max-width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+#info-contents {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 5%;
+}
+
+#info-contents li {
+  color: var(--text)
+}
+
+/*============ Fine Exhib-info ==============*/
 
 /*================================================*/
 /* =============== Fine about ==================*/
