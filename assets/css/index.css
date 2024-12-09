@@ -226,8 +226,12 @@ p {line-height: 1.5em;}
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: fit-content fit-content;
   column-gap: 5%;
+}
+
+#info-contents ul {
+  padding-inline-start: 20px;
 }
 
 #info-contents li {
@@ -236,6 +240,38 @@ p {line-height: 1.5em;}
 
 /*============ Fine Exhib-info ==============*/
 
+/*============ Inizio Museum-panel ==============*/
+
+
+
+/*============ Fine Museum-panel ==============*/
+
 /*================================================*/
 /* =============== Fine about ==================*/
 /*================================================*/
+
+@media screen and (max-width: 830px) {
+  
+  #about {
+    padding-left: 10%;
+    padding-right: 10%;
+    gap: 30vh
+  }
+
+  #buttons .btn {
+    height: 40px;
+    width: 120px;
+  }
+
+  #image-box {
+    position: relative;
+    width: 100%;
+    top: unset;
+    right: unset;
+  }
+
+  #image-box img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
