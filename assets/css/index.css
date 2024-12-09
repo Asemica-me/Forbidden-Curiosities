@@ -9,12 +9,19 @@ body {
   font-style: normal;
 }
 
+h1, h2, h4 {
+  color: var(--color2);
+  font-family: var(--font-family-header);
+}
+
 
 /* INZIO classi bottoni */
 
 .btn {
   text-decoration: none;
-  padding: 1%;
+  padding: 2%;
+  width: fit-content;
+  height: fit-content;
   cursor: pointer;
   color: var(--text);
   background-color: var(--colorBackground);
@@ -34,12 +41,12 @@ body {
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2); /* Ombra interna */
 }
 
-#about-content .btn span {
+.btn span {
   position: relative;
   transition: 0.5s;
 }
 
-#about-content .btn span:after {
+.btn span:after {
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -48,11 +55,11 @@ body {
   transition: 0.5s;
 }
 
-#about-content .btn:hover span {
+.btn:hover span {
   padding-right: 25px;
 }
 
-#about-content .btn:hover span:after {
+.btn:hover span:after {
   opacity: 1;
   right: 0;
 }
@@ -65,7 +72,8 @@ body {
   margin: 0;
   height: inherit;
   width: inherit;
-  grid-template-rows: 100vh 100vh auto 20vh 25vh;
+  grid-template-rows: 100vh auto 25vh;
+  gap: 20vh;
 }
 
 
@@ -106,8 +114,6 @@ body {
   position: relative;
   margin-top: 20%;
   text-align: center;
-  color: var(--color2);
-  font-family: var(--font-family-header);
 }
 
 #arrow {
@@ -135,31 +141,40 @@ body {
 /* =============== Inizio about ==================*/
 /*================================================*/
 
-#about {
-  position: relative;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 0.5fr 2fr 0.5fr;
-  color: var(--mainColor);
-}
-
-#about-content {
+#description {
   display: flex;
   flex-direction: column;
+  gap: 10vh;
+}
+
+#texts {
+  position: relative;
+  padding-left: 20%;
+  padding-right: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+}
+
+#buttons {
+  position: relative;
+  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
+  gap: 5vw;
+  padding: 1%;
+  border-radius: 8px;
+  background-color: var(--color3);
 }
 
-#about-content h2 {
-  text-align: center;
-  color: var(--color2);
-  font-family: var(--font-family-header);
-}
-
-#about-content p {
-  max-width: 500px;
-  text-align: justify;
-  color: var(--text);
+#buttons .btn {
+  position: relative;
+  height: 50px;
+  width: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*================================================*/
