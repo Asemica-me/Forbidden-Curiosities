@@ -478,9 +478,9 @@ window.addEventListener('load', () => {
 document.addEventListener('click', (event) => {
     // Seleziona tutti i dropdown attivi
     const dropdowns = document.querySelectorAll('.options');
-    const toggles = document.querySelectorAll('.selected-box');
+    const selects = document.querySelectorAll('.select'); // Seleziona tutti i div select
 
-    // Chiudi tutti i dropdown
+    // Chiudi tutti i dropdown se il click non è dentro un dropdown
     dropdowns.forEach((dropdown) => {
         if (!dropdown.contains(event.target)) {
             dropdown.style.visibility = 'hidden';
@@ -488,16 +488,30 @@ document.addEventListener('click', (event) => {
         }
     });
 
-    // Controlla se l'utente ha cliccato su un toggle per aprire/chiudere il relativo menu
-    toggles.forEach((toggle) => {
-        if (toggle.contains(event.target)) {
-            const dropdown = toggle.nextElementSibling; // Trova il menu associato
-            const isVisible = dropdown.style.visibility === 'visible'; //check visibility of dropdown element (le tendine)
+    // Controlla se l'utente ha cliccato su un div.select per aprire/chiudere il relativo menu
+    selects.forEach((select) => {
+        if (select.contains(event.target)) {
+            const dropdown = select.querySelector('.options'); // Trova il menu associato
+            const isVisible = dropdown.style.visibility === 'visible'; // Verifica se il menu è visibile
 
             // Mostra o nasconde il dropdown
             dropdown.style.visibility = isVisible ? 'hidden' : 'visible';
             dropdown.style.opacity = isVisible ? '0' : '1';
-            // if true hidden and 0, if false visible and 1
+        }
+    });
+
+    // Se l'utente clicca su un'opzione, chiudi il menu
+    const options = document.querySelectorAll('.option');
+    options.forEach((option) => {
+        if (option.contains(event.target)) {
+            const dropdown = option.closest('.select').querySelector('.options');
+            dropdown.style.visibility = 'hidden';
+            dropdown.style.opacity = '0';
+
+            // Aggiorna la selezione del valore
+            const selectedBox = option.closest('.select').querySelector('.selected');
+            selectedBox.setAttribute('data-value', option.getAttribute('data-value'));
+            selectedBox.textContent = option.textContent; // Cambia il testo della selezione
         }
     });
 });
