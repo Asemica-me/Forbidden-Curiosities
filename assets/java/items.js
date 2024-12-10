@@ -117,55 +117,95 @@ document.addEventListener("DOMContentLoaded", async function(event) {
     
 });
 
-
 function prepareNarratives() {
+    // Resetta le caselle di selezione nel search-space
+    resetSelectionFields();
+
     if (sessionStorage.getItem("redirect")) {
         redirectTrue();
     } else {
         redirectFalse();
-    }   
+    }
 };
 
 function redirectTrue(){
-    let itemRedirect = sessionStorage.getItem("itemRedirect")
-    currentNarrative = sessionStorage.getItem("nar")
-    currentValue = sessionStorage.getItem("value")
+    let itemRedirect = sessionStorage.getItem("itemRedirect");
+    currentNarrative = sessionStorage.getItem("nar");
+    currentValue = sessionStorage.getItem("value");
     sessionStorage.clear();
     console.log("itemRedirect", itemRedirect, "currentNarrative", currentNarrative, "currentValue", currentValue);
     counter = -1;
     sortItemIndex = 0;
-    currentSelection = items.filter( i =>
-        i.info[currentNarrative]?.includes(currentValue));
 
-    console.log(currentSelection)
+    // Filtra gli item in base alla narrativa
+    currentSelection = items.filter(i => 
+        i.info[currentNarrative]?.includes(currentValue)
+    );
+
+    console.log(currentSelection);
     
-    if (currentSelection.length==0) currentSelection = items;
+    if (currentSelection.length === 0) currentSelection = items;
 
-    currentSelection.sort( (i,j) => i['@sort'] - j['@sort']);
+    // Ordina i risultati in base al campo '@sort'
+    currentSelection.sort((i, j) => i['@sort'] - j['@sort']);
 
+    // Aggiorna l'indice dell'item selezionato
     currentSelection.forEach(sel => {
         counter++;
-        if (sel["@sort"] === itemRedirect){
-            sortItemIndex = counter
+        if (sel["@sort"] === itemRedirect) {
+            sortItemIndex = counter;
         }
         console.log("counter", counter, "sortItemIndex", sortItemIndex, "sel[\"@sort\"]", sel["@sort"]);
-    })
+    });
 
+    // Aggiorna gli indici e mostra l'item selezionato
     updateIndices();
     showInfo(sortItemIndex);
 };
 
-
 function redirectFalse(){
-    currentSelection = items.filter( i => 
+    // Filtra gli item in base alla narrativa
+    currentSelection = items.filter(i => 
         i.info[currentNarrative]?.includes(currentValue)
     );
-    currentSelection.sort( (i,j) => i['@sort'] - j['@sort']);
 
-    if (currentSelection.length==0) currentSelection = items;
+    currentSelection.sort((i, j) => i['@sort'] - j['@sort']);
 
+    if (currentSelection.length === 0) currentSelection = items;
+
+    // Aggiorna gli indici e mostra il primo risultato
     updateIndices();
     showInfo(0);
+}
+
+function resetSearchResults() {
+    const results = document.getElementById("results");
+
+    // Pulisce i risultati attuali nel search-space
+    results.innerHTML = "Loading...";  // Messaggio di caricamento
+    results.style.visibility = "hidden";  // Nasconde i risultati fino al filtro
+
+    // Azzera altre variabili di stato se necessario
+    currentSelection = [];
+    index = -1;
+    currentSort = null; // Resetta anche l'ordinamento se applicabile
+}
+
+function resetSelectionFields() {
+    // Reset dei dropdown dei temi
+    const themesSelected = document.querySelector('.selected[data-name="Themes"]');
+    themesSelected.setAttribute('data-value', '');
+    themesSelected.innerText = 'All';
+
+    // Reset del dropdown della tipologia
+    const typologySelected = document.querySelector('.selected[data-name="Typology"]');
+    typologySelected.setAttribute('data-value', '');
+    typologySelected.innerText = 'All';
+
+    // Reset del dropdown del periodo storico
+    const periodSelected = document.querySelector('.selected[data-name="Historical period"]');
+    periodSelected.setAttribute('data-value', '');
+    periodSelected.innerText = 'All';
 }
 
 
@@ -309,10 +349,19 @@ function hideFullInfo() {
 
 // Funzioni narrative / Lucrezia e Romolo
 
-function changeNarrative(narrative,value) {
-        currentNarrative = narrative;
-        currentValue = value;
-        prepareNarratives();
+function changeNarrative(narrative, value) {
+    // Reset dei risultati nel search-space
+    resetSearchResults();
+
+    // Reset delle caselle di selezione nel search-space
+    resetSelectionFields();
+
+    // Aggiorna la narrativa selezionata
+    currentNarrative = narrative;
+    currentValue = value;
+
+    // Filtra i risultati in base alla nuova selezione
+    prepareNarratives();
 }
 
 function matchNarratives(item, narrativesList) {
