@@ -34,9 +34,11 @@ body {
 }
 
 .nar-h2 {
+  font-family: var(--font-family-header);
   font-size: 20px;
   margin: 20px 0;
   color: var(--color2)
+  
 }
 
 /*modal*/
@@ -99,6 +101,7 @@ body {
   font-size: 24px; /* Larger title */
   margin: 5%;
   color: var(--text); /* Dark text for the title */
+  font: var( --font-family-header)
 }
 
 #sumCont {
@@ -168,6 +171,7 @@ body {
 
 /* ============ Buttoni Pietro====================*/      
 
+
 .btnCont{
   opacity: 0;
   transform: translateX(-25%); /* Start off-screen to the left */
@@ -197,12 +201,12 @@ body {
   transition: background-color 0.3s;
   width: 40%;
   max-width: 250px; 
+  font-family: var(--buttons);
 }
 
 .narBtn:hover {
   background-color: var(--color5);
     
-
 }
 
 .narBtn:active,
