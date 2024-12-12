@@ -81,6 +81,21 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     }
     // fine FUNZIONI PER SELECTED CUSTOMIZATO
+
+    // fissare linea link menu navbar in base a selezione
+	// Ottieni l'URL corrente
+    const currentUrl = window.location.href;
+
+    // Seleziona tutti i link con la classe nav-link
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+        // Controlla se l'href del link corrisponde all'URL corrente
+        if (link.href === currentUrl) {
+            // Aggiungi la classe 'active' al link corrispondente
+            link.classList.add('perm');
+        }
+    });
     
 });
 
@@ -102,55 +117,95 @@ document.addEventListener("DOMContentLoaded", async function(event) {
     
 });
 
-
 function prepareNarratives() {
+    // Resetta le caselle di selezione nel search-space
+    resetSelectionFields();
+
     if (sessionStorage.getItem("redirect")) {
         redirectTrue();
     } else {
         redirectFalse();
-    }   
+    }
 };
 
 function redirectTrue(){
-    let itemRedirect = sessionStorage.getItem("itemRedirect")
-    currentNarrative = sessionStorage.getItem("nar")
-    currentValue = sessionStorage.getItem("value")
+    let itemRedirect = sessionStorage.getItem("itemRedirect");
+    currentNarrative = sessionStorage.getItem("nar");
+    currentValue = sessionStorage.getItem("value");
     sessionStorage.clear();
     console.log("itemRedirect", itemRedirect, "currentNarrative", currentNarrative, "currentValue", currentValue);
     counter = -1;
     sortItemIndex = 0;
-    currentSelection = items.filter( i =>
-        i.info[currentNarrative]?.includes(currentValue));
 
-    console.log(currentSelection)
+    // Filtra gli item in base alla narrativa
+    currentSelection = items.filter(i => 
+        i.info[currentNarrative]?.includes(currentValue)
+    );
+
+    console.log(currentSelection);
     
-    if (currentSelection.length==0) currentSelection = items;
+    if (currentSelection.length === 0) currentSelection = items;
 
-    currentSelection.sort( (i,j) => i['@sort'] - j['@sort']);
+    // Ordina i risultati in base al campo '@sort'
+    currentSelection.sort((i, j) => i['@sort'] - j['@sort']);
 
+    // Aggiorna l'indice dell'item selezionato
     currentSelection.forEach(sel => {
         counter++;
-        if (sel["@sort"] === itemRedirect){
-            sortItemIndex = counter
+        if (sel["@sort"] === itemRedirect) {
+            sortItemIndex = counter;
         }
         console.log("counter", counter, "sortItemIndex", sortItemIndex, "sel[\"@sort\"]", sel["@sort"]);
-    })
+    });
 
+    // Aggiorna gli indici e mostra l'item selezionato
     updateIndices();
     showInfo(sortItemIndex);
 };
 
-
 function redirectFalse(){
-    currentSelection = items.filter( i => 
+    // Filtra gli item in base alla narrativa
+    currentSelection = items.filter(i => 
         i.info[currentNarrative]?.includes(currentValue)
     );
-    currentSelection.sort( (i,j) => i['@sort'] - j['@sort']);
 
-    if (currentSelection.length==0) currentSelection = items;
+    currentSelection.sort((i, j) => i['@sort'] - j['@sort']);
 
+    if (currentSelection.length === 0) currentSelection = items;
+
+    // Aggiorna gli indici e mostra il primo risultato
     updateIndices();
     showInfo(0);
+}
+
+function resetSearchResults() {
+    const results = document.getElementById("results");
+
+    // Pulisce i risultati attuali nel search-space
+    results.innerHTML = "Loading...";  // Messaggio di caricamento
+    results.style.visibility = "hidden";  // Nasconde i risultati fino al filtro
+
+    // Azzera altre variabili di stato se necessario
+    currentSelection = [];
+    index = -1;
+    currentSort = null; // Resetta anche l'ordinamento se applicabile
+}
+
+function resetSelectionFields() {
+    // Reset dei dropdown dei temi
+    const themesSelected = document.querySelector('.selected[data-name="Themes"]');
+    themesSelected.setAttribute('data-value', '');
+    themesSelected.innerText = 'All';
+
+    // Reset del dropdown della tipologia
+    const typologySelected = document.querySelector('.selected[data-name="Typology"]');
+    typologySelected.setAttribute('data-value', '');
+    typologySelected.innerText = 'All';
+
+    // Reset del dropdown del periodo storico
+    const periodSelected = document.querySelector('.selected[data-name="Historical period"]');
+    periodSelected.setAttribute('data-value', '');
+    periodSelected.innerText = 'All';
 }
 
 
@@ -294,10 +349,19 @@ function hideFullInfo() {
 
 // Funzioni narrative / Lucrezia e Romolo
 
-function changeNarrative(narrative,value) {
-        currentNarrative = narrative;
-        currentValue = value;
-        prepareNarratives();
+function changeNarrative(narrative, value) {
+    // Reset dei risultati nel search-space
+    resetSearchResults();
+
+    // Reset delle caselle di selezione nel search-space
+    resetSelectionFields();
+
+    // Aggiorna la narrativa selezionata
+    currentNarrative = narrative;
+    currentValue = value;
+
+    // Filtra i risultati in base alla nuova selezione
+    prepareNarratives();
 }
 
 function matchNarratives(item, narrativesList) {
@@ -414,9 +478,9 @@ window.addEventListener('load', () => {
 document.addEventListener('click', (event) => {
     // Seleziona tutti i dropdown attivi
     const dropdowns = document.querySelectorAll('.options');
-    const toggles = document.querySelectorAll('.selected-box');
+    const selects = document.querySelectorAll('.select'); // Seleziona tutti i div select
 
-    // Chiudi tutti i dropdown
+    // Chiudi tutti i dropdown se il click non è dentro un dropdown
     dropdowns.forEach((dropdown) => {
         if (!dropdown.contains(event.target)) {
             dropdown.style.visibility = 'hidden';
@@ -424,16 +488,30 @@ document.addEventListener('click', (event) => {
         }
     });
 
-    // Controlla se l'utente ha cliccato su un toggle per aprire/chiudere il relativo menu
-    toggles.forEach((toggle) => {
-        if (toggle.contains(event.target)) {
-            const dropdown = toggle.nextElementSibling; // Trova il menu associato
-            const isVisible = dropdown.style.visibility === 'visible'; //check visibility of dropdown element (le tendine)
+    // Controlla se l'utente ha cliccato su un div.select per aprire/chiudere il relativo menu
+    selects.forEach((select) => {
+        if (select.contains(event.target)) {
+            const dropdown = select.querySelector('.options'); // Trova il menu associato
+            const isVisible = dropdown.style.visibility === 'visible'; // Verifica se il menu è visibile
 
             // Mostra o nasconde il dropdown
             dropdown.style.visibility = isVisible ? 'hidden' : 'visible';
             dropdown.style.opacity = isVisible ? '0' : '1';
-            // if true hidden and 0, if false visible and 1
+        }
+    });
+
+    // Se l'utente clicca su un'opzione, chiudi il menu
+    const options = document.querySelectorAll('.option');
+    options.forEach((option) => {
+        if (option.contains(event.target)) {
+            const dropdown = option.closest('.select').querySelector('.options');
+            dropdown.style.visibility = 'hidden';
+            dropdown.style.opacity = '0';
+
+            // Aggiorna la selezione del valore
+            const selectedBox = option.closest('.select').querySelector('.selected');
+            selectedBox.setAttribute('data-value', option.getAttribute('data-value'));
+            selectedBox.textContent = option.textContent; // Cambia il testo della selezione
         }
     });
 });
