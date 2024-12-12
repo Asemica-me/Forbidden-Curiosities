@@ -41,6 +41,20 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 	const arrow = document.getElementById("arrow");
 	arrow.classList.add("pointed");
 
+	document.querySelector('#arrow').addEventListener('click', function() {
+	
+		const targetId = this.getAttribute('href');
+		const targetElement = document.querySelector(targetId);
+		
+		//Il calcolo è fatto per centrare il primo elemento di un periodo selezionato.
+		const offsetPosition = targetElement.getBoundingClientRect().top;
+
+		window.scrollTo({
+			top: offsetPosition,
+			behavior: 'smooth'
+		});
+	});
+
 	
 	
 	// Qui si attribuisce la classe con l'animazione alle immagini per farle entrare dai lati della viewport

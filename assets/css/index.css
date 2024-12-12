@@ -101,20 +101,6 @@ li {color: var(--text)}
   grid-template-rows: 15vh auto;
 }
 
-#welcome {
-  flex: 1 auto;
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-}
-
-#img-left {
-  background-color: grey;
-}
-
-#img-right {
-  background-color: grey;
-}
-
 #center {
   display: flex;
   flex-direction: column;
@@ -123,7 +109,7 @@ li {color: var(--text)}
 
 #center h1 {
   position: relative;
-  margin-top: 20%;
+  margin-top: 10%;
   text-align: center;
 }
 
@@ -131,6 +117,7 @@ li {color: var(--text)}
   position: absolute;
   bottom: 0;
   animation: pointing 2s ease-out;
+  cursor: pointer;
 }
 
 #arrow img {
