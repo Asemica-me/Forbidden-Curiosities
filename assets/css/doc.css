@@ -377,3 +377,24 @@ th, td {
 ::-webkit-scrollbar-thumb:hover {
     background: #524754; /* Colore del cursore al passaggio del mouse */
 }
+
+
+.palette-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .color-swatch {
+    text-align: center;
+  }
+  .swatch {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 10px;
+    border: 1px solid #e5e5e5;
+  }
+  .label {
+    font-size: 14px;
+  }
