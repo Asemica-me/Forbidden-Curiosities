@@ -43,6 +43,23 @@ footer.documentation {
     overflow: hidden;
 }
 
+.footer-icon {
+    margin-top: 10px;
+  }
+  
+  .footer-icon a img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    filter: grayscale(100%);
+  }
+  
+  .footer-icon a img:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+    filter: grayscale(0%);
+  }
+
 a {
     color: var(--color4); /* Colore di base */
     text-decoration: none; /* Rimuove la sottolineatura */
