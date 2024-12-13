@@ -49,6 +49,7 @@ body {
 
 /* Main Buttons */
 .nar-but {
+  font-family: var(--buttons);
   background-color: var(--colorBackground);
   color: var(--text);
   border: 1px solid var(--color5);
@@ -94,6 +95,7 @@ body {
 }
 
 .sub-nar-but {
+  font-family: var(--buttons);
   background-color: var(--colorBackground);
   color: var(--text);
   border: 1px solid var(--color5);
