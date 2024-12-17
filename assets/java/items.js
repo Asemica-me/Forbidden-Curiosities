@@ -1,12 +1,13 @@
-let index = 0;
-let items = [];
-let narratives = [];
-let currentSelection = [];
-let currentNarrative = "";
-let currentValue = "";
-let currentSort = "";
-let nar = sessionStorage.getItem("nar");
-let value = sessionStorage.getItem("value");
+// Global variables 
+let index = 0; 
+let items = [];             // Array to store all items from the JSON
+let narratives = [];        // Array to store narratives
+let currentSelection = [];  // Array to store filtered items
+let currentNarrative = "";  // Current narrative filter selected
+let currentValue = "";      // Current value for the narrative filter
+let currentSort = "";       // Sorting index for the current item
+let nar = sessionStorage.getItem("nar");    // Retrieve "nar" value from sessionStorage
+let value = sessionStorage.getItem("value");// Retrieve "value" from sessionStorage
 
 
 // Funzione per attivare e disattivare con un click il menu hamburger / Romolo
@@ -102,16 +103,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // JSON Data / Lucrezia
 
-document.addEventListener("DOMContentLoaded", async function(event) {
-    fetch('assets/data/items.json')
+document.addEventListener("DOMContentLoaded", async function(event) { // add event listener to the document object // when DOMContentLoaded event is triggered
+    fetch('assets/data/items.json') // Fetch the JSON file containing item data
     .then(response => response.json())
     .then(data => {	
-        items = data.items;
-        let startWith = data.meta.startWith;
-        let item = items[startWith];
+        items = data.items; // Store all items
+        let startWith = data.meta.startWith; // Index of the starting item
+        let item = items[startWith]; // Select the starting item
         narratives = data.meta.narratives;
         currentNarrative = data.meta.startNarrative;
-        currentValue = data.meta.startValue;
+        currentValue = data.meta.startValue; // Default value for narrative
         prepareNarratives();                  
     })
     
@@ -122,9 +123,9 @@ function prepareNarratives() {
     resetSelectionFields();
 
     if (sessionStorage.getItem("redirect")) {
-        redirectTrue();
+        redirectTrue(); // Handle case when redirected from another page / Pietro
     } else {
-        redirectFalse();
+        redirectFalse(); // Default filtering behavior
     }
 };
 
@@ -144,7 +145,7 @@ function redirectTrue(){
 
     console.log(currentSelection);
     
-    if (currentSelection.length === 0) currentSelection = items;
+    if (currentSelection.length === 0) currentSelection = items; // Fallback to all items if no match
 
     // Ordina i risultati in base al campo '@sort'
     currentSelection.sort((i, j) => i['@sort'] - j['@sort']);
@@ -182,7 +183,6 @@ function resetSearchResults() {
     const results = document.getElementById("results");
 
     // Pulisce i risultati attuali nel search-space
-    results.innerHTML = "Loading...";  // Messaggio di caricamento
     results.style.visibility = "hidden";  // Nasconde i risultati fino al filtro
 
     // Azzera altre variabili di stato se necessario
