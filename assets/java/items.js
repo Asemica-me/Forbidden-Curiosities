@@ -134,7 +134,6 @@ function redirectTrue(){
     currentNarrative = sessionStorage.getItem("nar");
     currentValue = sessionStorage.getItem("value");
     sessionStorage.clear();
-    console.log("itemRedirect", itemRedirect, "currentNarrative", currentNarrative, "currentValue", currentValue);
     counter = -1;
     sortItemIndex = 0;
 
@@ -143,8 +142,6 @@ function redirectTrue(){
         i.info[currentNarrative]?.includes(currentValue)
     );
 
-    console.log(currentSelection);
-    
     if (currentSelection.length === 0) currentSelection = items; // Fallback to all items if no match
 
     // Ordina i risultati in base al campo '@sort'
@@ -156,7 +153,7 @@ function redirectTrue(){
         if (sel["@sort"] === itemRedirect) {
             sortItemIndex = counter;
         }
-        console.log("counter", counter, "sortItemIndex", sortItemIndex, "sel[\"@sort\"]", sel["@sort"]);
+        
     });
 
     // Aggiorna gli indici e mostra l'item selezionato
