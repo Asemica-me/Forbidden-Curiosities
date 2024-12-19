@@ -76,7 +76,7 @@
   display: grid;
   height: inherit;
   grid-template-columns: repeat(5, auto); /* Le colonne si restringono al contenuto */
-  column-gap: 1px; /* Aggiungi uno spazio minimo tra le voci */
+  /*column-gap: 1px;  Aggiungi uno spazio minimo tra le voci */
 }
 
 .nav-link-box {
@@ -129,84 +129,83 @@
     width: 140px; /* Larghezza della sottolineatura attiva */
 }
   
-  #menu-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 2;
-  }
-  
-  .toggle-btn {
-    position: relative;
-    width: 4vw;
-    height: 4vw;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .toggle-btn span {
-    position: absolute;
-    width: 40px;
-    height: 4px;
-    transition: 0.3s;
-    background-color: var(--color5);
-  }
-  
-  .toggle-btn span:first-child {
-    transform: translateY(-8px);
-  }
-  
-  .toggle-btn.x span:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .toggle-btn span:last-child {
-    transform: translateY(8px);
-  }
-  
-  .toggle-btn.x span:first-child {
-    transform: rotate(45deg) translateY(0);
-  }
-  
-  .toggle-btn.x span:last-child {
-    transform: rotate(-45deg) translateY(0);
-  }
-  
-  #menu-links {
-    position: absolute;
-    height: 200px;
-    width: 100%;
-    display: none;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    z-index: 200;
-  }
-  
-  #menu-links a {
-    text-decoration: none;
-    text-align: center;
-    padding: 10px 0;
-    color: var(--text);
-    background-color: var(--color6);
-    font-family: var(--buttons);
-  }
-  
-  #menu-links a:last-child {
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-  }
-  
-  #menu-links a:nth-child(odd) {
-    background-color: var(--color3);
-  }
-  
-  #menu-links a:hover {
-    background-color: var(--color5);
-  }
+#menu-button {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.toggle-btn {
+  position: relative;
+  width: 4vw;
+  height: 4vw;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle-btn span {
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  transition: 0.3s;
+  background-color: var(--color5);
+}
+
+.toggle-btn span:first-child {
+  transform: translateY(-8px);
+}
+
+.toggle-btn.x span:nth-child(2) {
+  opacity: 0;
+}
+
+.toggle-btn span:last-child {
+  transform: translateY(8px);
+}
+
+.toggle-btn.x span:first-child {
+  transform: rotate(45deg) translateY(0);
+}
+
+.toggle-btn.x span:last-child {
+  transform: rotate(-45deg) translateY(0);
+}
+
+#menu-links {
+  position: absolute;
+  height: 200px;
+  width: 100%;
+  display: none;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  z-index: 200;
+}
+
+#menu-links a {
+  text-decoration: none;
+  text-align: center;
+  padding: 10px 0;
+  color: var(--text);
+  background-color: var(--color6);
+  font-family: var(--buttons);
+}
+
+#menu-links a:last-child {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+#menu-links a:nth-child(odd) {
+  background-color: var(--color3);
+}
+
+#menu-links a:hover {
+  background-color: var(--color5);
+}
 
 /*================================================*/
 /* ================ Fine Navbar ==================*/
