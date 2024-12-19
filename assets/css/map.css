@@ -120,7 +120,7 @@ body {
 
 .content {
   display: grid;
-  grid-template-columns: 60vw 30vw; /* Two columns within second row */
+  grid-template-columns: 60vw 30vw;
   gap: 5vw;
   width: 100%;
   padding-bottom: 3vh;
@@ -131,9 +131,9 @@ body {
 }
 
 #map-container {
-  display: flex; /* Use flexbox to control content alignment */
-  justify-content: center; /* Center the map horizontally */
-  align-items: center; /* Center the map vertically */
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
   margin-left: 5vh;
 }
 
@@ -176,19 +176,19 @@ body {
 
 
 .itemList li::marker {
-  font-size: 1.5em; /* Increase the size of the bullet */
-  color:var(--color4);   /* Change the color to purple */
+  font-size: 1.5em; 
+  color:var(--color4);   
 }
 
 .itemList li {
-  cursor: pointer; /* Makes the element appear clickable */
-  transition: border 0.2s ease, background-color 0.2s ease; /* Smooth transition effect */
+  cursor: pointer; 
+  transition: border 0.2s ease, background-color 0.2s ease; 
 }
 
 .itemList li:hover {
-  color: var(--color4); /* Black 1px border on hover */
-  border-radius: 5px; /* Rounded corners for the border */
-  background-color: var(--color6); /* Optional: Light gray background color on hover */
+  color: var(--color4); 
+  border-radius: 5px; 
+  background-color: var(--color6); 
 }
 
 
@@ -197,15 +197,15 @@ body {
 
   /* Adjust container grid */
   .container {
-    grid-template-rows: 15vh auto auto auto; /* Three rows */
+    grid-template-rows: 15vh auto auto auto; 
     
   }
 
   /* Content adjustments */
   .content {
     display: grid;
-    grid-template-columns: 1fr; /* Single column */
-    grid-template-rows: 40vh  min-content; /* Stack into two rows */
+    grid-template-columns: 1fr; 
+    grid-template-rows: 40vh  min-content; 
     padding-bottom: 0;
     
   }
@@ -219,7 +219,7 @@ body {
     min-height:42.55px ;
   }
   #sub-nar {
-    gap: 2%; /* Adds spacing between buttons */
+    gap: 2%; 
   }
 
   .sub-nar-but {
@@ -228,11 +228,9 @@ body {
     max-height: 42.55px;
   }
   
-
-
-  /* Map container height */
+  
   #map-container {
-    height: fit-content; /* Ensures height fits content */
+    height: fit-content; 
     margin-left: 0vh;
   }
 
