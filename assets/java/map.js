@@ -1,18 +1,3 @@
-function showList() {
-    const listContainer = document.getElementById('list');
-    const icon = document.getElementById('icon');
-
-    // Toggle visibility and icon rotation
-    if (listContainer.style.display === 'none' || listContainer.style.display === '') {
-        listContainer.style.display = 'block'; // Show the container
-        icon.style.transform = 'rotate(180deg)'; // Flip the icon
-    } else {
-        listContainer.style.display = 'none'; // Hide the container
-        icon.style.transform = 'rotate(0deg)'; // Reset icon orientation
-    }
-};
-
-
 function createSubButtons(container, items) {
     items.forEach((item) => {
         // Create a new div for the button
@@ -70,7 +55,7 @@ function changeList(subNarButton) {
     const mapImage = document.getElementById('map');
 
     // Define all object arrays
-    const ALLObj = ["Arquebus (1)",'Vitruvian man (2)', 'Martin Luther’s 95 Theses (facsimile) (3)', 'Galileo’s Telescope Replica (4)','Reign of Terror Guillotine Blade (5)', 'The Origin of Species” by Charles Darwin (6)','Victorian-Era Corset (7)', 'Courbet\'s L\'Origine du Monde (8)','Sheet of the measurements taken by Marie Curie (9)', 'Suffragette Hunger Strike Medal (10)', 'Enigma Machine Model D A1214 (11)', 'Replica of the Atomic Bomb “Little Boy” (12)','First Issue of “Playboy” Magazine (13)', 'Mini skirt by Mary Quant (14)', 'NASA Moon Landing Photo (15)', '“Shoot” by Chris Burden (16)','Dolly the Sheep (Cloning) (17)', 'For the Love of God” by Damien Hirst (18)', 'Edward Snowden’s Revelations (facsimile) (19)', 'AI Image of Pope Francis (20)'];
+    const ALLObj = ["Arquebus (1)",'Vitruvian Man (2)', 'Martin Luther’s 95 Theses (facsimile) (3)', 'Galileo’s Telescope Replica (4)','Reign of Terror Guillotine Blade (5)', '"The Origin of Species” by Charles Darwin (6)','Victorian-Era Corset (7)', 'Courbet\'s L\'Origine du Monde (8)','Sheet of the measurements taken by Marie Curie (9)', 'Suffragette Hunger Strike Medal (10)', 'Enigma Machine Model D A1214 (11)', 'Replica of the Atomic Bomb “Little Boy” (12)','First Issue of “Playboy” Magazine (13)', 'Mini skirt by Mary Quant (14)', 'NASA Moon Landing Photo (15)', '“Shoot” by Chris Burden (16)','Dolly the Sheep (Cloning) (17)', 'For the Love of God” by Damien Hirst (18)', 'Edward Snowden’s Revelations (facsimile) (19)', 'AI Image of Pope Francis (20)'];
     const XVXVIIObj = ['Vitruvian man (2)', 'Arquebus (1)', 'Martin Luther’s 95 Theses (facsimile) (3)', 'Galileo’s Telescope Replica (4)'];
     const XVIIXIXObj = ['Victorian-Era Corset (7)', 'Reign of Terror Guillotine Blade (5)', 'The Origin of Species” by Charles Darwin (6)', 'Courbet\'s L\'Origine du Monde (8)'];
     const fXXObj = ['Sheet of the measurements taken by Marie Curie (9)', 'Suffragette Hunger Strike Medal (10)', 'Enigma Machine Model D A1214 (11)', 'Replica of the Atomic Bomb “Little Boy” (12)'];
@@ -96,7 +81,7 @@ function changeList(subNarButton) {
         "Martin Luther’s 95 Theses (facsimile) (3)": 3,
         "Galileo’s Telescope Replica (4)": 4,
         "Reign of Terror Guillotine Blade (5)": 5,
-        "The Origin of Species” by Charles Darwin (6)": 6,
+        '"The Origin of Species” by Charles Darwin (6)': 6,
         "Victorian-Era Corset (7)": 7,
         "Courbet's L'Origine du Monde (8)": 8,
         "Sheet of the measurements taken by Marie Curie (9)": 9,

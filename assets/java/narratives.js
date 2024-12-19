@@ -1,5 +1,3 @@
-/*modal */
-
 function openModalBtn(btn) {
 	const goBtn = document.getElementById("goNar")
 	document.getElementById("sumModal").classList.add('visible') ;
