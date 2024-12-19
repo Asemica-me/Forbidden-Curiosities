@@ -2,6 +2,7 @@
 body {
   margin: 0;
   width: 100%;
+  max-width:100%;
   height: 100%;
   background-color: var(--colorBackground);
   overflow-x: hidden; /* Rimuove la barra di scorrimento orizzontale */
@@ -44,8 +45,9 @@ body {
 /*modal*/
 
 .opaque {
+    width: 100%;
     transition: opacity 0.5s ease, filter 0.5s ease;
-    filter: blur(5px); /* Optional: Apply blur effect */
+    filter: blur(5px); 
     pointer-events: none;
     overflow: "";
     
