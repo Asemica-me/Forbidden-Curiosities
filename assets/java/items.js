@@ -1,4 +1,4 @@
-currentSelection// Global variables 
+// Global variables 
 let index = 0; 
 let items = [];             // Array to store all items from the JSON
 let narratives = [];        // Array to store narratives
@@ -267,7 +267,7 @@ function createInfoTable(item) {
                     inner("infoTable",exb_room + item.info[i] +"\')\">" + item.info[i] + "</a></td></tr>", false);
                 } else {
                     let themes = item.info[i].split(", ");
-                    let val = []; // temporary array to store clickable narratives buttons
+                    let val = [];
                     for (j in themes) {
                         let theme = themes[j];
                         if (theme==="Women's history") {
@@ -363,11 +363,9 @@ function changeNarrative(narrative, value) {
     prepareNarratives();
 }
 
-// Funzioni filtri narrative / Romolo
-
 function matchNarratives(item, narrativesList) {
     item_narratives = item.info.Themes.split(", ").concat(item.info.Typology.split(", "), [item.info["Historical Period"]]);
-    for (let i = 0; i < narrativesList.length; i++) { // the loop continues as long as i is less than the length of the narrativesList array
+    for (let i = 0; i < narrativesList.length; i++) {
         if (narrativesList[i]==="") {continue}
         else if (!item_narratives.includes(narrativesList[i])) {return false;}
     };
@@ -397,7 +395,6 @@ function combinedNarratives() {
     showInfo(index);
 }
 
-// Lucrezia
 function show(id) {
     const element = document.getElementById(id);
     element.classList.remove('hidden'); // Rimuove lo stato "nascosto"
@@ -405,7 +402,6 @@ function show(id) {
     setTimeout(() => element.classList.remove('fade-in'), 500); // Rimuove la classe dopo l'animazione
 }
 
-// Lucrezia
 function hide(id) {
     document.getElementById(id).classList.add('hidden');
 }
@@ -485,9 +481,9 @@ document.addEventListener('click', (event) => {
 
     // Chiudi tutti i dropdown se il click non è dentro un dropdown
     dropdowns.forEach((dropdown) => {
-        if (!dropdown.contains(event.target)) { // if the event target is not inside the drop down if condition = true
-            dropdown.style.visibility = 'hidden'; // the element still takes up space
-            dropdown.style.opacity = '0'; // but it's invisible
+        if (!dropdown.contains(event.target)) {
+            dropdown.style.visibility = 'hidden';
+            dropdown.style.opacity = '0';
         }
     });
 
@@ -498,7 +494,7 @@ document.addEventListener('click', (event) => {
             const isVisible = dropdown.style.visibility === 'visible'; // Verifica se il menu è visibile
 
             // Mostra o nasconde il dropdown
-            dropdown.style.visibility = isVisible ? 'hidden' : 'visible'; // condition ? valueIfTrue : valueIfFalse;
+            dropdown.style.visibility = isVisible ? 'hidden' : 'visible';
             dropdown.style.opacity = isVisible ? '0' : '1';
         }
     });
