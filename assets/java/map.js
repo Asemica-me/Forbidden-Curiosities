@@ -81,7 +81,7 @@ function changeList(subNarButton) {
         "Martin Luther’s 95 Theses (facsimile) (3)": 3,
         "Galileo’s Telescope Replica (4)": 4,
         "Reign of Terror Guillotine Blade (5)": 5,
-        "The Origin of Species” by Charles Darwin (6)": 6,
+        '"The Origin of Species” by Charles Darwin (6)': 6,
         "Victorian-Era Corset (7)": 7,
         "Courbet's L'Origine du Monde (8)": 8,
         "Sheet of the measurements taken by Marie Curie (9)": 9,
