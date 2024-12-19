@@ -14,7 +14,7 @@ body {
 .container {
   display: grid;
   grid-template-rows: 15vh auto 85vh auto; 
-  max-width: 100vw;
+  
   row-gap: 3vh;
  
 }
@@ -229,12 +229,6 @@ body {
   }
   
 
-  /* List adjustments */
-  #list-container {
-    display: grid;
-    grid-template-rows: 10vh min-content;
-  }
-
 
   /* Map container height */
   #map-container {
@@ -242,47 +236,15 @@ body {
     margin-left: 0vh;
   }
 
-  /* List icon alignment */
-  #list-icon {
-    display: flex; /* Use flexbox for alignment */
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
-  }
-
-  /* Icon button styling */
-  #icon-button {
-    background: none; /* Remove default button styling */
-    border: none; /* Remove border */
-    padding: 0; /* Remove padding */
-    cursor: pointer; /* Change cursor to pointer for button-like behavior */
-  }
-
-  /* Icon styling and hover effect */
-  #icon {
-    width: 50px;
-    height: 50px;
-    transition: transform 0.3s ease; /* Smooth scaling effect */
-  }
-
-  #icon:hover {
-    transform: scale(1.1); /* Slightly enlarge on hover */
-  }
-
   .itemList{
     margin-top: 0%;
   }
 
-  /* List container hidden by default */
-  #list {
-    display: none;
-  }
+  
 }
-@media screen and (min-width: 831px) {
-  #list {
-    display: block;
-  }
 
-}
+
+
 
 
 
