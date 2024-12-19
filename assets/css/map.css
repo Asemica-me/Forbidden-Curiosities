@@ -172,7 +172,6 @@ body {
   font-family:var(--font-family-text) ;
 }
 
-
 .itemList li::marker {
   font-size: 1.5em; 
   color:var(--color4);   
@@ -187,6 +186,36 @@ body {
   color: var(--color4); 
   border-radius: 5px; 
   background-color: var(--color6); 
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+#map-container {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+#list-container {
+  animation: slideInRight 1s ease-out forwards;
 }
 
 @media screen and (max-width: 830px) {
