@@ -168,7 +168,7 @@ body {
 }
 
 .itemList{
-  
+  margin: 0px;
   width: 100%;
   height:90%;
   color: var(--text);
@@ -239,9 +239,7 @@ body {
    align-items: flex-start;
   }
 
-  .itemList{
-    margin-top: 0%;
-  }
+
 
   
 }
