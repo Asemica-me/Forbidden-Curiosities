@@ -14,12 +14,12 @@ body {
 .container {
   display: grid;
   grid-template-rows: 15vh auto auto auto; 
-  
   row-gap: 3vh;
  
 }
+
 /* =============== Inizio nar menu ===============*/
-/* Container and Grid Setup */
+
 .nar-container {
   display: flex;
   min-height: 40vh;
@@ -66,7 +66,6 @@ body {
   background-color: var(--color5);
 }
 
-/* Divider */
 #gap {
   justify-self: center;
   height: 1px;
@@ -74,7 +73,6 @@ body {
   background-color: var(--dividers);
 }
 
-/* Sub Buttons Section */
 #sub-nar {
   display: flex;
   flex-wrap: wrap;
@@ -106,6 +104,7 @@ body {
   border-radius: 10px;
   transition: background-color 0.3s ease;
 }
+
 .sub-nar-but:hover {
   background-color: var(--color5);
 }
@@ -116,7 +115,6 @@ body {
 }
 
 /* =============== fine nar menu ===============*/
-
 
 .content {
   display: grid;
@@ -146,6 +144,7 @@ body {
 }
 
 /* =========list block========*/
+
 #list-container{
  height: 100%;
  width: 100%;
@@ -159,16 +158,14 @@ body {
   padding:0px;
   display: flex;
   justify-content: center;
-  
   height: 100%;
   width: 100%;
   border-radius: 15px;
   min-height: 480px;
-  
 }
 
 .itemList{
-  
+  margin: 0px;
   width: 100%;
   height:90%;
   color: var(--text);
@@ -192,17 +189,7 @@ body {
   background-color: var(--color6); 
 }
 
-
 @media screen and (max-width: 830px) {
-
-
-  /* Adjust container grid */
-  .container {
-    grid-template-rows: 15vh auto auto auto; 
-    
-  }
-
-  /* Content adjustments */
 
   .nar-grid{
     gap:0;
@@ -212,6 +199,7 @@ body {
     min-width: fit-content;
     min-height:42.55px ;
   }
+
   #sub-nar {
     gap: 2%; 
   }
@@ -227,7 +215,6 @@ body {
     grid-template-columns: 1fr; 
     grid-template-rows: auto auto; 
     padding-bottom: 0;
-    
   }
   
   #map-container {
@@ -238,21 +225,9 @@ body {
   #list {
    align-items: flex-start;
   }
-
-  .itemList{
-    margin-top: 0%;
-  }
-
   
 }
-
-
-
-
-
-
-  /*================================================*/
-  /* =============== Fine map ===============*/
-  /*================================================*/
+/* =============== Fine map ===============*/
+  
   
   
