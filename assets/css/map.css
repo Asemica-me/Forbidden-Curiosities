@@ -14,7 +14,6 @@ body {
 .container {
   display: grid;
   grid-template-rows: 15vh auto auto auto; 
-  
   row-gap: 3vh;
  
 }
@@ -195,12 +194,6 @@ body {
 
 @media screen and (max-width: 830px) {
 
-
-  /* Adjust container grid */
-  .container {
-    grid-template-rows: 15vh auto auto auto; 
-    
-  }
 
   /* Content adjustments */
 
