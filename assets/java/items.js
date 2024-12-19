@@ -215,6 +215,8 @@ function updateIndices() {
     inner("indicesBox", indicesBar, true);
 }
 
+// funzioni informazioni items / Lucrezia 
+
 function showInfo(index) {
     let item = currentSelection[index];
     currentSort = item['@sort'];
@@ -255,7 +257,7 @@ function byId(id) {
 }
 
 function createInfoTable(item) {
-    inner("infoTable","",true) ;
+    inner("infoTable","",true) ;  // Clear existing content in the "infoTable" element
     const exb_room = "<tr><th>Exhibition Room</th><td><a type=\"button\" class=\"btn\" href=\"#\" onclick=\"changeNarrative(\'Historical Period\',\'";
     for (i in item.info) {
         if (["Type", "Exhibition", "icon"].includes(i)) continue; 
@@ -271,9 +273,9 @@ function createInfoTable(item) {
                         if (theme==="Women's history") {
                             theme = "Women\\&#39;s history";
                         }
-                        val.push(`<a type="button" class="btn" href="#" onclick="changeNarrative('${i}', '${theme}')">${themes[j]}</a>`)
+                        val.push(`<a type="button" class="btn" href="#" onclick="changeNarrative('${i}', '${theme}')">${themes[j]}</a>`) // create links for each theme in the string
                     }
-                    inner("infoTable","<tr><th>"+i+"</th><td>"+val.join(" ")+"</td></tr>", false);
+                    inner("infoTable","<tr><th>"+i+"</th><td>"+val.join(" ")+"</td></tr>", false); // Create a table row for other narrative keys
                 }
             } else {
                 inner("infoTable","<tr><th>"+i+"</th><td>"+item.info[i]+"</td></tr>", false);
@@ -321,9 +323,9 @@ function muchMore() {
     let lessBtn = document.getElementById("lessBtn");
     let moreBtn = document.getElementById("moreBtn");
 
-    fetch(uri)
-    .then(response => response.text())
-    .then(data => {	
+    fetch(uri) // Sends a request to the URL stored in the uri variable
+    .then(response => response.text()) // Processes the response and converts it to plain text
+    .then(data => {	// 'data' is the fetched content
         inner("fullInfoContent",data) ;
         show("fullInfo") ;
     })
