@@ -5,14 +5,13 @@ body {
   max-width:100%;
   height: 100%;
   background-color: var(--colorBackground);
-  overflow-x: hidden; /* Rimuove la barra di scorrimento orizzontale */
+  overflow-x: hidden; 
   font-family: var(--font-family-text);
   font-weight: 400;
   font-style: normal;
 }
 
 /* ============= inizio narratives ===============*/
-
 
 .grid-container {
   display: grid;
@@ -39,22 +38,20 @@ body {
   font-size: 20px;
   margin: 20px 0;
   color: var(--color2)
-  
 }
 
 /*modal*/
 
 .opaque {
-    width: 100%;
-    transition: opacity 0.5s ease, filter 0.5s ease;
-    filter: blur(5px); 
-    pointer-events: none;
-    overflow: "";
-    
+  width: 100%;
+  transition: opacity 0.5s ease, filter 0.5s ease;
+  filter: blur(5px); 
+  pointer-events: none;
+  overflow: "";
 }
 
 #sum{
-  overflow: auto; /* Enable vertical scrolling */
+  overflow: auto; 
   height: 100%;
 }
 
@@ -100,17 +97,17 @@ body {
 }
 
 #sumTitle {
-  font-size: 24px; /* Larger title */
+  font-size: 24px; 
   margin: 5%;
-  color: var(--text); /* Dark text for the title */
+  color: var(--text); 
   font: var( --font-family-header)
 }
 
 #sumCont {
   margin: 5%;
   font-size: 16px;
-  color:var(--text); /* Slightly lighter text for the content */
-  line-height: 1.5; /* Improve readability */
+  color:var(--text); 
+  line-height: 1.5; 
   text-align: left;
   overflow-y: auto;
 
@@ -124,7 +121,6 @@ body {
 }
 
 #goNar {
-  
   text-decoration: none;
   padding: 1%;
   cursor: pointer;
@@ -137,15 +133,14 @@ body {
   transition: background-color 0.3s ease;
 }
 
-
 #goNar:hover {
   background-color: var(--color5); 
 }
 
 #goNar:active {
   background-color: #f5e2c6;
-  transform: scale(0.95); /* Effetto di pressione */
-  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2); /* Ombra interna */
+  transform: scale(0.95); 
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2); 
 }
 
 #goNar span {
@@ -171,8 +166,7 @@ body {
   right: 0;
 }
 
-/* ============ Buttoni Pietro====================*/      
-
+/* ============ Buttons====================*/      
 
 .btnCont{
   opacity: 0;
@@ -185,6 +179,11 @@ body {
   border: none;
   padding: 10px 20px;
   margin: 5px;
+}
+
+.btnCont.animate {
+  opacity: 1;
+  transform: translateX(0); /* Move to the original position */
 }
 
 .narBtn {
@@ -208,17 +207,14 @@ body {
 
 .narBtn:hover {
   background-color: var(--color5);
-    
 }
 
 .narBtn:active,
 .narBtn.active {
   background-color: var(--color5);
-    
 }
 
 /* ============ Fine Buttoni Pietro ==============*/     
-
 
 @media (max-width: 600px) {
   #sumModal {
@@ -232,18 +228,7 @@ body {
   }
 }
 
-/* ============ Animazioni ==============*/   
-#content{
-  transition: opacity 0.5s ease, filter 0.5s ease;
-}
-
-.btnCont.animate {
-  opacity: 1;
-  transform: translateX(0); /* Move to the original position */
-}
-
-/*================================================*/
 /* =============== Fine narratives ===============*/
-/*================================================*/
+
 
 

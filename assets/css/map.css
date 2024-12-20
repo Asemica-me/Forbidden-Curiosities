@@ -13,13 +13,13 @@ body {
 
 .container {
   display: grid;
-  grid-template-rows: 15vh auto 85vh auto; 
-  
+  grid-template-rows: 15vh auto auto auto; 
   row-gap: 3vh;
  
 }
+
 /* =============== Inizio nar menu ===============*/
-/* Container and Grid Setup */
+
 .nar-container {
   display: flex;
   min-height: 40vh;
@@ -66,7 +66,6 @@ body {
   background-color: var(--color5);
 }
 
-/* Divider */
 #gap {
   justify-self: center;
   height: 1px;
@@ -74,7 +73,6 @@ body {
   background-color: var(--dividers);
 }
 
-/* Sub Buttons Section */
 #sub-nar {
   display: flex;
   flex-wrap: wrap;
@@ -106,6 +104,7 @@ body {
   border-radius: 10px;
   transition: background-color 0.3s ease;
 }
+
 .sub-nar-but:hover {
   background-color: var(--color5);
 }
@@ -116,7 +115,6 @@ body {
 }
 
 /* =============== fine nar menu ===============*/
-
 
 .content {
   display: grid;
@@ -131,9 +129,10 @@ body {
 }
 
 #map-container {
+  width: 100%;
   display: flex; 
+  align-items: flex-start;
   justify-content: center; 
-  align-items: center; 
   margin-left: 5vh;
 }
 
@@ -145,6 +144,7 @@ body {
 }
 
 /* =========list block========*/
+
 #list-container{
  height: 100%;
  width: 100%;
@@ -162,18 +162,15 @@ body {
   width: 100%;
   border-radius: 15px;
   min-height: 480px;
-  
-
 }
 
 .itemList{
-  margin-top: 10%;
+  margin: 0px;
   width: 100%;
   height:90%;
   color: var(--text);
   font-family:var(--font-family-text) ;
 }
-
 
 .itemList li::marker {
   font-size: 1.5em; 
@@ -191,24 +188,37 @@ body {
   background-color: var(--color6); 
 }
 
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+#map-container {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+#list-container {
+  animation: slideInRight 1s ease-out forwards;
+}
 
 @media screen and (max-width: 830px) {
-
-
-  /* Adjust container grid */
-  .container {
-    grid-template-rows: 15vh auto auto auto; 
-    
-  }
-
-  /* Content adjustments */
-  .content {
-    display: grid;
-    grid-template-columns: 1fr; 
-    grid-template-rows: 40vh  min-content; 
-    padding-bottom: 0;
-    
-  }
 
   .nar-grid{
     gap:0;
@@ -218,6 +228,7 @@ body {
     min-width: fit-content;
     min-height:42.55px ;
   }
+
   #sub-nar {
     gap: 2%; 
   }
@@ -228,26 +239,24 @@ body {
     max-height: 42.55px;
   }
   
+  .content {
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto auto; 
+    padding-bottom: 0;
+  }
   
   #map-container {
     height: fit-content; 
     margin-left: 0vh;
   }
 
-  .itemList{
-    margin-top: 0%;
+  #list {
+   align-items: flex-start;
   }
-
   
 }
-
-
-
-
-
-
-  /*================================================*/
-  /* =============== Fine map ===============*/
-  /*================================================*/
+/* =============== Fine map ===============*/
+  
   
   

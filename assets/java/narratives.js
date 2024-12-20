@@ -6,8 +6,6 @@ function openModalBtn(btn) {
 	goBtn.dataset.value = btn.dataset.value;
 	goBtn.dataset.nar=btn.parentElement.parentElement.dataset.nar;
 	
-	
-   
         var buttonText = btn.innerText;
         var title = document.getElementById('sumTitle');
         title.innerText = buttonText;
@@ -68,7 +66,6 @@ function openModalBtn(btn) {
 		
     }
 
-
 function closeModalBtn(){
 	document.getElementById("sumModal").classList.remove('visible') ;
 	document.getElementById("content").classList.remove('opaque');
@@ -93,9 +90,7 @@ let NarSum = {
 	FIRST: "The selected artifacts from the first half of the 20th century reflect the dramatic and transformative changes that characterized this tumultuous period in history, showcasing key moments and objects that shaped global political, cultural, and social landscapes. This era witnessed two world wars, the rise and fall of empires, and significant movements for social justice and civil rights. Artifacts from this time reveal the complexities of technological advancement, artistic innovation, and ideological struggle, as societies grappled with the consequences of conflict and the quest for progress. They highlight the voices of individuals and groups who challenged norms and advocated for change, illustrating the profound impact of modernity on everyday life. These pieces serve as important reminders of the resilience and creativity of humanity in the face of upheaval, as well as the ongoing pursuit of identity and meaning in an increasingly interconnected world.",
 	SECOND: "The selected artifacts from the second half of the 20th century illustrate the profound and varied changes that shaped this dynamic period in history, reflecting key moments and objects that influenced global political, cultural, and social landscapes. This era was marked by the aftermath of World War II, the Cold War, the civil rights movement, and significant shifts in technology and culture. Artifacts from this time reveal the complexities of decolonization, the rise of counterculture, and the ongoing struggles for equality and justice. They highlight the voices of individuals and movements that challenged established norms, embraced new ideologies, and sought to redefine identities in an increasingly interconnected world. These pieces serve as crucial reminders of the resilience of the human spirit and the transformative power of creativity, activism, and innovation during a time of rapid change and global interdependence.",
 	XXI: "The selected artifacts from the 21st century illuminate the rapid and multifaceted changes that define this current era, reflecting key moments and objects that shape contemporary political, cultural, and social landscapes. This period has been characterized by significant technological advancements, globalization, and urgent discussions around issues such as climate change, social justice, and human rights. Artifacts from this time reveal the complexities of a digital age, where information flows freely and communities are both connected and divided. They highlight the voices of diverse individuals and movements that challenge traditional power structures, advocate for inclusivity, and strive for sustainable futures. These pieces serve as vital reminders of the dynamic interplay between innovation, activism, and cultural expression, illustrating the ongoing quest for identity, belonging, and meaningful change in an increasingly interconnected world.",
-
   };
-
 
   window.addEventListener("load", () => {
     const btnContainers = document.querySelectorAll(".btnCont");
@@ -109,16 +104,11 @@ let NarSum = {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Ottieni l'URL corrente
     const currentUrl = window.location.href;
-
-    // Seleziona tutti i link con la classe nav-link
     const navLinks = document.querySelectorAll('.nav-link');
 
     navLinks.forEach(link => {
-        // Controlla se l'href del link corrisponde all'URL corrente
         if (link.href === currentUrl) {
-            // Aggiungi la classe 'active' al link corrispondente
             link.classList.add('perm');
         }
     });
