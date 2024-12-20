@@ -27,19 +27,9 @@ function toggleCurtain() {
 	toggleButton.classList.toggle('x');
   }
 
+// switch Panel / Romolo
+
 document.addEventListener("DOMContentLoaded", function() {
-    
-    // Romolo // Event Listener per far apparire il layer con le frecce di navigazione e 
-    // per farlo sparire quando il puntatore esce dall'area
-    const switchPanel = document.getElementById("switchPanel");
-
-    switchPanel.addEventListener("mouseover", () => {
-        switchPanel.style.opacity = "1";
-    });
-
-    switchPanel.addEventListener("mouseout", () => {
-        switchPanel.style.opacity = "0";
-    });
 
     // inizio FUNZIONI PER SELECTED CUSTOMIZATO
     // Adattamento elementi selected a larghezza loro opzioni
@@ -108,8 +98,6 @@ document.addEventListener("DOMContentLoaded", async function(event) { // add eve
     .then(response => response.json())
     .then(data => {	
         items = data.items; // Store all items
-        let startWith = data.meta.startWith; // Index of the starting item
-        let item = items[startWith]; // Select the starting item
         narratives = data.meta.narratives;
         currentNarrative = data.meta.startNarrative;
         currentValue = data.meta.startValue; // Default value for narrative
@@ -259,7 +247,7 @@ function byId(id) {
 function createInfoTable(item) {
     inner("infoTable","",true) ;  // Clear existing content in the "infoTable" element
     const exb_room = "<tr><th>Exhibition Room</th><td><a type=\"button\" class=\"btn\" href=\"#\" onclick=\"changeNarrative(\'Historical Period\',\'";
-    for (i in item.info) {
+    for (i in item.info) { // loop through the info property of the item object
         if (["Type", "Exhibition", "icon"].includes(i)) continue; 
         if (item.info[i] !== null) {
             if (narratives.includes(i)) {
