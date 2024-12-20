@@ -134,6 +134,7 @@ body {
   align-items: flex-start;
   justify-content: center; 
   margin-left: 5vh;
+  animation: slideInLeft 1s ease-out forwards;
 }
 
 #map {
@@ -148,6 +149,7 @@ body {
 #list-container{
  height: 100%;
  width: 100%;
+ animation: slideInRight 1s ease-out forwards;
 }
 
 #list-icon{
@@ -210,13 +212,6 @@ body {
   }
 }
 
-#map-container {
-  animation: slideInLeft 1s ease-out forwards;
-}
-
-#list-container {
-  animation: slideInRight 1s ease-out forwards;
-}
 
 @media screen and (max-width: 830px) {
 
