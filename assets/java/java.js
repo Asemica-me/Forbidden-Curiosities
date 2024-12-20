@@ -37,16 +37,10 @@ window.addEventListener('scroll', function() { // Necessario per controllare il 
 document.addEventListener("DOMContentLoaded", function() { //Necessario per poter agire sugli elementi una volta che sono stati caricati dal browser
 	
 	// Animazione freccia nella prima sezione della pagina #arrow
-
-	const arrow = document.getElementById("arrow");
-	arrow.classList.add("pointed");
-
 	document.querySelector('#arrow').addEventListener('click', function() {
 	
 		const targetId = this.getAttribute('href');
 		const targetElement = document.querySelector(targetId);
-		
-		//Il calcolo è fatto per centrare il primo elemento di un periodo selezionato.
 		const offsetPosition = targetElement.getBoundingClientRect().top;
 
 		window.scrollTo({
@@ -63,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 	const option = {
 		root: null, // Valore per ottenere la viewport come contenitore da osservare
 		rootMargin: '0px',
-		threshold: 0.6 // Valore che fa scattare l'animazione quando l'elemento è per il 100% visibile
+		threshold: 0.6 // Valore che fa scattare l'animazione quando l'elemento è per il 60% visibile
 	};
 
 	

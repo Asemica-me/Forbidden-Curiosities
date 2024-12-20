@@ -96,7 +96,6 @@ document.addEventListener("DOMContentLoaded", function() { //Necessario per pote
 		entries.forEach(entry => {
 			let n = parseInt(entry.target.dataset.item, 10);
 			if (entry.isIntersecting) {
-				console.log(entry.target, n);
 				if (1 <= n && n <= 4) {
 					preavious.style.textDecoration= "none";
 					first_p.style.textDecoration= "underline";
