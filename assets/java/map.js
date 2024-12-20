@@ -32,11 +32,11 @@ function subNar(narButton) {
     const themes = ["Ethics Of War", "Scientific Revolution", "Women's History", "Religious Dissent", "Provocative Art", "Digital Privacy"];
 
     if (buttonText === "Period") {
-        createSubButtons(targetContainer, periods, changeList);
+        createSubButtons(targetContainer, periods);
     } else if (buttonText === "Themes") {
-        createSubButtons(targetContainer, themes, changeList);
+        createSubButtons(targetContainer, themes);
     } else if (buttonText === "Tipology") {
-        createSubButtons(targetContainer, tipologies, changeList);
+        createSubButtons(targetContainer, tipologies);
     }
 };
 
