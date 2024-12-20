@@ -16,7 +16,7 @@ function createSubButtons(container, items) {
         container.appendChild(newDiv);
 
         setTimeout(() => {
-            newDiv.style.transform = "translateY(0)";
+            newDiv.style.transform = "translateX(0)";
         }, 10);
     });
 }
